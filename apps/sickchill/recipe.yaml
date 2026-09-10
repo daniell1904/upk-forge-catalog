@@ -1,0 +1,33 @@
+id: sickchill
+name: Sickchill
+author: Team
+category: Media
+description: 'SickChill is an automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic: automatic torrent/nzb searching, downloading, and processing at the qualities you want.'
+homepage: https://sickchill.github.io
+source_code: https://github.com/SickChill/SickChill
+ugos:
+  app_id: com.upkforge.docker.sickchill
+  version: 0.1.0
+  port: 8081
+  open_type: tab
+  tag_type: media
+parameters:
+- key: VOL_1
+  label: Downloads folder
+  help: Folder on the NAS for Sickchill's downloads. It is mounted into the container at /downloads; Sickchill has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Tv folder
+  help: Folder on the NAS for Sickchill's tv. It is mounted into the container at /tv; Sickchill has full read and write access to it.
+  type: path
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /downloads
+  label: Downloads
+  default_host_subpath: sickchill-downloads
+- container_path: /tv
+  label: Tv
+  default_host_subpath: sickchill-tv

@@ -1,0 +1,31 @@
+id: opensurge
+name: OpenSurge
+version: 0.1.1
+author: funchs
+category: Network
+warnings:
+- service 'opensurge' uses host networking
+- "service 'opensurge' adds capabilities: NET_ADMIN, NET_RAW, SYS_ADMIN"
+- service 'opensurge' maps device '/dev/net/tun:/dev/net/tun'
+ugos:
+  app_id: com.upkforge.docker.opensurge
+  version: 0.1.0
+  port: 61767
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: OPENSURGE_BASE_URL
+  label: Opensurge base url
+  type: string
+- key: OPENSURGE_ALLOWED_HOSTS
+  label: Opensurge allowed hosts
+  type: string
+volumes:
+- container_path: /etc/opensurge
+  label: Opensurge
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /var/lib/opensurge
+  label: Opensurge
+  user_chosen: false
+  default_host_subpath: state

@@ -1,0 +1,12 @@
+services:
+  plex:
+    image: lscr.io/linuxserver/plex:1.43.2
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./config:/config
+      - ${VOL_1}:/Media
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - VERSION=docker

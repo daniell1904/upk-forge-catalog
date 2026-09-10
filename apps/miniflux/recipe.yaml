@@ -1,0 +1,28 @@
+id: miniflux
+name: Miniflux
+version: 2.3.3
+author: Miniflux
+category: Content
+homepage: https://miniflux.app
+ugos:
+  app_id: com.upkforge.docker.miniflux
+  version: 0.1.0
+  port: 8190
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: POSTGRES_PASSWORD
+  label: Postgres password
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: wizard_password
+  label: Wizard password
+  type: password
+  changeable: false
+  generate_bytes: 24
+volumes:
+- container_path: /var/lib/postgresql/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: pgdata

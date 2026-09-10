@@ -1,0 +1,6 @@
+services:
+  holoplay:
+    image: spout8301/holoplay:1.12.3
+    restart: unless-stopped
+    ports:
+      - 3000:3000

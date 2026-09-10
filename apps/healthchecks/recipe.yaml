@@ -1,0 +1,20 @@
+id: healthchecks
+name: Healthchecks
+author: Community
+category: Others
+description: Healthchecks is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface.
+ugos:
+  app_id: com.upkforge.docker.healthchecks
+  version: 0.1.0
+  port: 8000
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: SUPERUSER_PASSWORD
+  label: SUPERUSER PASSWORD
+  type: password
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config

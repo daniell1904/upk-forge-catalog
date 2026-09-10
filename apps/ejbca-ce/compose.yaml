@@ -1,0 +1,11 @@
+services:
+  ejbca-ce:
+    image: keyfactor/ejbca-ce:9.3.7@sha256:183b86af44b9b13e7cc8912c868f635aeb8dba6bf056ccbd4683b17626964d0a
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+      - 8443:8443
+    volumes:
+      - ./persistent:/mnt/persistent
+    environment:
+      - TLS_SETUP_ENABLED=simple

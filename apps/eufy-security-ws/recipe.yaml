@@ -1,0 +1,18 @@
+id: eufy-security-ws
+name: Eufy Security WS
+author: Community
+category: Others
+description: eufy-security-ws is a small server wrapper around the eufy-security-client library to access it via a WebSocket. It allows you to control Eufy security devices by connecting to the Eufy cloud servers and local/remote stations.
+warnings:
+- service uses host networking
+ugos:
+  app_id: com.upkforge.docker.eufysecurityws
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

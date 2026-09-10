@@ -1,0 +1,28 @@
+id: plant-it
+name: Plant-it
+author: Community
+category: Others
+description: Plant-it is a self-hosted gardening companion app. Useful for keeping track of plant care, receiving notifications about when to water plants, uploading plant images, and more.
+ugos:
+  app_id: com.upkforge.docker.plantit
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: MYSQL_ROOT_PASSWORD
+  label: MYSQL ROOT PASSWORD
+  type: password
+volumes:
+- container_path: /upload-dir
+  label: Upload dir
+  user_chosen: false
+  default_host_subpath: upload-dir
+- container_path: /certificates
+  label: Certificates
+  user_chosen: false
+  default_host_subpath: certificates
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: mysql

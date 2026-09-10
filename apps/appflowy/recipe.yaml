@@ -1,0 +1,17 @@
+id: appflowy
+name: AppFlowy
+version: 0.9.64
+author: AppFlowy-IO
+category: Content
+homepage: https://appflowy.io
+ugos:
+  app_id: com.upkforge.docker.appflowy
+  version: 0.1.0
+  port: 8501
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /app/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

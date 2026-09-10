@@ -1,0 +1,20 @@
+id: ghost
+name: Ghost
+author: Community
+category: Others
+description: Ghost is a free and open source blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.
+ugos:
+  app_id: com.upkforge.docker.ghost
+  version: 0.1.0
+  port: 2368
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /var/lib/ghost/content
+  label: Var lib ghost content
+  user_chosen: false
+  default_host_subpath: content
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: mysql

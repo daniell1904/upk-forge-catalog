@@ -1,0 +1,17 @@
+services:
+  syncthing:
+    image: linuxserver/syncthing:1.29.7
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 8384:8384
+      - 22000:22000
+      - 22000:22000
+      - 21027:21027
+    volumes:
+      - ./config:/config
+      - ./syncthing-data:/DATA
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ

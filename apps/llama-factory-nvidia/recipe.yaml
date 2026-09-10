@@ -1,0 +1,41 @@
+id: llama-factory-nvidia
+name: LLaMA Factory(Nvidia GPU)
+author: hiyouga
+category: AI
+description: >-
+  LLaMA Factory is a comprehensive framework for fine-tuning Large Language Models (LLMs) with support for over 100 models. It provides a user-friendly web interface and powerful training methods including LoRA, QLoRA, and full-parameter training.
+
+
+  **Key Features:**
+
+  - Support for 100+ LLMs including LLaMA, Mistral, Qwen, and more
+
+  - Multiple fine-tuning methods (LoRA, QLoRA, Full, Freeze)
+
+  - Intuitive Web UI for easy model management
+
+  - Built-in API server for model inference
+
+  - Multi-GPU training support
+
+  - Quantization and model export capabilities
+
+
+  **Hardware Requirements:**
+
+  - GPU: NVIDIA GPU with CUDA support required
+
+
+  **Learn More:**
+
+  - [GitHub Repository](https://github.com/hiyouga/LLaMA-Factory)
+
+  - [Documentation](https://llamafactory.readthedocs.io/)
+homepage: https://llamafactory.readthedocs.io/
+source_code: https://github.com/hiyouga/LLaMA-Factory
+ugos:
+  app_id: com.upkforge.docker.llamafactorynvidia
+  version: 0.1.0
+  port: 18877
+  open_type: tab
+  tag_type: utility

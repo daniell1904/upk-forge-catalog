@@ -1,0 +1,13 @@
+services:
+  obsidian:
+    image: docker.io/linuxserver/obsidian:1.13.8
+    ports:
+      - "8080:3001"
+    volumes:
+      - ./data:/config
+    environment:
+      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+    shm_size: 1gb
+    restart: unless-stopped

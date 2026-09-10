@@ -1,0 +1,44 @@
+id: reactive-resume
+name: Reactive Resume
+version: v5.3.0
+author: amruthpillai
+category: Content
+description: A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume.
+homepage: https://github.com/amruthpillai/reactive-resume
+warnings:
+- service 'reactive-resume-chrome' image 'ghcr.io/browserless/chromium:latest' is not pinned to a fixed version
+ugos:
+  app_id: com.upkforge.docker.reactiveresume
+  version: 0.1.0
+  port: 3200
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: SECRET_KEY
+  label: Secret key
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: POSTGRES_PASSWORD
+  label: Postgres password
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: TOKEN
+  label: Token
+  type: password
+  changeable: false
+  generate_bytes: 24
+volumes:
+- container_path: /app/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /var/lib/postgresql/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: db
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: chrome

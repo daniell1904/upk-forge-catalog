@@ -1,0 +1,17 @@
+id: ddns-updater
+name: ddns-updater
+author: rstuhlmuller
+category: Networking
+description: Program to keep DNS A and/or AAAA records updated for multiple DNS providers
+source_code: https://github.com/qdm12/ddns-updater
+ugos:
+  app_id: com.upkforge.docker.ddnsupdater
+  version: 0.1.0
+  port: 8000
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /updater/data
+  label: Updater data
+  user_chosen: false
+  default_host_subpath: data

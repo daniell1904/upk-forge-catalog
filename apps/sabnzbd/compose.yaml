@@ -1,0 +1,14 @@
+services:
+  sabnzbd:
+    image: docker.io/linuxserver/sabnzbd:5.1.3
+    ports:
+      - "8780:8080"
+    volumes:
+      - ./config:/config
+      - ./downloads:/downloads
+      - ./incomplete:/incomplete-downloads
+    environment:
+      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+    restart: unless-stopped

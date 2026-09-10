@@ -1,0 +1,31 @@
+id: odoo
+name: Odoo
+author: Community
+category: Finance
+description: Open-source business management software suite designed to streamline various aspects of business operations. With its modular structure, users can choose and integrate specific applications such as accounting, inventory, and sales. Odoo provides a user-friendly interface, scalability for businesses of all sizes, and is available in both community (free) and enterprise editions. Its integrated approach and customization options make it a popular choice for comprehensive ERP (Enterprise Resource Planning) solutions.
+ugos:
+  app_id: com.upkforge.docker.odoo
+  version: 0.1.0
+  port: 8069
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: PASSWORD
+  label: PASSWORD
+  type: password
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
+volumes:
+- container_path: /etc/odoo
+  label: Etc odoo
+  user_chosen: false
+  default_host_subpath: data/etc
+- container_path: /mnt/extra-addons
+  label: Mnt extra addons
+  user_chosen: false
+  default_host_subpath: data/addons
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: data/postgresql

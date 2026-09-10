@@ -1,0 +1,8 @@
+services:
+  rackpeek:
+    image: aptacode/rackpeek:v2.0.0@sha256:ebe9b5a7585b07ecdff5978b9464815138d340f720cc88f53a262fb230b6e717
+    restart: unless-stopped
+    ports:
+      - 8095:8080
+    volumes:
+      - ./config:/app/config

@@ -1,0 +1,26 @@
+id: medusa
+name: Medusa
+version: 1.0.26
+author: pymedusa
+category: Automation
+description: Automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.
+homepage: https://github.com/pymedusa/Medusa
+ugos:
+  app_id: com.upkforge.docker.medusa
+  version: 0.1.0
+  port: 8081
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /downloads
+  label: Downloads
+  user_chosen: false
+  default_host_subpath: downloads
+- container_path: /tv
+  label: Tv
+  user_chosen: false
+  default_host_subpath: tv

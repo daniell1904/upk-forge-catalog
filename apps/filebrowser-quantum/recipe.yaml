@@ -1,0 +1,20 @@
+id: filebrowser-quantum
+name: FileBrowser Quantum
+author: Community
+category: Productivity
+description: A self-hosted web file manager forked from FileBrowser with advanced features including OIDC authentication, indexed search, office document previews, and multi-source support.
+ugos:
+  app_id: com.upkforge.docker.filebrowserquantum
+  version: 0.1.0
+  port: 8700
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /home/filebrowser/data
+  label: Home filebrowser data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /srv
+  label: Srv
+  user_chosen: false
+  default_host_subpath: srv

@@ -1,0 +1,10 @@
+services:
+  peanut:
+    image: brandawg93/peanut:6.0.0
+    restart: unless-stopped
+    ports:
+      - 8084:8080
+    volumes:
+      - ./config:/config
+    environment:
+      - WEB_PORT=8080

@@ -1,0 +1,16 @@
+id: gem-digest-bot
+name: GemDigest Bot
+author: Community
+category: Others
+description: "Simplify your reads, amplify your time! \U0001F4DA✨ GemDigest is a Telegram bot that summarizes articles from any website into bite-sized nuggets, saving you time and energy for what matters most. \U0001F4F1\U0001F44B"
+ugos:
+  app_id: com.upkforge.docker.gemdigestbot
+  version: 0.1.0
+  port: 3333
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /gem_digest_bot/extra_configs
+  label: Gem digest bot extra configs
+  user_chosen: false
+  default_host_subpath: extra/configs

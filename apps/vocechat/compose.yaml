@@ -1,0 +1,11 @@
+services:
+  vocechat:
+    image: privoce/vocechat-server:v0.5.17
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 3009:3000
+    volumes:
+      - ./home/vocechat-server/data:/home/vocechat-server/data
+    environment:
+      - TZ=$TZ

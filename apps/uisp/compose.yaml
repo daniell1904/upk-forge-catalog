@@ -1,0 +1,11 @@
+services:
+  uisp:
+    image: nico640/docker-unms:2.4.155.1@sha256:f7f3f7820cb3e86bfbe0691585410482b5079f9708b400c810fbdc4cc9fd6590
+    restart: unless-stopped
+    ports:
+      - 8080:80
+      - 10443:443
+    volumes:
+      - ./config:/config
+    environment:
+      - TZ=UTC

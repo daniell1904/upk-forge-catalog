@@ -1,0 +1,33 @@
+id: sonarr
+name: Sonarr
+author: Team
+category: Media
+description: Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
+homepage: https://sonarr.tv
+source_code: https://github.com/Sonarr/Sonarr
+ugos:
+  app_id: com.upkforge.docker.sonarr
+  version: 0.1.0
+  port: 8989
+  open_type: tab
+  tag_type: media
+parameters:
+- key: VOL_1
+  label: Tv folder
+  help: Folder on the NAS for Sonarr's tv. It is mounted into the container at /tv; Sonarr has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Downloads folder
+  help: Folder on the NAS for Sonarr's downloads. It is mounted into the container at /downloads; Sonarr has full read and write access to it.
+  type: path
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /tv
+  label: Tv
+  default_host_subpath: sonarr-tv
+- container_path: /downloads
+  label: Downloads
+  default_host_subpath: sonarr-downloads

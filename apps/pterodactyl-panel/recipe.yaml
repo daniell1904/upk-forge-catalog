@@ -1,0 +1,32 @@
+id: pterodactyl-panel
+name: Pterodactyl Panel
+author: Community
+category: Developer
+description: Pterodactyl® is a free, open-source game server management panel built with PHP, React, and Go. Designed with security in mind, Pterodactyl runs all game servers in isolated Docker containers while exposing a beautiful and intuitive UI to end users.
+ugos:
+  app_id: com.upkforge.docker.pterodactylpanel
+  version: 0.1.0
+  port: 1180
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /app/var/
+  label: App var
+  user_chosen: false
+  default_host_subpath: var
+- container_path: /etc/nginx/http.d/
+  label: Etc nginx http.d
+  user_chosen: false
+  default_host_subpath: nginx
+- container_path: /etc/letsencrypt/
+  label: Etc letsencrypt
+  user_chosen: false
+  default_host_subpath: certs
+- container_path: /app/storage/logs
+  label: App storage logs
+  user_chosen: false
+  default_host_subpath: logs
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: database

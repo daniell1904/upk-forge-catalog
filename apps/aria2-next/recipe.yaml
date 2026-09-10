@@ -1,0 +1,25 @@
+id: aria2-next
+name: Aria2 Next
+version: 2.7.5
+author: AnInsomniacy
+category: Download
+homepage: https://github.com/AnInsomniacy/aria2-next
+ugos:
+  app_id: com.upkforge.docker.aria2next
+  version: 0.1.0
+  port: 6800
+  open_type: tab
+  tag_type: download
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /var/lib/aria2-next
+  label: Aria2 next
+  user_chosen: false
+  default_host_subpath: state
+- container_path: /downloads
+  label: Downloads
+  user_chosen: false
+  default_host_subpath: downloads

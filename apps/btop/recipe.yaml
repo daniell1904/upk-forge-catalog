@@ -1,0 +1,18 @@
+id: btop
+name: btop
+author: Community
+category: Others
+description: A monitor of resources. Software made by Aristocratos at https://github.com/aristocratos/btop
+warnings:
+- service is privileged
+ugos:
+  app_id: com.upkforge.docker.btop
+  version: 0.1.0
+  port: 7681
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /root/.config/btop
+  label: Root .config btop
+  user_chosen: false
+  default_host_subpath: config

@@ -1,0 +1,14 @@
+services:
+  mineos:
+    image: hexparrot/mineos:latest
+    restart: unless-stopped
+    ports:
+      - 8444:8443
+    volumes:
+      - ./mineos-var-games-minecraft:/var/games/minecraft
+    environment:
+      - USE_HTTPS=true
+      - SERVER_PORT=8443
+      - USER_NAME=mc
+      - USER_UID=1000
+      - USER_PASSWORD=root

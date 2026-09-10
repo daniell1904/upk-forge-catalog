@@ -1,0 +1,16 @@
+id: spacedrive
+name: Spacedrive
+author: Community
+category: Others
+description: Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust.
+ugos:
+  app_id: com.upkforge.docker.spacedrive
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /var/spacedrive
+  label: Var spacedrive
+  user_chosen: false
+  default_host_subpath: data/spacedrive

@@ -1,0 +1,45 @@
+services:
+  authentik:
+    image: ghcr.io/goauthentik/server:2026.2.2@sha256:40f0df709957c11324420fa387f1135c427f16086f12ca266b2d883d39c71fe3
+    restart: unless-stopped
+    ports:
+      - 9443:9443
+    volumes:
+      - ./data/authentik-media:/media
+      - ./data/authentik-custom-templates:/templates
+    environment:
+      - AUTHENTIK_REDIS__HOST=authentik-redis
+      - AUTHENTIK_POSTGRESQL__HOST=authentik-db
+      - AUTHENTIK_POSTGRESQL__USER=authentik
+      - AUTHENTIK_POSTGRESQL__NAME=authentik
+      - AUTHENTIK_POSTGRESQL__PASSWORD=authentik-password
+      - AUTHENTIK_SECRET_KEY=changeme
+  authentik-worker:
+    image: ghcr.io/goauthentik/server:2026.2.2@sha256:40f0df709957c11324420fa387f1135c427f16086f12ca266b2d883d39c71fe3
+    restart: unless-stopped
+    volumes:
+      - ./authentik-worker-var-run-docker-sock:/var/run/docker.sock
+      - ./data/authentik-media:/media
+      - ./data/authentik-certs:/certs
+      - ./data/authentik-custom-templates:/templates
+    environment:
+      - AUTHENTIK_REDIS__HOST=authentik-redis
+      - AUTHENTIK_POSTGRESQL__HOST=authentik-db
+      - AUTHENTIK_POSTGRESQL__USER=authentik
+      - AUTHENTIK_POSTGRESQL__NAME=authentik
+      - AUTHENTIK_POSTGRESQL__PASSWORD=authentik-password
+      - AUTHENTIK_SECRET_KEY=changeme
+  authentik-db:
+    image: postgres:14-alpine@sha256:f1341c01408dc7278e9d365ed4f860cd3f87dd16b4464ac326fc0f422083a579
+    restart: unless-stopped
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=authentik-password
+      - POSTGRES_USER=authentik
+      - POSTGRES_DB=authentik
+  authentik-redis:
+    image: redis:8.2.2-alpine@sha256:1c78f5e7512cc8b22b0edc95c20e7abd9e1fd832e5dfd5c3c6b59ce82fb238d0
+    restart: unless-stopped
+    volumes:
+      - ./data/redis:/data

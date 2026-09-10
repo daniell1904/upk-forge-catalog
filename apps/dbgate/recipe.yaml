@@ -1,0 +1,16 @@
+id: dbgate
+name: DBGate
+author: Community
+category: Developer
+description: Web based UI for managing and exploring SQL database data
+ugos:
+  app_id: com.upkforge.docker.dbgate
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /root/.dbgate
+  label: Root .dbgate
+  user_chosen: false
+  default_host_subpath: config

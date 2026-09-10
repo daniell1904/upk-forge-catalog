@@ -1,0 +1,13 @@
+services:
+  qinglong:
+    image: docker.io/whyour/qinglong:2.21.0
+    hostname: qinglong
+    ports:
+      - "5700:5700"
+    volumes:
+      - ./data:/ql/data
+    environment:
+      - QlBaseUrl=/
+      - QlPort=5700
+      - TZ=${TZ}
+    restart: unless-stopped

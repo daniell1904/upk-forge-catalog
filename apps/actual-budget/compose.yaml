@@ -1,0 +1,10 @@
+services:
+  actual-budget:
+    image: docker.io/actualbudget/actual-server:26.9.0
+    ports:
+      - "5006:5006"
+    volumes:
+      - ./data:/data
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

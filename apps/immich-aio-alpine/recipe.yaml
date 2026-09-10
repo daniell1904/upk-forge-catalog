@@ -1,0 +1,24 @@
+id: immich-aio-alpine
+name: Immich AIO Alpine
+author: Community
+category: Media
+description: AIO Alpine. Self-hosted photo and video storage.
+ugos:
+  app_id: com.upkforge.docker.immichaioalpine
+  version: 0.1.0
+  port: 2283
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /usr/src/app/photos
+  label: Usr src app photos
+  user_chosen: false
+  default_host_subpath: photos
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: pgdata

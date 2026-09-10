@@ -1,0 +1,20 @@
+id: code-server
+name: Code Server
+author: Community
+category: Developer
+description: Run VS Code on any machine anywhere and access it in the browser.
+ugos:
+  app_id: com.upkforge.docker.codeserver
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /projects
+  label: Projects
+  user_chosen: false
+  default_host_subpath: projects

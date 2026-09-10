@@ -1,0 +1,22 @@
+id: scrypted
+name: Scrypted
+author: Community
+category: Home
+description: Scrypted is an open source video integration platform. Using various Plugins, Scrypted can receive streams from a range of cameras and send them to other platforms (HomeKit, Google Home, Alexa, Home Assistant).
+warnings:
+- service uses host networking
+ugos:
+  app_id: com.upkforge.docker.scrypted
+  version: 0.1.0
+  port: 10443
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /server/volume
+  label: Server volume
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /var/run/docker.sock
+  label: Var run docker.sock
+  user_chosen: false
+  default_host_subpath: watchtower-var-run-docker-sock

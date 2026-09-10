@@ -1,0 +1,55 @@
+id: ente
+name: Ente
+version: latest-2026.09.10
+author: ente-io
+category: Media
+description: Ente is a self-hosted, end-to-end encrypted platform to store, share, and rediscover your photos and videos across all your devices.
+homepage: https://ente.io
+warnings:
+- service 'ente' image 'ghcr.io/ente-io/server:latest' is not pinned to a fixed version
+- service 'ente-minio' image 'docker.io/minio/minio:latest' is not pinned to a fixed version
+- service 'ente-minio-init' image 'docker.io/minio/mc:latest' is not pinned to a fixed version
+ugos:
+  app_id: com.upkforge.docker.ente
+  version: 0.1.0
+  port: 8510
+  open_type: tab
+  tag_type: media
+parameters:
+- key: ENTE_DB_PASSWORD
+  label: Ente db password
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: ENTE_S3_B2_EU_CEN_KEY
+  label: Ente s3 b2 eu cen key
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: ENTE_S3_B2_EU_CEN_SECRET
+  label: Ente s3 b2 eu cen secret
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: wizard_s3_endpoint
+  label: Wizard s3 endpoint
+  type: string
+- key: POSTGRES_PASSWORD
+  label: Postgres password
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: MINIO_ROOT_PASSWORD
+  label: Minio root password
+  type: password
+  changeable: false
+  generate_bytes: 24
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /var/lib/postgresql/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: db

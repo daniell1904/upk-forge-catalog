@@ -1,0 +1,20 @@
+id: obsidian-livesync
+name: Obsidian Livesync
+author: Community
+category: Developer
+description: Self-hosted database for synchronizing Obsidian vaults.
+ugos:
+  app_id: com.upkforge.docker.obsidianlivesync
+  version: 0.1.0
+  port: 5984
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /opt/couchdb/data
+  label: Opt couchdb data
+  user_chosen: false
+  default_host_subpath: data/couchdb
+- container_path: /opt/couchdb/etc/local.ini
+  label: Opt couchdb etc local.ini
+  user_chosen: false
+  default_host_subpath: data/local.ini

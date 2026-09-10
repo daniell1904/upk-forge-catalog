@@ -1,0 +1,23 @@
+id: cowagent
+name: CowAgent
+version: 2.1.7
+author: zhayujie
+category: Ai
+homepage: https://github.com/zhayujie/chatgpt-on-wechat
+ugos:
+  app_id: com.upkforge.docker.cowagent
+  version: 0.1.0
+  port: 9899
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: wizard_web_password
+  label: Wizard web password
+  type: password
+  changeable: false
+  generate_bytes: 24
+volumes:
+- container_path: /app/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

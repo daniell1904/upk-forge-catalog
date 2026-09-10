@@ -1,0 +1,12 @@
+services:
+  overseerr:
+    image: linuxserver/overseerr:1.35.0
+    restart: unless-stopped
+    ports:
+      - 5055:5055
+    volumes:
+      - ./config:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=$TZ

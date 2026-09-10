@@ -1,0 +1,12 @@
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:v2.3.0
+    ports:
+      - "3003:3000"
+    volumes:
+      - ./config:/app/config
+      - ./icons:/app/public/icons
+    environment:
+      - TZ=${TZ}
+      - HOMEPAGE_ALLOWED_HOSTS=*
+    restart: unless-stopped

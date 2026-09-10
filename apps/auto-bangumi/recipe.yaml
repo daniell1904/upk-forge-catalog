@@ -1,0 +1,21 @@
+id: auto-bangumi
+name: AutoBangumi
+version: 3.3.5
+author: EstrellaXD
+category: Automation
+homepage: https://github.com/EstrellaXD/Auto_Bangumi
+ugos:
+  app_id: com.upkforge.docker.autobangumi
+  version: 0.1.0
+  port: 7892
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /app/config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /app/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

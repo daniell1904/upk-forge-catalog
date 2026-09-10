@@ -1,0 +1,53 @@
+services:
+  penpot-frontend:
+    image: docker.io/penpotapp/frontend:2.17.2
+    depends_on:
+      - penpot-backend
+    ports:
+      - "9001:80"
+    volumes:
+      - ./assets:/opt/data/assets
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped
+
+  penpot-backend:
+    image: docker.io/penpotapp/backend:2.17.2
+    depends_on:
+      - penpot-db
+      - penpot-redis
+    environment:
+      - TZ=${TZ}
+      - PENPOT_DATABASE_URI=postgresql://penpot:penpot@penpot-db:5432/penpot
+      - PENPOT_REDIS_URI=redis://penpot-redis:6379/0
+      - PENPOT_SECRET_KEY=${PENPOT_SECRET_KEY}
+      - PENPOT_PUBLIC_URI=${PENPOT_PUBLIC_URI}
+    restart: unless-stopped
+
+  penpot-exporter:
+    image: docker.io/penpotapp/exporter:2.17.2
+    depends_on:
+      - penpot-frontend
+    environment:
+      - TZ=${TZ}
+      - PENPOT_PUBLIC_URI=${PENPOT_PUBLIC_URI}
+    restart: unless-stopped
+
+  penpot-db:
+    image: docker.io/postgres:15-alpine
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    environment:
+      - TZ=${TZ}
+      - POSTGRES_DB=penpot
+      - POSTGRES_USER=penpot
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    restart: unless-stopped
+
+  penpot-redis:
+    image: docker.io/redis:7-alpine
+    volumes:
+      - ./redis:/data
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

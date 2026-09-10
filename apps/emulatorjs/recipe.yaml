@@ -1,0 +1,28 @@
+id: emulatorjs
+name: emulatorjs
+author: self
+category: Media
+description: EmulatorJS is a Docker-based emulator application that can simulate various operating systems and device environments within containers for development, testing, and learning purposes.
+homepage: https://emulatorjs.org/
+source_code: https://github.com/linuxserver/emulatorjs
+warnings:
+- service is privileged
+ugos:
+  app_id: com.upkforge.docker.emulatorjs
+  version: 0.1.0
+  port: 3001
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /data/nes/roms
+  label: Data nes roms
+  user_chosen: false
+  default_host_subpath: emulatorjs-data-nes-roms

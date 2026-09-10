@@ -1,0 +1,23 @@
+id: scrutiny
+name: Scrutiny
+author: Community
+category: Others
+description: If you run a server with more than a couple of hard drives, you're probably already familiar with S.M.A.R.T and the smartd daemon.
+warnings:
+- service is privileged
+- 'service adds capabilities: SYS_RAWIO'
+ugos:
+  app_id: com.upkforge.docker.scrutiny
+  version: 0.1.0
+  port: 38080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /opt/scrutiny/config
+  label: Opt scrutiny config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /opt/scrutiny/influxdb
+  label: Opt scrutiny influxdb
+  user_chosen: false
+  default_host_subpath: influxdb

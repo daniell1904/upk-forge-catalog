@@ -1,0 +1,12 @@
+services:
+  netronome:
+    image: ghcr.io/autobrr/netronome:v0.13.0
+    restart: unless-stopped
+    ports:
+      - 7575:7575
+    volumes:
+      - ./data:/data
+    environment:
+      - TZ=$TZ
+      - NETRONOME__HOST=0.0.0.0
+      - NETRONOME__PORT=7575

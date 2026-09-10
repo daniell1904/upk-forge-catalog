@@ -1,0 +1,22 @@
+id: smokeping
+name: Smokeping
+author: Team
+category: Networking
+description: keeps track of your network latency.
+homepage: https://oss.oetiker.ch/smokeping/
+source_code: https://github.com/oetiker/SmokePing
+ugos:
+  app_id: com.upkforge.docker.smokeping
+  version: 0.1.0
+  port: 10280
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

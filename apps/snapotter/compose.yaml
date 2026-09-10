@@ -1,0 +1,18 @@
+services:
+  snapotter:
+    image: snapotter/snapotter:2.2.0
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 1349:1349
+    volumes:
+      - ./data:/data
+      - /DATA/AppData/snapotter/workspace:/tmp/workspace
+    environment:
+      - AUTH_ENABLED=true
+      - DEFAULT_USERNAME=admin
+      - DEFAULT_PASSWORD=admin
+      - MAX_UPLOAD_SIZE_MB=0
+      - MAX_BATCH_SIZE=0
+      - CONCURRENT_JOBS=0
+      - REDIS_MAXMEMORY=512mb

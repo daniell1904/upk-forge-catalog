@@ -1,0 +1,8 @@
+services:
+  dsh:
+    image: ghcr.io/smanx/deepseek-harness:latest
+    restart: unless-stopped
+    ports:
+      - 3080:3080
+    volumes:
+      - ./dsh-root-dsh:/root/.dsh

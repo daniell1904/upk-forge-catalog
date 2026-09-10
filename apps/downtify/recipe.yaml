@@ -1,0 +1,26 @@
+id: downtify
+name: Downtify
+author: Henrique Sebastião
+category: Media
+description: With Downtify you can download Spotify musics containing album art, track names, album title and other metadata about the songs. Just copy the Spotify link, whether it's a single song, an album, etc. As soon as your downloads are complete you will be notified!
+homepage: https://downtify.henriquesebastiao.com
+source_code: https://github.com/henriquesebastiao/downtify
+ugos:
+  app_id: com.upkforge.docker.downtify
+  version: 0.1.0
+  port: 8582
+  open_type: tab
+  tag_type: media
+parameters:
+- key: VOL_1
+  label: Downloads folder
+  help: Folder on the NAS for Downtify's downloads. It is mounted into the container at /downloads; Downtify has full read and write access to it.
+  type: path
+volumes:
+- container_path: /downloads
+  label: Downloads
+  default_host_subpath: downtify-downloads
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

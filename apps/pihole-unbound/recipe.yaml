@@ -1,0 +1,20 @@
+id: pihole-unbound
+name: Pi-hole and Unbound
+author: Community
+category: Networking
+description: This is a custom pihole and unbound setup.
+ugos:
+  app_id: com.upkforge.docker.piholeunbound
+  version: 0.1.0
+  port: 53
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /etc/pihole/
+  label: Etc pihole
+  user_chosen: false
+  default_host_subpath: etc
+- container_path: /etc/dnsmasq.d/
+  label: Etc dnsmasq.d
+  user_chosen: false
+  default_host_subpath: dnsmasq.d

@@ -1,0 +1,26 @@
+services:
+  vikunja:
+    image: vikunja/vikunja:1.1.0@sha256:84b56920e2860c67cb889bce0e0950aa529e42838b45bdf81eb2422178e90cc7
+    restart: unless-stopped
+    ports:
+      - 8081:3456
+    volumes:
+      - ./files:/app/vikunja/files
+    environment:
+      - VIKUNJA_SERVICE_PUBLICURL=http://<your public frontend url with slash>/
+      - VIKUNJA_DATABASE_HOST=vikunja-db
+      - VIKUNJA_DATABASE_PASSWORD=secret
+      - VIKUNJA_DATABASE_TYPE=mysql
+      - VIKUNJA_DATABASE_USER=vikunja
+      - VIKUNJA_DATABASE_DATABASE=vikunja
+      - VIKUNJA_SERVICE_JWTSECRET=${VIKUNJA_SERVICE_JWTSECRET}
+  vikunja-db:
+    image: mariadb:10@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350
+    restart: unless-stopped
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=supersecret
+      - MYSQL_USER=vikunja
+      - MYSQL_PASSWORD=secret
+      - MYSQL_DATABASE=vikunja

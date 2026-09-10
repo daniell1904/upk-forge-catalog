@@ -1,0 +1,16 @@
+services:
+  resilio-sync:
+    image: linuxserver/resilio-sync:3.1.2
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 55555:55555
+      - 8888:8888
+    volumes:
+      - ./data:/sync
+      - ./config:/config
+      - ${VOL_1}:/downloads
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ

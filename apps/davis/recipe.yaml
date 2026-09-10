@@ -1,0 +1,30 @@
+id: davis
+name: Davis
+author: Community
+category: Productivity
+description: A simple, fully translatable admin interface for sabre/dav based on Symfony 5 and Bootstrap 5, initially inspired by Baïkal. Provides user edition, calendar creation and sharing, and address book creation. The interface is simple and straightforward, responsive, and provides a light and a dark mode.
+ugos:
+  app_id: com.upkforge.docker.davis
+  version: 0.1.0
+  port: 9000
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: ADMIN_PASSWORD
+  label: ADMIN PASSWORD
+  type: password
+- key: MYSQL_ROOT_PASSWORD
+  label: MYSQL ROOT PASSWORD
+  type: password
+- key: MYSQL_PASSWORD
+  label: MYSQL PASSWORD
+  type: password
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: mailpit/data
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: mysql

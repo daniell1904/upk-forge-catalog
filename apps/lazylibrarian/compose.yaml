@@ -1,0 +1,16 @@
+services:
+  lazylibrarian:
+    image: linuxserver/lazylibrarian:version-169e669f
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 5299:5299
+    volumes:
+      - ${VOL_1}:/downloads
+      - ${VOL_2}:/books
+      - ./config:/config
+    environment:
+      - DOCKER_MODS=linuxserver/calibre-web:calibre|linuxserver/mods:lazylibrarian-ffmpeg
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ

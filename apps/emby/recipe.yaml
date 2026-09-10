@@ -1,0 +1,66 @@
+id: emby
+name: Emby
+author: Team
+category: Media
+description: >-
+  Emby is a personal media management platform that brings home videos, music, and photos together, automatically converting and streaming to any device. An intuitive design makes it ideal for users to enjoy media content anytime, anywhere, meeting family entertainment and media management needs.
+
+
+  Core features include cross-device media streaming and easy access. It supports real-time conversion and streaming of personal media to any device for seamless playback. A connection service enables easy media access while away from home. Live TV functionality supports streaming, managing DVR, and accessing a library of recordings. Mobile sync delivers media to smartphones and tablets for offline access, automatically updating new content.
+
+
+  It offers parental controls to restrict children's content access, set schedules and time limits, and remotely monitor sessions. Chromecast support enables easy streaming of videos, music, photos, and Live TV. Content is presented elegantly, enhancing visual experience. Cloud sync supports backup, archiving, and multi-resolution storage for optimized streaming. Web-based media management facilitates editing metadata, images, and searching subtitles, while DLNA integration auto-detects network devices for content streaming. With convenience and versatility at the core, the platform delivers a modern media management solution.
+
+
+  **Key Features:**
+
+  - Automatic conversion and streaming of media to any device
+
+  - Easy access via connection service while away from home
+
+  - Live TV streaming, DVR management, and recording library access
+
+  - Mobile sync to smartphones and tablets for offline access
+
+  - Parental controls with content restrictions, schedules, and remote monitoring
+
+  - Chromecast support for streaming videos, music, photos, and Live TV
+
+  - Cloud sync for backup and multi-resolution storage
+
+  - Web-based media management for editing metadata and searching subtitles
+
+  - DLNA integration for auto-detecting network devices and streaming content
+
+
+  **Learn More:**
+
+  - [Emby Official Website](https://emby.media/)
+homepage: https://emby.media/
+source_code: https://github.com/linuxserver/docker-emby
+ugos:
+  app_id: com.upkforge.docker.emby
+  version: 0.1.0
+  port: 8096
+  open_type: tab
+  tag_type: media
+parameters:
+- key: VOL_1
+  label: Data tvshows folder
+  help: Folder on the NAS for Emby's data tvshows. It is mounted into the container at /data/tvshows; Emby has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Data movies folder
+  help: Folder on the NAS for Emby's data movies. It is mounted into the container at /data/movies; Emby has full read and write access to it.
+  type: path
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /data/tvshows
+  label: Data tvshows
+  default_host_subpath: emby-data-tvshows
+- container_path: /data/movies
+  label: Data movies
+  default_host_subpath: emby-data-movies

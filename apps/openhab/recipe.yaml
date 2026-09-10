@@ -1,0 +1,28 @@
+id: openhab
+name: OpenHAB
+author: Team
+category: Home
+description: The open Home Automation Bus (openHAB, pronounced ˈəʊpənˈhæb) is an open source, technology agnostic home automation platform which runs as the center of your smart home! Its ability to integrate a multitude of other devices and systems. openHAB includes other home automation systems, (smart) devices and other technologies into a single solution. To provide a uniform user interface and a common approach to automation rules across the entire system, regardless of the number of manufacturers and sub-systems involved. Giving you the most flexible tool available to make almost any home automation wish come true; if you can think it, odds are that you can implement it with openHAB.
+homepage: https://www.openhab.org
+source_code: https://github.com/openhab/openhab-distro
+warnings:
+- service uses host networking
+ugos:
+  app_id: com.upkforge.docker.openhab
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /openhab/addons
+  label: Openhab addons
+  user_chosen: false
+  default_host_subpath: addons
+- container_path: /openhab/conf
+  label: Openhab conf
+  user_chosen: false
+  default_host_subpath: conf
+- container_path: /openhab/userdata
+  label: Openhab userdata
+  user_chosen: false
+  default_host_subpath: userdata

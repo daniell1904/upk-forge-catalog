@@ -1,0 +1,32 @@
+id: pd3f
+name: PD3F
+author: Community
+category: AI
+description: pd3f is a PDF text extraction pipeline that is self-hosted, local-first and Docker-based. It reconstructs the original continuous text with the help of machine learning.
+ugos:
+  app_id: com.upkforge.docker.pd3f
+  version: 0.1.0
+  port: 1616
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /uploads/
+  label: Uploads
+  user_chosen: false
+  default_host_subpath: uploads
+- container_path: /root/.cache/
+  label: Root .cache
+  user_chosen: false
+  default_host_subpath: cache
+- container_path: /to-ocr/
+  label: To ocr
+  user_chosen: false
+  default_host_subpath: to-ocr
+- container_path: /uploads/
+  label: Uploads
+  user_chosen: false
+  default_host_subpath: uploads
+- container_path: /to-ocr/
+  label: To ocr
+  user_chosen: false
+  default_host_subpath: to-ocr

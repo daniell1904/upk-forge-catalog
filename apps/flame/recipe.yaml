@@ -1,0 +1,20 @@
+id: flame
+name: Flame
+author: Community
+category: Others
+description: Flame is a self-hosted startpage for your server. Its design is heavily inspired by SUI. Flame is user-friendly and easy to set up. With its built-in editors, users can quickly establish their own application hub without any file editing.
+ugos:
+  app_id: com.upkforge.docker.flame
+  version: 0.1.0
+  port: 5005
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /app/data
+  label: App data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /var/run/docker.sock
+  label: Var run docker.sock
+  user_chosen: false
+  default_host_subpath: app-var-run-docker-sock

@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: docker.io/library/postgres:16-alpine
+    environment:
+      - POSTGRES_USER=wikijs
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=wikijs
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  wikijs:
+    image: ghcr.io/requarks/wiki:2.5.277
+    depends_on:
+      - postgres
+    ports:
+      - "3110:3000"
+    environment:
+      - DB_TYPE=postgres
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USER=wikijs
+      - DB_PASS=${DB_PASS}
+      - DB_NAME=wikijs
+      - TZ=${TZ}
+    restart: unless-stopped

@@ -1,0 +1,23 @@
+id: rallly
+name: Rallly
+author: Community
+category: Others
+description: Rallly is an open-source scheduling and collaboration tool designed to make organizing events and meetings easier.
+ugos:
+  app_id: com.upkforge.docker.rallly
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: SECRET_PASSWORD
+  label: SECRET PASSWORD
+  type: password
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
+volumes:
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: postgresql

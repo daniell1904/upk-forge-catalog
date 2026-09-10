@@ -1,0 +1,19 @@
+services:
+  pihole-updatelists:
+    image: jacklul/pihole:2026.07.2@sha256:5c274108cdd1fca4dcfda8996e3638c457bcde94f7fe53f53d9c8f49c333707b
+    restart: unless-stopped
+    ports:
+      - 53:53
+      - 53:53
+      - 67:67
+      - 8080:80
+      - 10443:443
+    volumes:
+      - ./etc:/etc/pihole/
+      - ./etc/pihole-updatelists:/etc/pihole-updatelists/
+      - ./dnsmasq.d:/etc/dnsmasq.d/
+    environment:
+      - TZ=UTC
+      - FTLCONF_webserver_api_password=your_password
+      - BLOCKLISTS_URL=https://v.firebog.net/hosts/lists.php?type=tick
+      - REGEX_BLACKLIST_URL=https://raw.githubusercontent.com/mmotti/pihole-regex/master/regex.list

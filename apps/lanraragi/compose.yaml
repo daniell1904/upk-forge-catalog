@@ -1,0 +1,14 @@
+services:
+  lanraragi:
+    image: docker.io/difegue/lanraragi:v.0.9.81
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./content:/home/koyomi/lanraragi/content
+      - ./thumb:/home/koyomi/lanraragi/thumb
+      - ./database:/home/koyomi/lanraragi/database
+    environment:
+      - TZ=${TZ}
+      - LRR_UID=1000
+      - LRR_GID=1000
+    restart: unless-stopped

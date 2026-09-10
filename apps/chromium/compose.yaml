@@ -1,0 +1,20 @@
+services:
+  chromium:
+    image: docker.io/jlesage/chromium:v26.08.3
+    ports:
+      - "5802:5800"
+    volumes:
+      - ./config:/config
+      - ./fonts:/usr/share/fonts
+    environment:
+      - USER_ID=1000
+      - GROUP_ID=1000
+      - TZ=${TZ}
+      - LANG=zh_CN.UTF-8
+      - ENABLE_CJK_FONT=1
+      - PACKAGES_MIRROR=https://mirrors.aliyun.com/alpine
+      - DISPLAY_WIDTH=1280
+      - DISPLAY_HEIGHT=720
+      - KEEP_APP_RUNNING=1
+    shm_size: "2gb"
+    restart: unless-stopped

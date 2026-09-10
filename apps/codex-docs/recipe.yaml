@@ -1,0 +1,24 @@
+id: codex-docs
+name: CodeX Docs
+author: Community
+category: Developer
+description: CodeX Docs is a free docs application. It's based on Editor.js ecosystem which gives all modern opportunities for working with content.
+ugos:
+  app_id: com.upkforge.docker.codexdocs
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /usr/src/app/uploads
+  label: Usr src app uploads
+  user_chosen: false
+  default_host_subpath: uploads
+- container_path: /usr/src/app/db
+  label: Usr src app db
+  user_chosen: false
+  default_host_subpath: db
+- container_path: /usr/src/app/docs-config.yaml
+  label: Usr src app docs config.yaml
+  user_chosen: false
+  default_host_subpath: codex-docs-config.local.yaml

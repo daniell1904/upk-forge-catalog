@@ -1,0 +1,61 @@
+id: weknora
+name: WeKnora
+author: tencent
+category: AI
+description: >-
+  WeKnora is a deep document understanding and semantic retrieval framework based on Large Language Models (LLM), specifically designed for document scenarios with complex structures and heterogeneous content. It adopts a modular architecture, integrating key technologies such as multimodal preprocessing, semantic vector indexing, intelligent retrieval, and large model inference. Based on the Retrieval-Augmented Generation (RAG) paradigm, it achieves context-aware, high-quality Q&A capabilities. WeKnora can deeply understand document content in different formats, combine relevant document fragments with language model inference, and output accurate, coherent semantic results.
+
+
+  **Key Features:**
+
+  - Multimodal Deep Parsing: Supports structured content extraction from various formats such as PDF, Word, TXT, images, including OCR image text recognition.
+
+  - Semantic Vector Indexing and Intelligent Retrieval: Achieves high-precision semantic matching and recall through a combination of vector retrieval, keyword retrieval, and even knowledge graph-enhanced retrieval.
+
+  - RAG Closed-Loop Q&A Generation: Generates accurate and coherent content answers by leveraging large language model inference and retrieval fragment fusion.
+
+  - Agent Mode Enhanced Capabilities: Supports ReACT Agent mode, which can call built-in tools, external web search, etc., during multi-round iterations, to improve complex task processing capabilities.
+
+  - Multi-type Knowledge Base Management: Can create FAQ and document-type knowledge bases, and flexibly manage tags, batch import files or URLs.
+
+  - Configurable Dialogue Strategy and UI: Provides an intuitive Web interface and REST API, allowing online adjustment of models, retrieval thresholds, and Prompt to control dialogue behavior.
+
+
+  **Learn More:**
+
+  - [Official Website](https://weknora.weixin.qq.com)
+
+  - [GitHub Link](https://github.com/Tencent/WeKnora)
+homepage: https://weknora.weixin.qq.com
+source_code: https://github.com/Tencent/WeKnora
+ugos:
+  app_id: com.upkforge.docker.weknora
+  version: 0.1.0
+  port: 1080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /data/files
+  label: Data files
+  user_chosen: false
+  default_host_subpath: files
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: minio-data
+- container_path: /var/lib/jaeger
+  label: Var lib jaeger
+  user_chosen: false
+  default_host_subpath: jaeger
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: neo4j-data
+- container_path: /qdrant/storage
+  label: Qdrant storage
+  user_chosen: false
+  default_host_subpath: storage

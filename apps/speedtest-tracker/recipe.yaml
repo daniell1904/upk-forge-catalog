@@ -1,0 +1,24 @@
+id: speedtest-tracker
+name: Speedtest Tracker
+author: Community
+category: Networking
+description: A Docker image to check your internet speed using Ookla's Speedtest service. Build using Laravel and the Speedtest CLI.
+ugos:
+  app_id: com.upkforge.docker.speedtesttracker
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /etc/ssl/web
+  label: Etc ssl web
+  user_chosen: false
+  default_host_subpath: web
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: mysql

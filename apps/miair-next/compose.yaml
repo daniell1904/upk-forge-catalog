@@ -1,0 +1,10 @@
+services:
+  miair-next:
+    image: docker.io/mrdeer1997/miair-next:0.6.0
+    network_mode: host
+    environment:
+      - TZ=${TZ}
+      - MIAIR_WEB_PORT=8300
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

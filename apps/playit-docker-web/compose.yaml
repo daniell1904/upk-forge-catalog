@@ -1,0 +1,9 @@
+services:
+  playit-docker-web:
+    image: wisdomsky/playit-docker-web:1.0.10@sha256:1198f2246a1d91b4a24b6b3d7874030a354292f402d51435a7d71ea65a2b9984
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./config:/config
+    environment:
+      - WEBUI_PORT=8008

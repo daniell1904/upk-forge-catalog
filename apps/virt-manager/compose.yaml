@@ -1,0 +1,14 @@
+services:
+  virt-manager:
+    image: mber5/virt-manager:latest
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 8185:80
+    volumes:
+      - ./virt-manager-var-run-libvirt-libvirt-sock:/var/run/libvirt/libvirt-sock
+      - ./virt-manager-var-lib-libvirt:/var/lib/libvirt
+      - ${VOL_1}:/DATA/Downloads
+    environment:
+      - DARK_MODE=false
+      - HOSTS=['qemu:///system']

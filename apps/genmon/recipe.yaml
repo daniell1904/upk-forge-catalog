@@ -1,0 +1,24 @@
+id: genmon
+name: Genmon
+author: Community
+category: Others
+description: Generac (and other models) Generator Monitoring using a Raspberry Pi and WiFi
+ugos:
+  app_id: com.upkforge.docker.genmon
+  version: 0.1.0
+  port: 20022
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /git/genmon
+  label: Git genmon
+  user_chosen: false
+  default_host_subpath: git/genmon
+- container_path: /etc/genmon
+  label: Etc genmon
+  user_chosen: false
+  default_host_subpath: etc/genmon
+- container_path: /var/log
+  label: Var log
+  user_chosen: false
+  default_host_subpath: var/log

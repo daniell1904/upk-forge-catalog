@@ -1,0 +1,13 @@
+id: chatgpt-next-web
+name: ChatGPT Next Web
+author: CorrectRoadH,Cp0204
+category: AI
+description: An intelligent chat application based on ChatGPT, supports fast deployment, Markdown, beautiful UI, fluid response, privacy and security, and allows customization of preset roles for quick creation, sharing, and debugging of personalized conversations.
+homepage: https://nextchat.club
+source_code: https://github.com/ChatGPTNextWeb/NextChat
+ugos:
+  app_id: com.upkforge.docker.chatgptnextweb
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: utility

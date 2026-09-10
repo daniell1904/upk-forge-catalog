@@ -1,0 +1,28 @@
+id: planka
+name: Planka (Legacy)
+author: Community
+category: Productivity
+description: The realtime kanban board for workgroups built with React and Redux.
+ugos:
+  app_id: com.upkforge.docker.planka
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /app/public/user-avatars
+  label: App public user avatars
+  user_chosen: false
+  default_host_subpath: user-avatars
+- container_path: /app/public/project-background-images
+  label: App public project background images
+  user_chosen: false
+  default_host_subpath: project-background-images
+- container_path: /app/private/attachments
+  label: App private attachments
+  user_chosen: false
+  default_host_subpath: attachments
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: postgresql

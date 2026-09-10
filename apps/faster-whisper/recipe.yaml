@@ -1,0 +1,16 @@
+id: faster-whisper
+name: Faster-whisper
+author: Community
+category: AI
+description: Faster-whisper is a reimplementation of OpenAI's Whisper model using CTranslate2, which is a fast inference engine for Transformer models. This container provides a Wyoming protocol server for faster-whisper.
+ugos:
+  app_id: com.upkforge.docker.fasterwhisper
+  version: 0.1.0
+  port: 10300
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config

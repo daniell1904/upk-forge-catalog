@@ -1,0 +1,35 @@
+id: netdata
+name: Netdata
+version: 2.11.0
+author: netdata
+category: System
+description: Netdata is a real-time performance and health monitoring solution that helps you visualize and understand the behavior of your systems.
+homepage: https://github.com/netdata/netdata
+warnings:
+- dropped host bind mount /etc/passwd:/host/etc/passwd:ro
+- dropped host bind mount /etc/group:/host/etc/group:ro
+- dropped host bind mount /etc/localtime:/etc/localtime:ro
+- dropped host bind mount /proc:/host/proc:ro
+- dropped host bind mount /sys:/host/sys:ro
+- dropped host bind mount /var/log:/host/var/log:ro
+- dropped host bind mount /var/run/docker.sock:/var/run/docker.sock:ro
+- "service 'netdata' adds capabilities: SYS_PTRACE, SYS_ADMIN"
+ugos:
+  app_id: com.upkforge.docker.netdata
+  version: 0.1.0
+  port: 19999
+  open_type: tab
+  tag_type: system
+volumes:
+- container_path: /etc/netdata
+  label: Netdata
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /var/lib/netdata
+  label: Netdata
+  user_chosen: false
+  default_host_subpath: lib
+- container_path: /var/cache/netdata
+  label: Netdata
+  user_chosen: false
+  default_host_subpath: cache

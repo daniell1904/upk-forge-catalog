@@ -1,0 +1,13 @@
+services:
+  beaverhabittracker:
+    image: daya0576/beaverhabits:0.9.1
+    restart: unless-stopped
+    ports:
+      - 15580:8080
+    volumes:
+      - ./beaverhabittracker-app-user:/app/.user
+    environment:
+      - HABITS_STORAGE=USER_DISK
+      - TRUSTED_LOCAL_EMAIL=your@email.com
+      - INDEX_HABIT_DATE_COLUMNS=5
+      - ENABLE_IOS_STANDALONE=true

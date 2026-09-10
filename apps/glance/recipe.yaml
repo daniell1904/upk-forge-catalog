@@ -1,0 +1,20 @@
+id: glance
+name: Glance
+author: Community
+category: Others
+description: Glance is a self-hosted dashboard that puts all your feeds in one place.
+ugos:
+  app_id: com.upkforge.docker.glance
+  version: 0.1.0
+  port: 8280
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /app/config
+  label: App config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /var/run/docker.sock
+  label: Var run docker.sock
+  user_chosen: false
+  default_host_subpath: app-var-run-docker-sock

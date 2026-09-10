@@ -1,0 +1,20 @@
+services:
+  tianji:
+    image: moonrailgun/tianji:1.32.21@sha256:2bd3cb48bc496e41b2b16772a25a96358a881790d1388897be216381dbb7b534
+    restart: unless-stopped
+    ports:
+      - 12345:12345
+    environment:
+      - DATABASE_URL=postgresql://tianji-user:227453b7-1286-48cc-b471-1c269495c5fc@tianji-db:5432/tianji
+      - JWT_SECRET=replace-me-with-a-random-string
+      - ALLOW_REGISTER=false
+      - ALLOW_OPENAPI=true
+  tianji-db:
+    image: postgres:15.4-alpine@sha256:35ce2187f2f7fb75e8e79493e13743596c21eb3789ff41ece145ae04d06e93a5
+    restart: unless-stopped
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=tianji
+      - POSTGRES_USER=tianji-user
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}

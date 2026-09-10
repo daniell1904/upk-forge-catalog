@@ -1,0 +1,20 @@
+id: netronome
+name: Netronome
+author: autobrr
+category: Networking
+description: Netronome is a complete network performance monitoring solution with speed tests, continuous packet-loss monitoring, distributed server agents, automated alerts, visualizations, and historical tracking.
+homepage: https://netrono.me
+source_code: https://github.com/autobrr/netronome
+warnings:
+- 'service adds capabilities: NET_RAW'
+ugos:
+  app_id: com.upkforge.docker.netronome
+  version: 0.1.0
+  port: 7575
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

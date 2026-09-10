@@ -1,0 +1,17 @@
+id: localai
+name: LocalAI
+version: 4.9.0
+author: mudler
+category: Ai
+homepage: https://localai.io
+ugos:
+  app_id: com.upkforge.docker.localai
+  version: 0.1.0
+  port: 8185
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /build/models
+  label: Models
+  user_chosen: false
+  default_host_subpath: models

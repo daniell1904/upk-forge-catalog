@@ -1,0 +1,53 @@
+id: gopeed
+name: Gopeed
+author: joaobosconff
+category: Media
+description: >-
+  Gopeed is a modern high-speed download tool supporting HTTP, BitTorrent, and Magnet protocols, offering a beautiful interface and powerful functionality. Its lightweight design and multi-platform support make it ideal for efficient file downloading across various devices.
+
+
+  The tool's core features include high-speed downloading and an elegant interface. It leverages Golang coroutines for concurrent downloading, supporting HTTP, HTTPS, BitTorrent, and Magnet protocols for fast, stable performance. The interface follows Material Design standards, including a dark mode, balancing aesthetics and usability. Advanced features include seeding, DHT, PEX, uTP, Webtorrent, and UPnP support, with daily automatic tracker list updates to enhance download efficiency.
+
+
+  It provides a RESTful API for open integration, allowing users to remotely control download tasks, pause, or delete them. Decentralized extensions enable JavaScript plugins to enhance functionality, such as downloading videos or music from websites. The tool's speed, flexibility, and user-friendly design deliver a modern download solution.
+
+
+  **Key Features:**
+
+  - High-speed downloading with HTTP, BitTorrent, Magnet protocols
+
+  - Seeding, DHT, PEX, uTP, Webtorrent, UPnP
+
+  - Daily automatic tracker list updates
+
+  - RESTful API for remote download task control
+
+  - Decentralized extensions with JavaScript plugins
+
+
+  **Learn More:**
+
+  - [Gopeed Official Website](https://gopeed.com)
+
+  - [Gopeed GitHub Repository](https://github.com/gopeedlab/gopeed)
+homepage: https://gopeed.com
+source_code: https://github.com/gopeedlab/gopeed
+ugos:
+  app_id: com.upkforge.docker.gopeed
+  version: 0.1.0
+  port: 9999
+  open_type: tab
+  tag_type: media
+parameters:
+- key: VOL_1
+  label: App Downloads folder
+  help: Folder on the NAS for Gopeed's app downloads. It is mounted into the container at /app/Downloads; Gopeed has full read and write access to it.
+  type: path
+volumes:
+- container_path: /app/storage
+  label: App storage
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /app/Downloads
+  label: App Downloads
+  default_host_subpath: gopeed-app-downloads

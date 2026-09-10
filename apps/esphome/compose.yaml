@@ -1,0 +1,12 @@
+services:
+  esphome:
+    image: ghcr.io/esphome/esphome:2026.5.1
+    restart: unless-stopped
+    network_mode: host
+    ports:
+      - 6052:6052
+    volumes:
+      - ./config:/config
+    environment:
+      - ESPHOME_DASHBOARD_USE_PING=false
+      - TZ=$TZ

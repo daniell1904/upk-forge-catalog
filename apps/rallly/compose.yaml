@@ -1,0 +1,28 @@
+services:
+  rallly:
+    image: lukevella/rallly:4.12.2@sha256:1b5d20f93b531edf6c79c3de038622142e2209ae7f989c8479c75dde99dcf7e6
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    environment:
+      - DATABASE_URL=postgres://rallly:f87c7126-f816-47ef-9193-2e5eec763fcd@rallly-db/rallly
+      - SECRET_PASSWORD=${SECRET_PASSWORD}
+      - NEXT_PUBLIC_BASE_URL=http://[YOUR_app_IP]:3000
+      - NOREPLY_EMAIL=noreply@example.com
+      - SUPPORT_EMAIL=support@example.com
+      - SMTP_HOST=[YOUR_app_IP]
+      - SMTP_PORT=1025
+      - SMTP_SECURE=
+      - SMTP_USER=
+      - SMTP_PWD=
+      - SMTP_TLS_ENABLED=
+      - ALLOWED_EMAILS=
+  rallly-db:
+    image: postgres:14@sha256:9e279cc7fc6e908da071befe389c576bd6752dbd295a9c078f96a75bab03e54c
+    restart: unless-stopped
+    volumes:
+      - ./postgresql:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=rallly
+      - POSTGRES_USER=rallly

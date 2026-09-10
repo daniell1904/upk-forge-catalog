@@ -1,0 +1,16 @@
+id: beszel
+name: Beszel
+author: Community
+category: Developer
+description: A lightweight server resource monitoring hub with historical data, docker stats, and alerts.
+ugos:
+  app_id: com.upkforge.docker.beszel
+  version: 0.1.0
+  port: 8090
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /beszel_data
+  label: Beszel data
+  user_chosen: false
+  default_host_subpath: data

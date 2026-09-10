@@ -1,0 +1,8 @@
+services:
+  index-tts-nvidia:
+    image: app/index-tts:2.0
+    restart: unless-stopped
+    ports:
+      - 7867:7860
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all

@@ -1,0 +1,33 @@
+id: arcane
+name: Arcane
+version: 2.10.2
+author: getarcaneapp
+category: System
+homepage: https://github.com/getarcaneapp/arcane
+warnings:
+- dropped host bind mount /var/run/docker.sock:/var/run/docker.sock
+ugos:
+  app_id: com.upkforge.docker.arcane
+  version: 0.1.0
+  port: 3552
+  open_type: tab
+  tag_type: system
+parameters:
+- key: wizard_encryption_key
+  label: Wizard encryption key
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: wizard_jwt_secret
+  label: Wizard jwt secret
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: wizard_app_url
+  label: Wizard app url
+  type: string
+volumes:
+- container_path: /app/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

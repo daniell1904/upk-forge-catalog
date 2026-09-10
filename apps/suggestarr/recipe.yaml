@@ -1,0 +1,17 @@
+id: suggestarr
+name: SuggestArr
+version: 2.14.0
+author: SuggestArr
+category: Media
+homepage: https://github.com/giuseppe99barchetta/SuggestArr
+ugos:
+  app_id: com.upkforge.docker.suggestarr
+  version: 0.1.0
+  port: 5007
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /app/config/config_files
+  label: Config files
+  user_chosen: false
+  default_host_subpath: config_files

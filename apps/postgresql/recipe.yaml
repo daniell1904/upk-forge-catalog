@@ -1,0 +1,25 @@
+id: postgresql
+name: PostgreSQL
+author: WisdomSky
+category: Developer
+description: >-
+  PostgreSQL is a powerful, open source object-relational database system with over 35 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.
+
+
+  PostgreSQL is a highly stable database backed by more than 20 years of development by the open-source community.
+
+
+  PostgreSQL is used as a primary database for many web applications as well as mobile and analytics applications.
+homepage: https://www.postgresql.org
+source_code: https://github.com/postgres/postgres
+ugos:
+  app_id: com.upkforge.docker.postgresql
+  version: 0.1.0
+  port: 5432
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: data

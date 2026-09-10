@@ -1,0 +1,13 @@
+services:
+  anaconda3:
+    image: continuumio/anaconda3:2024.10-1
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 8888:8888
+    volumes:
+      - ./notebooks:/opt/notebooks
+    environment:
+      - LANG=C.UTF-8
+      - LC_ALL=C.UTF-8
+      - PATH=/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin

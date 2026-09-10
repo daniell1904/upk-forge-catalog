@@ -1,0 +1,26 @@
+id: pihole-updatelists
+name: Pi-hole® Updatelists
+author: Community
+category: Networking
+description: The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content without installing any client-side software. This is a fork of the Pi-hole® application that adds the ability to update the lists of blocked domains and regexes.
+warnings:
+- 'service adds capabilities: NET_ADMIN'
+ugos:
+  app_id: com.upkforge.docker.piholeupdatelists
+  version: 0.1.0
+  port: 53
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /etc/pihole/
+  label: Etc pihole
+  user_chosen: false
+  default_host_subpath: etc
+- container_path: /etc/pihole-updatelists/
+  label: Etc pihole updatelists
+  user_chosen: false
+  default_host_subpath: etc/pihole-updatelists
+- container_path: /etc/dnsmasq.d/
+  label: Etc dnsmasq.d
+  user_chosen: false
+  default_host_subpath: dnsmasq.d

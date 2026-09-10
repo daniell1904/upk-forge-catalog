@@ -1,0 +1,28 @@
+id: homarr
+name: Homarr
+version: 1.77.0
+author: Homarr
+category: System
+description: Simplify the management of your server with Homarr - a sleek, modern dashboard that puts all of your apps and services at your fingertips. With Homarr, you can access and control everything in one convenient location. Homarr seamlessly integrates with the apps you've added, providing you with valuable information and giving you complete control. Installation is a breeze, and Homarr supports a wide range of deployment methods.
+homepage: https://homarr.dev
+ugos:
+  app_id: com.upkforge.docker.homarr
+  version: 0.1.0
+  port: 7575
+  open_type: tab
+  tag_type: system
+parameters:
+- key: SECRET_ENCRYPTION_KEY
+  label: Secret encryption key
+  type: password
+  changeable: false
+  generate_bytes: 24
+volumes:
+- container_path: /appdata
+  label: Appdata
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /icons
+  label: Icons
+  user_chosen: false
+  default_host_subpath: icons

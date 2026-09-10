@@ -1,0 +1,12 @@
+services:
+  localai:
+    image: docker.io/localai/localai:4.9.0-cpu
+    ports:
+      - "8185:8080"
+    volumes:
+      - ./models:/build/models
+    environment:
+      - TZ=${TZ}
+      - THREADS=4
+      - CONTEXT_SIZE=512
+    restart: unless-stopped

@@ -1,0 +1,45 @@
+id: taskingai
+name: TaskingAI
+author: Team
+category: AI
+description: The developer-friendly cloud platform for building and running LLM agents for AI-native applications.
+homepage: https://docs.tasking.ai/
+source_code: https://github.com/TaskingAI/TaskingAI
+ugos:
+  app_id: com.upkforge.docker.taskingai
+  version: 0.1.0
+  port: 3080
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: AES_ENCRYPTION_KEY
+  label: AES ENCRYPTION KEY
+  type: password
+- key: JWT_SECRET_KEY
+  label: JWT SECRET KEY
+  type: password
+volumes:
+- container_path: /var/lib/data
+  label: Var lib data
+  user_chosen: false
+  default_host_subpath: data/object_storage
+- container_path: /var/lib/data
+  label: Var lib data
+  user_chosen: false
+  default_host_subpath: data/object_storage
+- container_path: /var/lib/data
+  label: Var lib data
+  user_chosen: false
+  default_host_subpath: data/object_storage
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: data/postgres
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data/redis
+- container_path: /var/cache/nginx
+  label: Var cache nginx
+  user_chosen: false
+  default_host_subpath: data/nginx_cache

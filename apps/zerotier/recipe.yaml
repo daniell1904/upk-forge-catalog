@@ -1,0 +1,47 @@
+id: zerotier
+name: ZeroTier
+version: 0.8.3
+author: Sinamics
+category: Network
+homepage: https://github.com/sinamics/ztnet
+warnings:
+- "service 'zerotier' adds capabilities: NET_ADMIN, SYS_ADMIN"
+- service 'zerotier' maps device '/dev/net/tun:/dev/net/tun'
+ugos:
+  app_id: com.upkforge.docker.zerotier
+  version: 0.1.0
+  port: 3008
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: wizard_postgres_password
+  label: Wizard postgres password
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: wizard_nextauth_url
+  label: Wizard nextauth url
+  type: string
+- key: wizard_nextauth_secret
+  label: Wizard nextauth secret
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: wizard_zt_secret
+  label: Wizard zt secret
+  type: password
+  changeable: false
+  generate_bytes: 24
+volumes:
+- container_path: /app/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: ztnet
+- container_path: /var/lib/zerotier-one
+  label: Zerotier one
+  user_chosen: false
+  default_host_subpath: zerotier
+- container_path: /var/lib/postgresql/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: postgres

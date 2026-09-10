@@ -1,0 +1,43 @@
+services:
+  davis:
+    image: ghcr.io/tchapi/davis-standalone:5.4.1@sha256:9db11b957fdce6d56c04185793c149b62db1596035feb876878acef6b3421be4
+    restart: unless-stopped
+    ports:
+      - 9000:9000
+    environment:
+      - APP_ENV=prod
+      - DATABASE_DRIVER=mysql
+      - DATABASE_URL=mysql://app:0c9d2acc-d4f3-423c-8361-86f35cdd3eb2@davis-mysql:3306/davis?serverVersion=10.6.10&charset=utf8mb4
+      - MAILER_DSN=smtp://:@davis-mailpit:1025
+      - ADMIN_LOGIN=app
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - AUTH_REALM=
+      - AUTH_METHOD=
+      - CALDAV_ENABLED=
+      - CARDDAV_ENABLED=
+      - WEBDAV_ENABLED=
+      - WEBDAV_TMP_DIR=
+      - WEBDAV_PUBLIC_DIR=
+      - WEBDAV_HOMES_DIR=
+      - INVITE_FROM_ADDRESS=
+      - APP_TIMEZONE=UTC
+  davis-mailpit:
+    image: axllent/mailpit:v1.30@sha256:d5ecbb067db3705fa953d79e1b7f81ef84038df67aba6c52825d8c02a1ea748a
+    restart: unless-stopped
+    ports:
+      - 8025:8025
+      - 1025:1025
+    volumes:
+      - ./mailpit/data:/data
+    environment:
+      - TZ=UTC
+  davis-mysql:
+    image: mariadb:10.6.10@sha256:d1bd65504ffbea8dc7445223c9a9b1e6dc7d93f49f5ceff352bb9d43f52d0ffa
+    restart: unless-stopped
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=davis
+      - MYSQL_USER=app
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}

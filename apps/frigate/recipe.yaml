@@ -1,0 +1,22 @@
+id: frigate
+name: Frigate
+version: 0.17.2
+author: blakeblackshear
+category: Media
+description: Frigate is an open-source network video recorder (NVR) with real-time AI object detection. It provides local, private camera recording, event review, snapshots, and live viewing through a web interface.
+homepage: https://frigate.video
+ugos:
+  app_id: com.upkforge.docker.frigate
+  version: 0.1.0
+  port: 8971
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /media/frigate
+  label: Frigate
+  user_chosen: false
+  default_host_subpath: media

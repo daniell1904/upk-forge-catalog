@@ -1,0 +1,16 @@
+services:
+  albyhub:
+    image: ghcr.io/getalby/hub:v1.22.2
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 58000:8080
+    volumes:
+      - ./data:/data
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ
+      - UMASK=002
+      - WORK_DIR=/data/albyhub
+      - LOG_EVENTS=true

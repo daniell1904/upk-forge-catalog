@@ -1,0 +1,18 @@
+services:
+  fileflows:
+    image: revenz/fileflows:stable
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 19200:5000
+    volumes:
+      - ./data:/app/Data
+      - ./logs:/app/Logs
+      - ./common:/app/common
+      - ./temp:/temp
+      - ${VOL_1}:/Media
+      - ./fileflows-var-run-docker-sock:/var/run/docker.sock
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ

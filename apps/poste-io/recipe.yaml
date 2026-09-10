@@ -1,0 +1,18 @@
+id: poste-io
+name: Poste.io
+author: Community
+category: Others
+description: Full stack mail server solution with SSL TLS support. POP3s, SMTP(s), IMAPs, RSPAMD, Clamav, Roundcube(HTTPS), SPF, DKIM with easy installation and web administration.
+warnings:
+- service uses host networking
+ugos:
+  app_id: com.upkforge.docker.posteio
+  version: 0.1.0
+  port: 80
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

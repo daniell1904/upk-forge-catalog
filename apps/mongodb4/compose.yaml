@@ -1,0 +1,13 @@
+services:
+  mongodb4:
+    image: mongo:4.4.22
+    restart: unless-stopped
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/configdb:/data/configdb
+      - ./data/db:/data/db
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=$TZ

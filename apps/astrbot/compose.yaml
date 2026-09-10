@@ -1,0 +1,10 @@
+services:
+  astrbot:
+    image: docker.io/soulter/astrbot:v4.28.0
+    ports:
+      - "6185:6185"
+    volumes:
+      - ./data:/AstrBot/data
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

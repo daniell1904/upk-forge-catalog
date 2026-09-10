@@ -1,0 +1,9 @@
+services:
+  app:
+    image: flcontainers/guacamole:1.6.0@sha256:81a420f386ef8cbb4697208e13ea90f6a10a54619981241bed672e4a41b5f77f
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    environment:
+      - tz=UTC
+      - EXTENSIONS=auth-totp,auth-ldap

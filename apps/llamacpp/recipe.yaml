@@ -1,0 +1,35 @@
+id: llamacpp
+name: llama.cpp
+author: Community
+category: AI
+description: >-
+  llama.cpp is a pure C/C++ inference engine for GGUF large language models, with the official OpenAI-compatible server and a built-in Web UI. **Key Features:**
+
+  - Run GGUF models (Llama, Qwen, DeepSeek, Gemma, Mistral and more) on CPU or GPU
+
+  - Vulkan backend works on AMD / Intel / NVIDIA GPUs out of the box
+
+  - Great fit for unified-memory machines (e.g. AMD Ryzen AI Max 395)
+
+  - OpenAI-compatible API for integration with Open WebUI, ChatGPT-Next-Web and more
+
+  - Built-in chat Web UI with runtime model loading **Getting started:**
+
+  1. Put GGUF model files into the models volume (`/models`)
+
+  2. Open the Web UI at `http://<-ip>:18080` and load a model
+
+  3. Keep `/dev/dri` mapped for Vulkan acceleration; remove it for CPU-only mode
+homepage: https://github.com/ggml-org/llama.cpp
+source_code: https://github.com/ggml-org/llama.cpp
+ugos:
+  app_id: com.upkforge.docker.llamacpp
+  version: 0.1.0
+  port: 18080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /models
+  label: Models
+  user_chosen: false
+  default_host_subpath: models

@@ -1,0 +1,30 @@
+id: virt-manager
+name: Virtual Machine Manager
+author: mber5
+category: Developer
+description: A GTK Broadway web UI for libvirt and virt-manager, to run virtual machines using QEMU/KVM.
+homepage: https://virt-manager.org
+source_code: https://github.com/m-bers/docker-virt-manager
+ugos:
+  app_id: com.upkforge.docker.virtmanager
+  version: 0.1.0
+  port: 8185
+  open_type: tab
+  tag_type: devtool
+parameters:
+- key: VOL_1
+  label: DATA Downloads folder
+  help: Folder on the NAS for Virtual Machine Manager's data downloads. It is mounted into the container at /DATA/Downloads; Virtual Machine Manager has full read and write access to it.
+  type: path
+volumes:
+- container_path: /var/run/libvirt/libvirt-sock
+  label: Var run libvirt libvirt sock
+  user_chosen: false
+  default_host_subpath: virt-manager-var-run-libvirt-libvirt-sock
+- container_path: /var/lib/libvirt
+  label: Var lib libvirt
+  user_chosen: false
+  default_host_subpath: virt-manager-var-lib-libvirt
+- container_path: /DATA/Downloads
+  label: DATA Downloads
+  default_host_subpath: virt-manager-data-downloads

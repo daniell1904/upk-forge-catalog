@@ -1,0 +1,25 @@
+id: jackett
+name: Jackett
+author: Team
+category: Media
+description: it translates queries from apps (Sonarr, Radarr, SickRage, CouchPotato, Mylar3, Lidarr, DuckieTV, qBittorrent, Nefarious etc.) into tracker-site-specific http queries, parses the html or json response, and then sends results back to the requesting software. This allows for getting recent uploads (like RSS) and performing searches. Jackett is a single repository of maintained indexer scraping & translation logic - removing the burden from other apps.
+source_code: https://github.com/Jackett/Jackett
+ugos:
+  app_id: com.upkforge.docker.jackett
+  version: 0.1.0
+  port: 9117
+  open_type: tab
+  tag_type: media
+parameters:
+- key: VOL_1
+  label: Downloads folder
+  help: Folder on the NAS for Jackett's downloads. It is mounted into the container at /downloads; Jackett has full read and write access to it.
+  type: path
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /downloads
+  label: Downloads
+  default_host_subpath: jackett-downloads

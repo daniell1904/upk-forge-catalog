@@ -1,0 +1,15 @@
+services:
+  readarr:
+    image: linuxserver/readarr:0.3.10-develop
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 8787:8787
+    volumes:
+      - ./config:/config
+      - ${VOL_1}:/books
+      - ${VOL_2}:/downloads
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ

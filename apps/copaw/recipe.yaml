@@ -1,0 +1,19 @@
+id: copaw
+name: CoPaw
+version: 2.2.0
+author: AgentScope
+category: Ai
+homepage: https://github.com/agentscope-ai/CoPaw
+warnings:
+- service 'copaw' image 'docker.io/agentscope/copaw:latest' is not pinned to a fixed version
+ugos:
+  app_id: com.upkforge.docker.copaw
+  version: 0.1.0
+  port: 8088
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /app/working
+  label: Working
+  user_chosen: false
+  default_host_subpath: data

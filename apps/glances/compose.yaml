@@ -1,0 +1,12 @@
+services:
+  glances:
+    image: docker.io/nicolargo/glances:latest-full
+    pid: host
+    ports:
+      - "61208:61208"
+    volumes:
+      - ./config:/etc/glances
+    environment:
+      - TZ=${TZ}
+      - GLANCES_OPT=w
+    restart: unless-stopped

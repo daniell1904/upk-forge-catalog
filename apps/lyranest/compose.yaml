@@ -1,0 +1,20 @@
+services:
+  lyranest:
+    image: ghcr.io/whwgogogo/lyranest-server:0.2.6
+    ports:
+      - "8080:8080"
+    volumes:
+      - ${wizard_music_dir}:/music:ro
+      - ./downloads:/downloads
+      - ./data:/data
+      - ./cache:/cache
+    environment:
+      - TZ=${TZ}
+      - SERVER_ADDR=:8080
+      - MUSIC_LIBRARY_DIR=/music
+      - MUSIC_LIBRARY_ROOTS=/music:/downloads
+      - MUSIC_DATA_DIR=/data
+      - MUSIC_CACHE_DIR=/cache
+      - DOWNLOADS_ROOT=/downloads
+      - LOG_LEVEL=info
+    restart: unless-stopped

@@ -1,0 +1,20 @@
+id: jfa-go
+name: jfa-go
+author: Community
+category: Media
+description: jfa-go is a user management app for Jellyfin (and Emby as 2nd class) that provides invite-based account creation as well as other features that make one's instance much easier to manage.
+ugos:
+  app_id: com.upkforge.docker.jfago
+  version: 0.1.0
+  port: 8056
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: .config/jfa-go
+- container_path: /jf
+  label: Jf
+  user_chosen: false
+  default_host_subpath: jellyfin

@@ -1,0 +1,10 @@
+services:
+  jellyseerr:
+    image: docker.io/fallenbagel/jellyseerr:2.7.3
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./config:/app/config
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

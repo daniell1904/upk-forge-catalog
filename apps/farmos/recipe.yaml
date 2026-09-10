@@ -1,0 +1,27 @@
+id: farmos
+name: FarmOS (Legacy)
+author: Community
+category: Social
+description: farmOS is a web-based application for farm management, planning, and record keeping. It is developed by a community of volunteers and aims to provide a standard platform for farmers, developers, and researchers to build upon.
+ugos:
+  app_id: com.upkforge.docker.farmos
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: MYSQL_ROOT_PASSWORD
+  label: MYSQL ROOT PASSWORD
+  type: password
+- key: MYSQL_PASSWORD
+  label: MYSQL PASSWORD
+  type: password
+volumes:
+- container_path: /opt/drupal/web/sites
+  label: Opt drupal web sites
+  user_chosen: false
+  default_host_subpath: sites
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: db

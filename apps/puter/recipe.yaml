@@ -1,0 +1,21 @@
+id: puter
+name: Puter
+version: 26.08.2
+author: HeyPuter
+category: Content
+homepage: https://puter.com
+ugos:
+  app_id: com.upkforge.docker.puter
+  version: 0.1.0
+  port: 4100
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /etc/puter
+  label: Puter
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /var/puter
+  label: Puter
+  user_chosen: false
+  default_host_subpath: data

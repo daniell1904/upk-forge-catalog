@@ -1,0 +1,15 @@
+services:
+  podfetch:
+    image: samuel19982/podfetch:v5.2.3
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 8000:8000
+    volumes:
+      - ./podcasts:/app/podcasts
+      - ./db:/app/db
+    environment:
+      - DATABASE_URL=sqlite:///app/db/podcast.db
+      - POLLING_INTERVAL=300
+      - BASIC_AUTH=false
+      - GPODDER_INTEGRATION_ENABLED=false

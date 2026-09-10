@@ -1,0 +1,19 @@
+id: koodo-reader
+name: Koodo Reader
+version: 2.4.4
+author: koodo-reader
+category: Media
+homepage: https://github.com/koodo-reader/koodo-reader
+warnings:
+- service 'koodo-reader' image 'ghcr.io/koodo-reader/koodo-reader:master' is not pinned to a fixed version
+ugos:
+  app_id: com.upkforge.docker.koodoreader
+  version: 0.1.0
+  port: 8930
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /app/uploads
+  label: Uploads
+  user_chosen: false
+  default_host_subpath: uploads

@@ -1,0 +1,19 @@
+services:
+  nightscout:
+    image: nightscout/cgm-remote-monitor:15.0.7@sha256:4399411fad4014352832865266207eb1ba4e3ec4129e4776ae3142a4e9abe913
+    restart: unless-stopped
+    ports:
+      - 1337:1337
+    environment:
+      - NODE_ENV=production
+      - TZ=Etc/UTC
+      - INSECURE_USE_HTTP=true
+      - MONGO_CONNECTION=mongodb://nightscout-mongo:27017/nightscout
+      - API_SECRET=${API_SECRET}
+      - ENABLE=careportal rawbg iob
+      - AUTH_DEFAULT_ROLES=denied
+  nightscout-mongo:
+    image: mongo:4.4@sha256:4be76f674fc4b27859816811b8baa3c51830eb1dbf4ca81a51e26b79edd662ef
+    restart: unless-stopped
+    volumes:
+      - ./mongo-data:/data/db

@@ -1,0 +1,13 @@
+services:
+  qwenpaw:
+    image: docker.io/agentscope/qwenpaw:v2.2.0
+    init: true
+    ports:
+      - "8088:8088"
+    volumes:
+      - ./data:/app/working
+      - ./secrets:/app/working.secret
+      - ./backups:/app/working.backups
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

@@ -1,0 +1,26 @@
+id: nzbget
+name: Nzbget
+author: Team
+category: Media
+description: NZBGet can run on almost any device - classic PC, NAS, media player, SAT-receiver, WLAN-router, etc. The download area provides precompiled binaries for Windows, macOS, Linux (compatible with many CPUs and platform variants), FreeBSD and Android. For other platforms the program can be compiled from sources.
+homepage: https://nzbget.com
+source_code: https://github.com/nzbgetcom/nzbget
+ugos:
+  app_id: com.upkforge.docker.nzbget
+  version: 0.1.0
+  port: 6789
+  open_type: tab
+  tag_type: media
+parameters:
+- key: VOL_1
+  label: Downloads folder
+  help: Folder on the NAS for Nzbget's downloads. It is mounted into the container at /downloads; Nzbget has full read and write access to it.
+  type: path
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /downloads
+  label: Downloads
+  default_host_subpath: nzbget-downloads

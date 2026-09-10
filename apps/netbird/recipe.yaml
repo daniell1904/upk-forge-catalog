@@ -1,0 +1,26 @@
+id: netbird
+name: NetBird
+version: 0.78.1
+author: netbirdio
+category: Network
+homepage: https://netbird.io
+warnings:
+- service 'netbird' uses host networking
+- "service 'netbird' adds capabilities: NET_ADMIN, SYS_RESOURCE"
+ugos:
+  app_id: com.upkforge.docker.netbird
+  version: 0.1.0
+  port: 8820
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: NB_SETUP_KEY
+  label: Nb setup key
+  type: password
+  changeable: false
+  generate_bytes: 24
+volumes:
+- container_path: /etc/netbird
+  label: Netbird
+  user_chosen: false
+  default_host_subpath: config

@@ -1,0 +1,40 @@
+id: financial-freedom
+name: Financial Freedom
+author: Community
+category: Others
+description: Keep investors and their buyers out of your financial data. Own 100% of your data and start building financial wealth.
+ugos:
+  app_id: com.upkforge.docker.financialfreedom
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: APP_KEY
+  label: APP KEY
+  type: password
+- key: DB_ROOT_PASSWORD
+  label: DB ROOT PASSWORD
+  type: password
+- key: DB_PASSWORD
+  label: DB PASSWORD
+  type: password
+- key: MYSQL_ROOT_PASSWORD
+  label: MYSQL ROOT PASSWORD
+  type: password
+- key: MYSQL_PASSWORD
+  label: MYSQL PASSWORD
+  type: password
+volumes:
+- container_path: /var/www/html/storage/logs
+  label: Var www html storage logs
+  user_chosen: false
+  default_host_subpath: logs
+- container_path: /var/www/html/storage/framework/sessions
+  label: Var www html storage framework sessions
+  user_chosen: false
+  default_host_subpath: sessions
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: mariadb

@@ -1,0 +1,30 @@
+id: discopanel
+name: DiscoPanel
+author: Community
+category: Developer
+description: DiscoPanel is a game server panel for Minecraft. It provides a clean interface for creating and managing Minecraft servers, installing modpacks, and running each server as its own Docker container. Features include modpack browsing and installation, per-server configuration, backups, and real-time server management.
+warnings:
+- service uses host networking
+ugos:
+  app_id: com.upkforge.docker.discopanel
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /var/run/docker.sock
+  label: Var run docker.sock
+  user_chosen: false
+  default_host_subpath: discopanel-var-run-docker-sock
+- container_path: /app/data
+  label: App data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /app/backups
+  label: App backups
+  user_chosen: false
+  default_host_subpath: backups
+- container_path: /app/tmp
+  label: App tmp
+  user_chosen: false
+  default_host_subpath: tmp

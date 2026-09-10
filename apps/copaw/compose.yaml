@@ -1,0 +1,10 @@
+services:
+  copaw:
+    image: docker.io/agentscope/copaw:latest
+    ports:
+      - "8088:8088"
+    volumes:
+      - ./data:/app/working
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

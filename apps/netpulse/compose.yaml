@@ -1,0 +1,14 @@
+services:
+  netpulse:
+    image: ghcr.io/bentfender/netpulse:sha-8922b29@sha256:14a442573fe53e0e812d2d3e5d84f0ecc11646578372f55ff98ffc07d5288624
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./data:/data
+    environment:
+      - NETPULSE_USERNAME=admin
+      - NETPULSE_PASSWORD=${NETPULSE_PASSWORD}
+      - SPEEDTEST_INTERVAL_MIN=10
+      - PING_INTERVAL_SEC=60
+      - PING_HOST=1.1.1.1
+      - TZ=UTC

@@ -1,0 +1,11 @@
+id: immich-kiosk
+name: Immich Kiosk
+author: Community
+category: Others
+description: Immich Kiosk is a lightweight slideshow for running on kiosk devices and browsers that uses Immich as a data source.
+ugos:
+  app_id: com.upkforge.docker.immichkiosk
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: utility

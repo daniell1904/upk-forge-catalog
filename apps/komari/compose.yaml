@@ -1,0 +1,10 @@
+services:
+  komari:
+    image: ghcr.io/komari-monitor/komari:1.4.3
+    ports:
+      - "25774:25774"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

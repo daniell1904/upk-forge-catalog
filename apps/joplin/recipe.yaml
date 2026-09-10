@@ -1,0 +1,20 @@
+id: joplin
+name: joplin
+author: Community
+category: Productivity
+description: Note taking and to-do application with synchronisation
+ugos:
+  app_id: com.upkforge.docker.joplin
+  version: 0.1.0
+  port: 22300
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
+volumes:
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: postgresql/data

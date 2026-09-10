@@ -1,0 +1,34 @@
+id: nextcloud
+name: Nextcloud
+version: 34.0.3
+author: Nextcloud
+category: Content
+description: Discover the ultimate solution for remote collaboration with Nextcloud. Unlike traditional office software, Nextcloud seamlessly integrates files, communication, and productivity tools into one platform, enhancing teamwork and streamlining your workflow. Say goodbye to the limitations of conventional tools and embrace a new era of collaboration. Nextcloud stands out with its robust features tailored for every need. Enjoy secure file storage, real-time communication via Talk, comprehensive groupware, and powerful office integration, all in one place. Experience these top-notch features at an affordable price, making it accessible for everyone to elevate their collaboration game. Deploying Nextcloud on a private cloud device brings unparalleled convenience. Benefit from unlimited storage, secure data privacy, local network speeds, and multi-device access, ensuring you have everything you need at your fingertips.
+homepage: https://nextcloud.com
+ugos:
+  app_id: com.upkforge.docker.nextcloud
+  version: 0.1.0
+  port: 8082
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: UPLOAD_LOCATION
+  label: Data folder
+  help: Folder on the NAS for Nextcloud's data. It is mounted into the container at /var/www/html/data; Nextcloud has full read and write access to it.
+  type: path
+- key: DB_PASSWORD
+  label: Db password
+  type: password
+  changeable: false
+  generate_bytes: 24
+volumes:
+- container_path: /var/www/html
+  label: Html
+  user_chosen: false
+  default_host_subpath: html
+- container_path: /var/www/html/data
+  label: Data
+- container_path: /var/lib/mysql
+  label: Mysql
+  user_chosen: false
+  default_host_subpath: mysql

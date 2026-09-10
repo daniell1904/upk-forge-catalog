@@ -1,0 +1,23 @@
+services:
+  monica:
+    image: monica:4.1.2
+    restart: unless-stopped
+    ports:
+      - 18930:80
+    volumes:
+      - ./storage:/var/www/html/storage
+    environment:
+      - APP_KEY=${APP_KEY}
+      - DB_HOST=monica-db
+      - DB_USERNAME=monicauser
+      - DB_PASSWORD=monicasecret
+  monica-db:
+    image: mariadb:11.8.2
+    restart: unless-stopped
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MARIADB_RANDOM_ROOT_PASSWORD=true
+      - MARIADB_DATABASE=monica
+      - MARIADB_USER=monicauser
+      - MARIADB_PASSWORD=monicasecret

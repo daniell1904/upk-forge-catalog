@@ -1,0 +1,12 @@
+services:
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:1.6.0
+    ports:
+      - "6767:6767"
+    volumes:
+      - ./config:/config
+    environment:
+      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+    restart: unless-stopped

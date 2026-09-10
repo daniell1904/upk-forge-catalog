@@ -1,0 +1,11 @@
+services:
+  seerr:
+    image: docker.io/seerr/seerr:v3.4.1
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./config:/app/config
+    environment:
+      - TZ=${TZ}
+      - LOG_LEVEL=info
+    restart: unless-stopped

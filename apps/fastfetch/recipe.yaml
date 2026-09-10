@@ -1,0 +1,13 @@
+id: fastfetch
+name: Fastfetch
+author: Community
+category: Others
+description: Fastfetch is a neofetch-like tool for fetching system information and displaying it prettily. It is written mainly in C, with performance and customizability in mind. Currently, Linux, Android, FreeBSD, macOS, SunOS and Windows 7+ are supported. https://github.com/fastfetch-cli/fastfetch
+warnings:
+- service is privileged
+ugos:
+  app_id: com.upkforge.docker.fastfetch
+  version: 0.1.0
+  port: 7681
+  open_type: tab
+  tag_type: utility

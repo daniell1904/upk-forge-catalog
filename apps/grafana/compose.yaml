@@ -1,0 +1,9 @@
+services:
+  grafana:
+    image: grafana/grafana:13.0.1-security-01
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 3003:3000
+    volumes:
+      - ./data:/var/lib/grafana

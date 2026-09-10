@@ -1,0 +1,45 @@
+services:
+  frontend:
+    image: ghcr.io/xxroxxerxx/clumoove-frontend:v0.18.0@sha256:74e6cce4f2a2f52937b27b48a0137abd4be40d534556785cb579e0f464ba6888
+    restart: unless-stopped
+    ports:
+      - 8380:3000
+    environment:
+      - CLUMOOVE_API_URL=
+  api-backend:
+    image: ghcr.io/xxroxxerxx/clumoove-api:v0.18.0@sha256:d9c34a1c6db8c7ffbeb942cffae849796a9c4eab267d8af2a7d1eb75c932b9bc
+    restart: unless-stopped
+    volumes:
+      - ./storage:/clumoove
+    environment:
+      - DATABASE_URL=postgres://clumoove:clumoove_secure_password_default@postgres-db:5432/cloud_migration_db?sslmode=disable
+      - REDIS_URL=redis://:clumoove_secure_redis_pass@redis-queue:6379
+      - PORT=8000
+      - ENCRYPTION_SECRET_KEY=enc_app_clumoove_encryption_key_v1_32b
+      - JWT_SECRET_KEY=jwt_app_clumoove_jwt_signing_key_32bytes_v1
+      - TRUSTED_PROXY=1
+      - LOCAL_STORAGE_ROOT=/clumoove
+  migration-worker:
+    image: ghcr.io/xxroxxerxx/clumoove-worker:v0.18.0@sha256:76ea62f213b117a66083a1414704fdde3f40216231ce2a69f3a396595c85b405
+    restart: unless-stopped
+    volumes:
+      - ./storage:/clumoove
+    environment:
+      - DATABASE_URL=postgres://clumoove:clumoove_secure_password_default@postgres-db:5432/cloud_migration_db?sslmode=disable
+      - REDIS_URL=redis://:clumoove_secure_redis_pass@redis-queue:6379
+      - ENCRYPTION_SECRET_KEY=enc_app_clumoove_encryption_key_v1_32b
+      - LOCAL_STORAGE_ROOT=/clumoove
+  postgres-db:
+    image: postgres:15-alpine@sha256:fe0737ba566a2c5b2a28f34433c0a423261900ec17b9bf7ad115e1aae7e57f1b
+    restart: unless-stopped
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=clumoove
+      - POSTGRES_PASSWORD=clumoove_secure_password_default
+      - POSTGRES_DB=cloud_migration_db
+  redis-queue:
+    image: redis:7-alpine@sha256:ff02b58f971e7d7d156a1267e283fcbbeee91773b6aa36c49dac28ecfe28eadf
+    restart: unless-stopped
+    volumes:
+      - ./redis:/data

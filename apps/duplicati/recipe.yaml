@@ -1,0 +1,30 @@
+id: duplicati
+name: Duplicati
+version: 2.4.0.0_stable_2026-09-03
+author: duplicati
+category: System
+description: Duplicati is a free, open source, backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers.
+homepage: https://duplicati.com
+ugos:
+  app_id: com.upkforge.docker.duplicati
+  version: 0.1.0
+  port: 8200
+  open_type: tab
+  tag_type: system
+parameters:
+- key: BACKUP_SOURCE
+  label: Source folder
+  help: Folder on the NAS for Duplicati's source. It is mounted into the container at /source; Duplicati reads from it.
+  type: path
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /source
+  label: Source
+  read_only: true
+- container_path: /backups
+  label: Backups
+  user_chosen: false
+  default_host_subpath: backups

@@ -1,0 +1,16 @@
+id: dashy
+name: Dashy (Legacy)
+author: Community
+category: Others
+description: Dashy helps you organize your self-hosted services by making them accessible from a single place
+ugos:
+  app_id: com.upkforge.docker.dashy
+  version: 0.1.0
+  port: 4000
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /app/public
+  label: App public
+  user_chosen: false
+  default_host_subpath: public

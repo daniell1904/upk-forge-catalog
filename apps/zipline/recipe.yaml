@@ -1,0 +1,24 @@
+id: zipline
+name: zipline
+author: Community
+category: Others
+description: A ShareX/file upload server that is easy to use, packed with features, and with an easy setup!
+ugos:
+  app_id: com.upkforge.docker.zipline
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /zipline/uploads
+  label: Zipline uploads
+  user_chosen: false
+  default_host_subpath: uploads
+- container_path: /zipline/public
+  label: Zipline public
+  user_chosen: false
+  default_host_subpath: public
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: postgres

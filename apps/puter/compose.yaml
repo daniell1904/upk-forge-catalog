@@ -1,0 +1,11 @@
+services:
+  puter:
+    image: ghcr.io/heyputer/puter:26.08.2
+    ports:
+      - "4100:4100"
+    volumes:
+      - ./config:/etc/puter
+      - ./data:/var/puter
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

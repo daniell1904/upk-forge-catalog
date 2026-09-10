@@ -1,0 +1,20 @@
+id: portracker
+name: Portracker
+author: Community
+category: Networking
+description: A self-hosted, real-time port monitoring and discovery tool that automatically discovers and maps network services across systems.
+ugos:
+  app_id: com.upkforge.docker.portracker
+  version: 0.1.0
+  port: 4999
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /var/run/docker.sock
+  label: Var run docker.sock
+  user_chosen: false
+  default_host_subpath: portracker-var-run-docker-sock

@@ -1,0 +1,25 @@
+services:
+  neko-firefox:
+    image: m1k1o/neko:firefox@sha256:d8799542697b20979d7cc3481bc95d7385157e5bf42bca3ffaa12ac87e22606d
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+      - 52000:52000
+      - 52001:52001
+      - 52002:52002
+      - 52003:52003
+      - 52004:52004
+      - 52005:52005
+      - 52006:52006
+      - 52007:52007
+      - 52008:52008
+      - 52009:52009
+      - 52010:52010
+    environment:
+      - NEKO_SCREEN=1920x1080@30
+      - NEKO_PASSWORD=neko
+      - NEKO_PASSWORD_ADMIN=app
+      - NEKO_EPR=52000-52010
+      - NEKO_ICELITE=1
+      - NEKO_DEBUG=1
+      - NEKO_NAT1TO1=[app_IP]

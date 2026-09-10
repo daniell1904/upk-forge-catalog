@@ -1,0 +1,28 @@
+id: nocodb
+name: NocoDB
+author: Community
+category: Developer
+description: NocoDB allows building no-code database solutions with ease of spreadsheets. Bring your own database or choose ours! Millions of rows? Not a problem. Your Data. Your rules. You are in control.
+ugos:
+  app_id: com.upkforge.docker.nocodb
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: devtool
+parameters:
+- key: NC_AUTH_JWT_SECRET
+  label: NC AUTH JWT SECRET
+  type: password
+volumes:
+- container_path: /usr/src/app/data
+  label: Usr src app data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: pgdata
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: redis

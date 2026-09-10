@@ -1,0 +1,24 @@
+id: rdtclient
+name: Real-Debrid Torrent Client
+author: calganaygun
+category: Media
+source_code: https://github.com/rogerfar/rdt-client
+ugos:
+  app_id: com.upkforge.docker.rdtclient
+  version: 0.1.0
+  port: 6500
+  open_type: tab
+  tag_type: media
+parameters:
+- key: VOL_1
+  label: Data downloads folder
+  help: Folder on the NAS for Real-Debrid Torrent Client's data downloads. It is mounted into the container at /data/downloads; Real-Debrid Torrent Client has full read and write access to it.
+  type: path
+volumes:
+- container_path: /data/downloads
+  label: Data downloads
+  default_host_subpath: rdtclient-data-downloads
+- container_path: /data/db
+  label: Data db
+  user_chosen: false
+  default_host_subpath: db

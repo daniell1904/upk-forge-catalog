@@ -1,0 +1,17 @@
+services:
+  deluge:
+    image: linuxserver/deluge:2.2.0
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 8112:8112
+      - 6881:6881
+      - 6881:6881
+    volumes:
+      - ./config:/config
+      - ./deluge-data:/DATA
+    environment:
+      - DELUGE_LOGLEVEL=error
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ

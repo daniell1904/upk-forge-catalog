@@ -1,0 +1,24 @@
+id: pwpush-v2
+name: Password Pusher v2
+author: Community
+category: Others
+description: Password Pusher is an open source application to communicate passwords over the web. Links to passwords expire after a certain number of views and/or time has passed.
+ugos:
+  app_id: com.upkforge.docker.pwpushv2
+  version: 0.1.0
+  port: 5101
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
+volumes:
+- container_path: /opt/PasswordPusher/storage
+  label: Opt PasswordPusher storage
+  user_chosen: false
+  default_host_subpath: storage
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: postgres

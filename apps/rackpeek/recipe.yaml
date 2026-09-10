@@ -1,0 +1,16 @@
+id: rackpeek
+name: RackPeek
+author: Community
+category: Networking
+description: A webui and CLI tool to discover, manage, and document your home lab and small-scale IT infrastructure. Track hardware, services, networks, and their relationships using open, non-proprietary YAML.
+ugos:
+  app_id: com.upkforge.docker.rackpeek
+  version: 0.1.0
+  port: 8095
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /app/config
+  label: App config
+  user_chosen: false
+  default_host_subpath: config

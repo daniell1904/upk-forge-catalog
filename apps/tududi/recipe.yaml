@@ -1,0 +1,23 @@
+id: tududi
+name: Tududi
+author: Community
+category: Productivity
+description: tududi is a task and project management web application built with Sinatra. It allows users to efficiently manage their tasks and projects, categorize them into different areas, and track due dates. tududi is designed to be intuitive and easy to use, providing a seamless experience for personal productivity.
+ugos:
+  app_id: com.upkforge.docker.tududi
+  version: 0.1.0
+  port: 9292
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: TUDUDI_USER_PASSWORD
+  label: TUDUDI USER PASSWORD
+  type: password
+- key: TUDUDI_SESSION_SECRET
+  label: TUDUDI SESSION SECRET
+  type: password
+volumes:
+- container_path: /usr/src/app/tududi_db
+  label: Usr src app tududi db
+  user_chosen: false
+  default_host_subpath: tududi/db

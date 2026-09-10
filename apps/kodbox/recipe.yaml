@@ -1,0 +1,17 @@
+id: kodbox
+name: KodBox
+version: 1.68.10
+author: KodCloud
+category: Content
+homepage: https://kodcloud.com
+ugos:
+  app_id: com.upkforge.docker.kodbox
+  version: 0.1.0
+  port: 8500
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /var/www/html
+  label: Html
+  user_chosen: false
+  default_host_subpath: data

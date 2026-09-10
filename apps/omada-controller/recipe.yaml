@@ -1,0 +1,22 @@
+id: omada-controller
+name: TP-Link Omada Controller
+author: Community
+category: Developer
+description: Docker image for TP-Link Omada Controller to control TP-Link Omada Hardware
+warnings:
+- service uses host networking
+ugos:
+  app_id: com.upkforge.docker.omadacontroller
+  version: 0.1.0
+  port: 8088
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /opt/tplink/EAPController/data
+  label: Opt tplink EAPController data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /opt/tplink/EAPController/logs
+  label: Opt tplink EAPController logs
+  user_chosen: false
+  default_host_subpath: logs

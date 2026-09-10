@@ -1,0 +1,14 @@
+services:
+  snapdrop:
+    image: linuxserver/snapdrop:version-eac78009
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 443:443
+      - 89:80
+    volumes:
+      - ./config:/config
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ

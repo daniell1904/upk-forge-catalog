@@ -1,0 +1,13 @@
+services:
+  downtify:
+    image: ghcr.io/henriquesebastiao/downtify:2.7.0
+    restart: unless-stopped
+    ports:
+      - 8582:8000
+    volumes:
+      - ${VOL_1}:/downloads
+      - ./data:/data
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ

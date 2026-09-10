@@ -1,0 +1,16 @@
+services:
+  nzbget:
+    image: linuxserver/nzbget:26.1.20260522
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 6789:6789
+    volumes:
+      - ./config:/config
+      - ${VOL_1}:/downloads
+    environment:
+      - NZBGET_PASS=tegbzn6789
+      - NZBGET_USER=nzbget
+      - PGID=1000
+      - PUID=1000
+      - TZ=Europe/London

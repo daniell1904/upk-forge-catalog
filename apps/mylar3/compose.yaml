@@ -1,0 +1,15 @@
+services:
+  mylar3:
+    image: linuxserver/mylar3:0.9.0
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 8090:8090
+    volumes:
+      - ./config:/config
+      - ${VOL_1}:/comics
+      - ${VOL_2}:/downloads
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ

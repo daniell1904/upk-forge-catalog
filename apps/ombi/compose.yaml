@@ -1,0 +1,12 @@
+services:
+  ombi:
+    image: docker.io/linuxserver/ombi:4.53.10
+    ports:
+      - "3579:3579"
+    volumes:
+      - ./config:/config
+    environment:
+      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+    restart: unless-stopped

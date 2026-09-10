@@ -1,0 +1,11 @@
+services:
+  scrutiny:
+    image: ghcr.io/analogj/scrutiny:master-omnibus@sha256:18689773150d6b8b53c94a435f40f7b6e946fd4a6d40b44c64fa2154a5b38941
+    restart: unless-stopped
+    ports:
+      - 38080:8080
+      - 38086:8086
+    volumes:
+      - ./config:/opt/scrutiny/config
+      - ./influxdb:/opt/scrutiny/influxdb
+      - /run/udev:/run/udev

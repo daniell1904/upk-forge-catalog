@@ -1,0 +1,18 @@
+id: libredb-studio
+name: LibreDB Studio
+author: libredb
+category: Developer
+description: LibreDB Studio is an open-source (MIT), self-hosted SQL IDE. It provides a modern web-based interface to connect to 16 database engines (PostgreSQL, MySQL, MongoDB, Redis, ClickHouse and more), browse schemas, write and run SQL queries, and manage your data from any browser on your LAN. Data is stored locally in a SQLite database, so everything stays under your control.
+homepage: https://libredb.org
+source_code: https://github.com/libredb/libredb-studio
+ugos:
+  app_id: com.upkforge.docker.libredbstudio
+  version: 0.1.0
+  port: 3016
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /app/data
+  label: App data
+  user_chosen: false
+  default_host_subpath: data

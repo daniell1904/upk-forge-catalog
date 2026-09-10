@@ -1,0 +1,51 @@
+id: openhands
+name: OpenHands
+author: All-Hands-AI
+category: AI
+description: >-
+  OpenHands is an open-source AI-powered coding assistant that provides developers with intelligent code completion, generation, and debugging capabilities. It runs in a sandboxed environment to ensure security and isolation while allowing access to various development tools and resources.
+
+
+  **Key Features:**
+
+  - AI-powered code completion and generation
+
+  - Interactive debugging and error resolution
+
+  - Support for multiple programming languages
+
+  - Secure sandboxed execution environment
+
+  - Customizable runtime configurations
+
+  - Integration with Docker for containerized workflows
+
+
+  **Learn More:**
+
+  - [OpenHands Official Website](https://www.all-hands.dev)
+
+  - [OpenHands GitHub Repository](https://github.com/All-Hands-AI/OpenHands)
+
+  - [Documentation](https://docs.all-hands.dev)
+homepage: https://www.openhands.dev/
+source_code: https://github.com/All-Hands-AI/OpenHands
+ugos:
+  app_id: com.upkforge.docker.openhands
+  version: 0.1.0
+  port: 13333
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /var/run/docker.sock
+  label: Var run docker.sock
+  user_chosen: false
+  default_host_subpath: openhands-var-run-docker-sock
+- container_path: /.openhands
+  label: .openhands
+  user_chosen: false
+  default_host_subpath: openhands
+- container_path: /opt/workspace_base
+  label: Opt workspace base
+  user_chosen: false
+  default_host_subpath: workspace

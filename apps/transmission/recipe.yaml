@@ -1,0 +1,32 @@
+id: transmission
+name: Transmission
+version: latest-2026.09.10
+author: Transmission
+category: Download
+description: >-
+  Transmission is a BitTorrent client designed for simplicity and powerful performance, delivering an efficient and user-friendly downloading experience. It comes equipped with all the essential features you expect, including encryption, a web interface, peer exchange, magnet links, DHT, µTP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.
+
+
+  With its intuitive interface, Transmission caters to both beginners and advanced users. Whether you’re managing a single download or juggling complex torrent queues, Transmission ensures a seamless experience with optimized resource usage and reliable performance. For casual users and tech enthusiasts alike, Transmission is the ideal BitTorrent solution.
+homepage: https://transmissionbt.com
+warnings:
+- service 'transmission' image 'docker.io/linuxserver/transmission:latest' is not pinned to a fixed version
+ugos:
+  app_id: com.upkforge.docker.transmission
+  version: 0.1.0
+  port: 9091
+  open_type: tab
+  tag_type: download
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /downloads
+  label: Downloads
+  user_chosen: false
+  default_host_subpath: downloads
+- container_path: /watch
+  label: Watch
+  user_chosen: false
+  default_host_subpath: watch

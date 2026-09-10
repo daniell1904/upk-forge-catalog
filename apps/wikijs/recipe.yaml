@@ -1,0 +1,26 @@
+id: wikijs
+name: Wiki.js
+version: 2.5.277
+author: Wiki.js
+category: Content
+homepage: https://js.wiki
+ugos:
+  app_id: com.upkforge.docker.wikijs
+  version: 0.1.0
+  port: 3110
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: POSTGRES_PASSWORD
+  label: Postgres password
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: DB_PASS
+  label: Db pass
+  type: string
+volumes:
+- container_path: /var/lib/postgresql/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: pgdata

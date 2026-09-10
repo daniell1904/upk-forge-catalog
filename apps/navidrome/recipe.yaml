@@ -1,0 +1,26 @@
+id: navidrome
+name: Navidrome
+author: The Navidrome Authors
+category: Media
+description: Navidrome is an open source web-based music collection server and streamer. It gives you freedom to listen to your music collection from any browser or mobile device. It's like your personal Spotify!
+homepage: https://www.navidrome.org
+source_code: https://github.com/navidrome/navidrome
+ugos:
+  app_id: com.upkforge.docker.navidrome
+  version: 0.1.0
+  port: 4533
+  open_type: tab
+  tag_type: media
+parameters:
+- key: VOL_1
+  label: Music folder
+  help: Folder on the NAS for Navidrome's music. It is mounted into the container at /music; Navidrome has full read and write access to it.
+  type: path
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /music
+  label: Music
+  default_host_subpath: navidrome-music

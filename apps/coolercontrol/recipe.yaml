@@ -1,0 +1,22 @@
+id: coolercontrol
+name: CoolerControl
+version: 5.0.0
+author: Guy Boldon
+category: System
+homepage: https://github.com/codifryed/coolercontrol
+warnings:
+- dropped host bind mount /sys/class/hwmon:/sys/class/hwmon:rw
+- dropped host bind mount /dev:/dev:rw
+- service 'coolercontrol' is privileged
+- "service 'coolercontrol' adds capabilities: SYS_ADMIN, SYS_RAWIO"
+ugos:
+  app_id: com.upkforge.docker.coolercontrol
+  version: 0.1.0
+  port: 11987
+  open_type: tab
+  tag_type: system
+volumes:
+- container_path: /etc/coolercontrol
+  label: Coolercontrol
+  user_chosen: false
+  default_host_subpath: config

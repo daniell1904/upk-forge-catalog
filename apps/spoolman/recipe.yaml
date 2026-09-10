@@ -1,0 +1,16 @@
+id: spoolman
+name: Spoolman
+author: Community
+category: Home
+description: Keep track of your inventory of 3D-printer filament spools. Spoolman is a self-hosted web service designed to help you efficiently manage your 3D printer filament spools and monitor their usage.
+ugos:
+  app_id: com.upkforge.docker.spoolman
+  version: 0.1.0
+  port: 7912
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /home/app/.local/share/spoolman
+  label: Home app .local share spoolman
+  user_chosen: false
+  default_host_subpath: data

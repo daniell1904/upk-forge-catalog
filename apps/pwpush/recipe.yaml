@@ -1,0 +1,24 @@
+id: pwpush
+name: Password Pusher (Legacy)
+author: Community
+category: Others
+description: Password Pusher is an open source application to communicate passwords over the web. Links to passwords expire after a certain number of views and/or time has passed.
+ugos:
+  app_id: com.upkforge.docker.pwpush
+  version: 0.1.0
+  port: 5100
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: MARIADB_PASSWORD
+  label: MARIADB PASSWORD
+  type: password
+volumes:
+- container_path: /opt/PasswordPusher/storage
+  label: Opt PasswordPusher storage
+  user_chosen: false
+  default_host_subpath: storage
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: mysql

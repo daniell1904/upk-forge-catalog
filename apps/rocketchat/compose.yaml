@@ -1,0 +1,32 @@
+services:
+  rocketchat:
+    image: docker.io/rocketchat/rocket.chat:8.8.1
+    ports:
+      - "3003:3000"
+    volumes:
+      - ./uploads:/app/uploads
+    environment:
+      - TZ=${TZ}
+      - MONGO_URL=mongodb://rocketchat-mongo:27017/rocketchat?replicaSet=rs0
+      - MONGO_OPLOG_URL=mongodb://rocketchat-mongo:27017/local?replicaSet=rs0
+      - ROOT_URL=http://localhost:3000
+      - PORT=3000
+      - DEPLOY_METHOD=docker
+    depends_on:
+      - rocketchat-mongo
+    restart: unless-stopped
+
+  rocketchat-mongo:
+    image: docker.io/bitnami/mongodb:8.0
+    environment:
+      - TZ=${TZ}
+      - MONGODB_REPLICA_SET_MODE=primary
+      - MONGODB_REPLICA_SET_NAME=rs0
+      - MONGODB_PORT_NUMBER=27017
+      - MONGODB_INITIAL_PRIMARY_HOST=rocketchat-mongo
+      - MONGODB_INITIAL_PRIMARY_PORT_NUMBER=27017
+      - MONGODB_ADVERTISED_HOSTNAME=rocketchat-mongo
+      - ALLOW_EMPTY_PASSWORD=${ALLOW_EMPTY_PASSWORD}
+    volumes:
+      - ./mongodb:/bitnami/mongodb
+    restart: unless-stopped

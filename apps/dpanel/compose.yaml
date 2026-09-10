@@ -1,0 +1,11 @@
+services:
+  dpanel:
+    image: docker.io/dpanel/dpanel:1.10.8
+    ports:
+      - "8807:80"
+    volumes:
+      - ./data:/dpanel
+    environment:
+      - TZ=${TZ}
+      - APP_NAME=dpanel
+    restart: unless-stopped

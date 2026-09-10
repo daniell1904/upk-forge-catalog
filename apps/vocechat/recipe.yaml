@@ -1,0 +1,25 @@
+id: vocechat
+name: VoceChat
+author: Privoce
+category: Social
+description: >-
+  VoceChat is a secure chat software designed for independent deployment, offering a flexible solution for seamless communication. It combines instant messaging with channel-based group chats, allowing you to engage in one-on-one conversations or create themed channels for group discussions.
+
+
+  VoceChat supports a variety of message formats, including text, images, files, emojis, and rich text (Markdown), making your communication vibrant and expressive. Once deployed, it can be accessed via a WebAPP or mobile APP, ensuring a consistent experience across platforms.
+
+
+  With robust management features, VoceChat enables easy member and channel administration, giving you full control over your team or group’s communication environment. Whether for individual users or enterprise teams, VoceChat delivers a secure, versatile, and efficient chat solution.
+homepage: https://voce.chat
+source_code: https://github.com/Privoce/vocechat-server-rust
+ugos:
+  app_id: com.upkforge.docker.vocechat
+  version: 0.1.0
+  port: 3009
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /home/vocechat-server/data
+  label: Home vocechat server data
+  user_chosen: false
+  default_host_subpath: home/vocechat-server/data

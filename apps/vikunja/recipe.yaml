@@ -1,0 +1,24 @@
+id: vikunja
+name: Vikunja (Legacy)
+author: Community
+category: Others
+description: The open-source, self-hostable to-do app. Organize everything, on all platforms.
+ugos:
+  app_id: com.upkforge.docker.vikunja
+  version: 0.1.0
+  port: 8081
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: VIKUNJA_SERVICE_JWTSECRET
+  label: VIKUNJA SERVICE JWTSECRET
+  type: password
+volumes:
+- container_path: /app/vikunja/files
+  label: App vikunja files
+  user_chosen: false
+  default_host_subpath: files
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: mysql

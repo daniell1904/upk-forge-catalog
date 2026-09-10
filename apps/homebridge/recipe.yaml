@@ -1,0 +1,20 @@
+id: homebridge
+name: Homebridge
+author: UnderCurve
+category: Home
+description: Homebridge is a lightweight NodeJS server you can run on your home network that emulates the iOS HomeKit API. It supports Plugins, which are community-contributed modules that provide a basic bridge from HomeKit to various 3rd-party APIs provided by manufacturers of "smart home" devices.
+homepage: https://homebridge.io/
+source_code: https://github.com/homebridge/homebridge
+warnings:
+- service uses host networking
+ugos:
+  app_id: com.upkforge.docker.homebridge
+  version: 0.1.0
+  port: 8581
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /homebridge
+  label: Homebridge
+  user_chosen: false
+  default_host_subpath: config

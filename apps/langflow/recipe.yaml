@@ -1,0 +1,52 @@
+id: langflow
+name: Langflow
+author: langflowai
+category: AI
+description: >-
+  Langflow is a powerful, open-source UI designed specifically for building and debugging multi-agent and Retrieval-Augmented Generation (RAG) applications. It provides a visual, drag-and-drop interface that simplifies the process of creating complex AI workflows.
+
+
+  The system consists of two main components:
+
+  - **Langflow**: The main application providing a visual interface for building AI workflows
+
+  - **PostgreSQL**: A robust database system for storing application data and configurations
+
+
+  **Key Features:**
+
+  - Visual, drag-and-drop interface for building AI workflows
+
+  - Support for multi-agent systems and RAG applications
+
+  - Integrated debugging tools for testing and optimization
+
+  - Persistent storage for workflows and configurations
+
+  - Easy deployment with Docker containers
+
+
+  **Learn More:**
+
+  - [Langflow Official Website](https://www.langflow.org)
+
+  - [Langflow GitHub Repository](https://github.com/langflow-ai/langflow)
+
+  - [Documentation](https://docs.langflow.org)
+homepage: https://www.langflow.org
+source_code: https://github.com/langflow-ai/langflow
+ugos:
+  app_id: com.upkforge.docker.langflow
+  version: 0.1.0
+  port: 17860
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /app/langflow
+  label: App langflow
+  user_chosen: false
+  default_host_subpath: backend
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: postgres

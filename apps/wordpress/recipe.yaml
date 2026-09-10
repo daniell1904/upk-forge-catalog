@@ -1,0 +1,20 @@
+id: wordpress
+name: WordPress (Legacy)
+author: Community
+category: Others
+description: Initially started as a blogging tool in 2003, it has evolved into a highly flexible CMS that powers over 40% of the web (as of my last training data in 2022).
+ugos:
+  app_id: com.upkforge.docker.wordpress
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /var/www/html
+  label: Var www html
+  user_chosen: false
+  default_host_subpath: html
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: mysql

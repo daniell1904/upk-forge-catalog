@@ -1,0 +1,10 @@
+services:
+  fileview:
+    image: docker.io/basemetas/fileview:1.5.2
+    ports:
+      - "9000:80"
+    volumes:
+      - ./data:/data
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

@@ -1,0 +1,20 @@
+id: ihatemoney
+name: I Hate Money
+author: Community
+category: Finance
+description: I hate money is a web application made to ease shared budget management. It keeps track of who bought what, when, and for whom; and helps to settle the bills.
+ugos:
+  app_id: com.upkforge.docker.ihatemoney
+  version: 0.1.0
+  port: 8001
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: SECRET_KEY
+  label: SECRET KEY
+  type: password
+volumes:
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: mysql

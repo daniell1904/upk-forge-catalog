@@ -1,0 +1,25 @@
+id: surveyking
+name: SurveyKing
+version: 1.13.0
+author: SurveyKing Contributors
+category: System
+homepage: https://github.com/anji-plus/survey
+ugos:
+  app_id: com.upkforge.docker.surveyking
+  version: 0.1.0
+  port: 1991
+  open_type: tab
+  tag_type: system
+volumes:
+- container_path: /app/db
+  label: Db
+  user_chosen: false
+  default_host_subpath: db
+- container_path: /app/files
+  label: Files
+  user_chosen: false
+  default_host_subpath: files
+- container_path: /app/logs
+  label: Logs
+  user_chosen: false
+  default_host_subpath: logs

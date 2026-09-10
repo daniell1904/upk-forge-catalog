@@ -1,0 +1,49 @@
+id: karakeep
+name: Karakeep
+author: karakeep
+category: Productivity
+description: >-
+  Karakeep is an open-source, self-hosted bookmark manager for links, notes, images, PDFs, and highlights, built to keep everything you want to save in one place.
+
+  It automatically fetches titles, descriptions, and previews, then helps you organize your library with AI tagging, full-text search, lists, and rule-based automation.
+
+  With browser extensions, mobile apps, RSS ingestion, and page archiving, Karakeep works well as both a read-later tool and a durable personal content archive.
+
+
+  **Main Features:**
+
+  - Save links, notes, images, PDFs, and text highlights in one library
+
+  - Auto-fetch titles, descriptions, images, and archived pages for later reading
+
+  - Use AI tagging, summarization, OCR, and full-text search to rediscover content quickly
+
+  - Organize content with tags, collaborative lists, RSS feeds, and rule-based workflows
+
+  - Access your collection through the web app, mobile apps, browser extensions, REST API, and CLI
+
+
+  **Learn More:**
+
+  - [Karakeep Official Website](https://karakeep.app/)
+
+  - [Karakeep GitHub](https://github.com/karakeep-app/karakeep)
+
+  - [Karakeep Documentation](https://docs.karakeep.app/)
+homepage: https://karakeep.app/
+source_code: https://github.com/karakeep-app/karakeep
+ugos:
+  app_id: com.upkforge.docker.karakeep
+  version: 0.1.0
+  port: 14592
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /meili_data
+  label: Meili data
+  user_chosen: false
+  default_host_subpath: meilisearch

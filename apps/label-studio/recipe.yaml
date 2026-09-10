@@ -1,0 +1,18 @@
+id: label-studio
+name: Label Studio
+author: CorrectRoadH
+category: AI
+description: Label Studio is an open source data labeling tool. It lets you label data types like audio, text, images, videos, and time series with a simple and straightforward UI and export to various model formats. It can be used to prepare raw data or improve existing training data to get more accurate ML models.
+homepage: https://labelstud.io/
+source_code: https://github.com/HumanSignal/label-studio
+ugos:
+  app_id: com.upkforge.docker.labelstudio
+  version: 0.1.0
+  port: 3080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /label-studio/data
+  label: Label studio data
+  user_chosen: false
+  default_host_subpath: data

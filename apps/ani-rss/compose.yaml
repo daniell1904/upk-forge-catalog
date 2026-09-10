@@ -1,0 +1,13 @@
+services:
+  ani-rss:
+    image: docker.io/wushuo894/ani-rss:v3.2.30
+    ports:
+      - "7789:7789"
+    volumes:
+      - ./config:/config
+      - ./downloads:/downloads
+    environment:
+      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+    restart: unless-stopped

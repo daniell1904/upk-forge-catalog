@@ -1,0 +1,22 @@
+id: homepage
+name: Homepage
+version: 2.3.0
+author: Homepage
+category: System
+description: A modern, fully static, fast, secure fully proxied, highly customizable application dashboard with integrations for over 100 services and translations into multiple languages. Easily configured via YAML files or through docker label discovery.
+homepage: https://gethomepage.dev
+ugos:
+  app_id: com.upkforge.docker.homepage
+  version: 0.1.0
+  port: 3003
+  open_type: tab
+  tag_type: system
+volumes:
+- container_path: /app/config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /app/public/icons
+  label: Icons
+  user_chosen: false
+  default_host_subpath: icons

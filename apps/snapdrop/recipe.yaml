@@ -1,0 +1,18 @@
+id: snapdrop
+name: snapdrop
+author: self
+category: Productivity
+description: Snapdrop is a Progressive Web App (PWA) that allows you to transfer files between devices in the same network without having to install anything.
+homepage: https://snapdrop.net
+source_code: https://github.com/RobinLinus/snapdrop
+ugos:
+  app_id: com.upkforge.docker.snapdrop
+  version: 0.1.0
+  port: 443
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config

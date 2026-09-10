@@ -1,0 +1,22 @@
+id: kasm
+name: Kasm
+author: Community
+category: Media
+description: The Container Streaming Platform - Streaming containerized apps and desktops to end-users. The Workspaces platform provides enterprise-class orchestration, data loss prevention, and web streaming technology to enable the delivery of containerized workloads to your browser.
+warnings:
+- service is privileged
+ugos:
+  app_id: com.upkforge.docker.kasm
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /opt
+  label: Opt
+  user_chosen: false
+  default_host_subpath: opt
+- container_path: /profiles
+  label: Profiles
+  user_chosen: false
+  default_host_subpath: profiles

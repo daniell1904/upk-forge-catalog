@@ -1,0 +1,25 @@
+id: qwenpaw
+name: QwenPaw
+version: 2.2.0
+author: AgentScope
+category: System
+homepage: https://github.com/agentscope-ai/QwenPaw
+ugos:
+  app_id: com.upkforge.docker.qwenpaw
+  version: 0.1.0
+  port: 8088
+  open_type: tab
+  tag_type: system
+volumes:
+- container_path: /app/working
+  label: Working
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /app/working.secret
+  label: Working.secret
+  user_chosen: false
+  default_host_subpath: secrets
+- container_path: /app/working.backups
+  label: Working.backups
+  user_chosen: false
+  default_host_subpath: backups

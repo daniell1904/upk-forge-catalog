@@ -1,0 +1,18 @@
+id: anaconda3
+name: Anaconda3
+author: LisonEvf
+category: AI
+description: Your machine learning Env work with Jupyter Lab
+homepage: https://www.anaconda.com
+source_code: https://github.com/anaconda/docker-images
+ugos:
+  app_id: com.upkforge.docker.anaconda3
+  version: 0.1.0
+  port: 8888
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /opt/notebooks
+  label: Opt notebooks
+  user_chosen: false
+  default_host_subpath: notebooks

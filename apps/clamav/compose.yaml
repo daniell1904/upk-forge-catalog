@@ -1,0 +1,11 @@
+services:
+  clamav:
+    image: docker.io/clamav/clamav:1.5.4
+    ports:
+      - "3310:3310"
+    volumes:
+      - ./virus_db:/var/lib/clamav
+      - ./config:/etc/clamav
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

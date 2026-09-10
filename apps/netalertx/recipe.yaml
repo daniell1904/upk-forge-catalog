@@ -1,0 +1,23 @@
+id: netalertx
+name: NetAlertX (Legacy)
+author: Community
+category: Networking
+description: 'WIFI / LAN intruder detector. Scans for devices connected to your network and alerts you if new and unknown devices are found. NOTE: This is the legacy version (frozen at 25.11.29). For new installs, use NetAlertX v26 which has improved security and updated volume paths.'
+warnings:
+- service is privileged
+- service uses host networking
+ugos:
+  app_id: com.upkforge.docker.netalertx
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /app/config
+  label: App config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /app/db
+  label: App db
+  user_chosen: false
+  default_host_subpath: db

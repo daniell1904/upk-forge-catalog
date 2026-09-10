@@ -1,0 +1,16 @@
+services:
+  arcane:
+    image: ghcr.io/getarcaneapp/manager:v2.10.2
+    ports:
+      - "3552:3552"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TZ=${TZ}
+      - GIN_MODE=release
+      - ENVIRONMENT=production
+      - PORT=3552
+      - ENCRYPTION_KEY=${wizard_encryption_key}
+      - JWT_SECRET=${wizard_jwt_secret}
+      - APP_URL=${wizard_app_url}
+    restart: unless-stopped

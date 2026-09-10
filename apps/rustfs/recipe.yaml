@@ -1,0 +1,24 @@
+id: rustfs
+name: RustFS
+author: Community
+category: AI
+description: RustFS is a high-performance, distributed object storage system built in Rust. It combines the simplicity of MinIO with the memory safety and raw performance of Rust. It offers full S3 compatibility, is completely open-source under Apache 2.0 license, and is optimized for data lakes, AI, and big data workloads.
+ugos:
+  app_id: com.upkforge.docker.rustfs
+  version: 0.1.0
+  port: 9000
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: RUSTFS_SECRET_KEY
+  label: RUSTFS SECRET KEY
+  type: password
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /logs
+  label: Logs
+  user_chosen: false
+  default_host_subpath: logs

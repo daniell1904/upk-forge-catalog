@@ -1,0 +1,12 @@
+services:
+  filedrop:
+    image: noecl/filedrop:1.0.1
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    volumes:
+      - ./data:/var/file_drop_files
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ

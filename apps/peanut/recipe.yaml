@@ -1,0 +1,42 @@
+id: peanut
+name: PeaNUT
+author: brandawg93
+category: Home
+description: >-
+  PeaNUT is a web-based UPS monitoring system specifically designed for monitoring Uninterruptible Power Supplies (UPS). It provides a user-friendly interface for monitoring UPS status, battery life, and power outage notifications to ensure your systems are always protected.
+
+
+  **Key Features:**
+
+  - Real-time UPS status monitoring and control
+
+  - Battery life and charge level monitoring
+
+  - Automatic power outage notifications via email/webhook
+
+  - Historical data logging and reporting
+
+  - Support for various UPS manufacturers and models
+
+  - Mobile-friendly responsive web interface for remote access
+
+  - Configurable warning thresholds and alerts
+
+  - Docker-based deployment for easy installation
+
+
+  **Learn More:**
+
+  - [PeaNUT GitHub Repository](https://github.com/brandawg93/peanut)
+source_code: https://github.com/brandawg93/peanut
+ugos:
+  app_id: com.upkforge.docker.peanut
+  version: 0.1.0
+  port: 8084
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config

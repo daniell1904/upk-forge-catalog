@@ -1,0 +1,33 @@
+id: lazylibrarian
+name: Lazylibrarian
+author: Team
+category: Media
+description: Lazylibrarian is a program to follow authors and grab metadata for all your digital reading needs. It uses a combination of Goodreads Librarything and optionally GoogleBooks as sources for author info and book info. This container is based on the DobyTang fork.
+homepage: https://lazylibrarian.gitlab.io/
+source_code: https://github.com/lazylibrarian/LazyLibrarian
+ugos:
+  app_id: com.upkforge.docker.lazylibrarian
+  version: 0.1.0
+  port: 5299
+  open_type: tab
+  tag_type: media
+parameters:
+- key: VOL_1
+  label: Downloads folder
+  help: Folder on the NAS for Lazylibrarian's downloads. It is mounted into the container at /downloads; Lazylibrarian has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Books folder
+  help: Folder on the NAS for Lazylibrarian's books. It is mounted into the container at /books; Lazylibrarian has full read and write access to it.
+  type: path
+volumes:
+- container_path: /downloads
+  label: Downloads
+  default_host_subpath: lazylibrarian-downloads
+- container_path: /books
+  label: Books
+  default_host_subpath: lazylibrarian-books
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config

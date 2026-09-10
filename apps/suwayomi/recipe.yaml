@@ -1,0 +1,17 @@
+id: suwayomi
+name: Suwayomi
+version: 2.3.2243
+author: Suwayomi
+category: Media
+homepage: https://github.com/Suwayomi/Suwayomi-Server
+ugos:
+  app_id: com.upkforge.docker.suwayomi
+  version: 0.1.0
+  port: 4567
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /home/suwayomi/.local/share/Tachidesk
+  label: Tachidesk
+  user_chosen: false
+  default_host_subpath: data

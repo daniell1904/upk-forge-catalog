@@ -1,0 +1,12 @@
+services:
+  app:
+    image: couchdb:3.5.0@sha256:1c0a30a54535377bc9ae23f42efb1ca4e92abe796f78ec98b768ac1d5874cc1b
+    restart: unless-stopped
+    ports:
+      - 5984:5984
+    volumes:
+      - ./data/couchdb:/opt/couchdb/data
+      - ./data/local.ini:/opt/couchdb/etc/local.ini
+    environment:
+      - COUCHDB_USER=app
+      - COUCHDB_PASSWORD=app

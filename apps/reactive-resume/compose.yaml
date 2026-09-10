@@ -1,0 +1,39 @@
+services:
+  reactive-resume:
+    image: docker.io/amruthpillai/reactive-resume:v5.3.0
+    depends_on:
+      - reactive-resume-db
+      - reactive-resume-chrome
+    ports:
+      - "3200:3000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TZ=${TZ}
+      - PUBLIC_URL=http://localhost:3200
+      - SECRET_KEY=${SECRET_KEY}
+      - DATABASE_URL=postgresql://reactive_resume:password@reactive-resume-db:5432/reactive_resume
+      - CHROME_URL=http://reactive-resume-chrome:3000
+    restart: unless-stopped
+
+  reactive-resume-db:
+    image: docker.io/postgres:16
+    environment:
+      - POSTGRES_USER=reactive_resume
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=reactive_resume
+      - TZ=${TZ}
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  reactive-resume-chrome:
+    image: ghcr.io/browserless/chromium:latest
+    environment:
+      - TZ=${TZ}
+      - TOKEN=${TOKEN}
+      - CONCURRENT=2
+      - TIMEOUT=60000
+    volumes:
+      - ./chrome:/data
+    restart: unless-stopped

@@ -1,0 +1,33 @@
+id: radarr
+name: Radarr
+author: Team
+category: Media
+description: Radarr is a movie collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new movies and will interface with clients and indexers to grab, sort, and rename them. It can also be configured to automatically upgrade the quality of existing files in the library when a better quality format becomes available. Note that only one type of a given movie is supported. If you want both an 4k version and 1080p version of a given movie you will need multiple instances.
+homepage: https://radarr.video
+source_code: https://github.com/Radarr/Radarr
+ugos:
+  app_id: com.upkforge.docker.radarr
+  version: 0.1.0
+  port: 7878
+  open_type: tab
+  tag_type: media
+parameters:
+- key: VOL_1
+  label: Movies folder
+  help: Folder on the NAS for Radarr's movies. It is mounted into the container at /movies; Radarr has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Downloads folder
+  help: Folder on the NAS for Radarr's downloads. It is mounted into the container at /downloads; Radarr has full read and write access to it.
+  type: path
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /movies
+  label: Movies
+  default_host_subpath: radarr-movies
+- container_path: /downloads
+  label: Downloads
+  default_host_subpath: radarr-downloads

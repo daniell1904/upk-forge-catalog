@@ -1,0 +1,13 @@
+id: adminer
+name: Adminer
+author: Tim Düsterhus
+category: Developer
+description: Adminer (formerly phpMinAdmin) is a full-featured database management tool written in PHP. Conversely to phpMyAdmin, it consist of a single file ready to deploy to the target server. Adminer is available for MySQL, PostgreSQL, SQLite, MS SQL, Oracle, Firebird, SimpleDB, Elasticsearch and MongoDB.
+homepage: https://www.adminer.org
+source_code: https://github.com/vrana/adminer
+ugos:
+  app_id: com.upkforge.docker.adminer
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: devtool

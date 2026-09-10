@@ -1,0 +1,18 @@
+id: stremio
+name: Stremio
+author: joaobosconff
+category: Media
+description: Stremio offers a secure, modern and seamless entertainment experience. With its easy-to-use interface and diverse content library, including 4K HDR support, users can enjoy their favorite movies and TV shows across all their devices. And with its commitment to security, Stremio is the ultimate choice for a worry-free, high-quality streaming experience.
+homepage: https://www.stremio.com
+source_code: https://github.com/tsaridas/stremio-docker
+ugos:
+  app_id: com.upkforge.docker.stremio
+  version: 0.1.0
+  port: 11470
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /root/.stremio-server
+  label: Root .stremio server
+  user_chosen: false
+  default_host_subpath: config

@@ -1,0 +1,37 @@
+id: owncloud
+name: ownCloud
+author: Community
+category: Others
+description: ownCloud offers file sharing and collaboration trusted by 200+ million users worldwide regardless of device or location.
+ugos:
+  app_id: com.upkforge.docker.owncloud
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: OWNCLOUD_DB_PASSWORD
+  label: OWNCLOUD DB PASSWORD
+  type: password
+- key: OWNCLOUD_ADMIN_PASSWORD
+  label: OWNCLOUD ADMIN PASSWORD
+  type: password
+- key: MYSQL_ROOT_PASSWORD
+  label: MYSQL ROOT PASSWORD
+  type: password
+- key: MYSQL_PASSWORD
+  label: MYSQL PASSWORD
+  type: password
+volumes:
+- container_path: /mnt/data
+  label: Mnt data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: mysql
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: redis

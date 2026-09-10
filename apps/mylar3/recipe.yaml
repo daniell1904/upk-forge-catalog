@@ -1,0 +1,32 @@
+id: mylar3
+name: Mylar3
+author: Team
+category: Media
+description: Mylar is an automated Comic Book (cbr/cbz) downloader program for use with NZB and torrents. Mylar allows you to create a watchlist of series that it monitors for various things (new issues, updated information, etc). It will grab, sort, and rename downloaded issues. It will also allow you to monitor weekly pull-lists for items belonging to said watchlisted series to download, as well as being able to monitor and maintain story-arcs.
+source_code: https://github.com/mylar3/mylar3
+ugos:
+  app_id: com.upkforge.docker.mylar3
+  version: 0.1.0
+  port: 8090
+  open_type: tab
+  tag_type: media
+parameters:
+- key: VOL_1
+  label: Comics folder
+  help: Folder on the NAS for Mylar3's comics. It is mounted into the container at /comics; Mylar3 has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Downloads folder
+  help: Folder on the NAS for Mylar3's downloads. It is mounted into the container at /downloads; Mylar3 has full read and write access to it.
+  type: path
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /comics
+  label: Comics
+  default_host_subpath: mylar3-comics
+- container_path: /downloads
+  label: Downloads
+  default_host_subpath: mylar3-downloads

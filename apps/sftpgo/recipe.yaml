@@ -1,0 +1,20 @@
+id: sftpgo
+name: SFTPGO
+author: Community
+category: Others
+description: Full-featured and highly configurable SFTP, HTTP/S, FTP/S and WebDAV server - S3, Google Cloud Storage, Azure Blob
+ugos:
+  app_id: com.upkforge.docker.sftpgo
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /srv/sftpgo
+  label: Srv sftpgo
+  user_chosen: false
+  default_host_subpath: srv
+- container_path: /var/lib/sftpgo
+  label: Var lib sftpgo
+  user_chosen: false
+  default_host_subpath: data

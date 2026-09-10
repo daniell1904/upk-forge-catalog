@@ -1,0 +1,34 @@
+id: handbrake
+name: HandBrake
+version: 26.08.2
+author: jlesage
+category: Media
+description: Handbrake is a Docker-based application for video transcoding and compression, offering powerful and flexible multimedia processing across multiple platforms.
+homepage: https://github.com/jlesage/docker-handbrake
+ugos:
+  app_id: com.upkforge.docker.handbrake
+  version: 0.1.0
+  port: 5800
+  open_type: tab
+  tag_type: media
+parameters:
+- key: STORAGE_PATH
+  label: Storage folder
+  help: Folder on the NAS for HandBrake's storage. It is mounted into the container at /storage; HandBrake reads from it.
+  type: path
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /storage
+  label: Storage
+  read_only: true
+- container_path: /watch
+  label: Watch
+  user_chosen: false
+  default_host_subpath: watch
+- container_path: /output
+  label: Output
+  user_chosen: false
+  default_host_subpath: output

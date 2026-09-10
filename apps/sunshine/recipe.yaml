@@ -1,0 +1,17 @@
+id: sunshine
+name: Sunshine
+version: 2026.906.222525
+author: LizardByte
+category: Media
+homepage: https://docs.lizardbyte.dev/projects/sunshine/
+ugos:
+  app_id: com.upkforge.docker.sunshine
+  version: 0.1.0
+  port: 47990
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config

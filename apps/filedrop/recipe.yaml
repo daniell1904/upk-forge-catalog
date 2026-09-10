@@ -1,0 +1,16 @@
+id: filedrop
+name: FileDrop
+author: Noé Favier
+category: Productivity
+description: FileDrop is a self-hosted file sharing service that allows you to easily share files with family, friends, or colleagues. It's been designed to be easy to use and light on resources.
+ugos:
+  app_id: com.upkforge.docker.filedrop
+  version: 0.1.0
+  port: 8000
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /var/file_drop_files
+  label: Var file drop files
+  user_chosen: false
+  default_host_subpath: data

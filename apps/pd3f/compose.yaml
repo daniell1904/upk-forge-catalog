@@ -1,0 +1,28 @@
+services:
+  web:
+    image: pd3f/pd3f:latest@sha256:30a5c6c4c108c05799718d296630fb2d52d7053b2fba75cb0d89ff43b0eaa823
+    restart: unless-stopped
+    ports:
+      - 1616:5000
+    volumes:
+      - ./uploads:/uploads/
+  parsr:
+    image: axarev/parsr:v1.2.2@sha256:9b2b844474cd750aa026cc4bcbba55fb807f93cead9f0bec47f8ac1dc9e33280
+    restart: unless-stopped
+  redis:
+    image: redis:6.2.20-alpine@sha256:2185e741f4c1e7b0ea9ca1e163a3767c4270a73086b6bbea2049a7203212fb7f
+    restart: unless-stopped
+  worker:
+    image: pd3f/pd3f:latest@sha256:30a5c6c4c108c05799718d296630fb2d52d7053b2fba75cb0d89ff43b0eaa823
+    restart: unless-stopped
+    volumes:
+      - ./cache:/root/.cache/
+      - ./to-ocr:/to-ocr/
+      - ./uploads:/uploads/
+    environment:
+      - KEEP_RESULTS_HOURS=24
+  ocr_worker:
+    image: pd3f/pd3f-ocr:latest@sha256:7bd3d4c8ba1816932e1f631d207056eb1f421f53f205b305372af8340db16a1b
+    restart: unless-stopped
+    volumes:
+      - ./to-ocr:/to-ocr/

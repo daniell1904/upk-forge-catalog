@@ -1,0 +1,15 @@
+services:
+  gitea-mirror:
+    image: ghcr.io/raylabshq/gitea-mirror:v3.15.10@sha256:2d97c98fd6f32915bbcc247373b9b39606d337cb3fb576980673d842dcaea291
+    restart: unless-stopped
+    ports:
+      - 4321:4321
+    volumes:
+      - ./data:/app/data
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=file:data/gitea-mirror.db
+      - HOST=0.0.0.0
+      - PORT=4321
+      - BETTER_AUTH_URL=http://0.0.0.0:4321
+      - BETTER_AUTH_SECRET=your-secret-key-change-this-in-production

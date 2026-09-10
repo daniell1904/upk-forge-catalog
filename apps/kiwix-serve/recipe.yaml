@@ -1,0 +1,16 @@
+id: kiwix-serve
+name: Kiwix Server
+author: Community
+category: Others
+description: Kiwix Server is a web server for hosting .zim files
+ugos:
+  app_id: com.upkforge.docker.kiwixserve
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: zim

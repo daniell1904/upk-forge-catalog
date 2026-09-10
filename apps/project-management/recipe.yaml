@@ -1,0 +1,26 @@
+id: project-management
+name: Project Management
+author: Community
+category: Developer
+description: An open source Project management tool based on Laravel and Filament
+ugos:
+  app_id: com.upkforge.docker.projectmanagement
+  version: 0.1.0
+  port: 8000
+  open_type: tab
+  tag_type: devtool
+parameters:
+- key: DB_PASSWORD
+  label: DB PASSWORD
+  type: password
+- key: MYSQL_PASSWORD
+  label: MYSQL PASSWORD
+  type: password
+- key: MYSQL_ROOT_PASSWORD
+  label: MYSQL ROOT PASSWORD
+  type: password
+volumes:
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: mysql

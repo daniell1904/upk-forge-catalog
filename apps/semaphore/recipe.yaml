@@ -1,0 +1,24 @@
+id: semaphore
+name: Ansible Semaphore
+author: Community
+category: Others
+description: Ansible Semaphore is a modern UI for Ansible. It lets you easily run Ansible playbooks, get notifications about fails, control access to deployment system.
+ugos:
+  app_id: com.upkforge.docker.semaphore
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /etc/semaphore
+  label: Etc semaphore
+  user_chosen: false
+  default_host_subpath: home
+- container_path: /var/lib/semaphore
+  label: Var lib semaphore
+  user_chosen: false
+  default_host_subpath: lib
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: mysql

@@ -1,0 +1,15 @@
+services:
+  webdav:
+    image: ugeek/webdav:amd64
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 5005:80
+    volumes:
+      - ./webdav-media:/media
+    environment:
+      - GID=1000
+      - PASSWORD=app
+      - TZ=Europe/Madrid
+      - UDI=1000
+      - USERNAME=app

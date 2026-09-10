@@ -1,0 +1,16 @@
+id: write-freely
+name: Write Freely
+author: Community
+category: Social
+description: WriteFreely is a clean, minimalist publishing platform made for writers. Start a blog, share knowledge within your organization, or build a community around the shared act of writing.
+ugos:
+  app_id: com.upkforge.docker.writefreely
+  version: 0.1.0
+  port: 70
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /mnt/config
+  label: Mnt config
+  user_chosen: false
+  default_host_subpath: data/config

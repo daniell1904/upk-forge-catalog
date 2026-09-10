@@ -1,0 +1,15 @@
+services:
+  postgresql:
+    image: postgres:17.4
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=$TZ
+      - POSTGRES_USER=app
+      - POSTGRES_PASSWORD=app
+      - POSTGRES_DB=app

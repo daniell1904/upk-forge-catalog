@@ -1,0 +1,17 @@
+id: fileview
+name: Fileview
+version: 1.5.2
+author: BaseMetas
+category: Content
+homepage: https://github.com/basemetas/fileview
+ugos:
+  app_id: com.upkforge.docker.fileview
+  version: 0.1.0
+  port: 9000
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

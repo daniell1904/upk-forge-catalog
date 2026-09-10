@@ -1,0 +1,10 @@
+services:
+  gopeed:
+    image: liwei2633/gopeed:v1.9.3
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 9999:9999
+    volumes:
+      - ./data:/app/storage
+      - ${VOL_1}:/app/Downloads

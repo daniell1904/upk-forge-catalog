@@ -1,0 +1,14 @@
+id: holoplay
+name: HoloPlay
+author: Stéphane Richin
+category: Media
+description: HoloPlay is a web based self-hosted using Invidious API for listening Youtube audio source.
+source_code: https://github.com/stephane-r/HoloPlay
+warnings:
+- service is privileged
+ugos:
+  app_id: com.upkforge.docker.holoplay
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: media

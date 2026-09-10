@@ -1,0 +1,55 @@
+id: coolify
+name: Coolify
+author: Community
+category: Media
+description: Coolify is a self-hosted web application that allows you to manage your servers, applications, and services. It provides a simple and intuitive interface for managing your infrastructure, making it easy to deploy and manage your applications. With Coolify, you can easily manage your servers, applications, and services, providing a streamlined experience for managing your infrastructure.
+ugos:
+  app_id: com.upkforge.docker.coolify
+  version: 0.1.0
+  port: 8000
+  open_type: tab
+  tag_type: media
+parameters:
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
+- key: REDIS_PASSWORD
+  label: REDIS PASSWORD
+  type: password
+volumes:
+- container_path: /var/www/html/storage/app/ssh
+  label: Var www html storage app ssh
+  user_chosen: false
+  default_host_subpath: ssh
+- container_path: /var/www/html/storage/app/applications
+  label: Var www html storage app applications
+  user_chosen: false
+  default_host_subpath: applications
+- container_path: /var/www/html/storage/app/databases
+  label: Var www html storage app databases
+  user_chosen: false
+  default_host_subpath: databases
+- container_path: /var/www/html/storage/app/services
+  label: Var www html storage app services
+  user_chosen: false
+  default_host_subpath: services
+- container_path: /var/www/html/storage/app/backups
+  label: Var www html storage app backups
+  user_chosen: false
+  default_host_subpath: backups
+- container_path: /var/www/html/storage/app/webhooks-during-maintenance
+  label: Var www html storage app webhooks during maintenance
+  user_chosen: false
+  default_host_subpath: webhooks-during-maintenance
+- container_path: /var/www/html/storage/logs
+  label: Var www html storage logs
+  user_chosen: false
+  default_host_subpath: logs
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: pgdata
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: redis

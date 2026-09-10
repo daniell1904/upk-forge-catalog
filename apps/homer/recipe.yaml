@@ -1,0 +1,16 @@
+id: homer
+name: Homer
+author: Community
+category: Others
+description: A dead simple static HOMepage for your servER to keep your services on hand, from a simple yaml configuration file.
+ugos:
+  app_id: com.upkforge.docker.homer
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /www/assets
+  label: Www assets
+  user_chosen: false
+  default_host_subpath: assets

@@ -1,0 +1,18 @@
+id: watchyourlan
+name: WatchYourLAN
+author: Community
+category: Networking
+description: Lightweight network IP scanner. Can be used to notify about new hosts and monitor host online/offline history
+warnings:
+- service uses host networking
+ugos:
+  app_id: com.upkforge.docker.watchyourlan
+  version: 0.1.0
+  port: 8840
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /data/WatchYourLAN
+  label: Data WatchYourLAN
+  user_chosen: false
+  default_host_subpath: data

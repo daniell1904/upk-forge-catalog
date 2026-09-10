@@ -1,0 +1,39 @@
+id: odysseus
+name: Odysseus
+author: Community
+category: AI
+description: Odysseus is a self-hosted AI workspace. It bundles chat, web search via SearXNG, and a ChromaDB vector store so you can run your own private AI environment with the LLM provider of your choice.
+ugos:
+  app_id: com.upkforge.docker.odysseus
+  version: 0.1.0
+  port: 7000
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: ODYSSEUS_ADMIN_PASSWORD
+  label: ODYSSEUS ADMIN PASSWORD
+  type: password
+- key: SEARXNG_SECRET
+  label: SEARXNG SECRET
+  type: password
+volumes:
+- container_path: /app/data
+  label: App data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /app/logs
+  label: App logs
+  user_chosen: false
+  default_host_subpath: logs
+- container_path: /chroma/chroma
+  label: Chroma chroma
+  user_chosen: false
+  default_host_subpath: chromadb
+- container_path: /etc/searxng
+  label: Etc searxng
+  user_chosen: false
+  default_host_subpath: searxng
+- container_path: /var/cache/ntfy
+  label: Var cache ntfy
+  user_chosen: false
+  default_host_subpath: ntfy

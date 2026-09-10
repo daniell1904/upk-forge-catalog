@@ -1,0 +1,11 @@
+id: mumble-server
+name: Mumble Server
+author: Community
+category: Social
+description: Mumble is a free, open source, low latency, high quality voice chat application.
+ugos:
+  app_id: com.upkforge.docker.mumbleserver
+  version: 0.1.0
+  port: 64738
+  open_type: tab
+  tag_type: utility

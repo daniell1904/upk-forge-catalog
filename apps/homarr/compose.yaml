@@ -1,0 +1,12 @@
+services:
+  homarr:
+    image: ghcr.io/homarr-labs/homarr:v1.77.0
+    ports:
+      - "7575:7575"
+    volumes:
+      - ./config:/appdata
+      - ./icons:/icons
+    environment:
+      - TZ=${TZ}
+      - SECRET_ENCRYPTION_KEY=${SECRET_ENCRYPTION_KEY}
+    restart: unless-stopped

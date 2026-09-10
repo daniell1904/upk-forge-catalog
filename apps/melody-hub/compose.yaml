@@ -1,0 +1,15 @@
+services:
+  melodyhub:
+    image: docker.io/geelonn/melodyhub:v1.0.0
+    ports:
+      - "3006:3000"
+    volumes:
+      - ./data:/app/data
+      - ./music:/app/music
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DATA_DIR=/app/data
+      - MUSIC_DIR=/app/music
+      - TZ=${TZ}
+    restart: unless-stopped

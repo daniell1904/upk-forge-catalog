@@ -1,0 +1,16 @@
+id: mind
+name: MIND
+author: Community
+category: Others
+description: A simple self hosted reminder application that can send push notifications to your device. Set the reminder and forget about it!
+ugos:
+  app_id: com.upkforge.docker.mind
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /app/db
+  label: App db
+  user_chosen: false
+  default_host_subpath: db

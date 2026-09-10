@@ -1,0 +1,16 @@
+id: dockpeek
+name: Dockpeek
+author: Community
+category: Developer
+description: A lightweight, self-hosted Docker dashboard that provides quick access to all running containers and their exposed ports with one-click access to web apps.
+ugos:
+  app_id: com.upkforge.docker.dockpeek
+  version: 0.1.0
+  port: 3420
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /var/run/docker.sock
+  label: Var run docker.sock
+  user_chosen: false
+  default_host_subpath: dockpeek-var-run-docker-sock

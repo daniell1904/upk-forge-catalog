@@ -1,0 +1,34 @@
+id: crafty
+name: Crafty
+author: Chàra Rose
+category: Media
+description: Crafty is an open source Minecraft control panel built using Tornado and AdminLTE, featuring server scheduling, a interactive console and the ability to run almost any type of Minecraft server
+homepage: https://craftycontrol.com
+source_code: https://gitlab.com/crafty-controller/crafty-4
+ugos:
+  app_id: com.upkforge.docker.crafty
+  version: 0.1.0
+  port: 8111
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /crafty/backups
+  label: Crafty backups
+  user_chosen: false
+  default_host_subpath: backups
+- container_path: /crafty/logs
+  label: Crafty logs
+  user_chosen: false
+  default_host_subpath: logs
+- container_path: /crafty/servers
+  label: Crafty servers
+  user_chosen: false
+  default_host_subpath: servers
+- container_path: /crafty/app/config
+  label: Crafty app config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /crafty/import
+  label: Crafty import
+  user_chosen: false
+  default_host_subpath: import

@@ -1,0 +1,22 @@
+id: matterbridge
+name: Matterbridge
+author: Community
+category: Home
+description: Matterbridge is a Matter plugin manager that allows you to have all your Matter devices up and running in a couple of minutes without having to deal with the pairing process for each individual device. It creates a device that can be paired with any ecosystem, such as Apple Home, Google Home, Amazon Alexa, Home Assistant, or any other platform supporting Matter.
+warnings:
+- service uses host networking
+ugos:
+  app_id: com.upkforge.docker.matterbridge
+  version: 0.1.0
+  port: 8283
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /root/Matterbridge
+  label: Root Matterbridge
+  user_chosen: false
+  default_host_subpath: Matterbridge
+- container_path: /root/.matterbridge
+  label: Root .matterbridge
+  user_chosen: false
+  default_host_subpath: .matterbridge

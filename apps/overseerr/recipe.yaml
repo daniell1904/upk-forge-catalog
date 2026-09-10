@@ -1,0 +1,18 @@
+id: overseerr
+name: Overseerr
+author: WisdomSky
+category: Media
+description: Overseerr is a free and open source software application for managing requests for your media library. It integrates with your existing services, such as Sonarr, Radarr, and Plex!
+homepage: https://overseerr.dev
+source_code: https://github.com/sct/overseerr
+ugos:
+  app_id: com.upkforge.docker.overseerr
+  version: 0.1.0
+  port: 5055
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config

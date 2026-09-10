@@ -1,0 +1,12 @@
+services:
+  threadfin:
+    image: fyb3roptik/threadfin:1.2.37
+    restart: unless-stopped
+    ports:
+      - 34400:34400
+    volumes:
+      - ./config:/home/threadfin/conf/data
+      - ./backup:/home/threadfin/conf/backup
+    environment:
+      - THREADFIN_BRANCH=main
+      - THREADFIN_DEBUG=0

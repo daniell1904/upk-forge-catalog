@@ -1,0 +1,26 @@
+id: podfetch
+name: PodFetch
+author: SamTV12345
+category: Media
+description: >-
+  PodFetch is a sleek and efficient self-hosted podcast manager written in Rust. It automatically downloads new episodes of your favorite podcasts on a configurable interval and lets you listen to them from a clean, fast web UI on any device.
+
+
+  Its standout feature is a GPodder-compatible sync API: keep using mobile podcast apps like AntennaPod while subscriptions, episode actions, and playback positions stay in sync with your server. PodFetch also supports multi-user setups with invites and roles, playlists, favorites, OPML import and export, podcast search via iTunes or Podcast Index, and optional OIDC or basic authentication.
+homepage: https://samtv12345.github.io/PodFetch/
+source_code: https://github.com/SamTV12345/PodFetch
+ugos:
+  app_id: com.upkforge.docker.podfetch
+  version: 0.1.0
+  port: 8000
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /app/podcasts
+  label: App podcasts
+  user_chosen: false
+  default_host_subpath: podcasts
+- container_path: /app/db
+  label: App db
+  user_chosen: false
+  default_host_subpath: db

@@ -1,0 +1,63 @@
+id: maybe
+name: Maybe
+author: maybe-finance
+category: Finance
+description: >-
+  Maybe is a personal finance management application designed to help you track your expenses, income, and investments in one place. With an intuitive interface and powerful features, Maybe makes it easy to understand your financial situation and make informed decisions about your money.
+
+
+  **Key Features:**
+
+  - **Expense Tracking**: Easily log and categorize your expenses
+
+  - **Income Management**: Track multiple income sources
+
+  - **Investment Monitoring**: Keep an eye on your investments and their performance
+
+  - **Budget Planning**: Create and maintain budgets to control your spending
+
+  - **Financial Reports**: Generate detailed reports to understand your financial habits
+
+  - **AI-Powered Insights**: Get personalized financial advice using AI technology
+
+
+  **Use Cases:**
+
+  - Personal budget management
+
+  - Expense tracking and categorization
+
+  - Investment portfolio monitoring
+
+  - Financial goal setting and tracking
+
+  - Cash flow analysis
+
+
+  **Learn More:**
+
+  - [Maybe GitHub Repository](https://github.com/maybe-finance/maybe)
+source_code: https://github.com/maybe-finance/maybe
+ugos:
+  app_id: com.upkforge.docker.maybe
+  version: 0.1.0
+  port: 23000
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: OPENAI_ACCESS_TOKEN
+  label: OPENAI ACCESS TOKEN
+  type: password
+volumes:
+- container_path: /rails/storage
+  label: Rails storage
+  user_chosen: false
+  default_host_subpath: app/storage
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: pgdata
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: redis/data

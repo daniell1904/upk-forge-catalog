@@ -1,0 +1,11 @@
+id: phpmyadmin
+name: phpMyAdmin
+author: Community
+category: Others
+description: phpMyAdmin - A web interface for MySQL and MariaDB.
+ugos:
+  app_id: com.upkforge.docker.phpmyadmin
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility

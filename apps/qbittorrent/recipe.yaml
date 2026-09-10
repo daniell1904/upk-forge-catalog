@@ -1,0 +1,22 @@
+id: qbittorrent
+name: qBittorrent
+author: Team
+category: Media
+description: '**Elevate Your Home Media Experience**. qBittorrent transforms your home media setup with a polished interface reminiscent of µTorrent, minus the ads. Unlike traditional download tools, it offers a streamlined, efficient, and ad-free experience. This makes it a perfect fit for those seeking a hassle-free way to manage and enjoy their media collections at home. **Feature-Rich and User-Friendly**. With qBittorrent, you gain access to a well-integrated and extensible search engine, allowing simultaneous searches across multiple torrent sites, and category-specific searches for books, music, and software. Its support for RSS feeds with advanced filters, magnet links, encrypted connections, and more, ensures you have complete control over your downloads. Available on all major platforms and in around 70 languages, qBittorrent is both versatile and accessible. **Seamless Integration with Private Clouds like **. Deploying qBittorrent on private cloud devices such as offers unparalleled convenience. Enjoy virtually unlimited storage, enhanced privacy for your data, and local network speeds that make downloading and streaming effortless. This setup ensures that your media library is always at your fingertips, securely and swiftly.'
+homepage: https://www.qbittorrent.org
+source_code: https://github.com/qbittorrent/qBittorrent
+ugos:
+  app_id: com.upkforge.docker.qbittorrent
+  version: 0.1.0
+  port: 8181
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /DATA
+  label: DATA
+  user_chosen: false
+  default_host_subpath: qbittorrent-data

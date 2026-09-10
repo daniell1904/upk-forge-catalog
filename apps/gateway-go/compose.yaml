@@ -1,0 +1,9 @@
+services:
+  gateway-go:
+    image: openiothub/gateway-go:v2.0.12
+    restart: unless-stopped
+    network_mode: host
+    ports:
+      - 34323:34323
+    volumes:
+      - ./config:/root

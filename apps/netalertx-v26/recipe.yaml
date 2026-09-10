@@ -1,0 +1,23 @@
+id: netalertx-v26
+name: NetAlertX v26
+author: Community
+category: Networking
+description: 'WIFI / LAN intruder detector. Scans for devices connected to your network and alerts you if new and unknown devices are found. WARNING: v26 has breaking changes from previous versions — volume paths changed from /app/config and /app/db to /data/config and /data/db. Existing data will NOT be migrated automatically. See the migration docs before upgrading.'
+warnings:
+- service uses host networking
+- 'service adds capabilities: NET_RAW, NET_ADMIN, NET_BIND_SERVICE, CHOWN, SETUID, SETGID'
+ugos:
+  app_id: com.upkforge.docker.netalertxv26
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /data/config
+  label: Data config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /data/db
+  label: Data db
+  user_chosen: false
+  default_host_subpath: db

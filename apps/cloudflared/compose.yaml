@@ -1,0 +1,10 @@
+services:
+  cloudflared:
+    image: docker.io/wisdomsky/cloudflared-web:2026.9.0
+    network_mode: host
+    volumes:
+      - ./config:/config
+      - ./cloudflared:/root/.cloudflared
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

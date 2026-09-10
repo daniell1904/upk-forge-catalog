@@ -1,0 +1,16 @@
+id: otel-lgtm
+name: OTEL LGTM
+author: Konrad Botor (Forinil)
+category: Developer
+description: An OpenTelemetry Backend in a Docker Image.
+ugos:
+  app_id: com.upkforge.docker.otellgtm
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

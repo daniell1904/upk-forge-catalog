@@ -1,0 +1,18 @@
+id: dashdot
+name: Dashdot
+author: Community
+category: Others
+description: About A simple, modern server dashboard, primarily used by smaller private servers.
+warnings:
+- service is privileged
+ugos:
+  app_id: com.upkforge.docker.dashdot
+  version: 0.1.0
+  port: 3001
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /mnt/host
+  label: Mnt host
+  user_chosen: false
+  default_host_subpath: app-mnt-host

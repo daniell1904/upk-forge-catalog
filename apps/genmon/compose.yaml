@@ -1,0 +1,14 @@
+services:
+  genmon:
+    image: app/genmon:2.0.01@sha256:0cc8f42c7859c64b428e0b5eca908c7e67f02880b34520b3b1985558998a897a
+    restart: unless-stopped
+    ports:
+      - 20022:22
+      - 38443:443
+      - 8000:8000
+    volumes:
+      - ./git/genmon:/git/genmon
+      - ./etc/genmon:/etc/genmon
+      - ./var/log:/var/log
+    environment:
+      - TZ=America/Chicago

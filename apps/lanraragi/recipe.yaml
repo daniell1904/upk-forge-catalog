@@ -1,0 +1,25 @@
+id: lanraragi
+name: LANraragi
+version: 0.9.81
+author: Difegue
+category: Content
+homepage: https://github.com/Difegue/LANraragi
+ugos:
+  app_id: com.upkforge.docker.lanraragi
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /home/koyomi/lanraragi/content
+  label: Content
+  user_chosen: false
+  default_host_subpath: content
+- container_path: /home/koyomi/lanraragi/thumb
+  label: Thumb
+  user_chosen: false
+  default_host_subpath: thumb
+- container_path: /home/koyomi/lanraragi/database
+  label: Database
+  user_chosen: false
+  default_host_subpath: database

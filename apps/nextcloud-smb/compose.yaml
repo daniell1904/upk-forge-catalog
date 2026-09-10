@@ -1,0 +1,39 @@
+services:
+  nextcloud-smb:
+    image: app/app-nextcloud-with-smbclient:34.0.2@sha256:a8bbd030af0f21205a2bc4d3f9a71820f8565f4555ee26af950beefa73c0553f
+    restart: unless-stopped
+    ports:
+      - 7580:80
+    volumes:
+      - ./html:/var/www/html
+    environment:
+      - POSTGRES_HOST=nextcloud-smb-db
+      - REDIS_HOST=nextcloud-smb-redis
+      - POSTGRES_PASSWORD=app
+      - POSTGRES_USER=app
+      - POSTGRES_DB=nextcloud
+      - NEXTCLOUD_ADMIN_USER=app
+      - NEXTCLOUD_ADMIN_PASSWORD=app
+      - TRUSTED_PROXIES=
+      - OVERWRITEPROTOCOL=http
+      - PHP_MEMORY_LIMIT=1024M
+      - PHP_UPLOAD_LIMIT=1024M
+  nextcloud-smb-db:
+    image: postgres:14.2@sha256:2c954f8c5d03da58f8b82645b783b56c1135df17e650b186b296fa1bb71f9cfd
+    restart: unless-stopped
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=app
+      - POSTGRES_USER=app
+      - POSTGRES_DB=nextcloud
+  nextcloud-smb-redis:
+    image: redis:6.2.20@sha256:d06ff6ec778c7f2a5c0dfaf58141d598efaa50a89d0e966faedfdf122cef451b
+    restart: unless-stopped
+    volumes:
+      - ./redis:/data
+  nextcloud-smb-cron:
+    image: app/app-nextcloud-with-smbclient:34.0.2@sha256:a8bbd030af0f21205a2bc4d3f9a71820f8565f4555ee26af950beefa73c0553f
+    restart: unless-stopped
+    volumes:
+      - ./html:/var/www/html

@@ -1,0 +1,16 @@
+id: chrome
+name: chrome
+author: Community
+category: Media
+description: This Image contains a browser-accessible version of chrome.
+ugos:
+  app_id: com.upkforge.docker.chrome
+  version: 0.1.0
+  port: 6902
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /home/kasm-user/Downloads
+  label: Home kasm user Downloads
+  user_chosen: false
+  default_host_subpath: Downloads

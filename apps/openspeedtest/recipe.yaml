@@ -1,0 +1,12 @@
+id: openspeedtest
+name: OpenSpeedTest
+author: OpenSpeedTest
+category: Networking
+description: An application for launching HTML5 Network Speed Test Server. You can test download & upload speed from any device within your network with a web browser that is IE10 or new.
+source_code: https://github.com/openspeedtest/Speed-Test
+ugos:
+  app_id: com.upkforge.docker.openspeedtest
+  version: 0.1.0
+  port: 3004
+  open_type: tab
+  tag_type: utility

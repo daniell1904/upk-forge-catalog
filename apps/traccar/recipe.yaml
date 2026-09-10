@@ -1,0 +1,20 @@
+id: traccar
+name: Traccar
+author: Community
+category: Developer
+description: Traccar GPS Tracking System in Docker image.
+ugos:
+  app_id: com.upkforge.docker.traccar
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /opt/traccar/logs
+  label: Opt traccar logs
+  user_chosen: false
+  default_host_subpath: logs
+- container_path: /opt/traccar/conf/traccar.xml
+  label: Opt traccar conf traccar.xml
+  user_chosen: false
+  default_host_subpath: traccar.xml

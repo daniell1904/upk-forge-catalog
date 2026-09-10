@@ -1,0 +1,28 @@
+id: nextcloud-smb
+name: Nextcloud with SMB (Legacy)
+author: Community
+category: Media
+description: This is legacy and you should use the Nextcloud instead. Nextcloud puts your data at your fingertips, under your control. Store your documents, calendar, contacts and photos on a server at home, at one of our providers or in a data center you trust.
+ugos:
+  app_id: com.upkforge.docker.nextcloudsmb
+  version: 0.1.0
+  port: 7580
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /var/www/html
+  label: Var www html
+  user_chosen: false
+  default_host_subpath: html
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: pgdata
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: redis
+- container_path: /var/www/html
+  label: Var www html
+  user_chosen: false
+  default_host_subpath: html

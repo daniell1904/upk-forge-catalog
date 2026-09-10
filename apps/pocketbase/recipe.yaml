@@ -1,0 +1,18 @@
+id: pocketbase
+name: PocketBase
+author: Team
+category: Developer
+description: PocketBase is an open-source backend solution that combines a real-time database, authentication, file storage, and an admin dashboard into a single, portable executable.
+homepage: https://pocketbase.io
+source_code: https://github.com/pocketbase/pocketbase
+ugos:
+  app_id: com.upkforge.docker.pocketbase
+  version: 0.1.0
+  port: 8090
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /pb_data
+  label: Pb data
+  user_chosen: false
+  default_host_subpath: pb_data

@@ -1,0 +1,20 @@
+id: vikunja-v2
+name: Vikunja v2
+author: Community
+category: Others
+description: The open-source, self-hostable to-do app. Organize everything, on all platforms.
+ugos:
+  app_id: com.upkforge.docker.vikunjav2
+  version: 0.1.0
+  port: 8082
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /app/vikunja/files
+  label: App vikunja files
+  user_chosen: false
+  default_host_subpath: files
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: mysql

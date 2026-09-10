@@ -1,0 +1,17 @@
+id: maxkb
+name: MaxKB
+version: 2.10.6-lts
+author: 1Panel
+category: Ai
+homepage: https://github.com/1Panel-dev/MaxKB
+ugos:
+  app_id: com.upkforge.docker.maxkb
+  version: 0.1.0
+  port: 8083
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /opt/maxkb
+  label: Maxkb
+  user_chosen: false
+  default_host_subpath: data

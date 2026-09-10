@@ -1,0 +1,18 @@
+id: docsify
+name: Docsify
+version: 1.31.5
+author: docsifyjs
+category: Content
+homepage: https://github.com/docsifyjs/docsify
+ugos:
+  app_id: com.upkforge.docker.docsify
+  version: 0.1.0
+  port: 4001
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /usr/share/nginx/html
+  label: Html
+  user_chosen: false
+  default_host_subpath: docs
+  read_only: true

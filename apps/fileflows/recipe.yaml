@@ -1,0 +1,45 @@
+id: fileflows
+name: FileFlows
+author: FileFlows
+category: Media
+description: >-
+  Save storage space with efficient file processing.
+
+
+  FileFlows lets you monitor and process any file type with custom flows. Videos, audio, images, archives, comics, eBooks—you name it!
+homepage: https://fileflows.com/
+ugos:
+  app_id: com.upkforge.docker.fileflows
+  version: 0.1.0
+  port: 19200
+  open_type: tab
+  tag_type: media
+parameters:
+- key: VOL_1
+  label: Media folder
+  help: Folder on the NAS for FileFlows's media. It is mounted into the container at /Media; FileFlows has full read and write access to it.
+  type: path
+volumes:
+- container_path: /app/Data
+  label: App Data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /app/Logs
+  label: App Logs
+  user_chosen: false
+  default_host_subpath: logs
+- container_path: /app/common
+  label: App common
+  user_chosen: false
+  default_host_subpath: common
+- container_path: /temp
+  label: Temp
+  user_chosen: false
+  default_host_subpath: temp
+- container_path: /Media
+  label: Media
+  default_host_subpath: fileflows-media
+- container_path: /var/run/docker.sock
+  label: Var run docker.sock
+  user_chosen: false
+  default_host_subpath: fileflows-var-run-docker-sock

@@ -1,0 +1,11 @@
+id: chatpad
+name: Chatpad
+author: Community
+category: Others
+description: Recently, there has been a surge of UIs for ChatGPT, making it the new to-do app that everyone wants to try their hand at. Chatpad sets itself apart with a broader vision - to become the ultimate interface for ChatGPT users.
+ugos:
+  app_id: com.upkforge.docker.chatpad
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility

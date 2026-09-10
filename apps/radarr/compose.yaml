@@ -1,0 +1,15 @@
+services:
+  radarr:
+    image: linuxserver/radarr:6.3.0
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 7878:7878
+    volumes:
+      - ./config:/config
+      - ${VOL_1}:/movies
+      - ${VOL_2}:/downloads
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ

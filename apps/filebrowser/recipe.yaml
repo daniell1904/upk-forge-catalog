@@ -1,0 +1,50 @@
+id: filebrowser
+name: Filebrowser
+author: Community
+category: Others
+description: Reliable and Performant File Management Desktop Sync and File Sharing Tool.
+ugos:
+  app_id: com.upkforge.docker.filebrowser
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: VOL_1
+  label: Srv documents folder
+  help: Folder on the NAS for Filebrowser's srv documents. It is mounted into the container at /srv/documents; Filebrowser has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Srv downloads folder
+  help: Folder on the NAS for Filebrowser's srv downloads. It is mounted into the container at /srv/downloads; Filebrowser has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Srv media folder
+  help: Folder on the NAS for Filebrowser's srv media. It is mounted into the container at /srv/media; Filebrowser has full read and write access to it.
+  type: path
+volumes:
+- container_path: /srv/app-data
+  label: Srv app data
+  user_chosen: false
+  default_host_subpath: filebrowser-srv-app-data
+- container_path: /srv/documents
+  label: Srv documents
+  default_host_subpath: filebrowser-srv-documents
+- container_path: /srv/downloads
+  label: Srv downloads
+  default_host_subpath: filebrowser-srv-downloads
+- container_path: /srv/gallery
+  label: Srv gallery
+  user_chosen: false
+  default_host_subpath: filebrowser-srv-gallery
+- container_path: /srv/media
+  label: Srv media
+  default_host_subpath: filebrowser-srv-media
+- container_path: /database
+  label: Database
+  user_chosen: false
+  default_host_subpath: data/db
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: data/config

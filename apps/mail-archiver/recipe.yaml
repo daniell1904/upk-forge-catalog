@@ -1,0 +1,63 @@
+id: mail-archiver
+name: Mail Archiver
+version: 2608.1
+author: s1t5
+category: Content
+homepage: https://github.com/s1t5/mail-archiver
+ugos:
+  app_id: com.upkforge.docker.mailarchiver
+  version: 0.1.0
+  port: 5008
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: wizard_db_password
+  label: Wizard db password
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: wizard_admin_username
+  label: Wizard admin username
+  type: string
+- key: wizard_admin_password
+  label: Wizard admin password
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: wizard_timezone
+  label: Wizard timezone
+  type: string
+- key: wizard_oidc_enabled
+  label: Wizard oidc enabled
+  type: string
+- key: wizard_oidc_authority
+  label: Wizard oidc authority
+  type: string
+- key: wizard_oidc_client_id
+  label: Wizard oidc client id
+  type: string
+- key: wizard_oidc_client_secret
+  label: Wizard oidc client secret
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: wizard_oidc_display_name
+  label: Wizard oidc display name
+  type: string
+volumes:
+- container_path: /app/DataProtection-Keys
+  label: DataProtection Keys
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /app/logs
+  label: Logs
+  user_chosen: false
+  default_host_subpath: logs
+- container_path: /data/import
+  label: Import
+  user_chosen: false
+  default_host_subpath: import
+- container_path: /var/lib/postgresql/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: db

@@ -1,0 +1,20 @@
+id: homarr-v1
+name: Homarr v1
+author: Community
+category: Productivity
+description: 'Homarr v1 - A sleek, modern dashboard for your server. This is the latest major version (v1.x) from homarr-labs with improved architecture and features. Note: This version uses a different data structure and requires SECRET_ENCRYPTION_KEY. Not compatible with legacy Homarr (v0.x) data without migration.'
+ugos:
+  app_id: com.upkforge.docker.homarrv1
+  version: 0.1.0
+  port: 7575
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /var/run/docker.sock
+  label: Var run docker.sock
+  user_chosen: false
+  default_host_subpath: homarr-v1-var-run-docker-sock
+- container_path: /appdata
+  label: Appdata
+  user_chosen: false
+  default_host_subpath: appdata

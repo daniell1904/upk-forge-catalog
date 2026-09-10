@@ -1,0 +1,25 @@
+id: motioneye
+name: Motioneye
+author: f4bio
+category: Home
+description: motionEye is a web-based frontend for motion. Check out the wiki for more details. Changelog is available on the releases page. https://github.com/motioneye-project/motioneye
+source_code: https://github.com/motioneye-project/motioneye
+ugos:
+  app_id: com.upkforge.docker.motioneye
+  version: 0.1.0
+  port: 8765
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: VOL_1
+  label: Var lib motioneye folder
+  help: Folder on the NAS for Motioneye's var lib motioneye. It is mounted into the container at /var/lib/motioneye; Motioneye has full read and write access to it.
+  type: path
+volumes:
+- container_path: /etc/motioneye
+  label: Etc motioneye
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /var/lib/motioneye
+  label: Var lib motioneye
+  default_host_subpath: motioneye-var-lib-motioneye

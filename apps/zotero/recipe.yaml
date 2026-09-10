@@ -1,0 +1,11 @@
+id: zotero
+name: Zotero
+author: Community
+category: Others
+description: Zotero is a free, easy-to-use tool to help you collect, organize, annotate, cite, and share research.
+ugos:
+  app_id: com.upkforge.docker.zotero
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: utility

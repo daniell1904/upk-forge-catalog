@@ -1,0 +1,13 @@
+services:
+  audiobookshelf:
+    image: docker.io/advplyr/audiobookshelf:2.36.0
+    ports:
+      - "13378:80"
+    volumes:
+      - ./config:/config
+      - ./metadata:/metadata
+      - ./audiobooks:/audiobooks
+      - ./podcasts:/podcasts
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

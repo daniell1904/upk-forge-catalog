@@ -1,0 +1,15 @@
+services:
+  qbittorrent:
+    image: ghcr.io/hotio/qbittorrent:release-5.0.4
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 8181:8080
+    volumes:
+      - ./config:/config
+      - ./qbittorrent-data:/DATA
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ
+      - UMASK=002

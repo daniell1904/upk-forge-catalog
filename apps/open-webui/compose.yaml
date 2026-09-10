@@ -1,0 +1,14 @@
+services:
+  open-webui:
+    image: docker.io/openwebui/open-webui:0.11.3
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/backend/data
+    environment:
+      - OLLAMA_BASE_URL=http://172.17.0.1:11434
+      - WEBUI_SECRET_KEY=${WEBUI_SECRET_KEY}
+      - ENABLE_SIGNUP=true
+      - HF_ENDPOINT=https://hf-mirror.com
+      - TZ=${TZ}
+    restart: unless-stopped

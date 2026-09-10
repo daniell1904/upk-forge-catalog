@@ -1,0 +1,20 @@
+id: wallos
+name: Wallos
+author: Community
+category: Others
+description: 'Wallos: Open-Source Personal Subscription Tracker'
+ugos:
+  app_id: com.upkforge.docker.wallos
+  version: 0.1.0
+  port: 8282
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /var/www/html/db
+  label: Var www html db
+  user_chosen: false
+  default_host_subpath: db
+- container_path: /var/www/html/images/uploads/logos
+  label: Var www html images uploads logos
+  user_chosen: false
+  default_host_subpath: logos

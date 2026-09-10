@@ -1,0 +1,25 @@
+id: nginx-proxy-manager
+name: Nginx Proxy Manager
+version: 2.15.1
+author: NginxProxyManager
+category: System
+description: Nginx Proxy Manager is a simple, powerful tool to help you host multiple websites on a single server.
+homepage: https://github.com/NginxProxyManager/nginx-proxy-manager
+warnings:
+- service 'nginx-proxy-manager' binds privileged host port 880
+- service 'nginx-proxy-manager' binds privileged host port 81
+ugos:
+  app_id: com.upkforge.docker.nginxproxymanager
+  version: 0.1.0
+  port: 81
+  open_type: tab
+  tag_type: system
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /etc/letsencrypt
+  label: Letsencrypt
+  user_chosen: false
+  default_host_subpath: letsencrypt

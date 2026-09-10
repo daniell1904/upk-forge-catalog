@@ -1,0 +1,18 @@
+id: bazarr
+name: Bazarr
+version: 1.6.0
+author: Bazarr
+category: Automation
+description: Bazarr is a companion application to Sonarr and Radarr. It can manage and download subtitles based on your requirements. You define your preferences by TV show or movie and Bazarr takes care of everything for you.
+homepage: https://www.bazarr.media
+ugos:
+  app_id: com.upkforge.docker.bazarr
+  version: 0.1.0
+  port: 6767
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config

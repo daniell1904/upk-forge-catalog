@@ -1,0 +1,16 @@
+id: paperclip
+name: Paperclip
+author: Community
+category: AI
+description: Paperclip is an open-source self-hosted board for managing AI coding agents such as Claude Code, Codex, OpenCode, and Gemini CLI. Assign work to agents, run them, and track cost and output from a single dashboard.
+ugos:
+  app_id: com.upkforge.docker.paperclip
+  version: 0.1.0
+  port: 3101
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /paperclip
+  label: Paperclip
+  user_chosen: false
+  default_host_subpath: data

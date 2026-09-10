@@ -1,0 +1,99 @@
+id: visor
+name: Visor
+version: 2.5.7
+author: dromara
+category: System
+homepage: https://github.com/dromara/orion-visor
+warnings:
+- service 'visor-service' is privileged
+- service 'visor-mysql' is privileged
+- service 'visor-redis' is privileged
+- service 'visor-influxdb' is privileged
+ugos:
+  app_id: com.upkforge.docker.visor
+  version: 0.1.0
+  port: 1081
+  open_type: tab
+  tag_type: system
+parameters:
+- key: MYSQL_PASSWORD
+  label: Mysql password
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: REDIS_PASSWORD
+  label: Redis password
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: INFLUXDB_TOKEN
+  label: Influxdb token
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: SECRET_KEY
+  label: Secret key
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: API_EXPOSE_TOKEN
+  label: Api expose token
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: MYSQL_ROOT_PASSWORD
+  label: Mysql root password
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: DOCKER_INFLUXDB_INIT_PASSWORD
+  label: Docker influxdb init password
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: DOCKER_INFLUXDB_INIT_ADMIN_TOKEN
+  label: Docker influxdb init admin token
+  type: password
+  changeable: false
+  generate_bytes: 24
+volumes:
+- container_path: /root/orion
+  label: Orion
+  user_chosen: false
+  default_host_subpath: volumes/service/root-orion
+- container_path: /var/lib/mysql
+  label: Mysql
+  user_chosen: false
+  default_host_subpath: volumes/mysql/var-lib-mysql
+- container_path: /var/lib/mysql-files
+  label: Mysql files
+  user_chosen: false
+  default_host_subpath: volumes/mysql/var-lib-mysql-files
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: volumes/redis/data
+- container_path: /var/lib/influxdb2
+  label: Influxdb2
+  user_chosen: false
+  default_host_subpath: volumes/influxdb/data
+- container_path: /etc/influxdb2
+  label: Influxdb2
+  user_chosen: false
+  default_host_subpath: volumes/influxdb/config
+- container_path: /drive
+  label: Drive
+  user_chosen: false
+  default_host_subpath: volumes/guacd/drive
+- container_path: /var/log
+  label: Log
+  user_chosen: false
+  default_host_subpath: volumes/guacd/var-logs
+- container_path: /usr/local/guacamole/lib
+  label: Lib
+  user_chosen: false
+  default_host_subpath: volumes/guacd/local-guacamole-lib
+- container_path: /usr/local/guacamole/extensions
+  label: Extensions
+  user_chosen: false
+  default_host_subpath: volumes/guacd/local-guacamole-extensions

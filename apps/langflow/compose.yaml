@@ -1,0 +1,20 @@
+services:
+  langflow:
+    image: langflowai/langflow:1.9.3
+    restart: unless-stopped
+    ports:
+      - 17860:7860
+    volumes:
+      - ./backend:/app/langflow
+    environment:
+      - LANGFLOW_DATABASE_URL=postgresql://langflow:langflow@langflow-postgres:5432/langflow
+      - LANGFLOW_CONFIG_DIR=/app/langflow
+  langflow-postgres:
+    image: postgres:16
+    restart: unless-stopped
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=langflow
+      - POSTGRES_PASSWORD=langflow
+      - POSTGRES_DB=langflow

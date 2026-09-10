@@ -1,0 +1,22 @@
+services:
+  odoo:
+    image: odoo:19@sha256:94a4f480b8039dc9ca2bca9e77e59f97d3311f66e2aad663cf2670be9c66d4ea
+    restart: unless-stopped
+    ports:
+      - 8069:8069
+    volumes:
+      - ./data/etc:/etc/odoo
+      - ./data/addons:/mnt/extra-addons
+    environment:
+      - HOST=odoo-db
+      - USER=odoo
+      - PASSWORD=${PASSWORD}
+  odoo-db:
+    image: postgres:15@sha256:bcab099bfaab33333a73a2ebe8c1d615c9f4c2402dd43452f989a36c6da9a5ba
+    restart: unless-stopped
+    volumes:
+      - ./data/postgresql:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=postgres

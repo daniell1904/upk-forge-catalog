@@ -1,0 +1,16 @@
+id: wud
+name: What's Up Docker
+author: Community
+category: Developer
+description: Gets you notified when new versions of your Docker containers are available and lets you react the way you want.
+ugos:
+  app_id: com.upkforge.docker.wud
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /var/run/docker.sock
+  label: Var run docker.sock
+  user_chosen: false
+  default_host_subpath: app-var-run-docker-sock

@@ -1,0 +1,32 @@
+id: buzz
+name: Buzz
+author: Community
+category: Developer
+description: Buzz is a self-hostable workspace for humans and agents from Block. It runs a Nostr relay, a REST bridge, git-over-object-storage, and a web interface from a single Rust binary, so you can host your own community and agent infrastructure.
+ugos:
+  app_id: com.upkforge.docker.buzz
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: devtool
+parameters:
+- key: BUZZ_RELAY_PRIVATE_KEY
+  label: BUZZ RELAY PRIVATE KEY
+  type: password
+volumes:
+- container_path: /data/git
+  label: Data git
+  user_chosen: false
+  default_host_subpath: git_data
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: postgres_data
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: redis_data
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: minio_data

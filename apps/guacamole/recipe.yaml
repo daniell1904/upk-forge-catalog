@@ -1,0 +1,16 @@
+id: guacamole
+name: Guacamole
+author: Community
+category: Others
+description: Apache Guacamole is a free and open-source, cross-platform, clientless remote desktop gateway maintained by the Apache Software Foundation.
+ugos:
+  app_id: com.upkforge.docker.guacamole
+  version: 0.1.0
+  port: 8090
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: mysql

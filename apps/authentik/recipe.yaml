@@ -1,0 +1,44 @@
+id: authentik
+name: Authentik
+author: Community
+category: Others
+description: Authentik is a self-hosted identity and access management platform that provides a secure and scalable solution for managing user accounts, authentication, and authorization. It offers a range of features, including user management, role-based access control, and multi-factor authentication. Authentik is designed to be easy to use and integrate with your existing systems, making it a great choice for organizations looking to improve their security and compliance.
+ugos:
+  app_id: com.upkforge.docker.authentik
+  version: 0.1.0
+  port: 9443
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /media
+  label: Media
+  user_chosen: false
+  default_host_subpath: data/authentik-media
+- container_path: /templates
+  label: Templates
+  user_chosen: false
+  default_host_subpath: data/authentik-custom-templates
+- container_path: /var/run/docker.sock
+  label: Var run docker.sock
+  user_chosen: false
+  default_host_subpath: authentik-worker-var-run-docker-sock
+- container_path: /media
+  label: Media
+  user_chosen: false
+  default_host_subpath: data/authentik-media
+- container_path: /certs
+  label: Certs
+  user_chosen: false
+  default_host_subpath: data/authentik-certs
+- container_path: /templates
+  label: Templates
+  user_chosen: false
+  default_host_subpath: data/authentik-custom-templates
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: data/postgres
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data/redis

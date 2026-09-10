@@ -1,0 +1,16 @@
+id: dozzle
+name: Dozzle
+author: Community
+category: Developer
+description: Dozzle is a real-time log viewer for docker containers.
+ugos:
+  app_id: com.upkforge.docker.dozzle
+  version: 0.1.0
+  port: 8888
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /var/run/docker.sock
+  label: Var run docker.sock
+  user_chosen: false
+  default_host_subpath: app-var-run-docker-sock

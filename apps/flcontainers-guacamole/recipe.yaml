@@ -1,0 +1,11 @@
+id: flcontainers-guacamole
+name: FlContainers Guacamole
+author: Community
+category: Developer
+description: A Docker Container for Apache Guacamole, a client-less remote desktop gateway. It supports standard protocols like VNC, RDP, and SSH over HTML5.
+ugos:
+  app_id: com.upkforge.docker.flcontainersguacamole
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: devtool

@@ -1,0 +1,26 @@
+id: sabnzbd
+name: SABnzbd
+version: 5.1.3
+author: sabnzbd
+category: Download
+description: SABnzbd is an Open Source Binary Newsreader written in Python. It's totally free, easy to use, and works practically everywhere. SABnzbd makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction. SABnzbd offers an easy setup wizard and has self-analysis tools to verify your setup.
+homepage: https://github.com/sabnzbd/sabnzbd
+ugos:
+  app_id: com.upkforge.docker.sabnzbd
+  version: 0.1.0
+  port: 8780
+  open_type: tab
+  tag_type: download
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /downloads
+  label: Downloads
+  user_chosen: false
+  default_host_subpath: downloads
+- container_path: /incomplete-downloads
+  label: Incomplete downloads
+  user_chosen: false
+  default_host_subpath: incomplete

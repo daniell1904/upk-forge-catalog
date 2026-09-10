@@ -1,0 +1,9 @@
+services:
+  app:
+    image: traccar/traccar:6.14-ubuntu@sha256:629cf4b4e90a432c5c02726c9e393f6badae84f7c561f05dbe7c8a8be7e03f6b
+    restart: unless-stopped
+    ports:
+      - 8080:8082
+    volumes:
+      - ./logs:/opt/traccar/logs
+      - ./traccar.xml:/opt/traccar/conf/traccar.xml

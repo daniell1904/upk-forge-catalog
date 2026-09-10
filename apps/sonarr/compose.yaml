@@ -1,0 +1,15 @@
+services:
+  sonarr:
+    image: linuxserver/sonarr:4.0.19
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 8989:8989
+    volumes:
+      - ./config:/config
+      - ${VOL_1}:/tv
+      - ${VOL_2}:/downloads
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ

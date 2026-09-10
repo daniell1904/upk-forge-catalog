@@ -1,0 +1,10 @@
+services:
+  koodo-reader:
+    image: ghcr.io/koodo-reader/koodo-reader:master
+    ports:
+      - "8930:80"
+    volumes:
+      - ./uploads:/app/uploads
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

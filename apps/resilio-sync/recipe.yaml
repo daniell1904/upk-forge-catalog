@@ -1,0 +1,30 @@
+id: resilio-sync
+name: resilio-sync
+author: self
+category: Productivity
+description: resilio-sync is a Docker-based application that enables fast and secure file synchronization and sharing.
+homepage: https://www.resilio.com/sync/
+source_code: https://github.com/linuxserver/docker-resilio-sync
+ugos:
+  app_id: com.upkforge.docker.resiliosync
+  version: 0.1.0
+  port: 55555
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: VOL_1
+  label: Downloads folder
+  help: Folder on the NAS for resilio-sync's downloads. It is mounted into the container at /downloads; resilio-sync has full read and write access to it.
+  type: path
+volumes:
+- container_path: /sync
+  label: Sync
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /downloads
+  label: Downloads
+  default_host_subpath: resilio-sync-downloads

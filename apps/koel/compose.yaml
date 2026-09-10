@@ -1,0 +1,16 @@
+services:
+  koel:
+    image: docker.io/phanan/koel:9.11.3
+    ports:
+      - "8060:80"
+    volumes:
+      - ${MUSIC_DIR}:/music
+      - ./database:/var/www/html/database
+      - ./covers:/var/www/html/public/img/storage
+      - ./search-indexes:/var/www/html/storage/search-indexes
+    environment:
+      - TZ=${TZ}
+      - DB_CONNECTION=sqlite-persistent
+      - APP_KEY=${KOEL_APP_KEY}
+      - MEMORY_LIMIT=512
+    restart: unless-stopped

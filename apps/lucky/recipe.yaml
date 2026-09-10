@@ -1,0 +1,20 @@
+id: lucky
+name: Lucky
+author: Community
+category: Networking
+description: A powerful tool for port forwarding, reverse proxy, dynamic DNS, wake-on-LAN, IPv4 NAT traversal, webdav services, task scheduling, and automatic certificate management.
+homepage: https://lucky666.cn/
+source_code: https://github.com/gdy666/lucky
+warnings:
+- service uses host networking
+ugos:
+  app_id: com.upkforge.docker.lucky
+  version: 0.1.0
+  port: 16601
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /goodluck
+  label: Goodluck
+  user_chosen: false
+  default_host_subpath: lucky-goodluck

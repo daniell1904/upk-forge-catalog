@@ -1,0 +1,15 @@
+services:
+  zonefoundry-bridge:
+    image: docker.io/zonefoundry/bridge:latest
+    network_mode: host
+    pull_policy: always
+    user: "0:0"
+    security_opt:
+      - apparmor:unconfined
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TZ=${TZ}
+      - ZF_RELAY_URL=wss://relay.zonefoundry.dev/ws
+      - ZF_AGENT_LABEL=bridge
+    restart: unless-stopped

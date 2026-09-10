@@ -1,0 +1,38 @@
+id: moviepilot
+name: MoviePilot
+version: 3.0.0
+author: jxxghp
+category: Content
+homepage: https://github.com/jxxghp/MoviePilot
+ugos:
+  app_id: com.upkforge.docker.moviepilot
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: VERSION_MAJOR
+  label: Version major
+  type: string
+- key: SUPERUSER_PASSWORD
+  label: Superuser password
+  type: password
+  changeable: false
+  generate_bytes: 24
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /moviepilot
+  label: Moviepilot
+  user_chosen: false
+  default_host_subpath: core
+- container_path: /media
+  label: Media
+  user_chosen: false
+  default_host_subpath: media
+- container_path: /downloads
+  label: Downloads
+  user_chosen: false
+  default_host_subpath: downloads

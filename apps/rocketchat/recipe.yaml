@@ -1,0 +1,28 @@
+id: rocketchat
+name: Rocket.Chat
+version: 8.8.1
+author: Rocket.Chat
+category: System
+description: Rocket.Chat is an open-source fully customizable communications platform [...]
+homepage: https://rocket.chat
+ugos:
+  app_id: com.upkforge.docker.rocketchat
+  version: 0.1.0
+  port: 3003
+  open_type: tab
+  tag_type: system
+parameters:
+- key: ALLOW_EMPTY_PASSWORD
+  label: Allow empty password
+  type: password
+  changeable: false
+  generate_bytes: 24
+volumes:
+- container_path: /app/uploads
+  label: Uploads
+  user_chosen: false
+  default_host_subpath: uploads
+- container_path: /bitnami/mongodb
+  label: Mongodb
+  user_chosen: false
+  default_host_subpath: mongodb

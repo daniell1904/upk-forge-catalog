@@ -1,0 +1,62 @@
+id: dify
+name: Dify
+author: Community
+category: AI
+description: Dify is an open-source large language model (LLM) application development platform. It combines the concepts of Backend-as-a-Service and LLMOps to enable developers to quickly build production-grade generative AI applications. Even non-technical personnel can participate in the definition and data operations of AI applications.
+homepage: https://dify.ai
+source_code: https://github.com/langgenius/dify
+ugos:
+  app_id: com.upkforge.docker.dify
+  version: 0.1.0
+  port: 3701
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: WEAVIATE_API_KEY
+  label: WEAVIATE API KEY
+  type: password
+volumes:
+- container_path: /configs/nginx
+  label: Configs nginx
+  user_chosen: false
+  default_host_subpath: data/nginx
+- container_path: /configs/ssrf_proxy
+  label: Configs ssrf proxy
+  user_chosen: false
+  default_host_subpath: data/ssrf_proxy
+- container_path: /configs/sandbox
+  label: Configs sandbox
+  user_chosen: false
+  default_host_subpath: data/sandbox
+- container_path: /app/api/storage
+  label: App api storage
+  user_chosen: false
+  default_host_subpath: data/app/api/storage
+- container_path: /app/api/storage
+  label: App api storage
+  user_chosen: false
+  default_host_subpath: data/app/api/storage
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: data/db/data
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data/redis/data
+- container_path: /var/lib/weaviate
+  label: Var lib weaviate
+  user_chosen: false
+  default_host_subpath: data/weaviate
+- container_path: /dependencies
+  label: Dependencies
+  user_chosen: false
+  default_host_subpath: data/sandbox/dependencies
+- container_path: /etc/squid
+  label: Etc squid
+  user_chosen: false
+  default_host_subpath: data/ssrf_proxy
+- container_path: /etc/nginx
+  label: Etc nginx
+  user_chosen: false
+  default_host_subpath: data/nginx

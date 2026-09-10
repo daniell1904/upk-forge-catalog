@@ -1,0 +1,31 @@
+id: piwigo
+name: Piwigo
+author: Community
+category: Media
+description: Piwigo is a photo gallery software for the web that comes with powerful features to publish and manage your collection of pictures.
+ugos:
+  app_id: com.upkforge.docker.piwigo
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: media
+parameters:
+- key: MYSQL_ROOT_PASSWORD
+  label: MYSQL ROOT PASSWORD
+  type: password
+- key: MYSQL_PASSWORD
+  label: MYSQL PASSWORD
+  type: password
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /gallery
+  label: Gallery
+  user_chosen: false
+  default_host_subpath: gallery
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: mysql

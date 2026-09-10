@@ -1,0 +1,29 @@
+id: wg-easy
+name: WG-Easy
+version: 15.4.0
+author: wg-easy
+category: Network
+description: You have found the easiest way to install & manage WireGuard on any Linux host!
+homepage: https://github.com/wg-easy/wg-easy
+warnings:
+- "service 'wg-easy' adds capabilities: NET_ADMIN, SYS_MODULE"
+ugos:
+  app_id: com.upkforge.docker.wgeasy
+  version: 0.1.0
+  port: 51821
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: wizard_password
+  label: Wizard password
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: wizard_wg_host
+  label: Wizard wg host
+  type: string
+volumes:
+- container_path: /etc/wireguard
+  label: Wireguard
+  user_chosen: false
+  default_host_subpath: config

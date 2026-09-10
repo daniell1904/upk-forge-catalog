@@ -1,0 +1,16 @@
+services:
+  linkstack:
+    image: linkstackorg/linkstack:V4@sha256:5cc5b4806f57c153e924fbd0c49d4255dee4c66cd6621f0e457fd43e43e5c000
+    restart: unless-stopped
+    ports:
+      - 8080:80
+      - 10443:443
+    volumes:
+      - ./data:/data
+    environment:
+      - HTTP_SERVER_NAME=www.example.xyz
+      - HTTPS_SERVER_NAME=www.example.xyz
+      - SERVER_ADMIN=admin@example.xyz
+      - TZ=Europe/Berlin
+      - PHP_MEMORY_LIMIT=512M
+      - UPLOAD_MAX_FILESIZE=8M

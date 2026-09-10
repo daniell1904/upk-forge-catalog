@@ -1,0 +1,16 @@
+id: uisp
+name: UISP
+author: Community
+category: Developer
+description: All-in-one docker image for Ubiquiti UISP (formerly UNMS). Supports x86_64 and ARM (Raspberry Pi).
+ugos:
+  app_id: com.upkforge.docker.uisp
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config

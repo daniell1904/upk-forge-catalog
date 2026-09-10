@@ -1,0 +1,16 @@
+id: baserow
+name: Baserow
+author: Community
+category: Developer
+description: Create your own online database without technical experience. Our user-friendly no-code tool gives you the powers of a developer without leaving your browser.
+ugos:
+  app_id: com.upkforge.docker.baserow
+  version: 0.1.0
+  port: 7350
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /baserow/data
+  label: Baserow data
+  user_chosen: false
+  default_host_subpath: data

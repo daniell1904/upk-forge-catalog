@@ -1,0 +1,16 @@
+id: octoprint
+name: OctoPrint
+author: Community
+category: Home
+description: OctoPrint is the snappy web interface for your 3D printer!
+ugos:
+  app_id: com.upkforge.docker.octoprint
+  version: 0.1.0
+  port: 1080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /octoprint
+  label: Octoprint
+  user_chosen: false
+  default_host_subpath: octoprint

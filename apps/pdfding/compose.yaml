@@ -1,0 +1,16 @@
+services:
+  pdfding:
+    image: mrmn/pdfding:v1.7.2
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 8000:8000
+    volumes:
+      - ./db:/home/nonroot/pdfding/db
+      - ./media:/home/nonroot/pdfding/media
+    environment:
+      - HOST_NAME=*
+      - SECRET_KEY=your_secret_key_here
+      - CSRF_COOKIE_SECURE=FALSE
+      - SESSION_COOKIE_SECURE=FALSE
+      - DEBUG=FALSE

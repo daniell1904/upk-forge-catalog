@@ -1,0 +1,25 @@
+id: firefly
+name: Firefly
+author: Cp0204
+category: Networking
+description: "Firefly is a simple and easy to install WireGuard server software, which can be widely used in scenarios such as remote networking, remote work, and expose a local server behind a NAT or firewall to the internet.  \U0001F3AF Features \U0001F7E2 Provide a simple and easy-to-use web management UI  \U0001F7E3 Supports access to all WireGuard clients  \U0001F7E1 No need for system installation of WireGuard components  \U0001F7E0 Single file, no additional library dependencies  \U0001F534 Automatically apply for free SSL certificate"
+homepage: https://qq.uusec.com/
+source_code: https://github.com/Safe3/firefly
+warnings:
+- service uses host networking
+- 'service adds capabilities: NET_ADMIN, SYS_MODULE'
+ugos:
+  app_id: com.upkforge.docker.firefly
+  version: 0.1.0
+  port: 50121
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /lib/modules
+  label: Lib modules
+  user_chosen: false
+  default_host_subpath: firefly-lib-modules
+- container_path: /firefly/conf
+  label: Firefly conf
+  user_chosen: false
+  default_host_subpath: conf

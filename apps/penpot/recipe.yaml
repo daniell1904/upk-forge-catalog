@@ -1,0 +1,40 @@
+id: penpot
+name: Penpot
+version: 2.17.2
+author: Penpot
+category: System
+description: Designers and developers can finally work in unison to build beautifully designed software experiences that truly scale up.
+homepage: https://github.com/penpot/penpot
+ugos:
+  app_id: com.upkforge.docker.penpot
+  version: 0.1.0
+  port: 9001
+  open_type: tab
+  tag_type: system
+parameters:
+- key: PENPOT_SECRET_KEY
+  label: Penpot secret key
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: PENPOT_PUBLIC_URI
+  label: Penpot public uri
+  type: string
+- key: POSTGRES_PASSWORD
+  label: Postgres password
+  type: password
+  changeable: false
+  generate_bytes: 24
+volumes:
+- container_path: /opt/data/assets
+  label: Assets
+  user_chosen: false
+  default_host_subpath: assets
+- container_path: /var/lib/postgresql/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: db
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: redis

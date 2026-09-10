@@ -1,0 +1,12 @@
+services:
+  sub-store:
+    image: docker.io/xream/sub-store:2.39.0
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./data:/opt/app/data
+    environment:
+      - TZ=${TZ}
+      - SUB_STORE_BACKEND_API_HOST=0.0.0.0
+      - SUB_STORE_FRONTEND_HOST=0.0.0.0
+    restart: unless-stopped

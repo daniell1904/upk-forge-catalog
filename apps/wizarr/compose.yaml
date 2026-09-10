@@ -1,0 +1,10 @@
+services:
+  wizarr:
+    image: ghcr.io/wizarrrr/wizarr:v2026.9.0
+    ports:
+      - "5690:5690"
+    volumes:
+      - ./data:/data/database
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

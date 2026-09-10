@@ -1,0 +1,33 @@
+id: lidarr
+name: Lidarr
+author: Team
+category: Media
+description: Lidarr is a music collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new albums from your favorite artists and will interface with clients and indexers to grab, sort, and rename them. It can also be configured to automatically upgrade the quality of existing files in the library when a better quality format becomes available.
+homepage: https://lidarr.audio/
+source_code: https://github.com/Lidarr/Lidarr
+ugos:
+  app_id: com.upkforge.docker.lidarr
+  version: 0.1.0
+  port: 8686
+  open_type: tab
+  tag_type: media
+parameters:
+- key: VOL_1
+  label: Music folder
+  help: Folder on the NAS for Lidarr's music. It is mounted into the container at /music; Lidarr has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Downloads folder
+  help: Folder on the NAS for Lidarr's downloads. It is mounted into the container at /downloads; Lidarr has full read and write access to it.
+  type: path
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /music
+  label: Music
+  default_host_subpath: lidarr-music
+- container_path: /downloads
+  label: Downloads
+  default_host_subpath: lidarr-downloads

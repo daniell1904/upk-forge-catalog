@@ -1,0 +1,30 @@
+id: songloft
+name: Songloft
+version: 2.12.0
+author: songloft-org
+category: Media
+homepage: https://github.com/songloft-org/songloft
+ugos:
+  app_id: com.upkforge.docker.songloft
+  version: 0.1.0
+  port: 58091
+  open_type: tab
+  tag_type: media
+parameters:
+- key: wizard_admin_username
+  label: Wizard admin username
+  type: string
+- key: wizard_admin_password
+  label: Wizard admin password
+  type: password
+  changeable: false
+  generate_bytes: 24
+volumes:
+- container_path: /app/music
+  label: Music
+  user_chosen: false
+  default_host_subpath: music
+- container_path: /app/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

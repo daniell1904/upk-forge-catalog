@@ -1,0 +1,16 @@
+id: brave
+name: Brave
+author: Community
+category: Media
+description: This Image contains a browser-accessible version of Brave.
+ugos:
+  app_id: com.upkforge.docker.brave
+  version: 0.1.0
+  port: 6901
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /home/kasm-user/Downloads
+  label: Home kasm user Downloads
+  user_chosen: false
+  default_host_subpath: Downloads

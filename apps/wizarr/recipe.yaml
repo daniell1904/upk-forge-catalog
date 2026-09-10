@@ -1,0 +1,17 @@
+id: wizarr
+name: Wizarr
+version: 2026.9.0
+author: wizarrrr
+category: Media
+homepage: https://github.com/wizarrrr/wizarr
+ugos:
+  app_id: com.upkforge.docker.wizarr
+  version: 0.1.0
+  port: 5690
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /data/database
+  label: Database
+  user_chosen: false
+  default_host_subpath: data

@@ -1,0 +1,14 @@
+services:
+  smokeping:
+    image: linuxserver/smokeping:2.9.0
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 10280:80
+    volumes:
+      - ./config:/config
+      - ./data:/data
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=Europe/London

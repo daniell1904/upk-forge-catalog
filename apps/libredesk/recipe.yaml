@@ -1,0 +1,28 @@
+id: libredesk
+name: Libredesk
+author: Community
+category: Others
+description: Open source, self-hosted customer support desk. Single binary app.
+ugos:
+  app_id: com.upkforge.docker.libredesk
+  version: 0.1.0
+  port: 9000
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /libredesk/uploads
+  label: Libredesk uploads
+  user_chosen: false
+  default_host_subpath: uploads
+- container_path: /libredesk/config
+  label: Libredesk config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: data/postgres
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data/redis

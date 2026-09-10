@@ -1,0 +1,22 @@
+id: jenkins
+name: Jenkins CI/CD
+author: bepp-boop
+category: Developer
+description: A server for creating pipelines for Jenkins continuous integration and delivery.
+homepage: https://www.jenkins.io/
+source_code: https://github.com/jenkinsci/jenkins
+ugos:
+  app_id: com.upkforge.docker.jenkins
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /var/jenkins_home
+  label: Var jenkins home
+  user_chosen: false
+  default_host_subpath: jenkins-var-jenkins-home

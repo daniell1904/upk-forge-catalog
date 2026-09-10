@@ -1,0 +1,14 @@
+services:
+  logseq:
+    image: correctroad/logseq:v0.10.10
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 3325:3000
+      - 12315:12315
+    volumes:
+      - ./config:/config
+      - ${VOL_1}:/notes
+    environment:
+      - PGID=0
+      - PUID=0

@@ -1,0 +1,9 @@
+services:
+  trilium:
+    image: triliumnext/trilium:v0.103.0
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 8088:8080
+    volumes:
+      - ./trilium-home-node-trilium-data:/home/node/trilium-data

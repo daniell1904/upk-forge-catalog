@@ -1,0 +1,16 @@
+id: ejbca-ce
+name: EJBCA Community
+author: Community
+category: Social
+description: The open-source public key infrastructure (PKI) and certificate authority (CA) software EJBCA is one of the longest running CA software projects. EJBCA covers all your needs - from certificate enrollment, via certificate management, to certificate validation.
+ugos:
+  app_id: com.upkforge.docker.ejbcace
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /mnt/persistent
+  label: Mnt persistent
+  user_chosen: false
+  default_host_subpath: persistent

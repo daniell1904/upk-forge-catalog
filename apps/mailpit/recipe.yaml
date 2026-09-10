@@ -1,0 +1,16 @@
+id: mailpit
+name: Mailpit
+author: Community
+category: Developer
+description: Mailpit is a multi-platform email testing tool & API for developers.
+ugos:
+  app_id: com.upkforge.docker.mailpit
+  version: 0.1.0
+  port: 8025
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

@@ -1,0 +1,16 @@
+services:
+  emby:
+    image: linuxserver/emby:4.9.5
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 8096:8096
+      - 8920:8920
+    volumes:
+      - ./config:/config
+      - ${VOL_1}:/data/tvshows
+      - ${VOL_2}:/data/movies
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ

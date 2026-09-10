@@ -1,0 +1,14 @@
+services:
+  duplicati:
+    image: lscr.io/linuxserver/duplicati:2.4.0.0_stable_2026-09-03
+    ports:
+      - "8200:8200"
+    volumes:
+      - ./config:/config
+      - ${BACKUP_SOURCE}:/source:ro
+      - ./backups:/backups
+    environment:
+      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+    restart: unless-stopped

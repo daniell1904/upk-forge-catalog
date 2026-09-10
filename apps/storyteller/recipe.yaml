@@ -1,0 +1,26 @@
+id: storyteller
+name: Storyteller
+author: Community
+category: Productivity
+description: Storyteller is a self-hosted platform for ebook reading and library management. It supports multiple ebook formats including EPUB, PDF, and MOBI. Features include a modern web-based reader, library organization, metadata management, and multi-user support. Built with Django and includes optional Readium reader integration for enhanced reading experience.
+ugos:
+  app_id: com.upkforge.docker.storyteller
+  version: 0.1.0
+  port: 8015
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: STORYTELLER_SECRET_KEY
+  label: STORYTELLER SECRET KEY
+  type: password
+- key: STORYTELLER_LOG_LEVEL
+  label: STORYTELLER LOG LEVEL
+  type: string
+- key: STORYTELLER_DATA_DIR
+  label: STORYTELLER DATA DIR
+  type: path
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

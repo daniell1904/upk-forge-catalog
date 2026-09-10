@@ -1,0 +1,29 @@
+id: warracker
+name: Warracker
+author: Community
+category: Others
+description: A self-hosted warranty tracker
+warnings:
+- service is privileged
+ugos:
+  app_id: com.upkforge.docker.warracker
+  version: 0.1.0
+  port: 8005
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: DB_PASSWORD
+  label: DB PASSWORD
+  type: password
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
+volumes:
+- container_path: /data/uploads
+  label: Data uploads
+  user_chosen: false
+  default_host_subpath: uploads
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: warrackerdb

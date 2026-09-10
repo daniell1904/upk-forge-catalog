@@ -1,0 +1,19 @@
+services:
+  opensurge:
+    image: ghcr.io/funchs/opensurge-fnos:v0.1.1
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+      - SYS_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - ./config:/etc/opensurge
+      - ./state:/var/lib/opensurge
+    environment:
+      - TZ=${TZ}
+      - OPENSURGE_ADDR=0.0.0.0:61767
+      - OPENSURGE_BASE_URL=${OPENSURGE_BASE_URL}
+      - OPENSURGE_ALLOWED_HOSTS=${OPENSURGE_ALLOWED_HOSTS}
+    restart: unless-stopped

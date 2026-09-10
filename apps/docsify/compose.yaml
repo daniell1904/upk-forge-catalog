@@ -1,0 +1,10 @@
+services:
+  docsify:
+    image: docker.io/nginxinc/nginx-unprivileged:1.31.5
+    ports:
+      - "4001:8080"
+    volumes:
+      - ./docs:/usr/share/nginx/html:ro
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

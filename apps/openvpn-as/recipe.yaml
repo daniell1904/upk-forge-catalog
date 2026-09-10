@@ -1,0 +1,19 @@
+id: openvpn-as
+name: OpenVPN
+author: Community
+category: Networking
+description: OpenVPN is an open-source commercial software that implements virtual private network (VPN) techniques to create secure point-to-point or site-to-site connections in routed or bridged configurations and remote access facilities.
+warnings:
+- service is privileged
+- 'service adds capabilities: NET_ADMIN'
+ugos:
+  app_id: com.upkforge.docker.openvpnas
+  version: 0.1.0
+  port: 943
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /openvpn
+  label: Openvpn
+  user_chosen: false
+  default_host_subpath: data

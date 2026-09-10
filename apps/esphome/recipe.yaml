@@ -1,0 +1,20 @@
+id: esphome
+name: ESPHome
+author: kd9lsv
+category: Home
+description: ESPHome is a system to control your microcontrollers by simple yet powerful configuration files and control them remotely through Home Automation systems.
+homepage: https://esphome.io
+source_code: https://github.com/esphome/esphome
+warnings:
+- service uses host networking
+ugos:
+  app_id: com.upkforge.docker.esphome
+  version: 0.1.0
+  port: 6052
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config

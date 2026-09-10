@@ -1,0 +1,19 @@
+services:
+  sunshine:
+    image: lscr.io/linuxserver/sunshine:2026.906.222525
+    ports:
+      - "47990:47990"
+      - "47984-47989:47984-47989/tcp"
+      - "48010:48010/tcp"
+      - "47998-48000:47998-48000/udp"
+      - "48002:48002/udp"
+      - "48010:48010/udp"
+    volumes:
+      - ./config:/config
+    devices:
+      - /dev/dri:/dev/dri
+    environment:
+      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+    restart: unless-stopped

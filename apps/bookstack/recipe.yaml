@@ -1,0 +1,33 @@
+id: bookstack
+name: bookstack
+author: Community
+category: Others
+description: BookStack is a simple, self-hosted, easy-to-use platform for organising and storing information. Default login admin@admin.com password password
+ugos:
+  app_id: com.upkforge.docker.bookstack
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: APP_KEY
+  label: APP KEY
+  type: password
+- key: DB_PASSWORD
+  label: DB PASSWORD
+  type: password
+- key: MYSQL_ROOT_PASSWORD
+  label: MYSQL ROOT PASSWORD
+  type: password
+- key: MYSQL_PASSWORD
+  label: MYSQL PASSWORD
+  type: password
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: mysql

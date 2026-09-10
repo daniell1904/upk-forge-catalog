@@ -1,0 +1,15 @@
+services:
+  pyload:
+    image: linuxserver/pyload-ng:0.5.0
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 8000:8000
+      - 9666:9666
+    volumes:
+      - ./config:/config
+      - ${VOL_1}:/downloads
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ

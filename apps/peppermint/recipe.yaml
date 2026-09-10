@@ -1,0 +1,16 @@
+id: peppermint
+name: Peppermint
+author: Community
+category: Others
+description: Peppermint is a central hub for your help desk. A powerfully easy system for tracking, prioritising, and solving customer support tickets.
+ugos:
+  app_id: com.upkforge.docker.peppermint
+  version: 0.1.0
+  port: 3000
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: postgres/data

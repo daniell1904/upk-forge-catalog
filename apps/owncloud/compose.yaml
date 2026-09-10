@@ -1,0 +1,37 @@
+services:
+  owncloud:
+    image: owncloud/server:10.16.4@sha256:efb57ba71ec3321c83661fd4e9976d120e80a0e1ead53ea5b7821d036e7af2b6
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    volumes:
+      - ./data:/mnt/data
+    environment:
+      - OWNCLOUD_DOMAIN=http://[YOUR_app_IP]:8080
+      - OWNCLOUD_TRUSTED_DOMAINS=[YOUR_app_IP]
+      - OWNCLOUD_DB_TYPE=mysql
+      - OWNCLOUD_DB_NAME=app_owncloud
+      - OWNCLOUD_DB_USERNAME=app
+      - OWNCLOUD_DB_PASSWORD=${OWNCLOUD_DB_PASSWORD}
+      - OWNCLOUD_DB_HOST=owncloud-db
+      - OWNCLOUD_ADMIN_USERNAME=app
+      - OWNCLOUD_ADMIN_PASSWORD=${OWNCLOUD_ADMIN_PASSWORD}
+      - OWNCLOUD_MYSQL_UTF8MB4=true
+      - OWNCLOUD_REDIS_ENABLED=true
+      - OWNCLOUD_REDIS_HOST=owncloud-redis
+  owncloud-db:
+    image: mariadb:10.6@sha256:114d40be36852d0a019afd8458f7e1cc63fd300403b115b1f32e31130d5f671b
+    restart: unless-stopped
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=app
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=app_owncloud
+      - MARIADB_AUTO_UPGRADE=1
+  owncloud-redis:
+    image: redis:6.2.20@sha256:d06ff6ec778c7f2a5c0dfaf58141d598efaa50a89d0e966faedfdf122cef451b
+    restart: unless-stopped
+    volumes:
+      - ./redis:/data

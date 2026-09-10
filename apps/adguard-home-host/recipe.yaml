@@ -1,0 +1,22 @@
+id: adguard-home-host
+name: AdGuard Home (HOST)
+author: Community
+category: Networking
+description: Use if you're going to use Adguard Home as a DHCP server. AdGuard Home is a network-wide software for blocking ads and tracking. After you set it up, it'll cover all your home devices, and you won't need any client-side software for that. Learn more on our official Github repository.
+warnings:
+- service uses host networking
+ugos:
+  app_id: com.upkforge.docker.adguardhomehost
+  version: 0.1.0
+  port: 80
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /opt/adguardhome/work
+  label: Opt adguardhome work
+  user_chosen: false
+  default_host_subpath: data/work
+- container_path: /opt/adguardhome/conf
+  label: Opt adguardhome conf
+  user_chosen: false
+  default_host_subpath: data/conf

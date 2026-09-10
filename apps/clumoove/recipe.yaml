@@ -1,0 +1,49 @@
+id: clumoove
+name: Clumoove
+author: Marcel Meyer
+category: Productivity
+description: >-
+  Clumoove is a modern, self-hosted cloud data migration and synchronization platform for files, calendars, and contacts.
+
+
+  Easily connect, transfer, and synchronize data between cloud storage providers including Nextcloud, Google Drive, Dropbox, OneDrive, HiDrive, S3, WebDAV, SMB, SFTP, FTP, Immich, Seafile, Koofr, MEGA, and local storage.
+
+
+  Key Features:
+
+  - Zero-disk streaming transfers (no local temporary storage retention during migration)
+
+  - Multi-threaded background migrations and cron-based synchronization schedules
+
+  - Robust 3-way hash integrity verification & flexible conflict resolution
+
+  - Integrated cloud file manager with multi-format previews and thumbnails
+
+  - Multi-channel notification delivery (Gotify, ntfy, Telegram, Discord, Email)
+
+  - Enterprise-grade security with AES-256-GCM encryption, TOTP 2FA, and audit logging
+homepage: https://clumoove.com
+source_code: https://github.com/xXRoxXeRXx/clumoove
+ugos:
+  app_id: com.upkforge.docker.clumoove
+  version: 0.1.0
+  port: 8380
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /clumoove
+  label: Clumoove
+  user_chosen: false
+  default_host_subpath: storage
+- container_path: /clumoove
+  label: Clumoove
+  user_chosen: false
+  default_host_subpath: storage
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: postgres
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: redis

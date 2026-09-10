@@ -1,0 +1,12 @@
+services:
+  app:
+    image: louislam/dockge:1.5.0@sha256:335c6368b880ecc203236ed89e6e5232e0d6578e8ef5920e4a502390451502bf
+    restart: unless-stopped
+    ports:
+      - 5001:5001
+    volumes:
+      - ./app-var-run-docker-sock:/var/run/docker.sock
+      - ./data:/app/data
+      - ./stacks:/DATA/AppData/app-dockge/stacks
+    environment:
+      - DOCKGE_STACKS_DIR=/DATA/AppData/app-dockge/stacks

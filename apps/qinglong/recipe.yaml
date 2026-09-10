@@ -1,0 +1,17 @@
+id: qinglong
+name: QingLong
+version: 2.21.0
+author: whyour
+category: System
+homepage: https://github.com/whyour/qinglong
+ugos:
+  app_id: com.upkforge.docker.qinglong
+  version: 0.1.0
+  port: 5700
+  open_type: tab
+  tag_type: system
+volumes:
+- container_path: /ql/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

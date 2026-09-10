@@ -1,0 +1,10 @@
+services:
+  maxkb:
+    image: docker.io/1panel/maxkb:v2.10.6-lts
+    ports:
+      - "8083:8080"
+    volumes:
+      - ./data:/opt/maxkb
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

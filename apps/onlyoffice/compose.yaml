@@ -1,0 +1,13 @@
+services:
+  app:
+    image: onlyoffice/documentserver:9.1.0@sha256:34b92f4a67bfd939bd6b75893e8217556e3b977f81e49472f7e28737b741ba1d
+    restart: unless-stopped
+    ports:
+      - 7400:80
+    volumes:
+      - ./onlyoffice/logs:/var/log/onlyoffice
+      - ./onlyoffice/data:/var/www/onlyoffice/Data
+      - ./onlyoffice/lib:/var/lib/onlyoffice
+      - ./onlyoffice/rabbitmq:/var/lib/rabbitmq
+      - ./onlyoffice/redis:/var/lib/redis
+      - ./onlyoffice/db:/var/lib/postgresql

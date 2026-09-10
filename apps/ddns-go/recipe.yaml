@@ -1,0 +1,17 @@
+id: ddns-go
+name: ddns-go
+author: zxxhz,Cp0204
+category: Networking
+description: A simple and easy-to-use DDNS tool. Automatically updates domain name resolution to your public IP (supports Alibaba Cloud, Tencent Cloud, Dnspod, Cloudflare, Callback, Huawei Cloud, Baidu Cloud, Porkbun, GoDaddy, and Google Domain). Deploy DDNS-go on, and you can bind the public IP of your device to your domain name. This way, you can access your device via the domain name while you are away.
+source_code: https://github.com/jeessy2/ddns-go
+ugos:
+  app_id: com.upkforge.docker.ddnsgo
+  version: 0.1.0
+  port: 9876
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /root
+  label: Root
+  user_chosen: false
+  default_host_subpath: config

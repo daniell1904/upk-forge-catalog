@@ -1,0 +1,24 @@
+id: maybe-finance
+name: Maybe Finance
+author: Community
+category: Finance
+description: Maybe is a fully* open-source OS for your personal finances built by a small team alongside an incredible community Discord
+ugos:
+  app_id: com.upkforge.docker.maybefinance
+  version: 0.1.0
+  port: 4000
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /rails/storage
+  label: Rails storage
+  user_chosen: false
+  default_host_subpath: app-storage
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: postgres-data
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: redis-data

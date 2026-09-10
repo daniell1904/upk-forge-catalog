@@ -1,0 +1,12 @@
+services:
+  freshrss:
+    image: docker.io/freshrss/freshrss:1.30.0
+    ports:
+      - "8180:80"
+    volumes:
+      - ./data:/var/www/FreshRSS/data
+      - ./extensions:/var/www/FreshRSS/extensions
+    environment:
+      - TZ=${TZ}
+      - CRON_MIN=1,31
+    restart: unless-stopped

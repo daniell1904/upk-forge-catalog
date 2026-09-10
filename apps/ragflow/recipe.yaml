@@ -1,0 +1,82 @@
+id: ragflow
+name: RagFlow
+author: RagFlow
+category: AI
+description: >-
+  RagFlow is an open-source RAG (Retrieval-Augmented Generation) engine based on deep document understanding. It enables users to build their own private ChatGPT by leveraging the power of large language models and deep document parsing capabilities. RagFlow supports various document formats including PDF, Word, Markdown, and more, allowing users to create intelligent question-answering systems based on their own documents.
+
+
+  **Key Features:**
+
+  - Deep document understanding with advanced parsing capabilities
+
+  - Support for multiple document formats (PDF, Word, Markdown, etc.)
+
+  - Private knowledge base with data security assurance
+
+  - Customizable RAG workflows for different use cases
+
+  - Integration with popular large language models
+
+  - Web-based interface for easy management and interaction
+
+
+  **Hardware Requirements:**
+
+  - CPU >= 4 cores
+
+  - RAM >= 16 GB
+
+  - Disk >= 50 GB
+
+
+  **Learn More:**
+
+  - [RagFlow Official Website](https://ragflow.io)
+
+  - [RagFlow GitHub Repository](https://github.com/infiniflow/ragflow)
+homepage: https://ragflow.io
+source_code: https://github.com/infiniflow/ragflow
+ugos:
+  app_id: com.upkforge.docker.ragflow
+  version: 0.1.0
+  port: 9380
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /ragflow/logs
+  label: Ragflow logs
+  user_chosen: false
+  default_host_subpath: ragflow-logs
+- container_path: /ragflow/history_data_agent
+  label: Ragflow history data agent
+  user_chosen: false
+  default_host_subpath: history_data_agent
+- container_path: /usr/share/elasticsearch/data
+  label: Usr share elasticsearch data
+  user_chosen: false
+  default_host_subpath: es01
+- container_path: /var/infinity
+  label: Var infinity
+  user_chosen: false
+  default_host_subpath: infinity
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: minio
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: mysql
+- container_path: /usr/share/opensearch/data
+  label: Usr share opensearch data
+  user_chosen: false
+  default_host_subpath: opensearch01
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: redis
+- container_path: /var/run/docker.sock
+  label: Var run docker.sock
+  user_chosen: false
+  default_host_subpath: ragflow-sandbox-executor-manager-var-run-docker-sock

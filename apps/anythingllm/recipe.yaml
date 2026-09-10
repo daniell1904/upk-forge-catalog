@@ -1,0 +1,20 @@
+id: anythingllm
+name: AnythingLLM
+author: Mintplex Labs
+category: AI
+description: AnythingLLM is the easiest to use, all-in-one AI application that can do RAG, AI Agents, and much more with no code or infrastructure headaches.
+homepage: https://anythingllm.com
+source_code: https://github.com/Mintplex-Labs/anything-llm
+warnings:
+- 'service adds capabilities: SYS_ADMIN'
+ugos:
+  app_id: com.upkforge.docker.anythingllm
+  version: 0.1.0
+  port: 3051
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /app/server/storage
+  label: App server storage
+  user_chosen: false
+  default_host_subpath: storage

@@ -1,0 +1,33 @@
+id: lyranest
+name: LyraNest
+version: 0.2.6
+author: WHWgogogo
+category: Media
+homepage: https://github.com/WHWgogogo/LyraNest
+ugos:
+  app_id: com.upkforge.docker.lyranest
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: media
+parameters:
+- key: wizard_music_dir
+  label: Music folder
+  help: Folder on the NAS for LyraNest's music. It is mounted into the container at /music; LyraNest reads from it.
+  type: path
+volumes:
+- container_path: /music
+  label: Music
+  read_only: true
+- container_path: /downloads
+  label: Downloads
+  user_chosen: false
+  default_host_subpath: downloads
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /cache
+  label: Cache
+  user_chosen: false
+  default_host_subpath: cache

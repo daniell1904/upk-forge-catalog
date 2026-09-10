@@ -1,0 +1,16 @@
+services:
+  btop:
+    image: app/btop:0.1.10@sha256:750bd69f934dc11458e88667ba311745535c57855a127f16ea2ed9c2ba8a3762
+    restart: unless-stopped
+    ports:
+      - 7681:7681
+    volumes:
+      - /proc:/proc
+      - /sys:/sys
+      - /dev:/dev
+      - /etc/localtime:/etc/localtime
+      - ./config:/root/.config/btop
+    environment:
+      - GOTTY_AUTH_USER=app
+      - GOTTY_AUTH_PASS=password
+      - GOTTY_AUTH_ENABLED=true

@@ -1,0 +1,36 @@
+id: jdownloader2
+name: JDownloader2
+author: Fabio Tea
+category: Media
+description: JDownloader is a free, open-source download management tool with a huge community that makes downloading as easy and fast as it should be. Users can start, stop or pause downloads, set bandwith limitations, auto-extract archives and much more. It's an easy-to-extend framework that can save hours of your valuable time every day!
+ugos:
+  app_id: com.upkforge.docker.jdownloader2
+  version: 0.1.0
+  port: 5800
+  open_type: tab
+  tag_type: media
+parameters:
+- key: VOL_1
+  label: Output folder
+  help: Folder on the NAS for JDownloader2's output. It is mounted into the container at /output; JDownloader2 has full read and write access to it.
+  type: path
+- key: MYJDOWNLOADER_EMAIL
+  label: MYJDOWNLOADER EMAIL
+  type: string
+- key: MYJDOWNLOADER_PASSWORD
+  label: MYJDOWNLOADER PASSWORD
+  type: password
+- key: MYJDOWNLOADER_DEVICE_NAME
+  label: MYJDOWNLOADER DEVICE NAME
+  type: string
+- key: JDOWNLOADER_HEADLESS
+  label: JDOWNLOADER HEADLESS
+  type: string
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /output
+  label: Output
+  default_host_subpath: jdownloader2-output

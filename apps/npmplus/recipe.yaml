@@ -1,0 +1,18 @@
+id: npmplus
+name: NPMPlus
+author: Community
+category: Networking
+description: Docker container for managing Nginx proxy hosts with a simple, powerful interface
+warnings:
+- service uses host networking
+ugos:
+  app_id: com.upkforge.docker.npmplus
+  version: 0.1.0
+  port: 81
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

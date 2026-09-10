@@ -1,0 +1,18 @@
+id: vaultwarden
+name: Vaultwarden
+version: 1.37.2
+author: Vaultwarden
+category: System
+description: Alternative implementation of the Bitwarden server API written in Rust and compatible with upstream Bitwarden clients*, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.
+homepage: https://github.com/dani-garcia/vaultwarden
+ugos:
+  app_id: com.upkforge.docker.vaultwarden
+  version: 0.1.0
+  port: 8880
+  open_type: tab
+  tag_type: system
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

@@ -1,0 +1,16 @@
+id: budibase
+name: Budibase
+author: Community
+category: Developer
+description: "Low code platform for creating internal tools, workflows, and admin panels in minutes. Supports PostgreSQL, MySQL, MSSQL, MongoDB, Rest API, Docker, K8s, and more \U0001F680. Budibase, the low code platform you'll enjoy using ⚡"
+ugos:
+  app_id: com.upkforge.docker.budibase
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

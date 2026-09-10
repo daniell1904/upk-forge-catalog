@@ -1,0 +1,16 @@
+id: microbin
+name: Microbin
+author: Community
+category: Others
+description: Self-hosted, encrypted pastebin alternative with configurable features.
+ugos:
+  app_id: com.upkforge.docker.microbin
+  version: 0.1.0
+  port: 8888
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /app/microbin_data
+  label: App microbin data
+  user_chosen: false
+  default_host_subpath: data

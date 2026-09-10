@@ -1,0 +1,18 @@
+id: seerr
+name: Seerr
+version: 3.4.1
+author: seerr-team
+category: Media
+description: Seerr is a free and open source software application for managing requests for your media library. It is the successor to Overseerr and Jellyseerr, bringing support for Jellyfin, Plex, and Emby media servers.
+homepage: https://github.com/seerr-team/seerr
+ugos:
+  app_id: com.upkforge.docker.seerr
+  version: 0.1.0
+  port: 5055
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /app/config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config

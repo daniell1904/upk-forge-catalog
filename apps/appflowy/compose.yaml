@@ -1,0 +1,10 @@
+services:
+  appflowy:
+    image: docker.io/appflowyinc/appflowy_cloud:0.9.64
+    ports:
+      - "8501:8025"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

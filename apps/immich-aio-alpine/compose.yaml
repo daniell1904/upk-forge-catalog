@@ -1,0 +1,37 @@
+services:
+  immich-aio-alpine:
+    image: ghcr.io/imagegenius/immich:2.0.0-alpine
+    restart: unless-stopped
+    ports:
+      - 2283:8080
+    volumes:
+      - ./config:/config
+      - ./photos:/usr/src/app/photos
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - DB_HOSTNAME=immich-db
+      - DB_USERNAME=app
+      - DB_PASSWORD=app
+      - DB_DATABASE_NAME=immich
+      - REDIS_HOSTNAME=immich-redis
+      - DB_PORT=5432
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=
+      - MACHINE_LEARNING_GPU_ACCELERATION=
+      - MACHINE_LEARNING_WORKERS=1
+      - MACHINE_LEARNING_WORKER_TIMEOUT=120
+  immich-redis:
+    image: redis:6.2.20-alpine@sha256:2185e741f4c1e7b0ea9ca1e163a3767c4270a73086b6bbea2049a7203212fb7f
+    restart: unless-stopped
+  immich-db:
+    image: tensorchord/pgvecto-rs:pg14-v0.2.0@sha256:739cdd626151ff1f796dc95a6591b55a714f341c737e27f045019ceabf8e8c52
+    restart: unless-stopped
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=app
+      - POSTGRES_USER=app
+      - POSTGRES_DB=immich
+      - PG_DATA=/var/lib/postgresql/data

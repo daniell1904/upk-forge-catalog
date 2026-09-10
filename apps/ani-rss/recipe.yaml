@@ -1,0 +1,21 @@
+id: ani-rss
+name: ANI-RSS
+version: 3.2.30
+author: wushuo894
+category: Content
+homepage: https://github.com/wushuo894/ani-rss
+ugos:
+  app_id: com.upkforge.docker.anirss
+  version: 0.1.0
+  port: 7789
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /downloads
+  label: Downloads
+  user_chosen: false
+  default_host_subpath: downloads

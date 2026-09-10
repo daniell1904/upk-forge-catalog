@@ -1,0 +1,10 @@
+services:
+  uptime-kuma:
+    image: docker.io/louislam/uptime-kuma:2.5.3
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./config:/app/data
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

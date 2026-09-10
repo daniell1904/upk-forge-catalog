@@ -1,0 +1,15 @@
+services:
+  turbodiffusion:
+    image: app/turbodiffusion:20260312
+    restart: unless-stopped
+    ports:
+      - 27860:7860
+    volumes:
+      - ./models:/workspace/TurboDiffusion/checkpoints_host
+      - ./outputs:/workspace/TurboDiffusion/outputs
+    environment:
+      - MODEL_PATHS=/workspace/TurboDiffusion/checkpoints_host,/workspace/TurboDiffusion/checkpoints
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
+      - CUDA_HOME=/usr/local/cuda
+      - PYTHONPATH=/workspace/TurboDiffusion/turbodiffusion

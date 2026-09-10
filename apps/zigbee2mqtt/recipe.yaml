@@ -1,0 +1,16 @@
+id: zigbee2mqtt
+name: Zigbee to MQTT bridge
+author: Community
+category: Home
+description: Zigbee to MQTT bridge, get rid of your proprietary Zigbee bridges
+ugos:
+  app_id: com.upkforge.docker.zigbee2mqtt
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /app/data
+  label: App data
+  user_chosen: false
+  default_host_subpath: data

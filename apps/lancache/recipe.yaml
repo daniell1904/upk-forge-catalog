@@ -1,0 +1,20 @@
+id: lancache
+name: LAN Cache
+author: Community
+category: Networking
+description: Make the most of your network. Get more play for your gamers. Download your games once and serve them out to many people at your LAN.
+ugos:
+  app_id: com.upkforge.docker.lancache
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /data/cache
+  label: Data cache
+  user_chosen: false
+  default_host_subpath: cache
+- container_path: /data/logs
+  label: Data logs
+  user_chosen: false
+  default_host_subpath: logs

@@ -1,0 +1,31 @@
+services:
+  unifi-network-application:
+    image: lscr.io/linuxserver/unifi-network-application:latest
+    restart: unless-stopped
+    ports:
+      - 8443:8443
+      - 3478:3478
+      - 10001:10001
+      - 8080:8080
+    volumes:
+      - ./unifi-network-application-config:/config
+    environment:
+      - MONGO_DBNAME=unifi-db
+      - MONGO_HOST=unifi-db
+      - MONGO_PASS=pass
+      - MONGO_PORT=27017
+      - MONGO_USER=unifi
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ
+  unifi-db:
+    image: docker.io/mongo:3.6
+    restart: unless-stopped
+    ports:
+      - 27017:27017
+    volumes:
+      - ./unifi-db-data-db:/data/db
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ

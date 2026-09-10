@@ -1,0 +1,16 @@
+id: erugo
+name: Erugo
+author: Community
+category: Developer
+description: A powerful, self-hosted file-sharing platform built with PHP and Laravel with a Vue.js frontend. It offers secure, customizable file-transfer capabilities through an elegant user interface, giving you complete control over your data while providing a seamless experience for both senders and recipients.
+ugos:
+  app_id: com.upkforge.docker.erugo
+  version: 0.1.0
+  port: 9997
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /var/www/html/storage
+  label: Var www html storage
+  user_chosen: false
+  default_host_subpath: storage

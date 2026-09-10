@@ -1,0 +1,19 @@
+id: nanobot
+name: Nanobot
+version: 0.3.0
+author: HKUDS
+category: Ai
+homepage: https://github.com/HKUDS/nanobot
+warnings:
+- service 'nanobot' image 'docker.io/kangkang223/nanobot-webui:latest' is not pinned to a fixed version
+ugos:
+  app_id: com.upkforge.docker.nanobot
+  version: 0.1.0
+  port: 18780
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /root/.nanobot
+  label: .nanobot
+  user_chosen: false
+  default_host_subpath: data

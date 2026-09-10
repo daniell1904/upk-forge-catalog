@@ -1,0 +1,10 @@
+services:
+  kodbox:
+    image: docker.io/kodcloud/kodbox:1.68.10
+    ports:
+      - "8500:80"
+    volumes:
+      - ./data:/var/www/html
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

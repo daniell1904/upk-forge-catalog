@@ -1,0 +1,12 @@
+services:
+  stirling-pdf:
+    image: docker.io/stirlingtools/stirling-pdf:2.14.3
+    ports:
+      - "18080:8080"
+    volumes:
+      - ./config:/configs
+      - ./data:/customFiles
+    environment:
+      - TZ=${TZ}
+      - DOCKER_ENABLE_SECURITY=false
+    restart: unless-stopped

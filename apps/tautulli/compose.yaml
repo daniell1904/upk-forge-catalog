@@ -1,0 +1,12 @@
+services:
+  tautulli:
+    image: docker.io/linuxserver/tautulli:2.18.1
+    ports:
+      - "8181:8181"
+    volumes:
+      - ./config:/config
+    environment:
+      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+    restart: unless-stopped

@@ -1,0 +1,23 @@
+id: gladys
+name: Gladys Assistant
+author: Community
+category: Others
+description: Gladys Assistant is a modern, privacy-first & open-source home automation software that runs anywhere.
+warnings:
+- service is privileged
+- service uses host networking
+ugos:
+  app_id: com.upkforge.docker.gladys
+  version: 0.1.0
+  port: 1080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /var/run/docker.sock
+  label: Var run docker.sock
+  user_chosen: false
+  default_host_subpath: app-var-run-docker-sock
+- container_path: /var/lib/gladysassistant
+  label: Var lib gladysassistant
+  user_chosen: false
+  default_host_subpath: data

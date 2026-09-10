@@ -1,0 +1,17 @@
+services:
+  mariadb:
+    image: linuxserver/mariadb:11.4.8
+    restart: unless-stopped
+    ports:
+      - 3306:3306
+    volumes:
+      - ./config:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=$TZ
+      - MYSQL_ROOT_PASSWORD=app
+      - MYSQL_DATABASE=app
+      - MYSQL_USER=app
+      - MYSQL_PASSWORD=app
+      - REMOTE_SQL=

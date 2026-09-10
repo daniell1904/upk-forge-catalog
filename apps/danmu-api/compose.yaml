@@ -1,0 +1,12 @@
+services:
+  danmu-api:
+    image: docker.io/logvar/danmu-api:1.20.10
+    ports:
+      - "9321:9321"
+    volumes:
+      - ./config:/app/config
+      - ./.cache:/app/.cache
+    environment:
+      - TZ=${TZ}
+      - TOKEN=${wizard_token}
+    restart: unless-stopped

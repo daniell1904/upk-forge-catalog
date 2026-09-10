@@ -1,0 +1,24 @@
+id: ghostfolio
+name: Ghostfolio
+author: Community
+category: Others
+description: "Open Source Wealth Management Software. Angular + NestJS + Prisma + Nx + TypeScript \U0001F90D"
+ugos:
+  app_id: com.upkforge.docker.ghostfolio
+  version: 0.1.0
+  port: 3333
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: JWT_SECRET_KEY
+  label: JWT SECRET KEY
+  type: password
+volumes:
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: data/db
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data/redis

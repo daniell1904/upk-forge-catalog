@@ -1,0 +1,37 @@
+id: koel
+name: Koel
+version: 9.11.3
+author: koel
+category: Media
+homepage: https://github.com/koel/koel
+ugos:
+  app_id: com.upkforge.docker.koel
+  version: 0.1.0
+  port: 8060
+  open_type: tab
+  tag_type: media
+parameters:
+- key: MUSIC_DIR
+  label: Music folder
+  help: Folder on the NAS for Koel's music. It is mounted into the container at /music; Koel has full read and write access to it.
+  type: path
+- key: KOEL_APP_KEY
+  label: Koel app key
+  type: password
+  changeable: false
+  generate_bytes: 24
+volumes:
+- container_path: /music
+  label: Music
+- container_path: /var/www/html/database
+  label: Database
+  user_chosen: false
+  default_host_subpath: database
+- container_path: /var/www/html/public/img/storage
+  label: Storage
+  user_chosen: false
+  default_host_subpath: covers
+- container_path: /var/www/html/storage/search-indexes
+  label: Search indexes
+  user_chosen: false
+  default_host_subpath: search-indexes

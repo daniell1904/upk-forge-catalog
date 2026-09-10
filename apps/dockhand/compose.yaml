@@ -1,0 +1,9 @@
+services:
+  app:
+    image: fnsys/dockhand:latest@sha256:76dc36ea6ce7ed03fde7112b93ccb6bf172a33e42e79435553f18c503215ee4f
+    restart: unless-stopped
+    ports:
+      - 3003:3000
+    volumes:
+      - ./app-var-run-docker-sock:/var/run/docker.sock
+      - ./data:/app/data

@@ -1,0 +1,11 @@
+services:
+  nanobot:
+    image: docker.io/kangkang223/nanobot-webui:latest
+    ports:
+      - "18780:18780"
+      - "18790:18790"
+    volumes:
+      - ./data:/root/.nanobot
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

@@ -1,0 +1,20 @@
+id: wishlist
+name: Wishlist
+author: Community
+category: Others
+description: Wishlist is a self-hosted wishlist application that you can share with your friends and family. You no longer have to wonder what to get your family for the holidays, simply check their wishlist and claim any available item!
+ugos:
+  app_id: com.upkforge.docker.wishlist
+  version: 0.1.0
+  port: 3280
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /usr/src/app/uploads
+  label: Usr src app uploads
+  user_chosen: false
+  default_host_subpath: uploads
+- container_path: /usr/src/app/data
+  label: Usr src app data
+  user_chosen: false
+  default_host_subpath: data

@@ -1,0 +1,16 @@
+id: jlesage-firefox
+name: Jlesage Firefox
+author: Community
+category: Others
+description: The GUI of the application is accessed through a modern web browser (no installation or configuration needed on the client side) or via any VNC client.
+ugos:
+  app_id: com.upkforge.docker.jlesagefirefox
+  version: 0.1.0
+  port: 5800
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config

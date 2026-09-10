@@ -1,0 +1,36 @@
+id: pterodactyl-wings
+name: Pterodactyl Wings
+author: Community
+category: Developer
+description: Wings is Pterodactyl's server control plane, built for the rapidly changing gaming industry and designed to be highly performant and secure. Wings provides an HTTP API allowing you to interface directly with running server instances, fetch server logs, generate backups, and control all aspects of the server lifecycle.
+ugos:
+  app_id: com.upkforge.docker.pterodactylwings
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /var/run/docker.sock
+  label: Var run docker.sock
+  user_chosen: false
+  default_host_subpath: app-var-run-docker-sock
+- container_path: /var/lib/docker/containers/
+  label: Var lib docker containers
+  user_chosen: false
+  default_host_subpath: app-var-lib-docker-containers
+- container_path: /etc/ssl/certs
+  label: Etc ssl certs
+  user_chosen: false
+  default_host_subpath: app-etc-ssl-certs
+- container_path: /etc/pterodactyl/
+  label: Etc pterodactyl
+  user_chosen: false
+  default_host_subpath: app-etc-pterodactyl
+- container_path: /var/log/pterodactyl/
+  label: Var log pterodactyl
+  user_chosen: false
+  default_host_subpath: app-var-log-pterodactyl
+- container_path: /var/lib/pterodactyl/
+  label: Var lib pterodactyl
+  user_chosen: false
+  default_host_subpath: app-var-lib-pterodactyl

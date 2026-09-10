@@ -1,0 +1,10 @@
+services:
+  motioneye:
+    image: ccrisan/motioneye:master-amd64
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 8765:8765
+    volumes:
+      - ./config:/etc/motioneye
+      - ${VOL_1}:/var/lib/motioneye

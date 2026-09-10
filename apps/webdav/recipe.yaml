@@ -1,0 +1,17 @@
+id: webdav
+name: WebDAV
+author: Team
+category: Productivity
+description: WebDAV is a web-based protocol that allows you to share and manage files over the internet, providing a collaborative environment for file editing and versioning.
+source_code: https://github.com/ugeek/docker-webdav
+ugos:
+  app_id: com.upkforge.docker.webdav
+  version: 0.1.0
+  port: 5005
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /media
+  label: Media
+  user_chosen: false
+  default_host_subpath: webdav-media

@@ -1,0 +1,22 @@
+id: netpulse
+name: NetPulse
+author: Community
+category: Networking
+description: A self-hosted network monitoring dashboard that runs real Ookla speedtests on a schedule, pings continuously to track uptime, and shows the history as graphs you can actually reflect on — not just a live number that resets every refresh.
+warnings:
+- service uses host networking
+ugos:
+  app_id: com.upkforge.docker.netpulse
+  version: 0.1.0
+  port: 8077
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: NETPULSE_PASSWORD
+  label: NETPULSE PASSWORD
+  type: password
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

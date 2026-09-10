@@ -1,0 +1,16 @@
+id: ollama-cpu
+name: Ollama - CPU
+author: Community
+category: AI
+description: Get up and running with Llama 3, Mistral, Gemma, and other large language models.
+ugos:
+  app_id: com.upkforge.docker.ollamacpu
+  version: 0.1.0
+  port: 11434
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /root/.ollama
+  label: Root .ollama
+  user_chosen: false
+  default_host_subpath: .ollama

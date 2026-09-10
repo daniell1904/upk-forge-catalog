@@ -1,0 +1,17 @@
+id: komari
+name: Komari
+version: 1.4.3
+author: Komari Monitor
+category: System
+homepage: https://github.com/komari-monitor/komari
+ugos:
+  app_id: com.upkforge.docker.komari
+  version: 0.1.0
+  port: 25774
+  open_type: tab
+  tag_type: system
+volumes:
+- container_path: /app/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

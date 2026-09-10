@@ -1,0 +1,22 @@
+id: freshrss
+name: FreshRSS
+version: 1.30.0
+author: FreshRSS
+category: Content
+description: FreshRSS is a self-hosted RSS and Atom feed aggregator. It is lightweight, easy to work with, powerful, and customizable.
+homepage: https://freshrss.org
+ugos:
+  app_id: com.upkforge.docker.freshrss
+  version: 0.1.0
+  port: 8180
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /var/www/FreshRSS/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /var/www/FreshRSS/extensions
+  label: Extensions
+  user_chosen: false
+  default_host_subpath: extensions

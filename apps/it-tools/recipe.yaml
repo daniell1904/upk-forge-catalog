@@ -1,0 +1,13 @@
+id: it-tools
+name: IT-Tools
+version: 2024.10.22-7ca5933
+author: CorentinTh
+category: System
+description: Collection of handy online tools for developers, with great UX as a web app.
+homepage: https://it-tools.tech
+ugos:
+  app_id: com.upkforge.docker.ittools
+  version: 0.1.0
+  port: 8280
+  open_type: tab
+  tag_type: system

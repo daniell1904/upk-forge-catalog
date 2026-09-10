@@ -1,0 +1,27 @@
+services:
+  tandoor:
+    image: ghcr.io/tandoorrecipes/recipes:2.6.9@sha256:969c5b3552ffbf18a6f82b3ad5babbae89bfbd30ab6e3195fd3c158bcf3062ed
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    volumes:
+      - ./staticfiles:/opt/recipes/staticfiles
+      - ./mediafiles:/opt/recipes/mediafiles
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+      - DB_ENGINE=django.db.backends.postgresql
+      - POSTGRES_HOST=tandoor-db
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=tandoor
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=tandoordb
+  tandoor-db:
+    image: postgres:15-alpine@sha256:3d0f7584ed7d04e27fa050d6683a74746608faf21f202be78460d679cc56461f
+    restart: unless-stopped
+    volumes:
+      - ./postgresql:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=tandoor
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=tandoordb

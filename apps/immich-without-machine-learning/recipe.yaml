@@ -1,0 +1,20 @@
+id: immich-without-machine-learning
+name: Immich without machine learning
+author: Community
+category: AI
+description: Self-hosted photo and video storage. This does not include the machine learning part.
+ugos:
+  app_id: com.upkforge.docker.immichwithoutmachinelearning
+  version: 0.1.0
+  port: 2283
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /usr/src/app/upload
+  label: Usr src app upload
+  user_chosen: false
+  default_host_subpath: upload
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: pgdata

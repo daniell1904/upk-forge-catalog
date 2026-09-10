@@ -1,0 +1,33 @@
+id: jellystat
+name: Jellystat
+version: 1.1.12
+author: CyferShepard
+category: Media
+description: Jellystat is a free and open source Statistics App for Jellyfin! (This project is still in development - expect some weirdness)
+homepage: https://github.com/CyferShepard/Jellystat
+ugos:
+  app_id: com.upkforge.docker.jellystat
+  version: 0.1.0
+  port: 3004
+  open_type: tab
+  tag_type: media
+parameters:
+- key: POSTGRES_PASSWORD
+  label: Postgres password
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: JWT_SECRET
+  label: Jwt secret
+  type: password
+  changeable: false
+  generate_bytes: 24
+volumes:
+- container_path: /app/backend/db
+  label: Db
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /var/lib/postgresql/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: db

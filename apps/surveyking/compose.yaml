@@ -1,0 +1,12 @@
+services:
+  surveyking:
+    image: docker.io/surveyking/surveyking:v1.13.0
+    ports:
+      - "1991:1991"
+    volumes:
+      - ./db:/app/db
+      - ./files:/app/files
+      - ./logs:/app/logs
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

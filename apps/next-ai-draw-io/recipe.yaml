@@ -1,0 +1,35 @@
+id: next-ai-draw-io
+name: Next AI Draw.io
+version: latest-2026.09.10
+author: Next AI Draw.io contributors
+category: Ai
+homepage: https://github.com/chadkunsman/next-ai-draw-io
+warnings:
+- service 'next-ai-draw-io' image 'ghcr.io/dayuanjiang/next-ai-draw-io:latest' is not pinned to a fixed version
+ugos:
+  app_id: com.upkforge.docker.nextaidrawio
+  version: 0.1.0
+  port: 3007
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: wizard_ai_provider
+  label: Wizard ai provider
+  type: string
+- key: wizard_ai_model
+  label: Wizard ai model
+  type: string
+- key: wizard_openai_api_key
+  label: Wizard openai api key
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: wizard_openai_base_url
+  label: Wizard openai base url
+  type: string
+- key: wizard_access_code
+  label: Wizard access code
+  type: string
+- key: wizard_drawio_base_url
+  label: Wizard drawio base url
+  type: string

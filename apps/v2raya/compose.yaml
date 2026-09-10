@@ -1,0 +1,9 @@
+services:
+  v2raya:
+    image: mzz2017/v2raya:v2.2.7.5
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./v2raya-lib-modules:/lib/modules
+      - ./v2raya-etc-resolv-conf:/etc/resolv.conf
+      - ./v2raya-etc-v2raya:/etc/v2raya

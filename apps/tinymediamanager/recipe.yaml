@@ -1,0 +1,30 @@
+id: tinymediamanager
+name: tinyMediaManager
+version: 5.3.2
+author: tinyMediaManager
+category: Media
+homepage: https://www.tinymediamanager.org
+ugos:
+  app_id: com.upkforge.docker.tinymediamanager
+  version: 0.1.0
+  port: 5800
+  open_type: tab
+  tag_type: media
+parameters:
+- key: MOVIE_DIR
+  label: Movies folder
+  help: Folder on the NAS for tinyMediaManager's movies. It is mounted into the container at /data/movies; tinyMediaManager has full read and write access to it.
+  type: path
+- key: TVSHOW_DIR
+  label: Tvshows folder
+  help: Folder on the NAS for tinyMediaManager's tvshows. It is mounted into the container at /data/tvshows; tinyMediaManager has full read and write access to it.
+  type: path
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /data/movies
+  label: Movies
+- container_path: /data/tvshows
+  label: Tvshows

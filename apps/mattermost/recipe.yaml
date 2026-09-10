@@ -1,0 +1,39 @@
+id: mattermost
+name: Mattermost
+version: 11.10.1
+author: mattermost
+category: System
+homepage: https://mattermost.com
+ugos:
+  app_id: com.upkforge.docker.mattermost
+  version: 0.1.0
+  port: 8065
+  open_type: tab
+  tag_type: system
+parameters:
+- key: POSTGRES_PASSWORD
+  label: Postgres password
+  type: password
+  changeable: false
+  generate_bytes: 24
+volumes:
+- container_path: /mattermost/config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /mattermost/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /mattermost/logs
+  label: Logs
+  user_chosen: false
+  default_host_subpath: logs
+- container_path: /mattermost/plugins
+  label: Plugins
+  user_chosen: false
+  default_host_subpath: plugins
+- container_path: /var/lib/postgresql/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: db

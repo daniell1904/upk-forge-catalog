@@ -1,0 +1,25 @@
+services:
+  bookstack:
+    image: linuxserver/bookstack:26.05.20260608@sha256:e3c387ac44a20fa29abcae8426e3e0d8c88b4ccf95d3c091fd9d96c8d0edcd8e
+    restart: unless-stopped
+    ports:
+      - 8080:80
+    volumes:
+      - ./config:/config
+    environment:
+      - APP_KEY=${APP_KEY}
+      - APP_URL=http://[change to your IP]:8080
+      - DB_HOST=bookstack-db
+      - DB_USERNAME=app
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DATABASE=bookstackapp
+  bookstack-db:
+    image: linuxserver/mariadb:10.11.6@sha256:7e34d92147dd7e1b63f43b3e76af73c273d7c3677786c32164a485f2a04964d8
+    restart: unless-stopped
+    volumes:
+      - ./mysql:/config
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=bookstackapp
+      - MYSQL_USER=app
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}

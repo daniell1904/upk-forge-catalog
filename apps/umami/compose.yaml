@@ -1,0 +1,19 @@
+services:
+  app:
+    image: ghcr.io/umami-software/umami:postgresql-latest@sha256:87312d334d009ee67ee0d2fba8fed01435547cc468e452243aef5133a9984d48
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    environment:
+      - DATABASE_URL=postgresql://umami:umami@db:5432/umami
+      - DATABASE_TYPE=postgresql
+      - APP_SECRET=replace-me-with-a-random-string
+  db:
+    image: postgres:15-alpine@sha256:3d0f7584ed7d04e27fa050d6683a74746608faf21f202be78460d679cc56461f
+    restart: unless-stopped
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=umami
+      - POSTGRES_USER=umami
+      - POSTGRES_PASSWORD=umami

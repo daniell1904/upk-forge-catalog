@@ -1,0 +1,50 @@
+id: invoice-ninja
+name: Invoice Ninja
+author: Community
+category: Finance
+description: Invoice Ninja is a free and open-source invoice and expense management system. It is a web-based application that allows you to create, manage, and track invoices and expenses.
+ugos:
+  app_id: com.upkforge.docker.invoiceninja
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: IN_PASSWORD
+  label: IN PASSWORD
+  type: password
+- key: APP_KEY
+  label: APP KEY
+  type: password
+- key: MARIADB_ROOT_PASSWORD
+  label: MARIADB ROOT PASSWORD
+  type: password
+volumes:
+- container_path: /var/www/app/public
+  label: Var www app public
+  user_chosen: false
+  default_host_subpath: data/public
+- container_path: /var/www/app/storage
+  label: Var www app storage
+  user_chosen: false
+  default_host_subpath: data/storage
+- container_path: /usr/local/etc/php/php.ini
+  label: Usr local etc php php.ini
+  user_chosen: false
+  default_host_subpath: data/php/php.ini
+- container_path: /usr/local/etc/php/php-cli.ini
+  label: Usr local etc php php cli.ini
+  user_chosen: false
+  default_host_subpath: data/php/php-cli.ini
+- container_path: /etc/nginx/conf.d/default.conf
+  label: Etc nginx conf.d default.conf
+  user_chosen: false
+  default_host_subpath: data/nginx/invoice-ninja.conf
+- container_path: /var/www/app/public
+  label: Var www app public
+  user_chosen: false
+  default_host_subpath: data/public
+- container_path: /var/lib/mysql
+  label: Var lib mysql
+  user_chosen: false
+  default_host_subpath: data/mysql

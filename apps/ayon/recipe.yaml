@@ -1,0 +1,28 @@
+id: ayon
+name: Ayon
+author: Community
+category: Developer
+description: This is the official Docker-based deployment for the Ayon Server. Ayon is a robust tool designed to manage and automate workflows in the animation and visual effects industries.
+ugos:
+  app_id: com.upkforge.docker.ayon
+  version: 0.1.0
+  port: 5000
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /addons
+  label: Addons
+  user_chosen: false
+  default_host_subpath: addons
+- container_path: /storage
+  label: Storage
+  user_chosen: false
+  default_host_subpath: storage
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: postgres
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: redis

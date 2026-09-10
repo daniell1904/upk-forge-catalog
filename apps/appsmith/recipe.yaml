@@ -1,0 +1,16 @@
+id: appsmith
+name: Appsmith
+author: Community
+category: Developer
+description: Low code project to build admin panels, internal tools, and dashboards, integrating 15+ databases.
+ugos:
+  app_id: com.upkforge.docker.appsmith
+  version: 0.1.0
+  port: 1080
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /appsmith-stacks
+  label: Appsmith stacks
+  user_chosen: false
+  default_host_subpath: stacks

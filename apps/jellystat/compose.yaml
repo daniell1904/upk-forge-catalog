@@ -1,0 +1,29 @@
+services:
+  jellystat:
+    image: docker.io/cyfershepard/jellystat:1.1.12
+    depends_on:
+      - jellystat-db
+    ports:
+      - "3004:3000"
+    volumes:
+      - ./data:/app/backend/db
+    environment:
+      - TZ=${TZ}
+      - JS_BASE_URL=/
+      - POSTGRES_IP=jellystat-db
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=jellystat
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - JWT_SECRET=${JWT_SECRET}
+    restart: unless-stopped
+
+  jellystat-db:
+    image: docker.io/postgres:16
+    environment:
+      - TZ=${TZ}
+      - POSTGRES_USER=jellystat
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=jellystat
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    restart: unless-stopped

@@ -1,0 +1,22 @@
+services:
+  kopia:
+    image: ghcr.io/thespad/kopia-server:v0.17.0-spad3@sha256:e9e9256e0037030932b78a16bdef09894b6f9c6f89e8367e05d9777813e67f62
+    restart: unless-stopped
+    ports:
+      - 51515:51515
+    volumes:
+      - ./config:/config
+      - ./home:/backups/home
+      - ./kopia-backups-docker:/backups/docker
+      - ./repository:/repository
+      - /tmp:/tmp
+      - ./kopia-var-run-docker-sock:/var/run/docker.sock
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=UTC
+      - KOPIA_HTTPS=true
+      - KOPIA_UI_USERNAME=app
+      - KOPIA_UI_PASSWORD=app
+      - KOPIA_PASSWORD=app
+      - REFRESH_INTERVAL=

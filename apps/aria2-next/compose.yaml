@@ -1,0 +1,14 @@
+services:
+  aria2-next:
+    image: ghcr.io/aninsomniacy/aria2-next:v2.7.5
+    ports:
+      - "6800:6800"
+    volumes:
+      - ./config:/config
+      - ./state:/var/lib/aria2-next
+      - ./downloads:/downloads
+    environment:
+      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+    restart: unless-stopped

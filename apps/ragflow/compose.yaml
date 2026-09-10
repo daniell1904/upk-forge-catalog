@@ -1,0 +1,118 @@
+services:
+  ragflow:
+    image: app/ragflow:v0.21.1
+    restart: unless-stopped
+    ports:
+      - 9380:9380
+      - 30080:80
+      - 10443:443
+      - 5678:5678
+      - 5679:5679
+      - 9382:9382
+    volumes:
+      - ./ragflow-logs:/ragflow/logs
+      - ./history_data_agent:/ragflow/history_data_agent
+    environment:
+      - ES_HOST=ragflow-es01
+      - INFINITY_HOST=ragflow-infinity
+      - MINIO_HOST=ragflow-minio
+      - MYSQL_HOST=ragflow-mysql
+      - OS_HOST=ragflow-opensearch01
+      - REDIS_HOST=ragflow-redis
+      - TZ=$TZ
+  ragflow-es01:
+    image: elasticsearch:8.11.3
+    restart: unless-stopped
+    ports:
+      - 9200:9200
+    volumes:
+      - ./es01:/usr/share/elasticsearch/data
+    environment:
+      - ELASTIC_PASSWORD=infini_rag_flow
+      - TZ=$TZ
+      - bootstrap.memory_lock=false
+      - cluster.routing.allocation.disk.watermark.flood_stage=2gb
+      - cluster.routing.allocation.disk.watermark.high=3gb
+      - cluster.routing.allocation.disk.watermark.low=5gb
+      - discovery.type=single-node
+      - node.name=es01
+      - xpack.security.enabled=true
+      - xpack.security.http.ssl.enabled=false
+      - xpack.security.transport.ssl.enabled=false
+  ragflow-infinity:
+    image: app/ragflow-infinity:v0.6.1
+    restart: unless-stopped
+    ports:
+      - 23817:23817
+      - 23820:23820
+      - 15432:5432
+    volumes:
+      - ./infinity:/var/infinity
+    environment:
+      - TZ=$TZ
+  ragflow-minio:
+    image: quay.io/minio/minio:RELEASE.2025-06-13T11-33-47Z
+    restart: unless-stopped
+    ports:
+      - 9000:9000
+      - 9001:9001
+    volumes:
+      - ./minio:/data
+    environment:
+      - MINIO_ROOT_PASSWORD=infini_rag_flow
+      - MINIO_ROOT_USER=rag_flow
+      - TZ=$TZ
+  ragflow-mysql:
+    image: app/ragflow-mysql:8.0.39
+    restart: unless-stopped
+    ports:
+      - 5455:3306
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_PASSWORD=infini_rag_flow
+      - MYSQL_ROOT_PASSWORD=mysql
+      - TZ=$TZ
+  ragflow-opensearch01:
+    image: opensearchproject/opensearch:2.19.1
+    restart: unless-stopped
+    ports:
+      - 9201:9201
+    volumes:
+      - ./opensearch01:/usr/share/opensearch/data
+    environment:
+      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=infini_rag_flow_OS_01
+      - OPENSEARCH_PASSWORD=infini_rag_flow_OS_01
+      - TZ=$TZ
+      - bootstrap.memory_lock=false
+      - cluster.routing.allocation.disk.watermark.flood_stage=2gb
+      - cluster.routing.allocation.disk.watermark.high=3gb
+      - cluster.routing.allocation.disk.watermark.low=5gb
+      - discovery.type=single-node
+      - http.port=9201
+      - node.name=opensearch01
+      - plugins.security.disabled=false
+      - plugins.security.ssl.http.enabled=false
+      - plugins.security.ssl.transport.enabled=true
+  ragflow-redis:
+    image: valkey/valkey:8
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+    volumes:
+      - ./redis:/data
+  ragflow-sandbox-executor-manager:
+    image: infiniflow/sandbox-executor-manager:latest
+    restart: unless-stopped
+    ports:
+      - 9385:9385
+    volumes:
+      - ./ragflow-sandbox-executor-manager-var-run-docker-sock:/var/run/docker.sock
+    environment:
+      - SANDBOX_BASE_NODEJS_IMAGE=infiniflow/sandbox-base-nodejs:latest
+      - SANDBOX_BASE_PYTHON_IMAGE=infiniflow/sandbox-base-python:latest
+      - SANDBOX_ENABLE_SECCOMP=false
+      - SANDBOX_EXECUTOR_MANAGER_POOL_SIZE=3
+      - SANDBOX_MAX_MEMORY=256m
+      - SANDBOX_TIMEOUT=10s
+      - TZ=$TZ

@@ -1,0 +1,16 @@
+id: gitea-mirror
+name: Gitea Mirror
+author: RayLabs HQ
+category: Developer
+description: Gitea Mirror is a modern web app for automatically mirroring repositories from GitHub to your self-hosted Gitea instance. It features a user-friendly interface to sync public, private, or starred GitHub repos, mirror entire organizations with structure preservation, and optionally mirror issues and labels. The application includes smart filtering, detailed logs, and scheduled automatic mirroring.
+ugos:
+  app_id: com.upkforge.docker.giteamirror
+  version: 0.1.0
+  port: 4321
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /app/data
+  label: App data
+  user_chosen: false
+  default_host_subpath: data

@@ -1,0 +1,56 @@
+id: celestory-voltask
+name: Celestory & Voltask
+author: Celestory
+category: Developer
+description: The all-in-one no-code platform for interactive storytelling and Voltask automation engine. Paid license required, no free tier available. Purchase a license at https://celestory.io/pricing
+ugos:
+  app_id: com.upkforge.docker.celestoryvoltask
+  version: 0.1.0
+  port: 1500
+  open_type: tab
+  tag_type: devtool
+parameters:
+- key: AUTH_AUTHORITY_SECRET
+  label: AUTH AUTHORITY SECRET
+  type: password
+- key: ADMIN_USERNAME
+  label: ADMIN USERNAME
+  type: string
+- key: ADMIN_PASSWORD
+  label: ADMIN PASSWORD
+  type: password
+- key: HUB_ORIGIN
+  label: HUB ORIGIN
+  type: string
+- key: API_ORIGIN
+  label: API ORIGIN
+  type: string
+- key: AUTH_REDIRECT_URI
+  label: AUTH REDIRECT URI
+  type: path
+- key: VOLTASK_WEBHOOK_URL
+  label: VOLTASK WEBHOOK URL
+  type: string
+- key: VOLTASK_ADMIN_EMAIL
+  label: VOLTASK ADMIN EMAIL
+  type: string
+- key: VOLTASK_ADMIN_PASSWORD
+  label: VOLTASK ADMIN PASSWORD
+  type: password
+volumes:
+- container_path: /app/projectFiles
+  label: App projectFiles
+  user_chosen: false
+  default_host_subpath: projectFiles
+- container_path: /usr/src/app/projectFiles
+  label: Usr src app projectFiles
+  user_chosen: false
+  default_host_subpath: projectFiles
+- container_path: /app/uploads
+  label: App uploads
+  user_chosen: false
+  default_host_subpath: uploads
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: db

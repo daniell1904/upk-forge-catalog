@@ -1,0 +1,18 @@
+id: myspeed
+name: MySpeed
+author: joaobosconff
+category: Networking
+description: MySpeed is a speed test analysis software that stores the speed of your internet for up to 30 days. This can also be useful if you want to know when your network might have drops or if you want to check if your internet matches the booked values from your contract.
+homepage: https://myspeed.dev
+source_code: https://github.com/gnmyt/myspeed
+ugos:
+  app_id: com.upkforge.docker.myspeed
+  version: 0.1.0
+  port: 5216
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /myspeed/data
+  label: Myspeed data
+  user_chosen: false
+  default_host_subpath: data

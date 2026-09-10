@@ -1,0 +1,17 @@
+id: sub-store
+name: Sub-Store
+version: 2.39.0
+author: Sub-Store Org
+category: System
+homepage: https://github.com/sub-store-org/Sub-Store
+ugos:
+  app_id: com.upkforge.docker.substore
+  version: 0.1.0
+  port: 3001
+  open_type: tab
+  tag_type: system
+volumes:
+- container_path: /opt/app/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

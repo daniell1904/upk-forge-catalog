@@ -1,0 +1,18 @@
+id: gluetun
+name: Gluetun
+author: Community
+category: Networking
+description: Lightweight swiss-knife-like VPN client to multiple VPN service providers
+warnings:
+- 'service adds capabilities: NET_ADMIN'
+ugos:
+  app_id: com.upkforge.docker.gluetun
+  version: 0.1.0
+  port: 8888
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /gluetun
+  label: Gluetun
+  user_chosen: false
+  default_host_subpath: data

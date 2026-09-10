@@ -1,0 +1,23 @@
+services:
+  deepseek-ocr-backend:
+    image: app/deepseek-ocr-backend:v2.2.0
+    restart: unless-stopped
+    ports:
+      - 22523:8000
+    volumes:
+      - ./models:/models
+    environment:
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - FRONTEND_PORT=3000
+      - MODEL_NAME=deepseek-ai/DeepSeek-OCR
+      - HF_HOME=/models
+      - MAX_UPLOAD_SIZE_MB=100
+      - BASE_SIZE=1024
+      - IMAGE_SIZE=640
+      - CROP_MODE=true
+  deepseek-ocr-frontend:
+    image: app/deepseek-ocr-frontend:v2.2.0
+    restart: unless-stopped
+    ports:
+      - 23000:80

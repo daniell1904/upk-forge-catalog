@@ -1,0 +1,16 @@
+id: nexterm
+name: Nexterm
+author: Community
+category: Others
+description: The open source server management software for SSH, VNC & RDP. This is in BETA.
+ugos:
+  app_id: com.upkforge.docker.nexterm
+  version: 0.1.0
+  port: 6989
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /app/data
+  label: App data
+  user_chosen: false
+  default_host_subpath: data

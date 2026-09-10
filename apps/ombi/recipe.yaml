@@ -1,0 +1,18 @@
+id: ombi
+name: Ombi
+version: 4.53.10
+author: Ombi-app
+category: Media
+description: Ombi is a self-hosted web application that automatically gives your shared Plex or Emby users the ability to request content by themselves! Ombi can be linked to multiple TV Show and Movie DVR tools to create a seamless end-to-end experience for your users.
+homepage: https://github.com/Ombi-app/Ombi
+ugos:
+  app_id: com.upkforge.docker.ombi
+  version: 0.1.0
+  port: 3579
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config

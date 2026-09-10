@@ -1,0 +1,27 @@
+id: danmu-api
+name: Danmu API
+version: 1.20.10
+author: huangxd-
+category: Content
+homepage: https://github.com/huangxd-/danmu_api
+ugos:
+  app_id: com.upkforge.docker.danmuapi
+  version: 0.1.0
+  port: 9321
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: wizard_token
+  label: Wizard token
+  type: password
+  changeable: false
+  generate_bytes: 24
+volumes:
+- container_path: /app/config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /app/.cache
+  label: .cache
+  user_chosen: false
+  default_host_subpath: .cache

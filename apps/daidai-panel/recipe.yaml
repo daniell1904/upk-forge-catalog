@@ -1,0 +1,17 @@
+id: daidai-panel
+name: Daidai Panel
+version: 3.2.6
+author: linzixuanzz
+category: System
+homepage: https://github.com/linzixuanzz/daidai-panel
+ugos:
+  app_id: com.upkforge.docker.daidaipanel
+  version: 0.1.0
+  port: 5701
+  open_type: tab
+  tag_type: system
+volumes:
+- container_path: /app/Dumb-Panel
+  label: Dumb Panel
+  user_chosen: false
+  default_host_subpath: data

@@ -1,0 +1,26 @@
+id: petio
+name: Petio
+author: WisdomSky
+category: Media
+description: >-
+  Petio is a third party companion app available to Plex server owners to allow their users to request, review and discover content. The app is built to appear instantly familiar and intuitive to even the most tech-agnostic users. Petio will help you manage requests from your users, connect to other third party apps such as Sonarr and Radarr, notify users when content is available and track request progress. Petio also allows users to discover media both on and off your server, quickly and easily find related content and review to leave their opinion for other users.
+
+
+  Petio is an ongoing, forever free, always evolving project currently in alpha prototype stage and now available!
+homepage: https://petio.tv
+source_code: https://github.com/petio-team/petio
+ugos:
+  app_id: com.upkforge.docker.petio
+  version: 0.1.0
+  port: 7777
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /app/api/config
+  label: App api config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /app/logs
+  label: App logs
+  user_chosen: false
+  default_host_subpath: logs

@@ -1,0 +1,21 @@
+id: clamav
+name: ClamAV
+version: 1.5.4
+author: Cisco-Talos
+category: System
+homepage: https://github.com/Cisco-Talos/clamav
+ugos:
+  app_id: com.upkforge.docker.clamav
+  version: 0.1.0
+  port: 3310
+  open_type: tab
+  tag_type: system
+volumes:
+- container_path: /var/lib/clamav
+  label: Clamav
+  user_chosen: false
+  default_host_subpath: virus_db
+- container_path: /etc/clamav
+  label: Clamav
+  user_chosen: false
+  default_host_subpath: config

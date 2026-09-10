@@ -1,0 +1,18 @@
+id: mealie
+name: Mealie
+version: 3.25.1
+author: Mealie
+category: Content
+description: Mealie is a self hosted recipe manager and meal planner with a RestAPI backend and a reactive frontend application built in Vue for a pleasant user experience for the whole family. Easily add recipes into your database by providing the url and mealie will automatically import the relevant data or add a family recipe with the UI editor
+homepage: https://mealie.io
+ugos:
+  app_id: com.upkforge.docker.mealie
+  version: 0.1.0
+  port: 9925
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /app/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

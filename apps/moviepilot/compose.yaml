@@ -1,0 +1,21 @@
+services:
+  moviepilot:
+    image: docker.io/jxxghp/moviepilot-v${VERSION_MAJOR}:3.0.0
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./config:/config
+      - ./core:/moviepilot
+      - ./media:/media
+      - ./downloads:/downloads
+    environment:
+      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+      - UMASK=022
+      - NGINX_PORT=3000
+      - PORT=3001
+      - GITHUB_PROXY=https://gh-proxy.com/
+      - SUPERUSER=admin
+      - SUPERUSER_PASSWORD=${SUPERUSER_PASSWORD}
+    restart: unless-stopped

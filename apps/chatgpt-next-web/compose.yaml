@@ -1,0 +1,14 @@
+services:
+  chatgpt-next-web:
+    image: yidadaa/chatgpt-next-web:v2.16.1
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 3000:3000
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ
+      - CODE=
+      - PROXY_URL=
+      - BASE_URL=https://api.openai.com

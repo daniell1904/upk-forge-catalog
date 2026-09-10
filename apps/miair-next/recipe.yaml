@@ -1,0 +1,19 @@
+id: miair-next
+name: MiAir Next
+version: 0.6.0
+author: deerwan
+category: Media
+homepage: https://github.com/deerwan/miair-next
+warnings:
+- service 'miair-next' uses host networking
+ugos:
+  app_id: com.upkforge.docker.miairnext
+  version: 0.1.0
+  port: 8300
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /app/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

@@ -1,0 +1,13 @@
+services:
+  embystat:
+    image: linuxserver/embystat:0.2.0
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 6555:6555
+    volumes:
+      - ./config:/config
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=Europe/London

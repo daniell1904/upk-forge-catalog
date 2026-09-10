@@ -1,0 +1,11 @@
+services:
+  cowagent:
+    image: docker.io/zhayujie/chatgpt-on-wechat:2.1.7
+    ports:
+      - "9899:9899"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TZ=${TZ}
+      - WEB_PASSWORD=${wizard_web_password}
+    restart: unless-stopped

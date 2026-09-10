@@ -1,0 +1,14 @@
+services:
+  stalwart-mail:
+    image: stalwartlabs/stalwart:v0.16.17@sha256:a8108e19bd927e172d4d8c128907b8dfc93fd180ae8ee07dccdd42cb97eb9dfa
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+      - 25:25
+      - 143:143
+      - 465:465
+      - 587:587
+      - 993:993
+      - 4190:4190
+    volumes:
+      - ./data:/opt/stalwart

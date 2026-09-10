@@ -1,0 +1,55 @@
+id: vibenvr
+name: VibeNVR
+version: 1.35.3
+author: spupuz
+category: Media
+homepage: https://github.com/spupuz/VibeNVR
+warnings:
+- service 'engine' is privileged
+ugos:
+  app_id: com.upkforge.docker.vibenvr
+  version: 0.1.0
+  port: 8087
+  open_type: tab
+  tag_type: media
+parameters:
+- key: wizard_postgres_password
+  label: Wizard postgres password
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: wizard_secret_key
+  label: Wizard secret key
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: wizard_webhook_secret
+  label: Wizard webhook secret
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: wizard_allowed_origins
+  label: Wizard allowed origins
+  type: string
+- key: wizard_cookie_secure
+  label: Wizard cookie secure
+  type: string
+- key: wizard_hw_accel_type
+  label: Wizard hw accel type
+  type: string
+- key: POSTGRES_USER
+  label: Postgres user
+  type: string
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /var/lib/vibe/recordings
+  label: Recordings
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /var/lib/postgresql/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: db

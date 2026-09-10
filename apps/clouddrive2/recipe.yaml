@@ -1,0 +1,25 @@
+id: clouddrive2
+name: CloudDrive2
+version: 1.0.16
+author: CloudNAS
+category: System
+homepage: https://www.clouddrive2.com/
+warnings:
+- service 'clouddrive2' is privileged
+- "service 'clouddrive2' adds capabilities: SYS_ADMIN"
+- service 'clouddrive2' maps device '/dev/fuse:/dev/fuse'
+ugos:
+  app_id: com.upkforge.docker.clouddrive2
+  version: 0.1.0
+  port: 19798
+  open_type: tab
+  tag_type: system
+volumes:
+- container_path: /CloudNAS
+  label: CloudNAS
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /Config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config

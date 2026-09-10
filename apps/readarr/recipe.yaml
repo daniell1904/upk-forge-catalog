@@ -1,0 +1,33 @@
+id: readarr
+name: Readarr
+author: Team
+category: Media
+description: Readarr is a ebook collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new books from your favorite authors and will interface with clients and indexers to grab, sort, and rename them.
+homepage: https://readarr.com
+source_code: https://github.com/Readarr/Readarr
+ugos:
+  app_id: com.upkforge.docker.readarr
+  version: 0.1.0
+  port: 8787
+  open_type: tab
+  tag_type: media
+parameters:
+- key: VOL_1
+  label: Books folder
+  help: Folder on the NAS for Readarr's books. It is mounted into the container at /books; Readarr has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Downloads folder
+  help: Folder on the NAS for Readarr's downloads. It is mounted into the container at /downloads; Readarr has full read and write access to it.
+  type: path
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /books
+  label: Books
+  default_host_subpath: readarr-books
+- container_path: /downloads
+  label: Downloads
+  default_host_subpath: readarr-downloads

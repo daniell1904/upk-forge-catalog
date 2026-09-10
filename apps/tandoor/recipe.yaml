@@ -1,0 +1,31 @@
+id: tandoor
+name: Tandoor
+author: Community
+category: Others
+description: Drop your collection of links and notes. Get Tandoor and never look back onto a time without recipe management, storage, sharing and collaborative cooking!
+ugos:
+  app_id: com.upkforge.docker.tandoor
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: SECRET_KEY
+  label: SECRET KEY
+  type: password
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
+volumes:
+- container_path: /opt/recipes/staticfiles
+  label: Opt recipes staticfiles
+  user_chosen: false
+  default_host_subpath: staticfiles
+- container_path: /opt/recipes/mediafiles
+  label: Opt recipes mediafiles
+  user_chosen: false
+  default_host_subpath: mediafiles
+- container_path: /var/lib/postgresql/data
+  label: Var lib postgresql data
+  user_chosen: false
+  default_host_subpath: postgresql

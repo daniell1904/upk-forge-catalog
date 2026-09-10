@@ -1,0 +1,22 @@
+id: mongodb4
+name: MongoDB 4
+author: WisdomSky
+category: Developer
+description: MongoDB is a free and open-source cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schemata. MongoDB is developed by MongoDB Inc., and is published under a combination of the Server Side Public License and the Apache License.
+homepage: https://www.mongodb.com/
+source_code: https://github.com/mongodb/mongo
+ugos:
+  app_id: com.upkforge.docker.mongodb4
+  version: 0.1.0
+  port: 27017
+  open_type: tab
+  tag_type: devtool
+volumes:
+- container_path: /data/configdb
+  label: Data configdb
+  user_chosen: false
+  default_host_subpath: data/configdb
+- container_path: /data/db
+  label: Data db
+  user_chosen: false
+  default_host_subpath: data/db

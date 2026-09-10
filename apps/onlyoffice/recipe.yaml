@@ -1,0 +1,36 @@
+id: onlyoffice
+name: OnlyOffice
+author: Community
+category: Productivity
+description: Feature-rich web-based office suite with a vast range of collaborative capabilities
+ugos:
+  app_id: com.upkforge.docker.onlyoffice
+  version: 0.1.0
+  port: 7400
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /var/log/onlyoffice
+  label: Var log onlyoffice
+  user_chosen: false
+  default_host_subpath: onlyoffice/logs
+- container_path: /var/www/onlyoffice/Data
+  label: Var www onlyoffice Data
+  user_chosen: false
+  default_host_subpath: onlyoffice/data
+- container_path: /var/lib/onlyoffice
+  label: Var lib onlyoffice
+  user_chosen: false
+  default_host_subpath: onlyoffice/lib
+- container_path: /var/lib/rabbitmq
+  label: Var lib rabbitmq
+  user_chosen: false
+  default_host_subpath: onlyoffice/rabbitmq
+- container_path: /var/lib/redis
+  label: Var lib redis
+  user_chosen: false
+  default_host_subpath: onlyoffice/redis
+- container_path: /var/lib/postgresql
+  label: Var lib postgresql
+  user_chosen: false
+  default_host_subpath: onlyoffice/db

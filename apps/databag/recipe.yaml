@@ -1,0 +1,17 @@
+id: databag
+name: Databag
+author: Pierre Balzack
+category: Social
+description: Databag is a federated chat app for self-hosting that focuses on user privacy and security; the service includes clients for iOS, Android, and browser.
+source_code: https://github.com/balzack/databag
+ugos:
+  app_id: com.upkforge.docker.databag
+  version: 0.1.0
+  port: 7000
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /var/lib/databag
+  label: Var lib databag
+  user_chosen: false
+  default_host_subpath: data

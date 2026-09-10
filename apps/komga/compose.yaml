@@ -1,0 +1,11 @@
+services:
+  komga:
+    image: docker.io/gotson/komga:1.26.3
+    ports:
+      - "25600:25600"
+    volumes:
+      - ./config:/config
+      - ./data:/data
+    environment:
+      - TZ=${TZ}
+    restart: unless-stopped

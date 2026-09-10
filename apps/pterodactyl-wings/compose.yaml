@@ -1,0 +1,20 @@
+services:
+  app:
+    image: ghcr.io/pterodactyl/wings:v1.12.1@sha256:85d92f778d47cbc255f559a476d82915c4c5cb2973c3e6d44c82046513d53365
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+      - 2022:2022
+    volumes:
+      - ./app-var-run-docker-sock:/var/run/docker.sock
+      - ./app-var-lib-docker-containers:/var/lib/docker/containers/
+      - ./app-etc-ssl-certs:/etc/ssl/certs
+      - /tmp/pterodactyl:/tmp/pterodactyl/
+      - ./app-etc-pterodactyl:/etc/pterodactyl/
+      - ./app-var-log-pterodactyl:/var/log/pterodactyl/
+      - ./app-var-lib-pterodactyl:/var/lib/pterodactyl/
+    environment:
+      - TZ=UTC
+      - WINGS_UID=988
+      - WINGS_GID=988
+      - WINGS_USERNAME=pterodactyl

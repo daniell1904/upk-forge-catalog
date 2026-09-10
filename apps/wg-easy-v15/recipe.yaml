@@ -1,0 +1,18 @@
+id: wg-easy-v15
+name: WireGuard Easy v15
+author: Community
+category: Networking
+description: "WireGuard Easy v15 - Complete rewrite with new features and improved UI. Access your homeserver from anywhere with this modern VPN solution. NOTE: This is v15 which has breaking changes from v14. If you're currently using v14, please backup your configuration before migrating."
+warnings:
+- 'service adds capabilities: NET_ADMIN, SYS_MODULE'
+ugos:
+  app_id: com.upkforge.docker.wgeasyv15
+  version: 0.1.0
+  port: 51820
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /etc/wireguard
+  label: Etc wireguard
+  user_chosen: false
+  default_host_subpath: data

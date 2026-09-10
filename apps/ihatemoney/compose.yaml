@@ -1,0 +1,24 @@
+services:
+  ihatemoney:
+    image: ihatemoney/ihatemoney:7.2.1@sha256:009d1520552782765c8c41750262cc69410be7ac616f93a9f371556e472f23c6
+    restart: unless-stopped
+    ports:
+      - 8001:8000
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+      - SQLALCHEMY_DATABASE_URI=mysql+pymysql://app:password@ihatemoney-db/ihatemoney
+      - ACTIVATE_ADMIN_DASHBOARD=True
+      - ADMIN_PASSWORD=
+      - SESSION_COOKIE_SECURE=False
+  ihatemoney-db:
+    image: mariadb:10@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350
+    restart: unless-stopped
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=ihatemoney
+      - MYSQL_USER=app
+      - MYSQL_PASSWORD=password

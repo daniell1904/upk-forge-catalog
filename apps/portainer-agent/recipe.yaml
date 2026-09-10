@@ -1,0 +1,20 @@
+id: portainer-agent
+name: Portainer Agent
+author: Community
+category: Productivity
+description: Portainer uses the Portainer Agent container to communicate with the Portainer Server instance and provide access to the node's resources. This document will outline how to install the Portainer Agent on your node and how to connect to it from your Portainer Server instance. If you do not have a working Portainer Server instance yet, please refer to the Portainer Server installation guide first.
+ugos:
+  app_id: com.upkforge.docker.portaineragent
+  version: 0.1.0
+  port: 9001
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /var/run/docker.sock
+  label: Var run docker.sock
+  user_chosen: false
+  default_host_subpath: app-var-run-docker-sock
+- container_path: /var/lib/docker/volumes
+  label: Var lib docker volumes
+  user_chosen: false
+  default_host_subpath: app-var-lib-docker-volumes

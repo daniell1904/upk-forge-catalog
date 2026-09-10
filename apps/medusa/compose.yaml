@@ -1,0 +1,14 @@
+services:
+  medusa:
+    image: docker.io/linuxserver/medusa:1.0.26
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./config:/config
+      - ./downloads:/downloads
+      - ./tv:/tv
+    environment:
+      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+    restart: unless-stopped

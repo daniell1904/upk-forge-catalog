@@ -1,0 +1,14 @@
+services:
+  songloft:
+    image: docker.io/songloft/songloft:2.12.0
+    ports:
+      - "58091:58091"
+    volumes:
+      - ./music:/app/music
+      - ./data:/app/data
+    environment:
+      - TZ=${TZ}
+      - LISTEN_PORT=58091
+      - ADMIN_USERNAME=${wizard_admin_username}
+      - ADMIN_PASSWORD=${wizard_admin_password}
+    restart: unless-stopped

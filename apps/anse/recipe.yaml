@@ -1,0 +1,11 @@
+id: anse
+name: Anse
+author: Community
+category: AI
+description: Anse is a fully optimized UI for AI Chats. Supercharged experience for multiple models such as ChatGPT, DALL-E and Stable Diffusion.
+ugos:
+  app_id: com.upkforge.docker.anse
+  version: 0.1.0
+  port: 8014
+  open_type: tab
+  tag_type: utility

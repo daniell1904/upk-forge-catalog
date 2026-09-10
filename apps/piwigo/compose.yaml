@@ -1,0 +1,23 @@
+services:
+  piwigo:
+    image: linuxserver/piwigo:16.4.0@sha256:26c4a6964f51d116211ecfd01f20d5c1fd0a7ea276cb7511bef92d91ca076d4d
+    restart: unless-stopped
+    ports:
+      - 8080:80
+    volumes:
+      - ./config:/config
+      - ./gallery:/gallery
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+  piwigo-db:
+    image: mariadb:10.6@sha256:114d40be36852d0a019afd8458f7e1cc63fd300403b115b1f32e31130d5f671b
+    restart: unless-stopped
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=piwigo
+      - MYSQL_USER=app_piwigo
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}

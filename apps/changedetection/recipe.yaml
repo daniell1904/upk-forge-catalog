@@ -1,0 +1,16 @@
+id: changedetection
+name: Change Detection
+author: Community
+category: Others
+description: The best and simplest free open source website change detection, restock monitor and notification service.
+ugos:
+  app_id: com.upkforge.docker.changedetection
+  version: 0.1.0
+  port: 5000
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /datastore
+  label: Datastore
+  user_chosen: false
+  default_host_subpath: datastore

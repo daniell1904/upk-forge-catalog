@@ -1,0 +1,26 @@
+id: pyload
+name: PyLoad
+author: joaobosconff
+category: Media
+description: pyLoad is a Free and Open Source download manager written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.
+homepage: https://pyload.net
+source_code: https://github.com/pyload/pyload
+ugos:
+  app_id: com.upkforge.docker.pyload
+  version: 0.1.0
+  port: 8000
+  open_type: tab
+  tag_type: media
+parameters:
+- key: VOL_1
+  label: Downloads folder
+  help: Folder on the NAS for PyLoad's downloads. It is mounted into the container at /downloads; PyLoad has full read and write access to it.
+  type: path
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /downloads
+  label: Downloads
+  default_host_subpath: pyload-downloads

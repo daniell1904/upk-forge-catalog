@@ -1,0 +1,20 @@
+id: umbrel
+name: Umbrel OS
+author: Community
+category: Others
+description: Umbrel is a personal server OS that makes self-hosting accessible to everyone.
+ugos:
+  app_id: com.upkforge.docker.umbrel
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /var/run/docker.sock
+  label: Var run docker.sock
+  user_chosen: false
+  default_host_subpath: umbrel-var-run-docker-sock

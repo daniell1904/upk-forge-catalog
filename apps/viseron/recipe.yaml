@@ -1,0 +1,32 @@
+id: viseron
+name: Viseron
+author: Community
+category: AI
+description: Viseron is a self-hosted, local only NVR and AI Computer Vision software
+ugos:
+  app_id: com.upkforge.docker.viseron
+  version: 0.1.0
+  port: 8888
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /segments
+  label: Segments
+  user_chosen: false
+  default_host_subpath: segments
+- container_path: /snapshots
+  label: Snapshots
+  user_chosen: false
+  default_host_subpath: snapshots
+- container_path: /thumbnails
+  label: Thumbnails
+  user_chosen: false
+  default_host_subpath: thumbnails
+- container_path: /event_clips
+  label: Event clips
+  user_chosen: false
+  default_host_subpath: event/clips
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config

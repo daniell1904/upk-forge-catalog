@@ -1,0 +1,16 @@
+id: nova-dso-tracker
+name: Nova DSO Tracker
+author: mrantonSG
+category: Media
+description: Nova DSO Tracker is a tool for astrophotographers to track Deep Space Objects, check observability, and manage imaging sessions.
+ugos:
+  app_id: com.upkforge.docker.novadsotracker
+  version: 0.1.0
+  port: 5001
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /app/instance
+  label: App instance
+  user_chosen: false
+  default_host_subpath: instance

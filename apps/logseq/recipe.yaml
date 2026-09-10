@@ -1,0 +1,28 @@
+id: logseq
+name: Logseq
+author: Team
+category: Productivity
+description: A privacy-first, open-source platform for knowledge management and collaboration.
+homepage: https://logseq.com/
+source_code: https://github.com/logseq/logseq
+warnings:
+- service is privileged
+ugos:
+  app_id: com.upkforge.docker.logseq
+  version: 0.1.0
+  port: 3325
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: VOL_1
+  label: Notes folder
+  help: Folder on the NAS for Logseq's notes. It is mounted into the container at /notes; Logseq has full read and write access to it.
+  type: path
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /notes
+  label: Notes
+  default_host_subpath: logseq-notes

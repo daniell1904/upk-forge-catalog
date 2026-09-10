@@ -1,0 +1,45 @@
+id: pingvin-share
+name: Pingvin-Share
+author: stonith404
+category: Productivity
+description: >-
+  Pingvin-Share is a self-hosted file sharing application compatible with Nextcloud apps, offering a modern and intuitive web interface. It enables users to securely store, organize, and share files without relying on external cloud services. The application supports multiple authentication methods and provides features such as share links, user accounts, and a responsive interface.
+
+
+  **Key features:**
+
+  - Modern, responsive web interface
+
+  - User accounts with a permission system
+
+  - Secure share links for files
+
+  - Drag-and-drop file upload
+
+  - Password-protected shares
+
+  - Multiple authentication methods
+
+  - Docker-based deployment for easy installation
+
+
+  **Learn more:**
+
+  - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
+homepage: https://stonith404.github.io/pingvin-share/
+source_code: https://github.com/stonith404/pingvin-share
+ugos:
+  app_id: com.upkforge.docker.pingvinshare
+  version: 0.1.0
+  port: 3410
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /opt/app/backend/data
+  label: Opt app backend data
+  user_chosen: false
+  default_host_subpath: data
+- container_path: /opt/app/frontend/public/img
+  label: Opt app frontend public img
+  user_chosen: false
+  default_host_subpath: images

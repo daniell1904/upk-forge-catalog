@@ -1,0 +1,75 @@
+id: librechat
+name: LibreChat
+version: 0.8.7
+author: danny-avila
+category: Ai
+description: >-
+  LibreChat is a full-featured, open-source AI chat interface that allows users to interact with multiple AI models through a unified platform. It supports various AI providers and offers advanced features like conversation management, plugin support, and customizable interfaces.
+
+  **Key Features:**
+
+  - Support for multiple AI models and providers
+
+  - Conversation history and management
+
+  - Plugin system for extended functionality
+
+  - Customizable themes and interfaces
+
+  - User authentication and management
+
+  - API integrations for various services
+
+  - Search functionality with MeiliSearch
+
+  - RAG (Retrieval-Augmented Generation) support
+
+  - File upload and processing capabilities
+
+  - Multi-language support
+
+
+  **Learn More:**
+
+  - [LibreChat Official Website](https://www.librechat.ai)
+
+  - [LibreChat GitHub Repository](https://github.com/danny-avila/LibreChat)
+
+
+  **extra:**
+
+  You can refer to the [Custom AI Endpoints](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints) documentation to configure the relevant files for calling the APIs of Anyscale, ApiPie, Cohere, Deepseek, Databricks, Fireworks, Groq, HuggingFace, Mistral, OpenRouter, Perplexity, ShuttleAI, TogetherAI, Unify, and xAI.
+homepage: https://librechat.ai
+ugos:
+  app_id: com.upkforge.docker.librechat
+  version: 0.1.0
+  port: 3085
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: JWT_SECRET
+  label: Jwt secret
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: CREDS_KEY
+  label: Creds key
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: CREDS_IV
+  label: Creds iv
+  type: string
+volumes:
+- container_path: /app/librechat.yaml
+  label: Librechat.yaml
+  user_chosen: false
+  default_host_subpath: config/librechat.yaml
+- container_path: /app/client/public/images
+  label: Images
+  user_chosen: false
+  default_host_subpath: images
+- container_path: /data/db
+  label: Db
+  user_chosen: false
+  default_host_subpath: db

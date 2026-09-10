@@ -1,0 +1,23 @@
+services:
+  app:
+    image: wordpress:6.9.4@sha256:5d2c212561c4b5442ebc4d98933a9cbadcf3dee8888ed3fd9ed44667c27cc905
+    restart: unless-stopped
+    ports:
+      - 8080:80
+    volumes:
+      - ./html:/var/www/html
+    environment:
+      - WORDPRESS_DB_HOST=db
+      - WORDPRESS_DB_USER=app
+      - WORDPRESS_DB_PASSWORD=app
+      - WORDPRESS_DB_NAME=wordpress
+  db:
+    image: mysql:5.7@sha256:4bc6bc963e6d8443453676cae56536f4b8156d78bae03c0145cbe47c2aad73bb
+    restart: unless-stopped
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=wordpress
+      - MYSQL_USER=app
+      - MYSQL_PASSWORD=app
+      - MYSQL_ROOT_PASSWORD=app

@@ -1,0 +1,16 @@
+id: minio
+name: Minio
+author: Community
+category: Others
+description: A distributed object storage server built for cloud applications and devops. Default credentials 'minioadmin:minioadmin', we recommend that you change these values with 'MINIO_ROOT_USER' and 'MINIO_ROOT_PASSWORD' environment variables.
+ugos:
+  app_id: com.upkforge.docker.minio
+  version: 0.1.0
+  port: 9010
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: app-data

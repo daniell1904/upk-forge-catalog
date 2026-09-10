@@ -1,0 +1,14 @@
+services:
+  tinymediamanager:
+    image: docker.io/tinymediamanager/tinymediamanager:5.3.2
+    ports:
+      - "5800:4000"
+    volumes:
+      - ./config:/config
+      - ${MOVIE_DIR}:/data/movies
+      - ${TVSHOW_DIR}:/data/tvshows
+    environment:
+      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+    restart: unless-stopped

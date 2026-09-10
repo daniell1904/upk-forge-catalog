@@ -1,0 +1,22 @@
+id: 2fauth
+name: 2FAuth
+author: Team
+category: Productivity
+description: 2FAuth is a web based self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator, designed for both mobile and desktop.
+homepage: https://2fauth.app
+source_code: https://github.com/Bubka/2FAuth
+ugos:
+  app_id: com.upkforge.docker.2fauth
+  version: 0.1.0
+  port: 8000
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: APP_KEY
+  label: APP KEY
+  type: password
+volumes:
+- container_path: /2fauth
+  label: 2fauth
+  user_chosen: false
+  default_host_subpath: 2fauth-2fauth

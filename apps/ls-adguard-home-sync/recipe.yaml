@@ -1,0 +1,16 @@
+id: ls-adguard-home-sync
+name: LS Adguard Home Sync
+author: Community
+category: Networking
+description: "\U0001F6E1️ Synchronize AdGuard Home config to replicas. This is the LinuxServer version."
+ugos:
+  app_id: com.upkforge.docker.lsadguardhomesync
+  version: 0.1.0
+  port: 8080
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /config
+  label: Config
+  user_chosen: false
+  default_host_subpath: config

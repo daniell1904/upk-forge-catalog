@@ -1,0 +1,26 @@
+services:
+  warracker:
+    image: ghcr.io/sassanix/warracker/main:9.9.3
+    restart: unless-stopped
+    ports:
+      - 8005:80
+    volumes:
+      - ./uploads:/data/uploads
+    environment:
+      - DB_HOST=warrackerdb
+      - DB_NAME=app_warracker
+      - DB_USER=app_warracker_user
+      - DB_PASSWORD=${DB_PASSWORD}
+      - SMTP_HOST=smtp.email.com
+      - SMTP_PORT=465
+      - SMTP_USERNAME=youremail@email.com
+      - SMTP_PASSWORD=password
+  warrackerdb:
+    image: postgres:15-alpine@sha256:3d0f7584ed7d04e27fa050d6683a74746608faf21f202be78460d679cc56461f
+    restart: unless-stopped
+    volumes:
+      - ./warrackerdb:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=app_warracker
+      - POSTGRES_USER=app_warracker_user
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}

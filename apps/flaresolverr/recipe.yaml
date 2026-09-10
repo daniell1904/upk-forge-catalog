@@ -1,0 +1,11 @@
+id: flaresolverr
+name: FlareSolverr
+author: calganaygun
+category: Networking
+source_code: https://github.com/FlareSolverr/FlareSolverr
+ugos:
+  app_id: com.upkforge.docker.flaresolverr
+  version: 0.1.0
+  port: 8191
+  open_type: tab
+  tag_type: utility

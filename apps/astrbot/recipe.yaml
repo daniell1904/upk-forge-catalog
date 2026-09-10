@@ -1,0 +1,20 @@
+id: astrbot
+name: AstrBot
+version: 4.28.0
+author: AstrBotDevs
+category: Ai
+homepage: https://github.com/AstrBotDevs/AstrBot
+warnings:
+- dropped host bind mount /etc/localtime:/etc/localtime:ro
+- dropped host bind mount /etc/timezone:/etc/timezone:ro
+ugos:
+  app_id: com.upkforge.docker.astrbot
+  version: 0.1.0
+  port: 6185
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /AstrBot/data
+  label: Data
+  user_chosen: false
+  default_host_subpath: data

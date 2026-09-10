@@ -1,0 +1,21 @@
+id: threadfin
+name: Threadfin
+author: Fabio Tea
+category: Media
+description: Threadfin is a M3U proxy server for Plex, Emby, Jellyfin and any client and provider which supports the .TS and .M3U8 (HLS) streaming formats.
+source_code: https://github.com/Threadfin/Threadfin
+ugos:
+  app_id: com.upkforge.docker.threadfin
+  version: 0.1.0
+  port: 34400
+  open_type: tab
+  tag_type: media
+volumes:
+- container_path: /home/threadfin/conf/data
+  label: Home threadfin conf data
+  user_chosen: false
+  default_host_subpath: config
+- container_path: /home/threadfin/conf/backup
+  label: Home threadfin conf backup
+  user_chosen: false
+  default_host_subpath: backup

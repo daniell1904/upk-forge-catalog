@@ -1,0 +1,13 @@
+services:
+  label-studio:
+    image: heartexlabs/label-studio:1.23.0
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 3080:8080
+    volumes:
+      - ./data:/label-studio/data
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=$TZ

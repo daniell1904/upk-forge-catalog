@@ -1,0 +1,15 @@
+services:
+  app:
+    image: gladysassistant/gladys:v4.85.0@sha256:ef200b1ef265206b31fc1b37777c4176a4298c7d03e5458467e31dd98e3c1fa0
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./app-var-run-docker-sock:/var/run/docker.sock
+      - ./data:/var/lib/gladysassistant
+      - /dev:/dev
+      - /run/udev:/run/udev
+    environment:
+      - NODE_ENV=production
+      - SQLITE_FILE_PATH=/var/lib/gladysassistant/gladys-production.db
+      - TZ=Europe/Paris
+      - SERVER_PORT=1080

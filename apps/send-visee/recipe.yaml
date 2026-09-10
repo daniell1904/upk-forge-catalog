@@ -1,0 +1,24 @@
+id: send-visee
+name: Send Visee
+author: Community
+category: Social
+description: A fork of Mozilla's Firefox Send. Mozilla discontinued Send, this fork is a community effort to keep the project up-to-date and alive.
+ugos:
+  app_id: com.upkforge.docker.sendvisee
+  version: 0.1.0
+  port: 1443
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: APP_DOMAIN
+  label: APP DOMAIN
+  type: string
+volumes:
+- container_path: /uploads
+  label: Uploads
+  user_chosen: false
+  default_host_subpath: uploads
+- container_path: /data
+  label: Data
+  user_chosen: false
+  default_host_subpath: redis

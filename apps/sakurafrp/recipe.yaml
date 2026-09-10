@@ -1,0 +1,23 @@
+id: sakurafrp
+name: SakuraFrp
+version: 3.1.8
+author: natfrp
+category: Network
+homepage: https://www.natfrp.com
+warnings:
+- service 'sakurafrp' uses host networking
+ugos:
+  app_id: com.upkforge.docker.sakurafrp
+  version: 0.1.0
+  port: 7102
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: wizard_natfrp_token
+  label: Wizard natfrp token
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: wizard_natfrp_remote
+  label: Wizard natfrp remote
+  type: string

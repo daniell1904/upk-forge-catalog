@@ -1,0 +1,49 @@
+id: seafile
+name: Seafile
+version: 13.0.25
+author: Seafile Ltd.
+category: Content
+description: Seafile is an open source file sync and share platform, focusing on reliability and performance. Seafile's built-in collaborative document SeaDoc, make it easy for collaborative writing and publishing documents.
+homepage: https://github.com/haiwen/seafile-docker
+ugos:
+  app_id: com.upkforge.docker.seafile
+  version: 0.1.0
+  port: 8002
+  open_type: tab
+  tag_type: utility
+parameters:
+- key: wizard_mysql_root_password
+  label: Wizard mysql root password
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: wizard_mysql_password
+  label: Wizard mysql password
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: wizard_admin_email
+  label: Wizard admin email
+  type: string
+- key: wizard_admin_password
+  label: Wizard admin password
+  type: password
+  changeable: false
+  generate_bytes: 24
+- key: wizard_server_hostname
+  label: Wizard server hostname
+  type: string
+- key: wizard_jwt_private_key
+  label: Wizard jwt private key
+  type: password
+  changeable: false
+  generate_bytes: 24
+volumes:
+- container_path: /var/lib/mysql
+  label: Mysql
+  user_chosen: false
+  default_host_subpath: mysql
+- container_path: /shared
+  label: Shared
+  user_chosen: false
+  default_host_subpath: seafile-data

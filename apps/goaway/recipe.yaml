@@ -1,0 +1,18 @@
+id: goaway
+name: GoAway
+author: Community
+category: Networking
+description: GoAway is a lightweight DNS sinkhole that blocks ads, trackers, and malicious domains at the network level. It provides a web-based admin dashboard for management and supports customizable blocking rules with real-time statistics tracking.
+warnings:
+- 'service adds capabilities: NET_BIND_SERVICE, NET_RAW'
+ugos:
+  app_id: com.upkforge.docker.goaway
+  version: 0.1.0
+  port: 53
+  open_type: tab
+  tag_type: utility
+volumes:
+- container_path: /app/config
+  label: App config
+  user_chosen: false
+  default_host_subpath: config

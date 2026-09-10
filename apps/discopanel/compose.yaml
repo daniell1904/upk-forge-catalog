@@ -1,0 +1,14 @@
+services:
+  discopanel:
+    image: nickheyer/discopanel:v2.0.15@sha256:4b8bd7d13bceaa4fbb06846760814fcaecf29a4383dbb3b8563b5df23efde192
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./discopanel-var-run-docker-sock:/var/run/docker.sock
+      - ./data:/app/data
+      - ./backups:/app/backups
+      - ./tmp:/app/tmp
+    environment:
+      - DISCOPANEL_DATA_DIR=/app/data
+      - DISCOPANEL_HOST_DATA_PATH=/DATA/AppData/discopanel/data
+      - TZ=UTC

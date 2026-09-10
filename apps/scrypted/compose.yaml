@@ -1,0 +1,22 @@
+services:
+  scrypted:
+    image: koush/scrypted:v0.144.1-noble-full@sha256:8bb29091d17b141ed6c2ae3d5cfaafbbb91420ff77e5bafd341518e205c91731
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./data:/server/volume
+    environment:
+      - SCRYPTED_WEBHOOK_UPDATE_AUTHORIZATION=Bearer SET_THIS_TO_SOME_RANDOM_TEXT
+      - SCRYPTED_WEBHOOK_UPDATE=http://localhost:10444/v1/update
+  watchtower:
+    image: containrrr/watchtower@sha256:6dd50763bbd632a83cb154d5451700530d1e44200b268a4e9488fefdfcf2b038
+    restart: unless-stopped
+    ports:
+      - 10444:8080
+    volumes:
+      - ./watchtower-var-run-docker-sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_HTTP_API_TOKEN=SET_THIS_TO_SOME_RANDOM_TEXT
+      - WATCHTOWER_HTTP_API_UPDATE=true
+      - WATCHTOWER_SCOPE=scrypted
+      - WATCHTOWER_HTTP_API_PERIODIC_POLLS=true
