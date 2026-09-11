@@ -15,14 +15,20 @@ parameters:
 - key: VOL_1
   label: Downloads folder
   help: Folder on the NAS for Lazylibrarian's downloads. It is mounted into the container at /downloads; Lazylibrarian has full read and write access to it.
+  label_de: Downloads-Ordner
+  help_de: Ordner auf der NAS für Lazylibrarians Downloads. Wird im Container unter /downloads eingebunden; Lazylibrarian hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Books folder
   help: Folder on the NAS for Lazylibrarian's books. It is mounted into the container at /books; Lazylibrarian has full read and write access to it.
+  label_de: Bücher-Ordner
+  help_de: Ordner auf der NAS für Lazylibrarians Bücher. Wird im Container unter /books eingebunden; Lazylibrarian hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Config folder
   help: Folder on the NAS for Lazylibrarian's config. It is mounted into the container at /config; Lazylibrarian has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Lazylibrarians Konfiguration. Wird im Container unter /config eingebunden; Lazylibrarian hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /downloads

@@ -13,14 +13,20 @@ parameters:
 - key: VOL_1
   label: Usr src app data folder
   help: Folder on the NAS for NocoDB's usr src app data. It is mounted into the container at /usr/src/app/data; NocoDB has full read and write access to it.
+  label_de: Usr src App Daten-Ordner
+  help_de: Ordner auf der NAS für NocoDBs Usr src App Daten. Wird im Container unter /usr/src/app/data eingebunden; NocoDB hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib postgresql data folder
   help: Folder on the NAS for NocoDB's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; NocoDB has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für NocoDBs Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; NocoDB hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Data folder
   help: Folder on the NAS for NocoDB's data. It is mounted into the container at /data; NocoDB has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für NocoDBs Daten. Wird im Container unter /data eingebunden; NocoDB hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: NC_AUTH_JWT_SECRET
   label: NC AUTH JWT SECRET

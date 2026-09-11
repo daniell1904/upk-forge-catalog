@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Www assets folder
   help: Folder on the NAS for Homer's www assets. It is mounted into the container at /www/assets; Homer has full read and write access to it.
+  label_de: www assets-Ordner
+  help_de: Ordner auf der NAS für Homers www assets. Wird im Container unter /www/assets eingebunden; Homer hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /www/assets

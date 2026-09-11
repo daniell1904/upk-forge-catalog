@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Var run docker.sock folder
   help: Folder on the NAS for Homarr v1's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Homarr v1 has full read and write access to it.
+  label_de: Var run docker.sock-Ordner
+  help_de: Ordner auf der NAS für Homarr v1s Var run docker.sock. Wird im Container unter /var/run/docker.sock eingebunden; Homarr v1 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Appdata folder
   help: Folder on the NAS for Homarr v1's appdata. It is mounted into the container at /appdata; Homarr v1 has full read and write access to it.
+  label_de: Appdata-Ordner
+  help_de: Ordner auf der NAS für Homarr v1s Appdata. Wird im Container unter /appdata eingebunden; Homarr v1 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/run/docker.sock

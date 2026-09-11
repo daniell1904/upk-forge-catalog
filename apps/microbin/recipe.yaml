@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: App microbin data folder
   help: Folder on the NAS for Microbin's app microbin data. It is mounted into the container at /app/microbin_data; Microbin has full read and write access to it.
+  label_de: App microbin Daten-Ordner
+  help_de: Ordner auf der NAS für Microbins App microbin Daten. Wird im Container unter /app/microbin_data eingebunden; Microbin hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: MICROBIN_ADMIN_PASSWORD
   label: MICROBIN ADMIN PASSWORD

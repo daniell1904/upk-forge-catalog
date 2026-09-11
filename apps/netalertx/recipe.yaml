@@ -16,10 +16,14 @@ parameters:
 - key: VOL_1
   label: App config folder
   help: Folder on the NAS for NetAlertX (Legacy)'s app config. It is mounted into the container at /app/config; NetAlertX (Legacy) has full read and write access to it.
+  label_de: App Konfiguration-Ordner
+  help_de: Ordner auf der NAS für NetAlertX (Legacy)s App Konfiguration. Wird im Container unter /app/config eingebunden; NetAlertX (Legacy) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: App db folder
   help: Folder on the NAS for NetAlertX (Legacy)'s app db. It is mounted into the container at /app/db; NetAlertX (Legacy) has full read and write access to it.
+  label_de: App db-Ordner
+  help_de: Ordner auf der NAS für NetAlertX (Legacy)s App db. Wird im Container unter /app/db eingebunden; NetAlertX (Legacy) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /app/config

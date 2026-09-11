@@ -14,6 +14,8 @@ parameters:
 - key: VOL_1
   label: Music folder
   help: Folder on the NAS for MelodyHub's music. It is mounted into the container at /app/music; MelodyHub has full read and write access to it.
+  label_de: Musik-Ordner
+  help_de: Ordner auf der NAS für MelodyHubs Musik. Wird im Container unter /app/music eingebunden; MelodyHub hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /app/data

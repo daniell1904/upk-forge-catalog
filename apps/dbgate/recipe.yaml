@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Root .dbgate folder
   help: Folder on the NAS for DBGate's root .dbgate. It is mounted into the container at /root/.dbgate; DBGate has full read and write access to it.
+  label_de: Root .dbgate-Ordner
+  help_de: Ordner auf der NAS für DBGates Root .dbgate. Wird im Container unter /root/.dbgate eingebunden; DBGate hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /root/.dbgate

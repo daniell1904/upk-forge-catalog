@@ -15,14 +15,20 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Readarr's config. It is mounted into the container at /config; Readarr has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Readarrs Konfiguration. Wird im Container unter /config eingebunden; Readarr hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Books folder
   help: Folder on the NAS for Readarr's books. It is mounted into the container at /books; Readarr has full read and write access to it.
+  label_de: Bücher-Ordner
+  help_de: Ordner auf der NAS für Readarrs Bücher. Wird im Container unter /books eingebunden; Readarr hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Downloads folder
   help: Folder on the NAS for Readarr's downloads. It is mounted into the container at /downloads; Readarr has full read and write access to it.
+  label_de: Downloads-Ordner
+  help_de: Ordner auf der NAS für Readarrs Downloads. Wird im Container unter /downloads eingebunden; Readarr hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

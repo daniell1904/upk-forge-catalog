@@ -13,14 +13,20 @@ parameters:
 - key: VOL_1
   label: Git genmon folder
   help: Folder on the NAS for Genmon's git genmon. It is mounted into the container at /git/genmon; Genmon has full read and write access to it.
+  label_de: Git genmon-Ordner
+  help_de: Ordner auf der NAS für Genmons Git genmon. Wird im Container unter /git/genmon eingebunden; Genmon hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Etc genmon folder
   help: Folder on the NAS for Genmon's etc genmon. It is mounted into the container at /etc/genmon; Genmon has full read and write access to it.
+  label_de: Etc genmon-Ordner
+  help_de: Ordner auf der NAS für Genmons Etc genmon. Wird im Container unter /etc/genmon eingebunden; Genmon hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Var log folder
   help: Folder on the NAS for Genmon's var log. It is mounted into the container at /var/log; Genmon has full read and write access to it.
+  label_de: Var Protokoll-Ordner
+  help_de: Ordner auf der NAS für Genmons Var Protokoll. Wird im Container unter /var/log eingebunden; Genmon hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /git/genmon

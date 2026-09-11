@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Datastore folder
   help: Folder on the NAS for Change Detection's datastore. It is mounted into the container at /datastore; Change Detection has full read and write access to it.
+  label_de: Datastore-Ordner
+  help_de: Ordner auf der NAS für Change Detections Datastore. Wird im Container unter /datastore eingebunden; Change Detection hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /datastore

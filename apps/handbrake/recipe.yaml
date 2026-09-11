@@ -15,6 +15,8 @@ parameters:
 - key: STORAGE_PATH
   label: Storage folder
   help: Folder on the NAS for HandBrake's storage. It is mounted into the container at /storage; HandBrake reads from it.
+  label_de: Speicher-Ordner
+  help_de: Ordner auf der NAS für HandBrakes Speicher. Wird im Container unter /storage eingebunden; HandBrake liest nur davon.
   type: path
 volumes:
 - container_path: /config

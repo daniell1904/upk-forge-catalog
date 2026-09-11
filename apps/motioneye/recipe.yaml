@@ -14,10 +14,14 @@ parameters:
 - key: VOL_1
   label: Etc motioneye folder
   help: Folder on the NAS for Motioneye's etc motioneye. It is mounted into the container at /etc/motioneye; Motioneye has full read and write access to it.
+  label_de: Etc motioneye-Ordner
+  help_de: Ordner auf der NAS für Motioneyes Etc motioneye. Wird im Container unter /etc/motioneye eingebunden; Motioneye hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib motioneye folder
   help: Folder on the NAS for Motioneye's var lib motioneye. It is mounted into the container at /var/lib/motioneye; Motioneye has full read and write access to it.
+  label_de: Var lib motioneye-Ordner
+  help_de: Ordner auf der NAS für Motioneyes Var lib motioneye. Wird im Container unter /var/lib/motioneye eingebunden; Motioneye hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /etc/motioneye

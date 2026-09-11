@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Var lib ghost content folder
   help: Folder on the NAS for Ghost's var lib ghost content. It is mounted into the container at /var/lib/ghost/content; Ghost has full read and write access to it.
+  label_de: Var lib ghost content-Ordner
+  help_de: Ordner auf der NAS für Ghosts Var lib ghost content. Wird im Container unter /var/lib/ghost/content eingebunden; Ghost hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib mysql folder
   help: Folder on the NAS for Ghost's var lib mysql. It is mounted into the container at /var/lib/mysql; Ghost has full read and write access to it.
+  label_de: Var lib mysql-Ordner
+  help_de: Ordner auf der NAS für Ghosts Var lib mysql. Wird im Container unter /var/lib/mysql eingebunden; Ghost hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: database__connection__password
   label: Database connection password

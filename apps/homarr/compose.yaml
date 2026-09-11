@@ -1,6 +1,6 @@
 services:
   homarr:
-    image: ghcr.io/homarr-labs/homarr:v1.77.0
+    image: ghcr.io/homarr-labs/homarr:v1.77.1
     ports:
       - "7575:7575"
     volumes:

@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Root .ollama folder
   help: Folder on the NAS for Ollama - CPU's root .ollama. It is mounted into the container at /root/.ollama; Ollama - CPU has full read and write access to it.
+  label_de: Root .ollama-Ordner
+  help_de: Ordner auf der NAS für Ollama - CPUs Root .ollama. Wird im Container unter /root/.ollama eingebunden; Ollama - CPU hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /root/.ollama

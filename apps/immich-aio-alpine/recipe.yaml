@@ -13,14 +13,20 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Immich AIO Alpine's config. It is mounted into the container at /config; Immich AIO Alpine has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Immich AIO Alpines Konfiguration. Wird im Container unter /config eingebunden; Immich AIO Alpine hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Usr src app photos folder
   help: Folder on the NAS for Immich AIO Alpine's usr src app photos. It is mounted into the container at /usr/src/app/photos; Immich AIO Alpine has full read and write access to it.
+  label_de: Usr src App Fotos-Ordner
+  help_de: Ordner auf der NAS für Immich AIO Alpines Usr src App Fotos. Wird im Container unter /usr/src/app/photos eingebunden; Immich AIO Alpine hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Var lib postgresql data folder
   help: Folder on the NAS for Immich AIO Alpine's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Immich AIO Alpine has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Immich AIO Alpines Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Immich AIO Alpine hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: DB_PASSWORD
   label: DB PASSWORD

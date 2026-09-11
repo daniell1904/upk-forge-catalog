@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Data downloads folder
   help: Folder on the NAS for Real-Debrid Torrent Client's data downloads. It is mounted into the container at /data/downloads; Real-Debrid Torrent Client has full read and write access to it.
+  label_de: Daten Downloads-Ordner
+  help_de: Ordner auf der NAS für Real-Debrid Torrent Clients Daten Downloads. Wird im Container unter /data/downloads eingebunden; Real-Debrid Torrent Client hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Data db folder
   help: Folder on the NAS for Real-Debrid Torrent Client's data db. It is mounted into the container at /data/db; Real-Debrid Torrent Client has full read and write access to it.
+  label_de: Daten db-Ordner
+  help_de: Ordner auf der NAS für Real-Debrid Torrent Clients Daten db. Wird im Container unter /data/db eingebunden; Real-Debrid Torrent Client hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /data/downloads

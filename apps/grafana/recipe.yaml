@@ -15,6 +15,8 @@ parameters:
 - key: VOL_1
   label: Var lib grafana folder
   help: Folder on the NAS for Grafana's var lib grafana. It is mounted into the container at /var/lib/grafana; Grafana has full read and write access to it.
+  label_de: Var lib grafana-Ordner
+  help_de: Ordner auf der NAS für Grafanas Var lib grafana. Wird im Container unter /var/lib/grafana eingebunden; Grafana hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/lib/grafana

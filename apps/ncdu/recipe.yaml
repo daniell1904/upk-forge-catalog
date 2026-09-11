@@ -15,6 +15,8 @@ parameters:
 - key: VOL_1
   label: App folder
   help: Folder on the NAS for Ncdu's app. It is mounted into the container at /app; Ncdu has full read and write access to it.
+  label_de: App-Ordner
+  help_de: Ordner auf der NAS für Ncdus App. Wird im Container unter /app eingebunden; Ncdu hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /app

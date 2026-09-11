@@ -15,10 +15,14 @@ parameters:
 - key: VOL_1
   label: Downloads folder
   help: Folder on the NAS for Medusa's downloads. It is mounted into the container at /downloads; Medusa has full read and write access to it.
+  label_de: Downloads-Ordner
+  help_de: Ordner auf der NAS für Medusas Downloads. Wird im Container unter /downloads eingebunden; Medusa hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Tv folder
   help: Folder on the NAS for Medusa's tv. It is mounted into the container at /tv; Medusa has full read and write access to it.
+  label_de: TV-Ordner
+  help_de: Ordner auf der NAS für Medusas TV. Wird im Container unter /tv eingebunden; Medusa hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

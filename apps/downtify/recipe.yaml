@@ -15,10 +15,14 @@ parameters:
 - key: VOL_1
   label: Downloads folder
   help: Folder on the NAS for Downtify's downloads. It is mounted into the container at /downloads; Downtify has full read and write access to it.
+  label_de: Downloads-Ordner
+  help_de: Ordner auf der NAS für Downtifys Downloads. Wird im Container unter /downloads eingebunden; Downtify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Data folder
   help: Folder on the NAS for Downtify's data. It is mounted into the container at /data; Downtify has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Downtifys Daten. Wird im Container unter /data eingebunden; Downtify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /downloads

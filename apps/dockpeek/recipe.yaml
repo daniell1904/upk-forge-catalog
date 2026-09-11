@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Var run docker.sock folder
   help: Folder on the NAS for Dockpeek's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Dockpeek has full read and write access to it.
+  label_de: Var run docker.sock-Ordner
+  help_de: Ordner auf der NAS für Dockpeeks Var run docker.sock. Wird im Container unter /var/run/docker.sock eingebunden; Dockpeek hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: SECRET_KEY
   label: SECRET KEY

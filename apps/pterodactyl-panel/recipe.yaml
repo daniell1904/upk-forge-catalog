@@ -13,22 +13,32 @@ parameters:
 - key: VOL_1
   label: App var folder
   help: Folder on the NAS for Pterodactyl Panel's app var. It is mounted into the container at /app/var/; Pterodactyl Panel has full read and write access to it.
+  label_de: App var-Ordner
+  help_de: Ordner auf der NAS für Pterodactyl Panels App var. Wird im Container unter /app/var/ eingebunden; Pterodactyl Panel hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Etc nginx http.d folder
   help: Folder on the NAS for Pterodactyl Panel's etc nginx http.d. It is mounted into the container at /etc/nginx/http.d/; Pterodactyl Panel has full read and write access to it.
+  label_de: Etc nginx http.d-Ordner
+  help_de: Ordner auf der NAS für Pterodactyl Panels Etc nginx http.d. Wird im Container unter /etc/nginx/http.d/ eingebunden; Pterodactyl Panel hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Etc letsencrypt folder
   help: Folder on the NAS for Pterodactyl Panel's etc letsencrypt. It is mounted into the container at /etc/letsencrypt/; Pterodactyl Panel has full read and write access to it.
+  label_de: Etc letsencrypt-Ordner
+  help_de: Ordner auf der NAS für Pterodactyl Panels Etc letsencrypt. Wird im Container unter /etc/letsencrypt/ eingebunden; Pterodactyl Panel hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: App storage logs folder
   help: Folder on the NAS for Pterodactyl Panel's app storage logs. It is mounted into the container at /app/storage/logs; Pterodactyl Panel has full read and write access to it.
+  label_de: App Speicher Protokolle-Ordner
+  help_de: Ordner auf der NAS für Pterodactyl Panels App Speicher Protokolle. Wird im Container unter /app/storage/logs eingebunden; Pterodactyl Panel hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_5
   label: Var lib mysql folder
   help: Folder on the NAS for Pterodactyl Panel's var lib mysql. It is mounted into the container at /var/lib/mysql; Pterodactyl Panel has full read and write access to it.
+  label_de: Var lib mysql-Ordner
+  help_de: Ordner auf der NAS für Pterodactyl Panels Var lib mysql. Wird im Container unter /var/lib/mysql eingebunden; Pterodactyl Panel hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: DB_PASSWORD
   label: DB PASSWORD

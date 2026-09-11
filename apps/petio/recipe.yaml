@@ -19,10 +19,14 @@ parameters:
 - key: VOL_1
   label: App api config folder
   help: Folder on the NAS for Petio's app api config. It is mounted into the container at /app/api/config; Petio has full read and write access to it.
+  label_de: App api Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Petios App api Konfiguration. Wird im Container unter /app/api/config eingebunden; Petio hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: App logs folder
   help: Folder on the NAS for Petio's app logs. It is mounted into the container at /app/logs; Petio has full read and write access to it.
+  label_de: App Protokolle-Ordner
+  help_de: Ordner auf der NAS für Petios App Protokolle. Wird im Container unter /app/logs eingebunden; Petio hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /app/api/config

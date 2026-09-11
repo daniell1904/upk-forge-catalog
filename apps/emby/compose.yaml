@@ -1,6 +1,6 @@
 services:
   emby:
-    image: linuxserver/emby:4.9.5
+    image: emby/embyserver:4.10.0.40
     restart: unless-stopped
     network_mode: bridge
     ports:
@@ -11,6 +11,7 @@ services:
       - ${VOL_2}:/data/tvshows
       - ${VOL_3}:/data/movies
     environment:
-      - PGID=1000
-      - PUID=1000
+      - UID=1000
+      - GID=100
+      - GIDLIST=100
       - TZ=$TZ

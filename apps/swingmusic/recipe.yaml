@@ -22,10 +22,14 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Swing Music's config. It is mounted into the container at /config; Swing Music has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Swing Musics Konfiguration. Wird im Container unter /config eingebunden; Swing Music hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Music folder
   help: Folder on the NAS for Swing Music's music. It is mounted into the container at /music; Swing Music has full read and write access to it.
+  label_de: Musik-Ordner
+  help_de: Ordner auf der NAS für Swing Musics Musik. Wird im Container unter /music eingebunden; Swing Music hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

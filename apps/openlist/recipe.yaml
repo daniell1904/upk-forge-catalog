@@ -40,6 +40,8 @@ parameters:
 - key: VOL_1
   label: Opt openlist data folder
   help: Folder on the NAS for OpenList's opt openlist data. It is mounted into the container at /opt/openlist/data; OpenList has full read and write access to it.
+  label_de: Opt openlist Daten-Ordner
+  help_de: Ordner auf der NAS für OpenLists Opt openlist Daten. Wird im Container unter /opt/openlist/data eingebunden; OpenList hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: OPENLIST_ADMIN_PASSWORD
   label: OPENLIST ADMIN PASSWORD

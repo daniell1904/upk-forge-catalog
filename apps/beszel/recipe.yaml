@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Beszel data folder
   help: Folder on the NAS for Beszel's beszel data. It is mounted into the container at /beszel_data; Beszel has full read and write access to it.
+  label_de: Beszel Daten-Ordner
+  help_de: Ordner auf der NAS für Beszels Beszel Daten. Wird im Container unter /beszel_data eingebunden; Beszel hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /beszel_data

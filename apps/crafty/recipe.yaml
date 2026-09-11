@@ -15,22 +15,32 @@ parameters:
 - key: VOL_1
   label: Crafty backups folder
   help: Folder on the NAS for Crafty's crafty backups. It is mounted into the container at /crafty/backups; Crafty has full read and write access to it.
+  label_de: Crafty Backups-Ordner
+  help_de: Ordner auf der NAS für Craftys Crafty Backups. Wird im Container unter /crafty/backups eingebunden; Crafty hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Crafty logs folder
   help: Folder on the NAS for Crafty's crafty logs. It is mounted into the container at /crafty/logs; Crafty has full read and write access to it.
+  label_de: Crafty Protokolle-Ordner
+  help_de: Ordner auf der NAS für Craftys Crafty Protokolle. Wird im Container unter /crafty/logs eingebunden; Crafty hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Crafty servers folder
   help: Folder on the NAS for Crafty's crafty servers. It is mounted into the container at /crafty/servers; Crafty has full read and write access to it.
+  label_de: Crafty servers-Ordner
+  help_de: Ordner auf der NAS für Craftys Crafty servers. Wird im Container unter /crafty/servers eingebunden; Crafty hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Crafty app config folder
   help: Folder on the NAS for Crafty's crafty app config. It is mounted into the container at /crafty/app/config; Crafty has full read and write access to it.
+  label_de: Crafty App Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Craftys Crafty App Konfiguration. Wird im Container unter /crafty/app/config eingebunden; Crafty hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_5
   label: Crafty import folder
   help: Folder on the NAS for Crafty's crafty import. It is mounted into the container at /crafty/import; Crafty has full read and write access to it.
+  label_de: Crafty import-Ordner
+  help_de: Ordner auf der NAS für Craftys Crafty import. Wird im Container unter /crafty/import eingebunden; Crafty hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /crafty/backups

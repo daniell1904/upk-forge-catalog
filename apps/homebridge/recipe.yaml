@@ -17,6 +17,8 @@ parameters:
 - key: VOL_1
   label: Homebridge folder
   help: Folder on the NAS for Homebridge's homebridge. It is mounted into the container at /homebridge; Homebridge has full read and write access to it.
+  label_de: Homebridge-Ordner
+  help_de: Ordner auf der NAS für Homebridges Homebridge. Wird im Container unter /homebridge eingebunden; Homebridge hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /homebridge

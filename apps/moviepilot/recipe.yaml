@@ -14,10 +14,14 @@ parameters:
 - key: VOL_1
   label: Media folder
   help: Folder on the NAS for MoviePilot's media. It is mounted into the container at /media; MoviePilot has full read and write access to it.
+  label_de: Medien-Ordner
+  help_de: Ordner auf der NAS für MoviePilots Medien. Wird im Container unter /media eingebunden; MoviePilot hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Downloads folder
   help: Folder on the NAS for MoviePilot's downloads. It is mounted into the container at /downloads; MoviePilot has full read and write access to it.
+  label_de: Downloads-Ordner
+  help_de: Ordner auf der NAS für MoviePilots Downloads. Wird im Container unter /downloads eingebunden; MoviePilot hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VERSION_MAJOR
   label: Version major

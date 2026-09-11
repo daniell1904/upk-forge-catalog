@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Home app .local share spoolman folder
   help: Folder on the NAS for Spoolman's home app .local share spoolman. It is mounted into the container at /home/app/.local/share/spoolman; Spoolman has full read and write access to it.
+  label_de: Home App .local share spoolman-Ordner
+  help_de: Ordner auf der NAS für Spoolmans Home App .local share spoolman. Wird im Container unter /home/app/.local/share/spoolman eingebunden; Spoolman hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /home/app/.local/share/spoolman

@@ -15,10 +15,14 @@ parameters:
 - key: VOL_1
   label: Data folder
   help: Folder on the NAS for Navidrome's data. It is mounted into the container at /data; Navidrome has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Navidromes Daten. Wird im Container unter /data eingebunden; Navidrome hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Music folder
   help: Folder on the NAS for Navidrome's music. It is mounted into the container at /music; Navidrome has full read and write access to it.
+  label_de: Musik-Ordner
+  help_de: Ordner auf der NAS für Navidromes Musik. Wird im Container unter /music eingebunden; Navidrome hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /data

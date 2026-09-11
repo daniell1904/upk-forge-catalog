@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Data db folder
   help: Folder on the NAS for nightscout's data db. It is mounted into the container at /data/db; nightscout has full read and write access to it.
+  label_de: Daten db-Ordner
+  help_de: Ordner auf der NAS für nightscouts Daten db. Wird im Container unter /data/db eingebunden; nightscout hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: API_SECRET
   label: API SECRET

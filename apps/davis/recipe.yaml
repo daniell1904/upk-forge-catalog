@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Data folder
   help: Folder on the NAS for Davis's data. It is mounted into the container at /data; Davis has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Daviss Daten. Wird im Container unter /data eingebunden; Davis hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib mysql folder
   help: Folder on the NAS for Davis's var lib mysql. It is mounted into the container at /var/lib/mysql; Davis has full read and write access to it.
+  label_de: Var lib mysql-Ordner
+  help_de: Ordner auf der NAS für Daviss Var lib mysql. Wird im Container unter /var/lib/mysql eingebunden; Davis hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: ADMIN_PASSWORD
   label: ADMIN PASSWORD

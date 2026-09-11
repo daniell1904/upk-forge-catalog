@@ -48,14 +48,20 @@ parameters:
 - key: VOL_1
   label: Rails storage folder
   help: Folder on the NAS for Maybe's rails storage. It is mounted into the container at /rails/storage; Maybe has full read and write access to it.
+  label_de: Rails Speicher-Ordner
+  help_de: Ordner auf der NAS für Maybes Rails Speicher. Wird im Container unter /rails/storage eingebunden; Maybe hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib postgresql data folder
   help: Folder on the NAS for Maybe's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Maybe has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Maybes Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Maybe hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Data folder
   help: Folder on the NAS for Maybe's data. It is mounted into the container at /data; Maybe has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Maybes Daten. Wird im Container unter /data eingebunden; Maybe hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: POSTGRES_PASSWORD
   label: POSTGRES PASSWORD

@@ -17,6 +17,8 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for ESPHome's config. It is mounted into the container at /config; ESPHome has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für ESPHomes Konfiguration. Wird im Container unter /config eingebunden; ESPHome hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

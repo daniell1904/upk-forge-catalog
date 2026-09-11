@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Opt traccar logs folder
   help: Folder on the NAS for Traccar's opt traccar logs. It is mounted into the container at /opt/traccar/logs; Traccar has full read and write access to it.
+  label_de: Opt traccar Protokolle-Ordner
+  help_de: Ordner auf der NAS für Traccars Opt traccar Protokolle. Wird im Container unter /opt/traccar/logs eingebunden; Traccar hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Opt traccar conf traccar.xml folder
   help: Folder on the NAS for Traccar's opt traccar conf traccar.xml. It is mounted into the container at /opt/traccar/conf/traccar.xml; Traccar has full read and write access to it.
+  label_de: Opt traccar conf traccar.xml-Ordner
+  help_de: Ordner auf der NAS für Traccars Opt traccar conf traccar.xml. Wird im Container unter /opt/traccar/conf/traccar.xml eingebunden; Traccar hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /opt/traccar/logs

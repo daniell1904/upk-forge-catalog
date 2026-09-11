@@ -22,6 +22,8 @@ parameters:
 - key: VOL_1
   label: Home vocechat server data folder
   help: Folder on the NAS for VoceChat's home vocechat server data. It is mounted into the container at /home/vocechat-server/data; VoceChat has full read and write access to it.
+  label_de: Home vocechat server Daten-Ordner
+  help_de: Ordner auf der NAS für VoceChats Home vocechat server Daten. Wird im Container unter /home/vocechat-server/data eingebunden; VoceChat hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /home/vocechat-server/data

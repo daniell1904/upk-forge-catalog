@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: App data folder
   help: Folder on the NAS for Gotify's app data. It is mounted into the container at /app/data; Gotify has full read and write access to it.
+  label_de: App Daten-Ordner
+  help_de: Ordner auf der NAS für Gotifys App Daten. Wird im Container unter /app/data eingebunden; Gotify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: GOTIFY_DEFAULTUSER_PASS
   label: GOTIFY DEFAULTUSER PASS

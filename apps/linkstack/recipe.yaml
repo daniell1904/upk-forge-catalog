@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Data folder
   help: Folder on the NAS for LinkStack's data. It is mounted into the container at /data; LinkStack has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für LinkStacks Daten. Wird im Container unter /data eingebunden; LinkStack hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /data

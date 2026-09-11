@@ -14,10 +14,14 @@ parameters:
 - key: VOL_1
   label: Home threadfin conf data folder
   help: Folder on the NAS for Threadfin's home threadfin conf data. It is mounted into the container at /home/threadfin/conf/data; Threadfin has full read and write access to it.
+  label_de: Home threadfin conf Daten-Ordner
+  help_de: Ordner auf der NAS für Threadfins Home threadfin conf Daten. Wird im Container unter /home/threadfin/conf/data eingebunden; Threadfin hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Home threadfin conf backup folder
   help: Folder on the NAS for Threadfin's home threadfin conf backup. It is mounted into the container at /home/threadfin/conf/backup; Threadfin has full read and write access to it.
+  label_de: Home threadfin conf Backup-Ordner
+  help_de: Ordner auf der NAS für Threadfins Home threadfin conf Backup. Wird im Container unter /home/threadfin/conf/backup eingebunden; Threadfin hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /home/threadfin/conf/data

@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Var www html storage folder
   help: Folder on the NAS for Erugo's var www html storage. It is mounted into the container at /var/www/html/storage; Erugo has full read and write access to it.
+  label_de: Var www html Speicher-Ordner
+  help_de: Ordner auf der NAS für Erugos Var www html Speicher. Wird im Container unter /var/www/html/storage eingebunden; Erugo hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/www/html/storage

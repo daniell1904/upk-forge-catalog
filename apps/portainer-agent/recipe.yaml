@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Var run docker.sock folder
   help: Folder on the NAS for Portainer Agent's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Portainer Agent has full read and write access to it.
+  label_de: Var run docker.sock-Ordner
+  help_de: Ordner auf der NAS für Portainer Agents Var run docker.sock. Wird im Container unter /var/run/docker.sock eingebunden; Portainer Agent hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib docker volumes folder
   help: Folder on the NAS for Portainer Agent's var lib docker volumes. It is mounted into the container at /var/lib/docker/volumes; Portainer Agent has full read and write access to it.
+  label_de: Var lib docker volumes-Ordner
+  help_de: Ordner auf der NAS für Portainer Agents Var lib docker volumes. Wird im Container unter /var/lib/docker/volumes eingebunden; Portainer Agent hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/run/docker.sock

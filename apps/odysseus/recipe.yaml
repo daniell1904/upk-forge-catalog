@@ -13,22 +13,32 @@ parameters:
 - key: VOL_1
   label: App data folder
   help: Folder on the NAS for Odysseus's app data. It is mounted into the container at /app/data; Odysseus has full read and write access to it.
+  label_de: App Daten-Ordner
+  help_de: Ordner auf der NAS für Odysseuss App Daten. Wird im Container unter /app/data eingebunden; Odysseus hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: App logs folder
   help: Folder on the NAS for Odysseus's app logs. It is mounted into the container at /app/logs; Odysseus has full read and write access to it.
+  label_de: App Protokolle-Ordner
+  help_de: Ordner auf der NAS für Odysseuss App Protokolle. Wird im Container unter /app/logs eingebunden; Odysseus hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Chroma chroma folder
   help: Folder on the NAS for Odysseus's chroma chroma. It is mounted into the container at /chroma/chroma; Odysseus has full read and write access to it.
+  label_de: Chroma chroma-Ordner
+  help_de: Ordner auf der NAS für Odysseuss Chroma chroma. Wird im Container unter /chroma/chroma eingebunden; Odysseus hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Etc searxng folder
   help: Folder on the NAS for Odysseus's etc searxng. It is mounted into the container at /etc/searxng; Odysseus has full read and write access to it.
+  label_de: Etc searxng-Ordner
+  help_de: Ordner auf der NAS für Odysseuss Etc searxng. Wird im Container unter /etc/searxng eingebunden; Odysseus hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_5
   label: Var cache ntfy folder
   help: Folder on the NAS for Odysseus's var cache ntfy. It is mounted into the container at /var/cache/ntfy; Odysseus has full read and write access to it.
+  label_de: Var Cache ntfy-Ordner
+  help_de: Ordner auf der NAS für Odysseuss Var Cache ntfy. Wird im Container unter /var/cache/ntfy eingebunden; Odysseus hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: ODYSSEUS_ADMIN_PASSWORD
   label: ODYSSEUS ADMIN PASSWORD

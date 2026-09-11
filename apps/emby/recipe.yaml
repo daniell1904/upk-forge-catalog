@@ -37,7 +37,7 @@ description: >-
 
   - [Emby Official Website](https://emby.media/)
 homepage: https://emby.media/
-source_code: https://github.com/linuxserver/docker-emby
+source_code: https://hub.docker.com/r/emby/embyserver
 ugos:
   app_id: com.upkforge.docker.emby
   version: 0.1.0
@@ -48,14 +48,20 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Emby's config. It is mounted into the container at /config; Emby has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Embys Konfiguration. Wird im Container unter /config eingebunden; Emby hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Data tvshows folder
   help: Folder on the NAS for Emby's data tvshows. It is mounted into the container at /data/tvshows; Emby has full read and write access to it.
+  label_de: Daten tvshows-Ordner
+  help_de: Ordner auf der NAS für Embys Daten tvshows. Wird im Container unter /data/tvshows eingebunden; Emby hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Data movies folder
   help: Folder on the NAS for Emby's data movies. It is mounted into the container at /data/movies; Emby has full read and write access to it.
+  label_de: Daten Filme-Ordner
+  help_de: Ordner auf der NAS für Embys Daten Filme. Wird im Container unter /data/movies eingebunden; Emby hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

@@ -15,6 +15,8 @@ parameters:
 - key: VOL_1
   label: Opt cloudbeaver workspace folder
   help: Folder on the NAS for CloudBeaver's opt cloudbeaver workspace. It is mounted into the container at /opt/cloudbeaver/workspace; CloudBeaver has full read and write access to it.
+  label_de: Opt cloudbeaver workspace-Ordner
+  help_de: Ordner auf der NAS für CloudBeavers Opt cloudbeaver workspace. Wird im Container unter /opt/cloudbeaver/workspace eingebunden; CloudBeaver hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /opt/cloudbeaver/workspace

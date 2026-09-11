@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Var lib postgresql data folder
   help: Folder on the NAS for Umami's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Umami has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Umamis Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Umami hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: APP_SECRET
   label: APP SECRET

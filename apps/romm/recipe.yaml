@@ -52,26 +52,38 @@ parameters:
 - key: VOL_1
   label: Romm resources folder
   help: Folder on the NAS for RomM's romm resources. It is mounted into the container at /romm/resources; RomM has full read and write access to it.
+  label_de: Romm resources-Ordner
+  help_de: Ordner auf der NAS für RomMs Romm resources. Wird im Container unter /romm/resources eingebunden; RomM hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Redis data folder
   help: Folder on the NAS for RomM's redis data. It is mounted into the container at /redis-data; RomM has full read and write access to it.
+  label_de: Redis Daten-Ordner
+  help_de: Ordner auf der NAS für RomMs Redis Daten. Wird im Container unter /redis-data eingebunden; RomM hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Romm library folder
   help: Folder on the NAS for RomM's romm library. It is mounted into the container at /romm/library; RomM has full read and write access to it.
+  label_de: Romm Mediathek-Ordner
+  help_de: Ordner auf der NAS für RomMs Romm Mediathek. Wird im Container unter /romm/library eingebunden; RomM hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Romm assets folder
   help: Folder on the NAS for RomM's romm assets. It is mounted into the container at /romm/assets; RomM has full read and write access to it.
+  label_de: Romm assets-Ordner
+  help_de: Ordner auf der NAS für RomMs Romm assets. Wird im Container unter /romm/assets eingebunden; RomM hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_5
   label: Romm config folder
   help: Folder on the NAS for RomM's romm config. It is mounted into the container at /romm/config; RomM has full read and write access to it.
+  label_de: Romm Konfiguration-Ordner
+  help_de: Ordner auf der NAS für RomMs Romm Konfiguration. Wird im Container unter /romm/config eingebunden; RomM hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_6
   label: Var lib mysql folder
   help: Folder on the NAS for RomM's var lib mysql. It is mounted into the container at /var/lib/mysql; RomM has full read and write access to it.
+  label_de: Var lib mysql-Ordner
+  help_de: Ordner auf der NAS für RomMs Var lib mysql. Wird im Container unter /var/lib/mysql eingebunden; RomM hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: DB_PASSWD
   label: DB PASSWD

@@ -15,10 +15,14 @@ parameters:
 - key: VOL_1
   label: Opt folder
   help: Folder on the NAS for Kasm's opt. It is mounted into the container at /opt; Kasm has full read and write access to it.
+  label_de: Opt-Ordner
+  help_de: Ordner auf der NAS für Kasms Opt. Wird im Container unter /opt eingebunden; Kasm hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Profiles folder
   help: Folder on the NAS for Kasm's profiles. It is mounted into the container at /profiles; Kasm has full read and write access to it.
+  label_de: Profiles-Ordner
+  help_de: Ordner auf der NAS für Kasms Profiles. Wird im Container unter /profiles eingebunden; Kasm hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /opt

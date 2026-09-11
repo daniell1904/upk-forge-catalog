@@ -17,6 +17,8 @@ parameters:
 - key: VOL_1
   label: Home node .openclaw folder
   help: Folder on the NAS for OpenClaw's home node .openclaw. It is mounted into the container at /home/node/.openclaw; OpenClaw has full read and write access to it.
+  label_de: Home node .openclaw-Ordner
+  help_de: Ordner auf der NAS für OpenClaws Home node .openclaw. Wird im Container unter /home/node/.openclaw eingebunden; OpenClaw hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: OPENCLAW_GATEWAY_TOKEN
   label: OPENCLAW GATEWAY TOKEN

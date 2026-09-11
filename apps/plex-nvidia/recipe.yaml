@@ -17,10 +17,14 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Plex(Nvidia GPU)'s config. It is mounted into the container at /config; Plex(Nvidia GPU) has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Plex(Nvidia GPU)s Konfiguration. Wird im Container unter /config eingebunden; Plex(Nvidia GPU) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Media folder
   help: Folder on the NAS for Plex(Nvidia GPU)'s media. It is mounted into the container at /Media; Plex(Nvidia GPU) has full read and write access to it.
+  label_de: Medien-Ordner
+  help_de: Ordner auf der NAS für Plex(Nvidia GPU)s Medien. Wird im Container unter /Media eingebunden; Plex(Nvidia GPU) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

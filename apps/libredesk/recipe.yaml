@@ -13,18 +13,26 @@ parameters:
 - key: VOL_1
   label: Libredesk uploads folder
   help: Folder on the NAS for Libredesk's libredesk uploads. It is mounted into the container at /libredesk/uploads; Libredesk has full read and write access to it.
+  label_de: Libredesk Uploads-Ordner
+  help_de: Ordner auf der NAS für Libredesks Libredesk Uploads. Wird im Container unter /libredesk/uploads eingebunden; Libredesk hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Libredesk config folder
   help: Folder on the NAS for Libredesk's libredesk config. It is mounted into the container at /libredesk/config; Libredesk has full read and write access to it.
+  label_de: Libredesk Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Libredesks Libredesk Konfiguration. Wird im Container unter /libredesk/config eingebunden; Libredesk hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Var lib postgresql data folder
   help: Folder on the NAS for Libredesk's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Libredesk has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Libredesks Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Libredesk hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Data folder
   help: Folder on the NAS for Libredesk's data. It is mounted into the container at /data; Libredesk has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Libredesks Daten. Wird im Container unter /data eingebunden; Libredesk hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: LIBREDESK_SYSTEM_USER_PASSWORD
   label: LIBREDESK SYSTEM USER PASSWORD

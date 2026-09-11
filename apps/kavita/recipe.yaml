@@ -52,6 +52,8 @@ parameters:
 - key: LIBRARY_DIR
   label: Library folder
   help: Folder on the NAS for Kavita's library. It is mounted into the container at /library; Kavita has full read and write access to it.
+  label_de: Mediathek-Ordner
+  help_de: Ordner auf der NAS für Kavitas Mediathek. Wird im Container unter /library eingebunden; Kavita hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /kavita/config

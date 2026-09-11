@@ -44,10 +44,14 @@ parameters:
 - key: VOL_1
   label: Workspace TurboDiffusion checkpoints host folder
   help: Folder on the NAS for TurboDiffusion(Nvidia GPU)'s workspace turbodiffusion checkpoints host. It is mounted into the container at /workspace/TurboDiffusion/checkpoints_host; TurboDiffusion(Nvidia GPU) has full read and write access to it.
+  label_de: Workspace TurboDiffusion checkpoints host-Ordner
+  help_de: Ordner auf der NAS für TurboDiffusion(Nvidia GPU)s Workspace TurboDiffusion checkpoints host. Wird im Container unter /workspace/TurboDiffusion/checkpoints_host eingebunden; TurboDiffusion(Nvidia GPU) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Workspace TurboDiffusion outputs folder
   help: Folder on the NAS for TurboDiffusion(Nvidia GPU)'s workspace turbodiffusion outputs. It is mounted into the container at /workspace/TurboDiffusion/outputs; TurboDiffusion(Nvidia GPU) has full read and write access to it.
+  label_de: Workspace TurboDiffusion outputs-Ordner
+  help_de: Ordner auf der NAS für TurboDiffusion(Nvidia GPU)s Workspace TurboDiffusion outputs. Wird im Container unter /workspace/TurboDiffusion/outputs eingebunden; TurboDiffusion(Nvidia GPU) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /workspace/TurboDiffusion/checkpoints_host

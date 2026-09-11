@@ -15,14 +15,20 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Radarr's config. It is mounted into the container at /config; Radarr has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Radarrs Konfiguration. Wird im Container unter /config eingebunden; Radarr hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Movies folder
   help: Folder on the NAS for Radarr's movies. It is mounted into the container at /movies; Radarr has full read and write access to it.
+  label_de: Filme-Ordner
+  help_de: Ordner auf der NAS für Radarrs Filme. Wird im Container unter /movies eingebunden; Radarr hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Downloads folder
   help: Folder on the NAS for Radarr's downloads. It is mounted into the container at /downloads; Radarr has full read and write access to it.
+  label_de: Downloads-Ordner
+  help_de: Ordner auf der NAS für Radarrs Downloads. Wird im Container unter /downloads eingebunden; Radarr hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

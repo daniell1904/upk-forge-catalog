@@ -14,6 +14,8 @@ parameters:
 - key: VOL_1
   label: Root folder
   help: Folder on the NAS for ddns-go's root. It is mounted into the container at /root; ddns-go has full read and write access to it.
+  label_de: Root-Ordner
+  help_de: Ordner auf der NAS für ddns-gos Root. Wird im Container unter /root eingebunden; ddns-go hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /root

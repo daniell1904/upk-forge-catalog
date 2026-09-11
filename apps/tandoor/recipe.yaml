@@ -13,14 +13,20 @@ parameters:
 - key: VOL_1
   label: Opt recipes staticfiles folder
   help: Folder on the NAS for Tandoor's opt recipes staticfiles. It is mounted into the container at /opt/recipes/staticfiles; Tandoor has full read and write access to it.
+  label_de: Opt recipes staticfiles-Ordner
+  help_de: Ordner auf der NAS für Tandoors Opt recipes staticfiles. Wird im Container unter /opt/recipes/staticfiles eingebunden; Tandoor hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Opt recipes mediafiles folder
   help: Folder on the NAS for Tandoor's opt recipes mediafiles. It is mounted into the container at /opt/recipes/mediafiles; Tandoor has full read and write access to it.
+  label_de: Opt recipes mediafiles-Ordner
+  help_de: Ordner auf der NAS für Tandoors Opt recipes mediafiles. Wird im Container unter /opt/recipes/mediafiles eingebunden; Tandoor hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Var lib postgresql data folder
   help: Folder on the NAS for Tandoor's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Tandoor has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Tandoors Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Tandoor hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: SECRET_KEY
   label: SECRET KEY

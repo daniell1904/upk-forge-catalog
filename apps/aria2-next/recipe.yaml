@@ -14,6 +14,8 @@ parameters:
 - key: VOL_1
   label: Downloads folder
   help: Folder on the NAS for Aria2 Next's downloads. It is mounted into the container at /downloads; Aria2 Next has full read and write access to it.
+  label_de: Downloads-Ordner
+  help_de: Ordner auf der NAS für Aria2 Nexts Downloads. Wird im Container unter /downloads eingebunden; Aria2 Next hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

@@ -15,10 +15,14 @@ parameters:
 - key: VOL_1
   label: Opt tplink EAPController data folder
   help: Folder on the NAS for TP-Link Omada Controller's opt tplink eapcontroller data. It is mounted into the container at /opt/tplink/EAPController/data; TP-Link Omada Controller has full read and write access to it.
+  label_de: Opt tplink EAPController Daten-Ordner
+  help_de: Ordner auf der NAS für TP-Link Omada Controllers Opt tplink EAPController Daten. Wird im Container unter /opt/tplink/EAPController/data eingebunden; TP-Link Omada Controller hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Opt tplink EAPController logs folder
   help: Folder on the NAS for TP-Link Omada Controller's opt tplink eapcontroller logs. It is mounted into the container at /opt/tplink/EAPController/logs; TP-Link Omada Controller has full read and write access to it.
+  label_de: Opt tplink EAPController Protokolle-Ordner
+  help_de: Ordner auf der NAS für TP-Link Omada Controllers Opt tplink EAPController Protokolle. Wird im Container unter /opt/tplink/EAPController/logs eingebunden; TP-Link Omada Controller hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /opt/tplink/EAPController/data

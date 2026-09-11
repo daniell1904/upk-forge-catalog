@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Uploads folder
   help: Folder on the NAS for Send Visee's uploads. It is mounted into the container at /uploads; Send Visee has full read and write access to it.
+  label_de: Uploads-Ordner
+  help_de: Ordner auf der NAS für Send Visees Uploads. Wird im Container unter /uploads eingebunden; Send Visee hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Data folder
   help: Folder on the NAS for Send Visee's data. It is mounted into the container at /data; Send Visee has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Send Visees Daten. Wird im Container unter /data eingebunden; Send Visee hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: APP_DOMAIN
   label: APP DOMAIN

@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Appsmith stacks folder
   help: Folder on the NAS for Appsmith's appsmith stacks. It is mounted into the container at /appsmith-stacks; Appsmith has full read and write access to it.
+  label_de: Appsmith stacks-Ordner
+  help_de: Ordner auf der NAS für Appsmiths Appsmith stacks. Wird im Container unter /appsmith-stacks eingebunden; Appsmith hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /appsmith-stacks

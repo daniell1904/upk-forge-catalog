@@ -42,10 +42,14 @@ parameters:
 - key: VOL_1
   label: Data folder
   help: Folder on the NAS for Karakeep's data. It is mounted into the container at /data; Karakeep has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Karakeeps Daten. Wird im Container unter /data eingebunden; Karakeep hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Meili data folder
   help: Folder on the NAS for Karakeep's meili data. It is mounted into the container at /meili_data; Karakeep has full read and write access to it.
+  label_de: Meili Daten-Ordner
+  help_de: Ordner auf der NAS für Karakeeps Meili Daten. Wird im Container unter /meili_data eingebunden; Karakeep hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: NEXTAUTH_SECRET
   label: NEXTAUTH SECRET

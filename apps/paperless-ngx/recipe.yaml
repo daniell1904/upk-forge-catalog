@@ -3,7 +3,8 @@ name: Paperless-ngx
 version: 3.1
 author: paperless-ngx team
 category: Documents
-description: 'Scan, index and archive your paper documents. Images: paperless-ngx, postgres, valkey.'
+description: Scan, index and archive your paper documents. Pick the document archive and the consume folder — everything else is Paperless's own storage.
+description_de: Papierdokumente scannen, durchsuchbar machen und archivieren. Dokumentenarchiv und Import-Ordner werden abgefragt — den Rest verwaltet Paperless selbst.
 homepage: https://docs.paperless-ngx.com
 source_code: https://github.com/paperless-ngx/paperless-ngx
 license: https://github.com/paperless-ngx/paperless-ngx/blob/main/LICENSE
@@ -17,10 +18,14 @@ parameters:
 - key: VOL_1
   label: Documents folder
   help: The document archive. Point this at a NAS share you back up — everything Paperless keeps lives here.
+  label_de: Dokumentenarchiv
+  help_de: Das Dokumentenarchiv. Wähle einen NAS-Ordner, den du sicherst — hier liegt alles, was Paperless verwaltet.
   type: path
 - key: VOL_2
   label: Consume folder
   help: Drop files in here (or let a scanner write to it) and Paperless imports them automatically.
+  label_de: Import-Ordner
+  help_de: Dateien hier ablegen (oder vom Scanner ablegen lassen) — Paperless importiert sie automatisch.
   type: path
 - key: PAPERLESS_SECRET_KEY
   label: Secret key
@@ -29,10 +34,12 @@ parameters:
   generate_bytes: 48
 - key: PAPERLESS_ADMIN_USER
   label: Admin user
+  label_de: Admin-Benutzer
   type: string
   default: admin
 - key: PAPERLESS_ADMIN_PASSWORD
   label: Admin password
+  label_de: Admin-Passwort
   type: password
 volumes:
 - container_path: /usr/src/paperless/data
@@ -45,5 +52,7 @@ volumes:
   default_host_subpath: paperless/db
 - container_path: /usr/src/paperless/media
   label: Documents
+  label_de: Dokumentenarchiv
 - container_path: /usr/src/paperless/consume
   label: Consume folder
+  label_de: Import-Ordner

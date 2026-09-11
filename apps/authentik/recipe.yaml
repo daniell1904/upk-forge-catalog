@@ -13,34 +13,50 @@ parameters:
 - key: VOL_1
   label: Media folder
   help: Folder on the NAS for Authentik's media. It is mounted into the container at /media; Authentik has full read and write access to it.
+  label_de: Medien-Ordner
+  help_de: Ordner auf der NAS für Authentiks Medien. Wird im Container unter /media eingebunden; Authentik hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Templates folder
   help: Folder on the NAS for Authentik's templates. It is mounted into the container at /templates; Authentik has full read and write access to it.
+  label_de: Templates-Ordner
+  help_de: Ordner auf der NAS für Authentiks Templates. Wird im Container unter /templates eingebunden; Authentik hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Var run docker.sock folder
   help: Folder on the NAS for Authentik's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Authentik has full read and write access to it.
+  label_de: Var run docker.sock-Ordner
+  help_de: Ordner auf der NAS für Authentiks Var run docker.sock. Wird im Container unter /var/run/docker.sock eingebunden; Authentik hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Media folder
   help: Folder on the NAS for Authentik's media. It is mounted into the container at /media; Authentik has full read and write access to it.
+  label_de: Medien-Ordner
+  help_de: Ordner auf der NAS für Authentiks Medien. Wird im Container unter /media eingebunden; Authentik hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_5
   label: Certs folder
   help: Folder on the NAS for Authentik's certs. It is mounted into the container at /certs; Authentik has full read and write access to it.
+  label_de: Certs-Ordner
+  help_de: Ordner auf der NAS für Authentiks Certs. Wird im Container unter /certs eingebunden; Authentik hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_6
   label: Templates folder
   help: Folder on the NAS for Authentik's templates. It is mounted into the container at /templates; Authentik has full read and write access to it.
+  label_de: Templates-Ordner
+  help_de: Ordner auf der NAS für Authentiks Templates. Wird im Container unter /templates eingebunden; Authentik hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_7
   label: Var lib postgresql data folder
   help: Folder on the NAS for Authentik's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Authentik has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Authentiks Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Authentik hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_8
   label: Data folder
   help: Folder on the NAS for Authentik's data. It is mounted into the container at /data; Authentik has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Authentiks Daten. Wird im Container unter /data eingebunden; Authentik hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: AUTHENTIK_POSTGRESQL__PASSWORD
   label: AUTHENTIK POSTGRESQL PASSWORD

@@ -13,18 +13,26 @@ parameters:
 - key: VOL_1
   label: Var www html folder
   help: Folder on the NAS for Nextcloud with SMB (Legacy)'s var www html. It is mounted into the container at /var/www/html; Nextcloud with SMB (Legacy) has full read and write access to it.
+  label_de: Var www html-Ordner
+  help_de: Ordner auf der NAS für Nextcloud with SMB (Legacy)s Var www html. Wird im Container unter /var/www/html eingebunden; Nextcloud with SMB (Legacy) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib postgresql data folder
   help: Folder on the NAS for Nextcloud with SMB (Legacy)'s var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Nextcloud with SMB (Legacy) has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Nextcloud with SMB (Legacy)s Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Nextcloud with SMB (Legacy) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Data folder
   help: Folder on the NAS for Nextcloud with SMB (Legacy)'s data. It is mounted into the container at /data; Nextcloud with SMB (Legacy) has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Nextcloud with SMB (Legacy)s Daten. Wird im Container unter /data eingebunden; Nextcloud with SMB (Legacy) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Var www html folder
   help: Folder on the NAS for Nextcloud with SMB (Legacy)'s var www html. It is mounted into the container at /var/www/html; Nextcloud with SMB (Legacy) has full read and write access to it.
+  label_de: Var www html-Ordner
+  help_de: Ordner auf der NAS für Nextcloud with SMB (Legacy)s Var www html. Wird im Container unter /var/www/html eingebunden; Nextcloud with SMB (Legacy) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: POSTGRES_PASSWORD
   label: POSTGRES PASSWORD

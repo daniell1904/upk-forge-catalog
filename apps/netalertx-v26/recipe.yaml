@@ -16,10 +16,14 @@ parameters:
 - key: VOL_1
   label: Data config folder
   help: Folder on the NAS for NetAlertX v26's data config. It is mounted into the container at /data/config; NetAlertX v26 has full read and write access to it.
+  label_de: Daten Konfiguration-Ordner
+  help_de: Ordner auf der NAS für NetAlertX v26s Daten Konfiguration. Wird im Container unter /data/config eingebunden; NetAlertX v26 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Data db folder
   help: Folder on the NAS for NetAlertX v26's data db. It is mounted into the container at /data/db; NetAlertX v26 has full read and write access to it.
+  label_de: Daten db-Ordner
+  help_de: Ordner auf der NAS für NetAlertX v26s Daten db. Wird im Container unter /data/db eingebunden; NetAlertX v26 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /data/config

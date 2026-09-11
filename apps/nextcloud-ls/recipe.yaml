@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Nextcloud LS's config. It is mounted into the container at /config; Nextcloud LS has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Nextcloud LSs Konfiguration. Wird im Container unter /config eingebunden; Nextcloud LS hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Data folder
   help: Folder on the NAS for Nextcloud LS's data. It is mounted into the container at /data; Nextcloud LS has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Nextcloud LSs Daten. Wird im Container unter /data eingebunden; Nextcloud LS hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

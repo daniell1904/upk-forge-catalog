@@ -14,6 +14,8 @@ parameters:
 - key: MUSIC_DIR
   label: Music folder
   help: Folder on the NAS for Koel's music. It is mounted into the container at /music; Koel has full read and write access to it.
+  label_de: Musik-Ordner
+  help_de: Ordner auf der NAS für Koels Musik. Wird im Container unter /music eingebunden; Koel hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: KOEL_APP_KEY
   label: Koel app key

@@ -1,6 +1,6 @@
 services:
   zigbee2mqtt:
-    image: koenkk/zigbee2mqtt:2.13.0@sha256:4fb4db4d49a217bed6d0204f454ce809febc565bbe051b85c556ee2bcef73d8c
+    image: koenkk/zigbee2mqtt:2.14.1
     restart: unless-stopped
     ports:
       - 8080:8080

@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Paperclip folder
   help: Folder on the NAS for Paperclip's paperclip. It is mounted into the container at /paperclip; Paperclip has full read and write access to it.
+  label_de: Paperclip-Ordner
+  help_de: Ordner auf der NAS für Paperclips Paperclip. Wird im Container unter /paperclip eingebunden; Paperclip hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: BETTER_AUTH_SECRET
   label: BETTER AUTH SECRET

@@ -13,38 +13,56 @@ parameters:
 - key: VOL_1
   label: Var www html storage app ssh folder
   help: Folder on the NAS for Coolify's var www html storage app ssh. It is mounted into the container at /var/www/html/storage/app/ssh; Coolify has full read and write access to it.
+  label_de: Var www html Speicher App ssh-Ordner
+  help_de: Ordner auf der NAS für Coolifys Var www html Speicher App ssh. Wird im Container unter /var/www/html/storage/app/ssh eingebunden; Coolify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var www html storage app applications folder
   help: Folder on the NAS for Coolify's var www html storage app applications. It is mounted into the container at /var/www/html/storage/app/applications; Coolify has full read and write access to it.
+  label_de: Var www html Speicher App applications-Ordner
+  help_de: Ordner auf der NAS für Coolifys Var www html Speicher App applications. Wird im Container unter /var/www/html/storage/app/applications eingebunden; Coolify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Var www html storage app databases folder
   help: Folder on the NAS for Coolify's var www html storage app databases. It is mounted into the container at /var/www/html/storage/app/databases; Coolify has full read and write access to it.
+  label_de: Var www html Speicher App databases-Ordner
+  help_de: Ordner auf der NAS für Coolifys Var www html Speicher App databases. Wird im Container unter /var/www/html/storage/app/databases eingebunden; Coolify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Var www html storage app services folder
   help: Folder on the NAS for Coolify's var www html storage app services. It is mounted into the container at /var/www/html/storage/app/services; Coolify has full read and write access to it.
+  label_de: Var www html Speicher App services-Ordner
+  help_de: Ordner auf der NAS für Coolifys Var www html Speicher App services. Wird im Container unter /var/www/html/storage/app/services eingebunden; Coolify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_5
   label: Var www html storage app backups folder
   help: Folder on the NAS for Coolify's var www html storage app backups. It is mounted into the container at /var/www/html/storage/app/backups; Coolify has full read and write access to it.
+  label_de: Var www html Speicher App Backups-Ordner
+  help_de: Ordner auf der NAS für Coolifys Var www html Speicher App Backups. Wird im Container unter /var/www/html/storage/app/backups eingebunden; Coolify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_6
   label: Var www html storage app webhooks during maintenance folder
   help: Folder on the NAS for Coolify's var www html storage app webhooks during maintenance. It is mounted into the container at /var/www/html/storage/app/webhooks-during-maintenance; Coolify has full read and write access to it.
+  label_de: Var www html Speicher App webhooks during maintenance-Ordner
+  help_de: Ordner auf der NAS für Coolifys Var www html Speicher App webhooks during maintenance. Wird im Container unter /var/www/html/storage/app/webhooks-during-maintenance eingebunden; Coolify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_7
   label: Var www html storage logs folder
   help: Folder on the NAS for Coolify's var www html storage logs. It is mounted into the container at /var/www/html/storage/logs; Coolify has full read and write access to it.
+  label_de: Var www html Speicher Protokolle-Ordner
+  help_de: Ordner auf der NAS für Coolifys Var www html Speicher Protokolle. Wird im Container unter /var/www/html/storage/logs eingebunden; Coolify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_8
   label: Var lib postgresql data folder
   help: Folder on the NAS for Coolify's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Coolify has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Coolifys Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Coolify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_9
   label: Data folder
   help: Folder on the NAS for Coolify's data. It is mounted into the container at /data; Coolify has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Coolifys Daten. Wird im Container unter /data eingebunden; Coolify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: APP_KEY
   label: APP KEY

@@ -17,14 +17,20 @@ parameters:
 - key: VOL_1
   label: Openhab addons folder
   help: Folder on the NAS for OpenHAB's openhab addons. It is mounted into the container at /openhab/addons; OpenHAB has full read and write access to it.
+  label_de: Openhab addons-Ordner
+  help_de: Ordner auf der NAS für OpenHABs Openhab addons. Wird im Container unter /openhab/addons eingebunden; OpenHAB hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Openhab conf folder
   help: Folder on the NAS for OpenHAB's openhab conf. It is mounted into the container at /openhab/conf; OpenHAB has full read and write access to it.
+  label_de: Openhab conf-Ordner
+  help_de: Ordner auf der NAS für OpenHABs Openhab conf. Wird im Container unter /openhab/conf eingebunden; OpenHAB hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Openhab userdata folder
   help: Folder on the NAS for OpenHAB's openhab userdata. It is mounted into the container at /openhab/userdata; OpenHAB has full read and write access to it.
+  label_de: Openhab userdata-Ordner
+  help_de: Ordner auf der NAS für OpenHABs Openhab userdata. Wird im Container unter /openhab/userdata eingebunden; OpenHAB hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /openhab/addons

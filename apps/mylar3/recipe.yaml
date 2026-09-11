@@ -14,14 +14,20 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Mylar3's config. It is mounted into the container at /config; Mylar3 has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Mylar3s Konfiguration. Wird im Container unter /config eingebunden; Mylar3 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Comics folder
   help: Folder on the NAS for Mylar3's comics. It is mounted into the container at /comics; Mylar3 has full read and write access to it.
+  label_de: Comics-Ordner
+  help_de: Ordner auf der NAS für Mylar3s Comics. Wird im Container unter /comics eingebunden; Mylar3 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Downloads folder
   help: Folder on the NAS for Mylar3's downloads. It is mounted into the container at /downloads; Mylar3 has full read and write access to it.
+  label_de: Downloads-Ordner
+  help_de: Ordner auf der NAS für Mylar3s Downloads. Wird im Container unter /downloads eingebunden; Mylar3 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

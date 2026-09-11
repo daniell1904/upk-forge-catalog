@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: App user data folder
   help: Folder on the NAS for Dashy v4's app user data. It is mounted into the container at /app/user-data; Dashy v4 has full read and write access to it.
+  label_de: App user Daten-Ordner
+  help_de: Ordner auf der NAS für Dashy v4s App user Daten. Wird im Container unter /app/user-data eingebunden; Dashy v4 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /app/user-data

@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Readeck folder
   help: Folder on the NAS for Readeck's readeck. It is mounted into the container at /readeck; Readeck has full read and write access to it.
+  label_de: Readeck-Ordner
+  help_de: Ordner auf der NAS für Readecks Readeck. Wird im Container unter /readeck eingebunden; Readeck hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /readeck

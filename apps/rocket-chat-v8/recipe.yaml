@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Data db folder
   help: Folder on the NAS for Rocket.Chat v8's data db. It is mounted into the container at /data/db; Rocket.Chat v8 has full read and write access to it.
+  label_de: Daten db-Ordner
+  help_de: Ordner auf der NAS für Rocket.Chat v8s Daten db. Wird im Container unter /data/db eingebunden; Rocket.Chat v8 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /data/db

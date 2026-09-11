@@ -17,6 +17,8 @@ parameters:
 - key: VOL_1
   label: App server storage folder
   help: Folder on the NAS for AnythingLLM's app server storage. It is mounted into the container at /app/server/storage; AnythingLLM has full read and write access to it.
+  label_de: App server Speicher-Ordner
+  help_de: Ordner auf der NAS für AnythingLLMs App server Speicher. Wird im Container unter /app/server/storage eingebunden; AnythingLLM hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /app/server/storage

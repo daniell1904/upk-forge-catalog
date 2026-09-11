@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Octoprint folder
   help: Folder on the NAS for OctoPrint's octoprint. It is mounted into the container at /octoprint; OctoPrint has full read and write access to it.
+  label_de: Octoprint-Ordner
+  help_de: Ordner auf der NAS für OctoPrints Octoprint. Wird im Container unter /octoprint eingebunden; OctoPrint hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /octoprint

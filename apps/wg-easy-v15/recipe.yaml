@@ -15,6 +15,8 @@ parameters:
 - key: VOL_1
   label: Etc wireguard folder
   help: Folder on the NAS for WireGuard Easy v15's etc wireguard. It is mounted into the container at /etc/wireguard; WireGuard Easy v15 has full read and write access to it.
+  label_de: Etc wireguard-Ordner
+  help_de: Ordner auf der NAS für WireGuard Easy v15s Etc wireguard. Wird im Container unter /etc/wireguard eingebunden; WireGuard Easy v15 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: INIT_PASSWORD
   label: INIT PASSWORD

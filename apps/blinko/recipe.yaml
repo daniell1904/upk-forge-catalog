@@ -42,10 +42,14 @@ parameters:
 - key: VOL_1
   label: App .blinko folder
   help: Folder on the NAS for Blinko's app .blinko. It is mounted into the container at /app/.blinko; Blinko has full read and write access to it.
+  label_de: App .blinko-Ordner
+  help_de: Ordner auf der NAS für Blinkos App .blinko. Wird im Container unter /app/.blinko eingebunden; Blinko hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib postgresql data folder
   help: Folder on the NAS for Blinko's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Blinko has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Blinkos Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Blinko hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: NEXTAUTH_SECRET
   label: NEXTAUTH SECRET

@@ -17,10 +17,14 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Cal.com's config. It is mounted into the container at /config; Cal.com has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Cal.coms Konfiguration. Wird im Container unter /config eingebunden; Cal.com hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib postgresql data folder
   help: Folder on the NAS for Cal.com's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Cal.com has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Cal.coms Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Cal.com hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: POSTGRES_PASSWORD
   label: POSTGRES PASSWORD

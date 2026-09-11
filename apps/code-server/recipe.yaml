@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Code Server's config. It is mounted into the container at /config; Code Server has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Code Servers Konfiguration. Wird im Container unter /config eingebunden; Code Server hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Projects folder
   help: Folder on the NAS for Code Server's projects. It is mounted into the container at /projects; Code Server has full read and write access to it.
+  label_de: Projects-Ordner
+  help_de: Ordner auf der NAS für Code Servers Projects. Wird im Container unter /projects eingebunden; Code Server hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: PASSWORD
   label: PASSWORD

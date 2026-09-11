@@ -16,6 +16,8 @@ parameters:
 - key: VOL_1
   label: Openvpn folder
   help: Folder on the NAS for OpenVPN's openvpn. It is mounted into the container at /openvpn; OpenVPN has full read and write access to it.
+  label_de: Openvpn-Ordner
+  help_de: Ordner auf der NAS für OpenVPNs Openvpn. Wird im Container unter /openvpn eingebunden; OpenVPN hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /openvpn

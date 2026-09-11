@@ -14,10 +14,14 @@ parameters:
 - key: wizard_music_dir
   label: Music folder
   help: Folder on the NAS for LyraNest's music. It is mounted into the container at /music; LyraNest reads from it.
+  label_de: Musik-Ordner
+  help_de: Ordner auf der NAS für LyraNests Musik. Wird im Container unter /music eingebunden; LyraNest liest nur davon.
   type: path
 - key: VOL_1
   label: Downloads folder
   help: Folder on the NAS for LyraNest's downloads. It is mounted into the container at /downloads; LyraNest has full read and write access to it.
+  label_de: Downloads-Ordner
+  help_de: Ordner auf der NAS für LyraNests Downloads. Wird im Container unter /downloads eingebunden; LyraNest hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /music

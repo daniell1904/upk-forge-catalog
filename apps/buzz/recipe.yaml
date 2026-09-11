@@ -13,18 +13,26 @@ parameters:
 - key: VOL_1
   label: Data git folder
   help: Folder on the NAS for Buzz's data git. It is mounted into the container at /data/git; Buzz has full read and write access to it.
+  label_de: Daten git-Ordner
+  help_de: Ordner auf der NAS für Buzzs Daten git. Wird im Container unter /data/git eingebunden; Buzz hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib postgresql data folder
   help: Folder on the NAS for Buzz's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Buzz has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Buzzs Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Buzz hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Data folder
   help: Folder on the NAS for Buzz's data. It is mounted into the container at /data; Buzz has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Buzzs Daten. Wird im Container unter /data eingebunden; Buzz hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Data folder
   help: Folder on the NAS for Buzz's data. It is mounted into the container at /data; Buzz has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Buzzs Daten. Wird im Container unter /data eingebunden; Buzz hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: BUZZ_S3_ACCESS_KEY
   label: BUZZ S3 ACCESS KEY

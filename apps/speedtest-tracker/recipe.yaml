@@ -13,14 +13,20 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Speedtest Tracker's config. It is mounted into the container at /config; Speedtest Tracker has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Speedtest Trackers Konfiguration. Wird im Container unter /config eingebunden; Speedtest Tracker hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Etc ssl web folder
   help: Folder on the NAS for Speedtest Tracker's etc ssl web. It is mounted into the container at /etc/ssl/web; Speedtest Tracker has full read and write access to it.
+  label_de: Etc ssl web-Ordner
+  help_de: Ordner auf der NAS für Speedtest Trackers Etc ssl web. Wird im Container unter /etc/ssl/web eingebunden; Speedtest Tracker hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Var lib mysql folder
   help: Folder on the NAS for Speedtest Tracker's var lib mysql. It is mounted into the container at /var/lib/mysql; Speedtest Tracker has full read and write access to it.
+  label_de: Var lib mysql-Ordner
+  help_de: Ordner auf der NAS für Speedtest Trackers Var lib mysql. Wird im Container unter /var/lib/mysql eingebunden; Speedtest Tracker hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: DB_PASSWORD
   label: DB PASSWORD

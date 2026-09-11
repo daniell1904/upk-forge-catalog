@@ -16,6 +16,8 @@ parameters:
 - key: VOL_1
   label: Data folder
   help: Folder on the NAS for Music Assistant's data. It is mounted into the container at /data; Music Assistant has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Music Assistants Daten. Wird im Container unter /data eingebunden; Music Assistant hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /data

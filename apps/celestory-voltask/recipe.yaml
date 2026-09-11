@@ -13,18 +13,26 @@ parameters:
 - key: VOL_1
   label: App projectFiles folder
   help: Folder on the NAS for Celestory & Voltask's app projectfiles. It is mounted into the container at /app/projectFiles; Celestory & Voltask has full read and write access to it.
+  label_de: App projectFiles-Ordner
+  help_de: Ordner auf der NAS für Celestory & Voltasks App projectFiles. Wird im Container unter /app/projectFiles eingebunden; Celestory & Voltask hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Usr src app projectFiles folder
   help: Folder on the NAS for Celestory & Voltask's usr src app projectfiles. It is mounted into the container at /usr/src/app/projectFiles; Celestory & Voltask has full read and write access to it.
+  label_de: Usr src App projectFiles-Ordner
+  help_de: Ordner auf der NAS für Celestory & Voltasks Usr src App projectFiles. Wird im Container unter /usr/src/app/projectFiles eingebunden; Celestory & Voltask hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: App uploads folder
   help: Folder on the NAS for Celestory & Voltask's app uploads. It is mounted into the container at /app/uploads; Celestory & Voltask has full read and write access to it.
+  label_de: App Uploads-Ordner
+  help_de: Ordner auf der NAS für Celestory & Voltasks App Uploads. Wird im Container unter /app/uploads eingebunden; Celestory & Voltask hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Var lib postgresql data folder
   help: Folder on the NAS for Celestory & Voltask's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Celestory & Voltask has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Celestory & Voltasks Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Celestory & Voltask hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: AUTH_CLIENT_SECRET
   label: AUTH CLIENT SECRET

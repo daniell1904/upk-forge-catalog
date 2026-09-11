@@ -33,7 +33,7 @@ services:
     restart: unless-stopped
 
   ente-minio:
-    image: docker.io/minio/minio:latest-cicd
+    image: docker.io/minio/minio:latest
     command: server /data --address ":3200" --console-address ":3201"
     ports:
       - "3200:3200"
@@ -45,7 +45,7 @@ services:
     restart: unless-stopped
 
   ente-minio-init:
-    image: docker.io/minio/mc:RELEASE.2025-08-13T08-35-41Z-cpuv1
+    image: docker.io/minio/mc:latest
     depends_on:
       - ente-minio
     entrypoint: ["/bin/sh", "-c", "until mc alias set local http://ente-minio:3200 ente ente-minio-secret 2>/dev/null; do echo 'waiting for minio...'; sleep 1; done; mc ls local/b2-eu-cen >/dev/null 2>&1 || mc mb local/b2-eu-cen || exit 1; echo 'bucket b2-eu-cen ready'; tail -f /dev/null"]

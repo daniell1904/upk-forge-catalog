@@ -1,14 +1,13 @@
 id: immich
 name: Immich
-version: release-2026.09.11
-author: immich-app
+version: 3.2
+author: Immich
 category: Media
-description: 'Immich: Revolutionizing Your Home Media Experience Immich is here to transform the way you manage and enjoy your media files across your home TV, smartphones, and other devices. Unlike traditional photo albums or mainstream cloud services, immich offers a seamless and modern platform for organizing, sharing, and accessing your photos and videos. Imagine effortlessly backing up your precious moments from your mobile devices and viewing them instantly on your TV or sharing them with family members—immich makes it all possible. Immich stands out with its automatic backup from mobile devices, a sleek web-based interface for easy media browsing, and advanced features like face recognition and object detection. You can organize your media by location, enjoy 4K video playback, and even manage RAW photos. Plus, with multi-user support, sharing memories with friends and family is a breeze. The best part? Immich offers these powerful features for low cost, ensuring you get a premium experience without breaking the bank. Deploying immich on a private cloud device like brings unparalleled convenience. Enjoy unlimited storage capacity, blazing-fast local network speeds, and easy multi-device access. With immich on your private cloud, your media is always at your fingertips, safe and secure in your home.'
-homepage: https://github.com/immich-app/immich
-warnings:
-- dropped host bind mount /etc/localtime:/etc/localtime:ro
-- service 'immich-server' image 'ghcr.io/immich-app/immich-server:release' is not pinned to a fixed version
-- service 'immich-machine-learning' image 'ghcr.io/immich-app/immich-machine-learning:release' is not pinned to a fixed version
+description: Self-hosted photo and video backup, organised by an ML-powered search accelerated by the NAS's Intel GPU (OpenVINO). Pick where your library goes — everything else is Immich's own storage.
+description_de: Selbstgehostetes Foto- und Video-Backup mit KI-gestützter Suche, beschleunigt durch die Intel-GPU (OpenVINO) der NAS. Nur die Mediathek wird abgefragt — den Rest verwaltet Immich selbst.
+homepage: https://immich.app
+source_code: https://github.com/immich-app/immich
+license: https://github.com/immich-app/immich/blob/main/LICENSE
 ugos:
   app_id: com.upkforge.docker.immich
   version: 0.1.0
@@ -16,23 +15,26 @@ ugos:
   open_type: tab
   tag_type: media
 parameters:
-- key: UPLOAD_LOCATION
-  label: Data folder
-  help: Folder on the NAS for Immich's data. It is mounted into the container at /data; Immich has full read and write access to it.
+- key: VOL_1
+  label: Library folder
+  help: Your photos and videos. Immich stores the originals, thumbnails and everything it generates here — point this at where you want the library kept.
+  label_de: Mediathek
+  help_de: Deine Fotos und Videos. Immich speichert hier die Originale, Vorschaubilder und alles, was es selbst erzeugt — wähle den Ordner, in dem die Mediathek liegen soll.
   type: path
-- key: DB_PASSWORD
-  label: Db password
+- key: IMMICH_DB_PASSWORD
+  label: Database password
   type: password
   changeable: false
-  generate_bytes: 24
+  generate_bytes: 32
 volumes:
-- container_path: /data
-  label: Data
-- container_path: /cache
-  label: Cache
-  user_chosen: false
-  default_host_subpath: immich-model-cache
 - container_path: /var/lib/postgresql/data
-  label: Data
+  label: Database
   user_chosen: false
-  default_host_subpath: postgres
+  default_host_subpath: immich/db
+- container_path: /cache
+  label: Machine learning cache
+  user_chosen: false
+  default_host_subpath: immich/model-cache
+- container_path: /data
+  label: Library
+  label_de: Mediathek

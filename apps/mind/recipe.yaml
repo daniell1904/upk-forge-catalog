@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: App db folder
   help: Folder on the NAS for MIND's app db. It is mounted into the container at /app/db; MIND has full read and write access to it.
+  label_de: App db-Ordner
+  help_de: Ordner auf der NAS für MINDs App db. Wird im Container unter /app/db eingebunden; MIND hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /app/db

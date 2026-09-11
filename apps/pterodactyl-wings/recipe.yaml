@@ -13,26 +13,38 @@ parameters:
 - key: VOL_1
   label: Var run docker.sock folder
   help: Folder on the NAS for Pterodactyl Wings's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Pterodactyl Wings has full read and write access to it.
+  label_de: Var run docker.sock-Ordner
+  help_de: Ordner auf der NAS für Pterodactyl Wingss Var run docker.sock. Wird im Container unter /var/run/docker.sock eingebunden; Pterodactyl Wings hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib docker containers folder
   help: Folder on the NAS for Pterodactyl Wings's var lib docker containers. It is mounted into the container at /var/lib/docker/containers/; Pterodactyl Wings has full read and write access to it.
+  label_de: Var lib docker containers-Ordner
+  help_de: Ordner auf der NAS für Pterodactyl Wingss Var lib docker containers. Wird im Container unter /var/lib/docker/containers/ eingebunden; Pterodactyl Wings hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Etc ssl certs folder
   help: Folder on the NAS for Pterodactyl Wings's etc ssl certs. It is mounted into the container at /etc/ssl/certs; Pterodactyl Wings has full read and write access to it.
+  label_de: Etc ssl certs-Ordner
+  help_de: Ordner auf der NAS für Pterodactyl Wingss Etc ssl certs. Wird im Container unter /etc/ssl/certs eingebunden; Pterodactyl Wings hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Etc pterodactyl folder
   help: Folder on the NAS for Pterodactyl Wings's etc pterodactyl. It is mounted into the container at /etc/pterodactyl/; Pterodactyl Wings has full read and write access to it.
+  label_de: Etc pterodactyl-Ordner
+  help_de: Ordner auf der NAS für Pterodactyl Wingss Etc pterodactyl. Wird im Container unter /etc/pterodactyl/ eingebunden; Pterodactyl Wings hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_5
   label: Var log pterodactyl folder
   help: Folder on the NAS for Pterodactyl Wings's var log pterodactyl. It is mounted into the container at /var/log/pterodactyl/; Pterodactyl Wings has full read and write access to it.
+  label_de: Var Protokoll pterodactyl-Ordner
+  help_de: Ordner auf der NAS für Pterodactyl Wingss Var Protokoll pterodactyl. Wird im Container unter /var/log/pterodactyl/ eingebunden; Pterodactyl Wings hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_6
   label: Var lib pterodactyl folder
   help: Folder on the NAS for Pterodactyl Wings's var lib pterodactyl. It is mounted into the container at /var/lib/pterodactyl/; Pterodactyl Wings has full read and write access to it.
+  label_de: Var lib pterodactyl-Ordner
+  help_de: Ordner auf der NAS für Pterodactyl Wingss Var lib pterodactyl. Wird im Container unter /var/lib/pterodactyl/ eingebunden; Pterodactyl Wings hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/run/docker.sock

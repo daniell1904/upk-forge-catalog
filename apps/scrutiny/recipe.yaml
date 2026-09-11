@@ -16,10 +16,14 @@ parameters:
 - key: VOL_1
   label: Opt scrutiny config folder
   help: Folder on the NAS for Scrutiny's opt scrutiny config. It is mounted into the container at /opt/scrutiny/config; Scrutiny has full read and write access to it.
+  label_de: Opt scrutiny Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Scrutinys Opt scrutiny Konfiguration. Wird im Container unter /opt/scrutiny/config eingebunden; Scrutiny hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Opt scrutiny influxdb folder
   help: Folder on the NAS for Scrutiny's opt scrutiny influxdb. It is mounted into the container at /opt/scrutiny/influxdb; Scrutiny has full read and write access to it.
+  label_de: Opt scrutiny influxdb-Ordner
+  help_de: Ordner auf der NAS für Scrutinys Opt scrutiny influxdb. Wird im Container unter /opt/scrutiny/influxdb eingebunden; Scrutiny hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /opt/scrutiny/config

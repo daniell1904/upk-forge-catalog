@@ -42,10 +42,14 @@ parameters:
 - key: VOL_1
   label: Data folder
   help: Folder on the NAS for Portainer's data. It is mounted into the container at /data; Portainer has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Portainers Daten. Wird im Container unter /data eingebunden; Portainer hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var run docker.sock folder
   help: Folder on the NAS for Portainer's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Portainer has full read and write access to it.
+  label_de: Var run docker.sock-Ordner
+  help_de: Ordner auf der NAS für Portainers Var run docker.sock. Wird im Container unter /var/run/docker.sock eingebunden; Portainer hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /data

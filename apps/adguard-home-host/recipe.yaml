@@ -15,10 +15,14 @@ parameters:
 - key: VOL_1
   label: Opt adguardhome work folder
   help: Folder on the NAS for AdGuard Home (HOST)'s opt adguardhome work. It is mounted into the container at /opt/adguardhome/work; AdGuard Home (HOST) has full read and write access to it.
+  label_de: Opt adguardhome work-Ordner
+  help_de: Ordner auf der NAS für AdGuard Home (HOST)s Opt adguardhome work. Wird im Container unter /opt/adguardhome/work eingebunden; AdGuard Home (HOST) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Opt adguardhome conf folder
   help: Folder on the NAS for AdGuard Home (HOST)'s opt adguardhome conf. It is mounted into the container at /opt/adguardhome/conf; AdGuard Home (HOST) has full read and write access to it.
+  label_de: Opt adguardhome conf-Ordner
+  help_de: Ordner auf der NAS für AdGuard Home (HOST)s Opt adguardhome conf. Wird im Container unter /opt/adguardhome/conf eingebunden; AdGuard Home (HOST) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /opt/adguardhome/work

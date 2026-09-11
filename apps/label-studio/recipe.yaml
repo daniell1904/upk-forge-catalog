@@ -15,6 +15,8 @@ parameters:
 - key: VOL_1
   label: Label studio data folder
   help: Folder on the NAS for Label Studio's label studio data. It is mounted into the container at /label-studio/data; Label Studio has full read and write access to it.
+  label_de: Label studio Daten-Ordner
+  help_de: Ordner auf der NAS für Label Studios Label studio Daten. Wird im Container unter /label-studio/data eingebunden; Label Studio hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /label-studio/data

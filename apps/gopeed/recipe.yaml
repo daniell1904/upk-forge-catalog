@@ -42,10 +42,14 @@ parameters:
 - key: VOL_1
   label: App storage folder
   help: Folder on the NAS for Gopeed's app storage. It is mounted into the container at /app/storage; Gopeed has full read and write access to it.
+  label_de: App Speicher-Ordner
+  help_de: Ordner auf der NAS für Gopeeds App Speicher. Wird im Container unter /app/storage eingebunden; Gopeed hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: App Downloads folder
   help: Folder on the NAS for Gopeed's app downloads. It is mounted into the container at /app/Downloads; Gopeed has full read and write access to it.
+  label_de: App Downloads-Ordner
+  help_de: Ordner auf der NAS für Gopeeds App Downloads. Wird im Container unter /app/Downloads eingebunden; Gopeed hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /app/storage

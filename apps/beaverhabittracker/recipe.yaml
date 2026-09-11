@@ -42,6 +42,8 @@ parameters:
 - key: VOL_1
   label: App .user folder
   help: Folder on the NAS for BeaverHabitTracker's app .user. It is mounted into the container at /app/.user; BeaverHabitTracker has full read and write access to it.
+  label_de: App .user-Ordner
+  help_de: Ordner auf der NAS für BeaverHabitTrackers App .user. Wird im Container unter /app/.user eingebunden; BeaverHabitTracker hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /app/.user

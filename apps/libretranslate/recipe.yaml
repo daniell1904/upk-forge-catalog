@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: App db folder
   help: Folder on the NAS for LibreTranslate's app db. It is mounted into the container at /app/db; LibreTranslate has full read and write access to it.
+  label_de: App db-Ordner
+  help_de: Ordner auf der NAS für LibreTranslates App db. Wird im Container unter /app/db eingebunden; LibreTranslate hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Home libretranslate .local folder
   help: Folder on the NAS for LibreTranslate's home libretranslate .local. It is mounted into the container at /home/libretranslate/.local; LibreTranslate has full read and write access to it.
+  label_de: Home libretranslate .local-Ordner
+  help_de: Ordner auf der NAS für LibreTranslates Home libretranslate .local. Wird im Container unter /home/libretranslate/.local eingebunden; LibreTranslate hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /app/db

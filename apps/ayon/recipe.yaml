@@ -13,18 +13,26 @@ parameters:
 - key: VOL_1
   label: Addons folder
   help: Folder on the NAS for Ayon's addons. It is mounted into the container at /addons; Ayon has full read and write access to it.
+  label_de: Addons-Ordner
+  help_de: Ordner auf der NAS für Ayons Addons. Wird im Container unter /addons eingebunden; Ayon hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Storage folder
   help: Folder on the NAS for Ayon's storage. It is mounted into the container at /storage; Ayon has full read and write access to it.
+  label_de: Speicher-Ordner
+  help_de: Ordner auf der NAS für Ayons Speicher. Wird im Container unter /storage eingebunden; Ayon hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Var lib postgresql data folder
   help: Folder on the NAS for Ayon's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Ayon has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Ayons Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Ayon hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Data folder
   help: Folder on the NAS for Ayon's data. It is mounted into the container at /data; Ayon has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Ayons Daten. Wird im Container unter /data eingebunden; Ayon hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: POSTGRES_PASSWORD
   label: POSTGRES PASSWORD

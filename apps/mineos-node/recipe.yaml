@@ -15,6 +15,8 @@ parameters:
 - key: VOL_1
   label: Var games minecraft folder
   help: Folder on the NAS for MineOS's var games minecraft. It is mounted into the container at /var/games/minecraft; MineOS has full read and write access to it.
+  label_de: Var games minecraft-Ordner
+  help_de: Ordner auf der NAS für MineOSs Var games minecraft. Wird im Container unter /var/games/minecraft eingebunden; MineOS hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: USER_PASSWORD
   label: USER PASSWORD

@@ -33,6 +33,8 @@ parameters:
 - key: VOL_1
   label: Models folder
   help: Folder on the NAS for DeepSeek OCR(Nvidia GPU)'s models. It is mounted into the container at /models; DeepSeek OCR(Nvidia GPU) has full read and write access to it.
+  label_de: Models-Ordner
+  help_de: Ordner auf der NAS für DeepSeek OCR(Nvidia GPU)s Models. Wird im Container unter /models eingebunden; DeepSeek OCR(Nvidia GPU) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /models

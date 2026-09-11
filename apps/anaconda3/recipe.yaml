@@ -15,6 +15,8 @@ parameters:
 - key: VOL_1
   label: Opt notebooks folder
   help: Folder on the NAS for Anaconda3's opt notebooks. It is mounted into the container at /opt/notebooks; Anaconda3 has full read and write access to it.
+  label_de: Opt notebooks-Ordner
+  help_de: Ordner auf der NAS für Anaconda3s Opt notebooks. Wird im Container unter /opt/notebooks eingebunden; Anaconda3 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /opt/notebooks

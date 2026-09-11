@@ -40,14 +40,20 @@ parameters:
 - key: VOL_1
   label: Var run docker.sock folder
   help: Folder on the NAS for OpenHands's var run docker.sock. It is mounted into the container at /var/run/docker.sock; OpenHands has full read and write access to it.
+  label_de: Var run docker.sock-Ordner
+  help_de: Ordner auf der NAS für OpenHandss Var run docker.sock. Wird im Container unter /var/run/docker.sock eingebunden; OpenHands hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: .openhands folder
   help: Folder on the NAS for OpenHands's .openhands. It is mounted into the container at /.openhands; OpenHands has full read and write access to it.
+  label_de: .openhands-Ordner
+  help_de: Ordner auf der NAS für OpenHandss .openhands. Wird im Container unter /.openhands eingebunden; OpenHands hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Opt workspace base folder
   help: Folder on the NAS for OpenHands's opt workspace base. It is mounted into the container at /opt/workspace_base; OpenHands has full read and write access to it.
+  label_de: Opt workspace base-Ordner
+  help_de: Ordner auf der NAS für OpenHandss Opt workspace base. Wird im Container unter /opt/workspace_base eingebunden; OpenHands hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/run/docker.sock

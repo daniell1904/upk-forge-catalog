@@ -19,6 +19,8 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for MariaDB's config. It is mounted into the container at /config; MariaDB has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für MariaDBs Konfiguration. Wird im Container unter /config eingebunden; MariaDB hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: MYSQL_ROOT_PASSWORD
   label: MYSQL ROOT PASSWORD

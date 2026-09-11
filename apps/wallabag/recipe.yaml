@@ -52,6 +52,8 @@ parameters:
 - key: VOL_1
   label: Var www wallabag web assets images folder
   help: Folder on the NAS for Wallabag's var www wallabag web assets images. It is mounted into the container at /var/www/wallabag/web/assets/images; Wallabag has full read and write access to it.
+  label_de: Var www wallabag web assets images-Ordner
+  help_de: Ordner auf der NAS für Wallabags Var www wallabag web assets images. Wird im Container unter /var/www/wallabag/web/assets/images eingebunden; Wallabag hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/www/wallabag/web/assets/images

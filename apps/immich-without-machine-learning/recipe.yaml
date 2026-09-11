@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Usr src app upload folder
   help: Folder on the NAS for Immich without machine learning's usr src app upload. It is mounted into the container at /usr/src/app/upload; Immich without machine learning has full read and write access to it.
+  label_de: Usr src App Upload-Ordner
+  help_de: Ordner auf der NAS für Immich without machine learnings Usr src App Upload. Wird im Container unter /usr/src/app/upload eingebunden; Immich without machine learning hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib postgresql data folder
   help: Folder on the NAS for Immich without machine learning's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Immich without machine learning has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Immich without machine learnings Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Immich without machine learning hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: DB_PASSWORD
   label: DB PASSWORD

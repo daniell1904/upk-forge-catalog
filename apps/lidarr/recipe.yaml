@@ -15,14 +15,20 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Lidarr's config. It is mounted into the container at /config; Lidarr has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Lidarrs Konfiguration. Wird im Container unter /config eingebunden; Lidarr hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Music folder
   help: Folder on the NAS for Lidarr's music. It is mounted into the container at /music; Lidarr has full read and write access to it.
+  label_de: Musik-Ordner
+  help_de: Ordner auf der NAS für Lidarrs Musik. Wird im Container unter /music eingebunden; Lidarr hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Downloads folder
   help: Folder on the NAS for Lidarr's downloads. It is mounted into the container at /downloads; Lidarr has full read and write access to it.
+  label_de: Downloads-Ordner
+  help_de: Ordner auf der NAS für Lidarrs Downloads. Wird im Container unter /downloads eingebunden; Lidarr hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

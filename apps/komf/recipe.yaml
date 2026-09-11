@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Komf's config. It is mounted into the container at /config; Komf has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Komfs Konfiguration. Wird im Container unter /config eingebunden; Komf hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: KOMF_KOMGA_PASSWORD
   label: KOMF KOMGA PASSWORD

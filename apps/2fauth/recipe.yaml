@@ -15,6 +15,8 @@ parameters:
 - key: VOL_1
   label: 2fauth folder
   help: Folder on the NAS for 2FAuth's 2fauth. It is mounted into the container at /2fauth; 2FAuth has full read and write access to it.
+  label_de: 2fauth-Ordner
+  help_de: Ordner auf der NAS für 2FAuths 2fauth. Wird im Container unter /2fauth eingebunden; 2FAuth hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: APP_KEY
   label: APP KEY

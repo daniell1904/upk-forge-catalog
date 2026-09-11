@@ -18,10 +18,14 @@ parameters:
 - key: VOL_1
   label: Lib modules folder
   help: Folder on the NAS for Firefly's lib modules. It is mounted into the container at /lib/modules; Firefly has full read and write access to it.
+  label_de: Lib modules-Ordner
+  help_de: Ordner auf der NAS für Fireflys Lib modules. Wird im Container unter /lib/modules eingebunden; Firefly hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Firefly conf folder
   help: Folder on the NAS for Firefly's firefly conf. It is mounted into the container at /firefly/conf; Firefly has full read and write access to it.
+  label_de: Firefly conf-Ordner
+  help_de: Ordner auf der NAS für Fireflys Firefly conf. Wird im Container unter /firefly/conf eingebunden; Firefly hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: FIREFLY_PASSWORD
   label: FIREFLY PASSWORD

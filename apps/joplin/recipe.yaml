@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Var lib postgresql data folder
   help: Folder on the NAS for joplin's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; joplin has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für joplins Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; joplin hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: POSTGRES_PASSWORD
   label: POSTGRES PASSWORD

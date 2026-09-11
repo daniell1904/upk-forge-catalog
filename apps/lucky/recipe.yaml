@@ -17,6 +17,8 @@ parameters:
 - key: VOL_1
   label: Goodluck folder
   help: Folder on the NAS for Lucky's goodluck. It is mounted into the container at /goodluck; Lucky has full read and write access to it.
+  label_de: Goodluck-Ordner
+  help_de: Ordner auf der NAS für Luckys Goodluck. Wird im Container unter /goodluck eingebunden; Lucky hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /goodluck

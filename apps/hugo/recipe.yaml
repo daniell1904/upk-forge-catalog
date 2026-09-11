@@ -74,10 +74,14 @@ parameters:
 - key: VOL_1
   label: Project folder
   help: Folder on the NAS for Hugo's project. It is mounted into the container at /project; Hugo has full read and write access to it.
+  label_de: Project-Ordner
+  help_de: Ordner auf der NAS für Hugos Project. Wird im Container unter /project eingebunden; Hugo hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Cache folder
   help: Folder on the NAS for Hugo's cache. It is mounted into the container at /cache; Hugo has full read and write access to it.
+  label_de: Cache-Ordner
+  help_de: Ordner auf der NAS für Hugos Cache. Wird im Container unter /cache eingebunden; Hugo hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /project

@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Baserow data folder
   help: Folder on the NAS for Baserow's baserow data. It is mounted into the container at /baserow/data; Baserow has full read and write access to it.
+  label_de: Baserow Daten-Ordner
+  help_de: Ordner auf der NAS für Baserows Baserow Daten. Wird im Container unter /baserow/data eingebunden; Baserow hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /baserow/data

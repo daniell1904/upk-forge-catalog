@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for bookstack's config. It is mounted into the container at /config; bookstack has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für bookstacks Konfiguration. Wird im Container unter /config eingebunden; bookstack hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Config folder
   help: Folder on the NAS for bookstack's config. It is mounted into the container at /config; bookstack has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für bookstacks Konfiguration. Wird im Container unter /config eingebunden; bookstack hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: APP_KEY
   label: APP KEY

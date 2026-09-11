@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: App instance folder
   help: Folder on the NAS for Nova DSO Tracker's app instance. It is mounted into the container at /app/instance; Nova DSO Tracker has full read and write access to it.
+  label_de: App instance-Ordner
+  help_de: Ordner auf der NAS für Nova DSO Trackers App instance. Wird im Container unter /app/instance eingebunden; Nova DSO Tracker hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /app/instance

@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Mnt config folder
   help: Folder on the NAS for Write Freely's mnt config. It is mounted into the container at /mnt/config; Write Freely has full read and write access to it.
+  label_de: Mnt Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Write Freelys Mnt Konfiguration. Wird im Container unter /mnt/config eingebunden; Write Freely hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /mnt/config

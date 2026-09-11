@@ -38,26 +38,38 @@ parameters:
 - key: VOL_1
   label: Data files folder
   help: Folder on the NAS for WeKnora's data files. It is mounted into the container at /data/files; WeKnora has full read and write access to it.
+  label_de: Daten files-Ordner
+  help_de: Ordner auf der NAS für WeKnoras Daten files. Wird im Container unter /data/files eingebunden; WeKnora hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib postgresql data folder
   help: Folder on the NAS for WeKnora's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; WeKnora has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für WeKnoras Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; WeKnora hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Data folder
   help: Folder on the NAS for WeKnora's data. It is mounted into the container at /data; WeKnora has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für WeKnoras Daten. Wird im Container unter /data eingebunden; WeKnora hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Var lib jaeger folder
   help: Folder on the NAS for WeKnora's var lib jaeger. It is mounted into the container at /var/lib/jaeger; WeKnora has full read and write access to it.
+  label_de: Var lib jaeger-Ordner
+  help_de: Ordner auf der NAS für WeKnoras Var lib jaeger. Wird im Container unter /var/lib/jaeger eingebunden; WeKnora hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_5
   label: Data folder
   help: Folder on the NAS for WeKnora's data. It is mounted into the container at /data; WeKnora has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für WeKnoras Daten. Wird im Container unter /data eingebunden; WeKnora hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_6
   label: Qdrant storage folder
   help: Folder on the NAS for WeKnora's qdrant storage. It is mounted into the container at /qdrant/storage; WeKnora has full read and write access to it.
+  label_de: Qdrant Speicher-Ordner
+  help_de: Ordner auf der NAS für WeKnoras Qdrant Speicher. Wird im Container unter /qdrant/storage eingebunden; WeKnora hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: MINIO_SECRET_ACCESS_KEY
   label: MINIO SECRET ACCESS KEY

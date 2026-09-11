@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Data folder
   help: Folder on the NAS for Minio's data. It is mounted into the container at /data; Minio has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Minios Daten. Wird im Container unter /data eingebunden; Minio hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: MINIO_ROOT_PASSWORD
   label: MINIO ROOT PASSWORD

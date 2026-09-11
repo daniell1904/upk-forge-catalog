@@ -15,6 +15,8 @@ parameters:
 - key: VOL_1
   label: Root .stremio server folder
   help: Folder on the NAS for Stremio's root .stremio server. It is mounted into the container at /root/.stremio-server; Stremio has full read and write access to it.
+  label_de: Root .stremio server-Ordner
+  help_de: Ordner auf der NAS für Stremios Root .stremio server. Wird im Container unter /root/.stremio-server eingebunden; Stremio hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /root/.stremio-server

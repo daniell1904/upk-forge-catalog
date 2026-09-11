@@ -14,6 +14,8 @@ parameters:
 - key: VOL_1
   label: Var lib databag folder
   help: Folder on the NAS for Databag's var lib databag. It is mounted into the container at /var/lib/databag; Databag has full read and write access to it.
+  label_de: Var lib databag-Ordner
+  help_de: Ordner auf der NAS für Databags Var lib databag. Wird im Container unter /var/lib/databag eingebunden; Databag hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/lib/databag

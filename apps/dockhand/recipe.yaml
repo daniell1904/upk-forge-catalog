@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Var run docker.sock folder
   help: Folder on the NAS for Dockhand's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Dockhand has full read and write access to it.
+  label_de: Var run docker.sock-Ordner
+  help_de: Ordner auf der NAS für Dockhands Var run docker.sock. Wird im Container unter /var/run/docker.sock eingebunden; Dockhand hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: App data folder
   help: Folder on the NAS for Dockhand's app data. It is mounted into the container at /app/data; Dockhand has full read and write access to it.
+  label_de: App Daten-Ordner
+  help_de: Ordner auf der NAS für Dockhands App Daten. Wird im Container unter /app/data eingebunden; Dockhand hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/run/docker.sock

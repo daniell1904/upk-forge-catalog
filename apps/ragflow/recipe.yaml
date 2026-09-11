@@ -47,38 +47,56 @@ parameters:
 - key: VOL_1
   label: Ragflow logs folder
   help: Folder on the NAS for RagFlow's ragflow logs. It is mounted into the container at /ragflow/logs; RagFlow has full read and write access to it.
+  label_de: Ragflow Protokolle-Ordner
+  help_de: Ordner auf der NAS für RagFlows Ragflow Protokolle. Wird im Container unter /ragflow/logs eingebunden; RagFlow hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Ragflow history data agent folder
   help: Folder on the NAS for RagFlow's ragflow history data agent. It is mounted into the container at /ragflow/history_data_agent; RagFlow has full read and write access to it.
+  label_de: Ragflow history Daten agent-Ordner
+  help_de: Ordner auf der NAS für RagFlows Ragflow history Daten agent. Wird im Container unter /ragflow/history_data_agent eingebunden; RagFlow hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Usr share elasticsearch data folder
   help: Folder on the NAS for RagFlow's usr share elasticsearch data. It is mounted into the container at /usr/share/elasticsearch/data; RagFlow has full read and write access to it.
+  label_de: Usr share elasticsearch Daten-Ordner
+  help_de: Ordner auf der NAS für RagFlows Usr share elasticsearch Daten. Wird im Container unter /usr/share/elasticsearch/data eingebunden; RagFlow hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Var infinity folder
   help: Folder on the NAS for RagFlow's var infinity. It is mounted into the container at /var/infinity; RagFlow has full read and write access to it.
+  label_de: Var infinity-Ordner
+  help_de: Ordner auf der NAS für RagFlows Var infinity. Wird im Container unter /var/infinity eingebunden; RagFlow hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_5
   label: Data folder
   help: Folder on the NAS for RagFlow's data. It is mounted into the container at /data; RagFlow has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für RagFlows Daten. Wird im Container unter /data eingebunden; RagFlow hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_6
   label: Var lib mysql folder
   help: Folder on the NAS for RagFlow's var lib mysql. It is mounted into the container at /var/lib/mysql; RagFlow has full read and write access to it.
+  label_de: Var lib mysql-Ordner
+  help_de: Ordner auf der NAS für RagFlows Var lib mysql. Wird im Container unter /var/lib/mysql eingebunden; RagFlow hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_7
   label: Usr share opensearch data folder
   help: Folder on the NAS for RagFlow's usr share opensearch data. It is mounted into the container at /usr/share/opensearch/data; RagFlow has full read and write access to it.
+  label_de: Usr share opensearch Daten-Ordner
+  help_de: Ordner auf der NAS für RagFlows Usr share opensearch Daten. Wird im Container unter /usr/share/opensearch/data eingebunden; RagFlow hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_8
   label: Data folder
   help: Folder on the NAS for RagFlow's data. It is mounted into the container at /data; RagFlow has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für RagFlows Daten. Wird im Container unter /data eingebunden; RagFlow hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_9
   label: Var run docker.sock folder
   help: Folder on the NAS for RagFlow's var run docker.sock. It is mounted into the container at /var/run/docker.sock; RagFlow has full read and write access to it.
+  label_de: Var run docker.sock-Ordner
+  help_de: Ordner auf der NAS für RagFlows Var run docker.sock. Wird im Container unter /var/run/docker.sock eingebunden; RagFlow hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: ELASTIC_PASSWORD
   label: ELASTIC PASSWORD

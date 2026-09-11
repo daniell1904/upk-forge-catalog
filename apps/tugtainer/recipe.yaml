@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Tugtainer folder
   help: Folder on the NAS for Tugtainer's tugtainer. It is mounted into the container at /tugtainer; Tugtainer has full read and write access to it.
+  label_de: Tugtainer-Ordner
+  help_de: Ordner auf der NAS für Tugtainers Tugtainer. Wird im Container unter /tugtainer eingebunden; Tugtainer hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var run docker.sock folder
   help: Folder on the NAS for Tugtainer's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Tugtainer has full read and write access to it.
+  label_de: Var run docker.sock-Ordner
+  help_de: Ordner auf der NAS für Tugtainers Var run docker.sock. Wird im Container unter /var/run/docker.sock eingebunden; Tugtainer hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: JWT_SECRET_KEY
   label: JWT SECRET KEY

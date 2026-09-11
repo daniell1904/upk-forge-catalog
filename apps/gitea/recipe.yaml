@@ -66,6 +66,8 @@ parameters:
 - key: VOL_1
   label: Data folder
   help: Folder on the NAS for Gitea's data. It is mounted into the container at /data; Gitea has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Giteas Daten. Wird im Container unter /data eingebunden; Gitea hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /data

@@ -13,26 +13,38 @@ parameters:
 - key: VOL_1
   label: App data folder
   help: Folder on the NAS for Planka v2's app data. It is mounted into the container at /app/data; Planka v2 has full read and write access to it.
+  label_de: App Daten-Ordner
+  help_de: Ordner auf der NAS für Planka v2s App Daten. Wird im Container unter /app/data eingebunden; Planka v2 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: App public background images folder
   help: Folder on the NAS for Planka v2's app public background images. It is mounted into the container at /app/public/background-images; Planka v2 has full read and write access to it.
+  label_de: App public background images-Ordner
+  help_de: Ordner auf der NAS für Planka v2s App public background images. Wird im Container unter /app/public/background-images eingebunden; Planka v2 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: App public user avatars folder
   help: Folder on the NAS for Planka v2's app public user avatars. It is mounted into the container at /app/public/user-avatars; Planka v2 has full read and write access to it.
+  label_de: App public user avatars-Ordner
+  help_de: Ordner auf der NAS für Planka v2s App public user avatars. Wird im Container unter /app/public/user-avatars eingebunden; Planka v2 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: App public project background images folder
   help: Folder on the NAS for Planka v2's app public project background images. It is mounted into the container at /app/public/project-background-images; Planka v2 has full read and write access to it.
+  label_de: App public project background images-Ordner
+  help_de: Ordner auf der NAS für Planka v2s App public project background images. Wird im Container unter /app/public/project-background-images eingebunden; Planka v2 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_5
   label: App private attachments folder
   help: Folder on the NAS for Planka v2's app private attachments. It is mounted into the container at /app/private/attachments; Planka v2 has full read and write access to it.
+  label_de: App private attachments-Ordner
+  help_de: Ordner auf der NAS für Planka v2s App private attachments. Wird im Container unter /app/private/attachments eingebunden; Planka v2 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_6
   label: Var lib postgresql data folder
   help: Folder on the NAS for Planka v2's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Planka v2 has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Planka v2s Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Planka v2 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: SECRET_KEY
   label: SECRET KEY

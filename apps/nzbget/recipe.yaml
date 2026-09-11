@@ -15,10 +15,14 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Nzbget's config. It is mounted into the container at /config; Nzbget has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Nzbgets Konfiguration. Wird im Container unter /config eingebunden; Nzbget hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Downloads folder
   help: Folder on the NAS for Nzbget's downloads. It is mounted into the container at /downloads; Nzbget has full read and write access to it.
+  label_de: Downloads-Ordner
+  help_de: Ordner auf der NAS für Nzbgets Downloads. Wird im Container unter /downloads eingebunden; Nzbget hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: NZBGET_PASS
   label: NZBGET PASS

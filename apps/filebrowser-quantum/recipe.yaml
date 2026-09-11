@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Home filebrowser data folder
   help: Folder on the NAS for FileBrowser Quantum's home filebrowser data. It is mounted into the container at /home/filebrowser/data; FileBrowser Quantum has full read and write access to it.
+  label_de: Home filebrowser Daten-Ordner
+  help_de: Ordner auf der NAS für FileBrowser Quantums Home filebrowser Daten. Wird im Container unter /home/filebrowser/data eingebunden; FileBrowser Quantum hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Srv folder
   help: Folder on the NAS for FileBrowser Quantum's srv. It is mounted into the container at /srv; FileBrowser Quantum has full read and write access to it.
+  label_de: Srv-Ordner
+  help_de: Ordner auf der NAS für FileBrowser Quantums Srv. Wird im Container unter /srv eingebunden; FileBrowser Quantum hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /home/filebrowser/data

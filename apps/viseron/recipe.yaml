@@ -13,22 +13,32 @@ parameters:
 - key: VOL_1
   label: Segments folder
   help: Folder on the NAS for Viseron's segments. It is mounted into the container at /segments; Viseron has full read and write access to it.
+  label_de: Segments-Ordner
+  help_de: Ordner auf der NAS für Viserons Segments. Wird im Container unter /segments eingebunden; Viseron hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Snapshots folder
   help: Folder on the NAS for Viseron's snapshots. It is mounted into the container at /snapshots; Viseron has full read and write access to it.
+  label_de: Snapshots-Ordner
+  help_de: Ordner auf der NAS für Viserons Snapshots. Wird im Container unter /snapshots eingebunden; Viseron hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Thumbnails folder
   help: Folder on the NAS for Viseron's thumbnails. It is mounted into the container at /thumbnails; Viseron has full read and write access to it.
+  label_de: Thumbnails-Ordner
+  help_de: Ordner auf der NAS für Viserons Thumbnails. Wird im Container unter /thumbnails eingebunden; Viseron hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Event clips folder
   help: Folder on the NAS for Viseron's event clips. It is mounted into the container at /event_clips; Viseron has full read and write access to it.
+  label_de: Event clips-Ordner
+  help_de: Ordner auf der NAS für Viserons Event clips. Wird im Container unter /event_clips eingebunden; Viseron hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_5
   label: Config folder
   help: Folder on the NAS for Viseron's config. It is mounted into the container at /config; Viseron has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Viserons Konfiguration. Wird im Container unter /config eingebunden; Viseron hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /segments

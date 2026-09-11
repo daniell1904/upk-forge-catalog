@@ -47,14 +47,20 @@ parameters:
 - key: VOL_1
   label: Lib modules folder
   help: Folder on the NAS for V2rayA's lib modules. It is mounted into the container at /lib/modules; V2rayA has full read and write access to it.
+  label_de: Lib modules-Ordner
+  help_de: Ordner auf der NAS für V2rayAs Lib modules. Wird im Container unter /lib/modules eingebunden; V2rayA hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Etc resolv.conf folder
   help: Folder on the NAS for V2rayA's etc resolv.conf. It is mounted into the container at /etc/resolv.conf; V2rayA has full read and write access to it.
+  label_de: Etc resolv.conf-Ordner
+  help_de: Ordner auf der NAS für V2rayAs Etc resolv.conf. Wird im Container unter /etc/resolv.conf eingebunden; V2rayA hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Etc v2raya folder
   help: Folder on the NAS for V2rayA's etc v2raya. It is mounted into the container at /etc/v2raya; V2rayA has full read and write access to it.
+  label_de: Etc v2raya-Ordner
+  help_de: Ordner auf der NAS für V2rayAs Etc v2raya. Wird im Container unter /etc/v2raya eingebunden; V2rayA hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /lib/modules

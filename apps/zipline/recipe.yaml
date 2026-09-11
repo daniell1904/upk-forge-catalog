@@ -13,14 +13,20 @@ parameters:
 - key: VOL_1
   label: Zipline uploads folder
   help: Folder on the NAS for zipline's zipline uploads. It is mounted into the container at /zipline/uploads; zipline has full read and write access to it.
+  label_de: Zipline Uploads-Ordner
+  help_de: Ordner auf der NAS für ziplines Zipline Uploads. Wird im Container unter /zipline/uploads eingebunden; zipline hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Zipline public folder
   help: Folder on the NAS for zipline's zipline public. It is mounted into the container at /zipline/public; zipline has full read and write access to it.
+  label_de: Zipline public-Ordner
+  help_de: Ordner auf der NAS für ziplines Zipline public. Wird im Container unter /zipline/public eingebunden; zipline hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Var lib postgresql data folder
   help: Folder on the NAS for zipline's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; zipline has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für ziplines Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; zipline hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: CORE_SECRET
   label: CORE SECRET

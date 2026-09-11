@@ -15,22 +15,32 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Kopia's config. It is mounted into the container at /config; Kopia has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Kopias Konfiguration. Wird im Container unter /config eingebunden; Kopia hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Backups home folder
   help: Folder on the NAS for Kopia's backups home. It is mounted into the container at /backups/home; Kopia has full read and write access to it.
+  label_de: Backups Home-Ordner
+  help_de: Ordner auf der NAS für Kopias Backups Home. Wird im Container unter /backups/home eingebunden; Kopia hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Backups docker folder
   help: Folder on the NAS for Kopia's backups docker. It is mounted into the container at /backups/docker; Kopia has full read and write access to it.
+  label_de: Backups docker-Ordner
+  help_de: Ordner auf der NAS für Kopias Backups docker. Wird im Container unter /backups/docker eingebunden; Kopia hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Repository folder
   help: Folder on the NAS for Kopia's repository. It is mounted into the container at /repository; Kopia has full read and write access to it.
+  label_de: Repository-Ordner
+  help_de: Ordner auf der NAS für Kopias Repository. Wird im Container unter /repository eingebunden; Kopia hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_5
   label: Var run docker.sock folder
   help: Folder on the NAS for Kopia's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Kopia has full read and write access to it.
+  label_de: Var run docker.sock-Ordner
+  help_de: Ordner auf der NAS für Kopias Var run docker.sock. Wird im Container unter /var/run/docker.sock eingebunden; Kopia hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: KOPIA_UI_PASSWORD
   label: KOPIA UI PASSWORD

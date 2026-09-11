@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: App data folder
   help: Folder on the NAS for Compose Toolbox's app data. It is mounted into the container at /app/data; Compose Toolbox has full read and write access to it.
+  label_de: App Daten-Ordner
+  help_de: Ordner auf der NAS für Compose Toolboxs App Daten. Wird im Container unter /app/data eingebunden; Compose Toolbox hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /app/data

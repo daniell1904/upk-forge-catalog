@@ -14,6 +14,8 @@ parameters:
 - key: VOL_1
   label: Updater data folder
   help: Folder on the NAS for ddns-updater's updater data. It is mounted into the container at /updater/data; ddns-updater has full read and write access to it.
+  label_de: Updater Daten-Ordner
+  help_de: Ordner auf der NAS für ddns-updaters Updater Daten. Wird im Container unter /updater/data eingebunden; ddns-updater hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /updater/data

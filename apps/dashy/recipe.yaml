@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: App public folder
   help: Folder on the NAS for Dashy (Legacy)'s app public. It is mounted into the container at /app/public; Dashy (Legacy) has full read and write access to it.
+  label_de: App public-Ordner
+  help_de: Ordner auf der NAS für Dashy (Legacy)s App public. Wird im Container unter /app/public eingebunden; Dashy (Legacy) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /app/public

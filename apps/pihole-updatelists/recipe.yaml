@@ -15,14 +15,20 @@ parameters:
 - key: VOL_1
   label: Etc pihole folder
   help: Folder on the NAS for Pi-hole® Updatelists's etc pihole. It is mounted into the container at /etc/pihole/; Pi-hole® Updatelists has full read and write access to it.
+  label_de: Etc pihole-Ordner
+  help_de: Ordner auf der NAS für Pi-hole® Updatelistss Etc pihole. Wird im Container unter /etc/pihole/ eingebunden; Pi-hole® Updatelists hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Etc pihole updatelists folder
   help: Folder on the NAS for Pi-hole® Updatelists's etc pihole updatelists. It is mounted into the container at /etc/pihole-updatelists/; Pi-hole® Updatelists has full read and write access to it.
+  label_de: Etc pihole updatelists-Ordner
+  help_de: Ordner auf der NAS für Pi-hole® Updatelistss Etc pihole updatelists. Wird im Container unter /etc/pihole-updatelists/ eingebunden; Pi-hole® Updatelists hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Etc dnsmasq.d folder
   help: Folder on the NAS for Pi-hole® Updatelists's etc dnsmasq.d. It is mounted into the container at /etc/dnsmasq.d/; Pi-hole® Updatelists has full read and write access to it.
+  label_de: Etc dnsmasq.d-Ordner
+  help_de: Ordner auf der NAS für Pi-hole® Updatelistss Etc dnsmasq.d. Wird im Container unter /etc/dnsmasq.d/ eingebunden; Pi-hole® Updatelists hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: FTLCONF_webserver_api_password
   label: FTLCONF webserver api password

@@ -15,14 +15,20 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Jellyfin(Nvidia GPU)'s config. It is mounted into the container at /config; Jellyfin(Nvidia GPU) has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Jellyfin(Nvidia GPU)s Konfiguration. Wird im Container unter /config eingebunden; Jellyfin(Nvidia GPU) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Media folder
   help: Folder on the NAS for Jellyfin(Nvidia GPU)'s media. It is mounted into the container at /Media; Jellyfin(Nvidia GPU) has full read and write access to it.
+  label_de: Medien-Ordner
+  help_de: Ordner auf der NAS für Jellyfin(Nvidia GPU)s Medien. Wird im Container unter /Media eingebunden; Jellyfin(Nvidia GPU) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Opt vc lib folder
   help: Folder on the NAS for Jellyfin(Nvidia GPU)'s opt vc lib. It is mounted into the container at /opt/vc/lib; Jellyfin(Nvidia GPU) has full read and write access to it.
+  label_de: Opt vc lib-Ordner
+  help_de: Ordner auf der NAS für Jellyfin(Nvidia GPU)s Opt vc lib. Wird im Container unter /opt/vc/lib eingebunden; Jellyfin(Nvidia GPU) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

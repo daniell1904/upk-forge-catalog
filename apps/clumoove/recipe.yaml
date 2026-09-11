@@ -34,18 +34,26 @@ parameters:
 - key: VOL_1
   label: Clumoove folder
   help: Folder on the NAS for Clumoove's clumoove. It is mounted into the container at /clumoove; Clumoove has full read and write access to it.
+  label_de: Clumoove-Ordner
+  help_de: Ordner auf der NAS für Clumooves Clumoove. Wird im Container unter /clumoove eingebunden; Clumoove hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Clumoove folder
   help: Folder on the NAS for Clumoove's clumoove. It is mounted into the container at /clumoove; Clumoove has full read and write access to it.
+  label_de: Clumoove-Ordner
+  help_de: Ordner auf der NAS für Clumooves Clumoove. Wird im Container unter /clumoove eingebunden; Clumoove hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Var lib postgresql data folder
   help: Folder on the NAS for Clumoove's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Clumoove has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Clumooves Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Clumoove hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Data folder
   help: Folder on the NAS for Clumoove's data. It is mounted into the container at /data; Clumoove has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Clumooves Daten. Wird im Container unter /data eingebunden; Clumoove hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: ENCRYPTION_SECRET_KEY
   label: ENCRYPTION SECRET KEY

@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Data cache folder
   help: Folder on the NAS for LAN Cache's data cache. It is mounted into the container at /data/cache; LAN Cache has full read and write access to it.
+  label_de: Daten Cache-Ordner
+  help_de: Ordner auf der NAS für LAN Caches Daten Cache. Wird im Container unter /data/cache eingebunden; LAN Cache hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Data logs folder
   help: Folder on the NAS for LAN Cache's data logs. It is mounted into the container at /data/logs; LAN Cache has full read and write access to it.
+  label_de: Daten Protokolle-Ordner
+  help_de: Ordner auf der NAS für LAN Caches Daten Protokolle. Wird im Container unter /data/logs eingebunden; LAN Cache hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /data/cache

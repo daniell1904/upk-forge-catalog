@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Opt couchdb data folder
   help: Folder on the NAS for Obsidian Livesync's opt couchdb data. It is mounted into the container at /opt/couchdb/data; Obsidian Livesync has full read and write access to it.
+  label_de: Opt couchdb Daten-Ordner
+  help_de: Ordner auf der NAS für Obsidian Livesyncs Opt couchdb Daten. Wird im Container unter /opt/couchdb/data eingebunden; Obsidian Livesync hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Opt couchdb etc local.ini folder
   help: Folder on the NAS for Obsidian Livesync's opt couchdb etc local.ini. It is mounted into the container at /opt/couchdb/etc/local.ini; Obsidian Livesync has full read and write access to it.
+  label_de: Opt couchdb etc local.ini-Ordner
+  help_de: Ordner auf der NAS für Obsidian Livesyncs Opt couchdb etc local.ini. Wird im Container unter /opt/couchdb/etc/local.ini eingebunden; Obsidian Livesync hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: COUCHDB_PASSWORD
   label: COUCHDB PASSWORD

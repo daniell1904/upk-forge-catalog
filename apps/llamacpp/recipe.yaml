@@ -32,6 +32,8 @@ parameters:
 - key: VOL_1
   label: Models folder
   help: Folder on the NAS for llama.cpp's models. It is mounted into the container at /models; llama.cpp has full read and write access to it.
+  label_de: Models-Ordner
+  help_de: Ordner auf der NAS für llama.cpps Models. Wird im Container unter /models eingebunden; llama.cpp hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /models

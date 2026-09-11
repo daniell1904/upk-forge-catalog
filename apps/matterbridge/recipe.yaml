@@ -15,10 +15,14 @@ parameters:
 - key: VOL_1
   label: Root Matterbridge folder
   help: Folder on the NAS for Matterbridge's root matterbridge. It is mounted into the container at /root/Matterbridge; Matterbridge has full read and write access to it.
+  label_de: Root Matterbridge-Ordner
+  help_de: Ordner auf der NAS für Matterbridges Root Matterbridge. Wird im Container unter /root/Matterbridge eingebunden; Matterbridge hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Root .matterbridge folder
   help: Folder on the NAS for Matterbridge's root .matterbridge. It is mounted into the container at /root/.matterbridge; Matterbridge has full read and write access to it.
+  label_de: Root .matterbridge-Ordner
+  help_de: Ordner auf der NAS für Matterbridges Root .matterbridge. Wird im Container unter /root/.matterbridge eingebunden; Matterbridge hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /root/Matterbridge

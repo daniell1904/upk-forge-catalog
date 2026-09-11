@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Faster-whisper's config. It is mounted into the container at /config; Faster-whisper has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Faster-whispers Konfiguration. Wird im Container unter /config eingebunden; Faster-whisper hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

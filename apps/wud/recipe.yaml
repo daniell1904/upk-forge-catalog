@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Var run docker.sock folder
   help: Folder on the NAS for What's Up Docker's var run docker.sock. It is mounted into the container at /var/run/docker.sock; What's Up Docker has full read and write access to it.
+  label_de: Var run docker.sock-Ordner
+  help_de: Ordner auf der NAS für What's Up Dockers Var run docker.sock. Wird im Container unter /var/run/docker.sock eingebunden; What's Up Docker hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/run/docker.sock

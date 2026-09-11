@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Var www html db folder
   help: Folder on the NAS for Wallos's var www html db. It is mounted into the container at /var/www/html/db; Wallos has full read and write access to it.
+  label_de: Var www html db-Ordner
+  help_de: Ordner auf der NAS für Walloss Var www html db. Wird im Container unter /var/www/html/db eingebunden; Wallos hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var www html images uploads logos folder
   help: Folder on the NAS for Wallos's var www html images uploads logos. It is mounted into the container at /var/www/html/images/uploads/logos; Wallos has full read and write access to it.
+  label_de: Var www html images Uploads logos-Ordner
+  help_de: Ordner auf der NAS für Walloss Var www html images Uploads logos. Wird im Container unter /var/www/html/images/uploads/logos eingebunden; Wallos hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/www/html/db

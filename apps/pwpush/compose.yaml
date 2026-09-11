@@ -1,6 +1,6 @@
 services:
   pwpush:
-    image: pglombardo/pwpush:2.11.6
+    image: pglombardo/pwpush:1.69.3@sha256:7bf7f919b87d818a9cafa2a5c53e2565a577a7b90983b3cd55de90d6de71cf07
     restart: unless-stopped
     ports:
       - 5100:5100
@@ -12,7 +12,7 @@ services:
       - PWP__PW__EXPIRE_AFTER_VIEWS_MIN=1
       - PWP__PW__RETRIEVAL_STEP_DEFAULT=true
   pwpush-db:
-    image: mariadb:12.3.3
+    image: mariadb:10.6.5@sha256:ca31f38b6e325ece985d857db7eba1fe59928b4fd83ff8a55cb912c9684b9e43
     restart: unless-stopped
     ports:
       - 3306:3306

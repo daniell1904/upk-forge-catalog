@@ -17,10 +17,14 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Plex's config. It is mounted into the container at /config; Plex has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Plexs Konfiguration. Wird im Container unter /config eingebunden; Plex hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Media folder
   help: Folder on the NAS for Plex's media. It is mounted into the container at /Media; Plex has full read and write access to it.
+  label_de: Medien-Ordner
+  help_de: Ordner auf der NAS für Plexs Medien. Wird im Container unter /Media eingebunden; Plex hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

@@ -15,14 +15,20 @@ parameters:
 - key: VOL_1
   label: Var run libvirt libvirt sock folder
   help: Folder on the NAS for Virtual Machine Manager's var run libvirt libvirt sock. It is mounted into the container at /var/run/libvirt/libvirt-sock; Virtual Machine Manager has full read and write access to it.
+  label_de: Var run libvirt libvirt sock-Ordner
+  help_de: Ordner auf der NAS für Virtual Machine Managers Var run libvirt libvirt sock. Wird im Container unter /var/run/libvirt/libvirt-sock eingebunden; Virtual Machine Manager hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib libvirt folder
   help: Folder on the NAS for Virtual Machine Manager's var lib libvirt. It is mounted into the container at /var/lib/libvirt; Virtual Machine Manager has full read and write access to it.
+  label_de: Var lib libvirt-Ordner
+  help_de: Ordner auf der NAS für Virtual Machine Managers Var lib libvirt. Wird im Container unter /var/lib/libvirt eingebunden; Virtual Machine Manager hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: DATA Downloads folder
   help: Folder on the NAS for Virtual Machine Manager's data downloads. It is mounted into the container at /DATA/Downloads; Virtual Machine Manager has full read and write access to it.
+  label_de: Daten Downloads-Ordner
+  help_de: Ordner auf der NAS für Virtual Machine Managers Daten Downloads. Wird im Container unter /DATA/Downloads eingebunden; Virtual Machine Manager hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/run/libvirt/libvirt-sock

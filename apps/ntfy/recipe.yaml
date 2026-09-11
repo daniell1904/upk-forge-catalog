@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Var cache ntfy folder
   help: Folder on the NAS for Ntfy.sh's var cache ntfy. It is mounted into the container at /var/cache/ntfy; Ntfy.sh has full read and write access to it.
+  label_de: Var Cache ntfy-Ordner
+  help_de: Ordner auf der NAS für Ntfy.shs Var Cache ntfy. Wird im Container unter /var/cache/ntfy eingebunden; Ntfy.sh hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Etc ntfy folder
   help: Folder on the NAS for Ntfy.sh's etc ntfy. It is mounted into the container at /etc/ntfy; Ntfy.sh has full read and write access to it.
+  label_de: Etc ntfy-Ordner
+  help_de: Ordner auf der NAS für Ntfy.shs Etc ntfy. Wird im Container unter /etc/ntfy eingebunden; Ntfy.sh hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/cache/ntfy

@@ -15,6 +15,8 @@ parameters:
 - key: VOL_1
   label: Data folder
   help: Folder on the NAS for SnapOtter's data. It is mounted into the container at /data; SnapOtter has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für SnapOtters Daten. Wird im Container unter /data eingebunden; SnapOtter hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: DEFAULT_PASSWORD
   label: DEFAULT PASSWORD

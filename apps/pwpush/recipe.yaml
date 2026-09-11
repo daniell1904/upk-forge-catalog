@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Opt PasswordPusher storage folder
   help: Folder on the NAS for Password Pusher (Legacy)'s opt passwordpusher storage. It is mounted into the container at /opt/PasswordPusher/storage; Password Pusher (Legacy) has full read and write access to it.
+  label_de: Opt PasswordPusher Speicher-Ordner
+  help_de: Ordner auf der NAS für Password Pusher (Legacy)s Opt PasswordPusher Speicher. Wird im Container unter /opt/PasswordPusher/storage eingebunden; Password Pusher (Legacy) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib mysql folder
   help: Folder on the NAS for Password Pusher (Legacy)'s var lib mysql. It is mounted into the container at /var/lib/mysql; Password Pusher (Legacy) has full read and write access to it.
+  label_de: Var lib mysql-Ordner
+  help_de: Ordner auf der NAS für Password Pusher (Legacy)s Var lib mysql. Wird im Container unter /var/lib/mysql eingebunden; Password Pusher (Legacy) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: MARIADB_PASSWORD
   label: MARIADB PASSWORD

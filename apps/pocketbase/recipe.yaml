@@ -15,6 +15,8 @@ parameters:
 - key: VOL_1
   label: Pb data folder
   help: Folder on the NAS for PocketBase's pb data. It is mounted into the container at /pb_data; PocketBase has full read and write access to it.
+  label_de: Pb Daten-Ordner
+  help_de: Ordner auf der NAS für PocketBases Pb Daten. Wird im Container unter /pb_data eingebunden; PocketBase hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /pb_data

@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for LS Adguard Home Sync's config. It is mounted into the container at /config; LS Adguard Home Sync has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für LS Adguard Home Syncs Konfiguration. Wird im Container unter /config eingebunden; LS Adguard Home Sync hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: ORIGIN_PASSWORD
   label: ORIGIN PASSWORD

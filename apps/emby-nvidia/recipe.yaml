@@ -4,7 +4,7 @@ author: Team
 category: Media
 description: Bringing all of your home videos, music, and photos together into one place has never been easier. Your personal Emby Server automatically converts and streams your media on-the-fly to play on any device.
 homepage: https://emby.media/
-source_code: https://github.com/linuxserver/docker-emby
+source_code: https://hub.docker.com/r/emby/embyserver
 ugos:
   app_id: com.upkforge.docker.embynvidia
   version: 0.1.0
@@ -15,14 +15,20 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Emby(Nvidia GPU)'s config. It is mounted into the container at /config; Emby(Nvidia GPU) has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Emby(Nvidia GPU)s Konfiguration. Wird im Container unter /config eingebunden; Emby(Nvidia GPU) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Data tvshows folder
   help: Folder on the NAS for Emby(Nvidia GPU)'s data tvshows. It is mounted into the container at /data/tvshows; Emby(Nvidia GPU) has full read and write access to it.
+  label_de: Daten tvshows-Ordner
+  help_de: Ordner auf der NAS für Emby(Nvidia GPU)s Daten tvshows. Wird im Container unter /data/tvshows eingebunden; Emby(Nvidia GPU) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Data movies folder
   help: Folder on the NAS for Emby(Nvidia GPU)'s data movies. It is mounted into the container at /data/movies; Emby(Nvidia GPU) has full read and write access to it.
+  label_de: Daten Filme-Ordner
+  help_de: Ordner auf der NAS für Emby(Nvidia GPU)s Daten Filme. Wird im Container unter /data/movies eingebunden; Emby(Nvidia GPU) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

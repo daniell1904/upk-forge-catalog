@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Gem digest bot extra configs folder
   help: Folder on the NAS for GemDigest Bot's gem digest bot extra configs. It is mounted into the container at /gem_digest_bot/extra_configs; GemDigest Bot has full read and write access to it.
+  label_de: Gem digest bot extra configs-Ordner
+  help_de: Ordner auf der NAS für GemDigest Bots Gem digest bot extra configs. Wird im Container unter /gem_digest_bot/extra_configs eingebunden; GemDigest Bot hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: TELEGRAM_API_KEY
   label: TELEGRAM API KEY

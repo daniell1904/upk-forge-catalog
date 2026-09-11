@@ -15,14 +15,20 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Sickchill's config. It is mounted into the container at /config; Sickchill has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Sickchills Konfiguration. Wird im Container unter /config eingebunden; Sickchill hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Downloads folder
   help: Folder on the NAS for Sickchill's downloads. It is mounted into the container at /downloads; Sickchill has full read and write access to it.
+  label_de: Downloads-Ordner
+  help_de: Ordner auf der NAS für Sickchills Downloads. Wird im Container unter /downloads eingebunden; Sickchill hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Tv folder
   help: Folder on the NAS for Sickchill's tv. It is mounted into the container at /tv; Sickchill has full read and write access to it.
+  label_de: TV-Ordner
+  help_de: Ordner auf der NAS für Sickchills TV. Wird im Container unter /tv eingebunden; Sickchill hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

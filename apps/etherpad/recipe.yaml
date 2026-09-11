@@ -42,6 +42,8 @@ parameters:
 - key: VOL_1
   label: Opt etherpad lite var folder
   help: Folder on the NAS for Etherpad's opt etherpad lite var. It is mounted into the container at /opt/etherpad-lite/var; Etherpad has full read and write access to it.
+  label_de: Opt etherpad lite var-Ordner
+  help_de: Ordner auf der NAS für Etherpads Opt etherpad lite var. Wird im Container unter /opt/etherpad-lite/var eingebunden; Etherpad hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: ADMIN_PASSWORD
   label: ADMIN PASSWORD

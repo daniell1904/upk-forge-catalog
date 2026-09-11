@@ -13,14 +13,20 @@ parameters:
 - key: VOL_1
   label: Rootfs folder
   help: Folder on the NAS for cAdvisor's rootfs. It is mounted into the container at /rootfs; cAdvisor has full read and write access to it.
+  label_de: Rootfs-Ordner
+  help_de: Ordner auf der NAS für cAdvisors Rootfs. Wird im Container unter /rootfs eingebunden; cAdvisor hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var run docker.sock folder
   help: Folder on the NAS for cAdvisor's var run docker.sock. It is mounted into the container at /var/run/docker.sock; cAdvisor has full read and write access to it.
+  label_de: Var run docker.sock-Ordner
+  help_de: Ordner auf der NAS für cAdvisors Var run docker.sock. Wird im Container unter /var/run/docker.sock eingebunden; cAdvisor hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Var lib docker folder
   help: Folder on the NAS for cAdvisor's var lib docker. It is mounted into the container at /var/lib/docker; cAdvisor has full read and write access to it.
+  label_de: Var lib docker-Ordner
+  help_de: Ordner auf der NAS für cAdvisors Var lib docker. Wird im Container unter /var/lib/docker eingebunden; cAdvisor hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /rootfs

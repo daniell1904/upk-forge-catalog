@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Var file drop files folder
   help: Folder on the NAS for FileDrop's var file drop files. It is mounted into the container at /var/file_drop_files; FileDrop has full read and write access to it.
+  label_de: Var file drop files-Ordner
+  help_de: Ordner auf der NAS für FileDrops Var file drop files. Wird im Container unter /var/file_drop_files eingebunden; FileDrop hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/file_drop_files

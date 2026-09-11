@@ -15,46 +15,68 @@ parameters:
 - key: VOL_1
   label: Configs nginx folder
   help: Folder on the NAS for Dify's configs nginx. It is mounted into the container at /configs/nginx; Dify has full read and write access to it.
+  label_de: Configs nginx-Ordner
+  help_de: Ordner auf der NAS für Difys Configs nginx. Wird im Container unter /configs/nginx eingebunden; Dify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Configs ssrf proxy folder
   help: Folder on the NAS for Dify's configs ssrf proxy. It is mounted into the container at /configs/ssrf_proxy; Dify has full read and write access to it.
+  label_de: Configs ssrf proxy-Ordner
+  help_de: Ordner auf der NAS für Difys Configs ssrf proxy. Wird im Container unter /configs/ssrf_proxy eingebunden; Dify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Configs sandbox folder
   help: Folder on the NAS for Dify's configs sandbox. It is mounted into the container at /configs/sandbox; Dify has full read and write access to it.
+  label_de: Configs sandbox-Ordner
+  help_de: Ordner auf der NAS für Difys Configs sandbox. Wird im Container unter /configs/sandbox eingebunden; Dify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: App api storage folder
   help: Folder on the NAS for Dify's app api storage. It is mounted into the container at /app/api/storage; Dify has full read and write access to it.
+  label_de: App api Speicher-Ordner
+  help_de: Ordner auf der NAS für Difys App api Speicher. Wird im Container unter /app/api/storage eingebunden; Dify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_5
   label: App api storage folder
   help: Folder on the NAS for Dify's app api storage. It is mounted into the container at /app/api/storage; Dify has full read and write access to it.
+  label_de: App api Speicher-Ordner
+  help_de: Ordner auf der NAS für Difys App api Speicher. Wird im Container unter /app/api/storage eingebunden; Dify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_6
   label: Var lib postgresql data folder
   help: Folder on the NAS for Dify's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Dify has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Difys Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Dify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_7
   label: Data folder
   help: Folder on the NAS for Dify's data. It is mounted into the container at /data; Dify has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Difys Daten. Wird im Container unter /data eingebunden; Dify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_8
   label: Var lib weaviate folder
   help: Folder on the NAS for Dify's var lib weaviate. It is mounted into the container at /var/lib/weaviate; Dify has full read and write access to it.
+  label_de: Var lib weaviate-Ordner
+  help_de: Ordner auf der NAS für Difys Var lib weaviate. Wird im Container unter /var/lib/weaviate eingebunden; Dify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_9
   label: Dependencies folder
   help: Folder on the NAS for Dify's dependencies. It is mounted into the container at /dependencies; Dify has full read and write access to it.
+  label_de: Dependencies-Ordner
+  help_de: Ordner auf der NAS für Difys Dependencies. Wird im Container unter /dependencies eingebunden; Dify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_10
   label: Etc squid folder
   help: Folder on the NAS for Dify's etc squid. It is mounted into the container at /etc/squid; Dify has full read and write access to it.
+  label_de: Etc squid-Ordner
+  help_de: Ordner auf der NAS für Difys Etc squid. Wird im Container unter /etc/squid eingebunden; Dify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_11
   label: Etc nginx folder
   help: Folder on the NAS for Dify's etc nginx. It is mounted into the container at /etc/nginx; Dify has full read and write access to it.
+  label_de: Etc nginx-Ordner
+  help_de: Ordner auf der NAS für Difys Etc nginx. Wird im Container unter /etc/nginx eingebunden; Dify hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: SECRET_KEY
   label: SECRET KEY

@@ -15,18 +15,26 @@ parameters:
 - key: VOL_1
   label: Var run docker.sock folder
   help: Folder on the NAS for DiscoPanel's var run docker.sock. It is mounted into the container at /var/run/docker.sock; DiscoPanel has full read and write access to it.
+  label_de: Var run docker.sock-Ordner
+  help_de: Ordner auf der NAS für DiscoPanels Var run docker.sock. Wird im Container unter /var/run/docker.sock eingebunden; DiscoPanel hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: App data folder
   help: Folder on the NAS for DiscoPanel's app data. It is mounted into the container at /app/data; DiscoPanel has full read and write access to it.
+  label_de: App Daten-Ordner
+  help_de: Ordner auf der NAS für DiscoPanels App Daten. Wird im Container unter /app/data eingebunden; DiscoPanel hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: App backups folder
   help: Folder on the NAS for DiscoPanel's app backups. It is mounted into the container at /app/backups; DiscoPanel has full read and write access to it.
+  label_de: App Backups-Ordner
+  help_de: Ordner auf der NAS für DiscoPanels App Backups. Wird im Container unter /app/backups eingebunden; DiscoPanel hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: App tmp folder
   help: Folder on the NAS for DiscoPanel's app tmp. It is mounted into the container at /app/tmp; DiscoPanel has full read and write access to it.
+  label_de: App tmp-Ordner
+  help_de: Ordner auf der NAS für DiscoPanels App tmp. Wird im Container unter /app/tmp eingebunden; DiscoPanel hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/run/docker.sock

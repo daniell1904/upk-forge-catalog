@@ -14,6 +14,8 @@ parameters:
 - key: VOL_1
   label: Music folder
   help: Folder on the NAS for Songloft's music. It is mounted into the container at /app/music; Songloft has full read and write access to it.
+  label_de: Musik-Ordner
+  help_de: Ordner auf der NAS für Songlofts Musik. Wird im Container unter /app/music eingebunden; Songloft hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: wizard_admin_username
   label: Wizard admin username

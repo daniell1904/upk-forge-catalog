@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Data folder
   help: Folder on the NAS for jfa-go's data. It is mounted into the container at /data; jfa-go has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für jfa-gos Daten. Wird im Container unter /data eingebunden; jfa-go hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Jf folder
   help: Folder on the NAS for jfa-go's jf. It is mounted into the container at /jf; jfa-go has full read and write access to it.
+  label_de: Jf-Ordner
+  help_de: Ordner auf der NAS für jfa-gos Jf. Wird im Container unter /jf eingebunden; jfa-go hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /data

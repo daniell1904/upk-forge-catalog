@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Opt PasswordPusher storage folder
   help: Folder on the NAS for Password Pusher v2's opt passwordpusher storage. It is mounted into the container at /opt/PasswordPusher/storage; Password Pusher v2 has full read and write access to it.
+  label_de: Opt PasswordPusher Speicher-Ordner
+  help_de: Ordner auf der NAS für Password Pusher v2s Opt PasswordPusher Speicher. Wird im Container unter /opt/PasswordPusher/storage eingebunden; Password Pusher v2 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib postgresql data folder
   help: Folder on the NAS for Password Pusher v2's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Password Pusher v2 has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Password Pusher v2s Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Password Pusher v2 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: POSTGRES_PASSWORD
   label: POSTGRES PASSWORD

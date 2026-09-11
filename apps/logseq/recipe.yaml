@@ -17,10 +17,14 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Logseq's config. It is mounted into the container at /config; Logseq has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Logseqs Konfiguration. Wird im Container unter /config eingebunden; Logseq hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Notes folder
   help: Folder on the NAS for Logseq's notes. It is mounted into the container at /notes; Logseq has full read and write access to it.
+  label_de: Notes-Ordner
+  help_de: Ordner auf der NAS für Logseqs Notes. Wird im Container unter /notes eingebunden; Logseq hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

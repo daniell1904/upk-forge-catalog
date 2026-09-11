@@ -15,10 +15,14 @@ parameters:
 - key: VOL_1
   label: Server volume folder
   help: Folder on the NAS for Scrypted's server volume. It is mounted into the container at /server/volume; Scrypted has full read and write access to it.
+  label_de: Server volume-Ordner
+  help_de: Ordner auf der NAS für Scrypteds Server volume. Wird im Container unter /server/volume eingebunden; Scrypted hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var run docker.sock folder
   help: Folder on the NAS for Scrypted's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Scrypted has full read and write access to it.
+  label_de: Var run docker.sock-Ordner
+  help_de: Ordner auf der NAS für Scrypteds Var run docker.sock. Wird im Container unter /var/run/docker.sock eingebunden; Scrypted hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: WATCHTOWER_HTTP_API_TOKEN
   label: WATCHTOWER HTTP API TOKEN

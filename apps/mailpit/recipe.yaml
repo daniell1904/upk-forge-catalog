@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Data folder
   help: Folder on the NAS for Mailpit's data. It is mounted into the container at /data; Mailpit has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Mailpits Daten. Wird im Container unter /data eingebunden; Mailpit hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /data

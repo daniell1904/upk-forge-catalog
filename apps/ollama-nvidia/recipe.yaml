@@ -84,6 +84,8 @@ parameters:
 - key: VOL_1
   label: Root .ollama folder
   help: Folder on the NAS for Ollama(Nvidia GPU)'s root .ollama. It is mounted into the container at /root/.ollama; Ollama(Nvidia GPU) has full read and write access to it.
+  label_de: Root .ollama-Ordner
+  help_de: Ordner auf der NAS für Ollama(Nvidia GPU)s Root .ollama. Wird im Container unter /root/.ollama eingebunden; Ollama(Nvidia GPU) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /root/.ollama

@@ -3,7 +3,8 @@ name: Jellyfin
 version: 12.0
 author: Jellyfin Project
 category: Media
-description: Free software media system. Config, cache and library map to NAS folders in the App configuration dialog.
+description: Free software media system. Pick your media library and the plugins folder — everything else is Jellyfin's own storage.
+description_de: Freie Mediathek-Software. Mediathek und Plugin-Ordner werden abgefragt — den Rest verwaltet Jellyfin selbst.
 homepage: https://jellyfin.org
 source_code: https://github.com/jellyfin/jellyfin
 license: https://github.com/jellyfin/jellyfin/blob/master/LICENSE
@@ -17,10 +18,14 @@ parameters:
 - key: VOL_1
   label: Media library folder
   help: Your existing films / shows / music. Jellyfin only reads from this folder.
+  label_de: Mediathek
+  help_de: Deine vorhandenen Filme/Serien/Musik. Jellyfin liest nur aus diesem Ordner.
   type: path
 - key: VOL_2
   label: Plugins folder
   help: Where Jellyfin plugins are installed. Kept separate from the rest of the configuration.
+  label_de: Plugin-Ordner
+  help_de: Wo Jellyfin-Plugins installiert werden. Getrennt vom Rest der Konfiguration.
   type: path
 volumes:
 - container_path: /config
@@ -33,6 +38,8 @@ volumes:
   default_host_subpath: jellyfin/cache
 - container_path: /media
   label: Media library
+  label_de: Mediathek
   read_only: true
 - container_path: /config/plugins
   label: Plugins
+  label_de: Plugin-Ordner

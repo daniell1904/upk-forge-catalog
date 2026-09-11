@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Jlesage Firefox's config. It is mounted into the container at /config; Jlesage Firefox has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Jlesage Firefoxs Konfiguration. Wird im Container unter /config eingebunden; Jlesage Firefox hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VNC_PASSWORD
   label: VNC PASSWORD

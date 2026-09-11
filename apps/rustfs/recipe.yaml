@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Data folder
   help: Folder on the NAS for RustFS's data. It is mounted into the container at /data; RustFS has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für RustFSs Daten. Wird im Container unter /data eingebunden; RustFS hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Logs folder
   help: Folder on the NAS for RustFS's logs. It is mounted into the container at /logs; RustFS has full read and write access to it.
+  label_de: Protokolle-Ordner
+  help_de: Ordner auf der NAS für RustFSs Protokolle. Wird im Container unter /logs eingebunden; RustFS hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: RUSTFS_ACCESS_KEY
   label: RUSTFS ACCESS KEY

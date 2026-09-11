@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for JDownloader2's config. It is mounted into the container at /config; JDownloader2 has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für JDownloader2s Konfiguration. Wird im Container unter /config eingebunden; JDownloader2 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Output folder
   help: Folder on the NAS for JDownloader2's output. It is mounted into the container at /output; JDownloader2 has full read and write access to it.
+  label_de: Output-Ordner
+  help_de: Ordner auf der NAS für JDownloader2s Output. Wird im Container unter /output eingebunden; JDownloader2 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: MYJDOWNLOADER_EMAIL
   label: MYJDOWNLOADER EMAIL

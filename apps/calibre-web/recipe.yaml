@@ -15,6 +15,8 @@ parameters:
 - key: VOL_1
   label: Books folder
   help: Folder on the NAS for Calibre-Web's books. It is mounted into the container at /books; Calibre-Web has full read and write access to it.
+  label_de: Bücher-Ordner
+  help_de: Ordner auf der NAS für Calibre-Webs Bücher. Wird im Container unter /books eingebunden; Calibre-Web hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

@@ -13,18 +13,26 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Jlesage Handbrake's config. It is mounted into the container at /config; Jlesage Handbrake has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Jlesage Handbrakes Konfiguration. Wird im Container unter /config eingebunden; Jlesage Handbrake hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Storage folder
   help: Folder on the NAS for Jlesage Handbrake's storage. It is mounted into the container at /storage; Jlesage Handbrake has full read and write access to it.
+  label_de: Speicher-Ordner
+  help_de: Ordner auf der NAS für Jlesage Handbrakes Speicher. Wird im Container unter /storage eingebunden; Jlesage Handbrake hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Watch folder
   help: Folder on the NAS for Jlesage Handbrake's watch. It is mounted into the container at /watch; Jlesage Handbrake has full read and write access to it.
+  label_de: Watch-Ordner
+  help_de: Ordner auf der NAS für Jlesage Handbrakes Watch. Wird im Container unter /watch eingebunden; Jlesage Handbrake hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Output folder
   help: Folder on the NAS for Jlesage Handbrake's output. It is mounted into the container at /output; Jlesage Handbrake has full read and write access to it.
+  label_de: Output-Ordner
+  help_de: Ordner auf der NAS für Jlesage Handbrakes Output. Wird im Container unter /output eingebunden; Jlesage Handbrake hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VNC_PASSWORD
   label: VNC PASSWORD

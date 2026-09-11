@@ -15,10 +15,14 @@ parameters:
 - key: VOL_1
   label: Data configdb folder
   help: Folder on the NAS for MongoDB's data configdb. It is mounted into the container at /data/configdb; MongoDB has full read and write access to it.
+  label_de: Daten configdb-Ordner
+  help_de: Ordner auf der NAS für MongoDBs Daten configdb. Wird im Container unter /data/configdb eingebunden; MongoDB hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Data db folder
   help: Folder on the NAS for MongoDB's data db. It is mounted into the container at /data/db; MongoDB has full read and write access to it.
+  label_de: Daten db-Ordner
+  help_de: Ordner auf der NAS für MongoDBs Daten db. Wird im Container unter /data/db eingebunden; MongoDB hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /data/configdb

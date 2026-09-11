@@ -13,22 +13,32 @@ parameters:
 - key: VOL_1
   label: Uploads folder
   help: Folder on the NAS for PD3F's uploads. It is mounted into the container at /uploads/; PD3F has full read and write access to it.
+  label_de: Uploads-Ordner
+  help_de: Ordner auf der NAS für PD3Fs Uploads. Wird im Container unter /uploads/ eingebunden; PD3F hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Root .cache folder
   help: Folder on the NAS for PD3F's root .cache. It is mounted into the container at /root/.cache/; PD3F has full read and write access to it.
+  label_de: Root .cache-Ordner
+  help_de: Ordner auf der NAS für PD3Fs Root .cache. Wird im Container unter /root/.cache/ eingebunden; PD3F hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: To ocr folder
   help: Folder on the NAS for PD3F's to ocr. It is mounted into the container at /to-ocr/; PD3F has full read and write access to it.
+  label_de: To ocr-Ordner
+  help_de: Ordner auf der NAS für PD3Fs To ocr. Wird im Container unter /to-ocr/ eingebunden; PD3F hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Uploads folder
   help: Folder on the NAS for PD3F's uploads. It is mounted into the container at /uploads/; PD3F has full read and write access to it.
+  label_de: Uploads-Ordner
+  help_de: Ordner auf der NAS für PD3Fs Uploads. Wird im Container unter /uploads/ eingebunden; PD3F hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_5
   label: To ocr folder
   help: Folder on the NAS for PD3F's to ocr. It is mounted into the container at /to-ocr/; PD3F has full read and write access to it.
+  label_de: To ocr-Ordner
+  help_de: Ordner auf der NAS für PD3Fs To ocr. Wird im Container unter /to-ocr/ eingebunden; PD3F hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /uploads/

@@ -15,10 +15,14 @@ parameters:
 - key: VOL_1
   label: Data folder
   help: Folder on the NAS for Jenkins CI/CD's data. It is mounted into the container at /data; Jenkins CI/CD has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Jenkins CI/CDs Daten. Wird im Container unter /data eingebunden; Jenkins CI/CD hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var jenkins home folder
   help: Folder on the NAS for Jenkins CI/CD's var jenkins home. It is mounted into the container at /var/jenkins_home; Jenkins CI/CD has full read and write access to it.
+  label_de: Var jenkins Home-Ordner
+  help_de: Ordner auf der NAS für Jenkins CI/CDs Var jenkins Home. Wird im Container unter /var/jenkins_home eingebunden; Jenkins CI/CD hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /data

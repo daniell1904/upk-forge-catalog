@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Opt focalboard data folder
   help: Folder on the NAS for Focalboard's opt focalboard data. It is mounted into the container at /opt/focalboard/data; Focalboard has full read and write access to it.
+  label_de: Opt focalboard Daten-Ordner
+  help_de: Ordner auf der NAS für Focalboards Opt focalboard Daten. Wird im Container unter /opt/focalboard/data eingebunden; Focalboard hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /opt/focalboard/data

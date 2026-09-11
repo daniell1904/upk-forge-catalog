@@ -13,14 +13,20 @@ parameters:
 - key: VOL_1
   label: Etc odoo folder
   help: Folder on the NAS for Odoo's etc odoo. It is mounted into the container at /etc/odoo; Odoo has full read and write access to it.
+  label_de: Etc odoo-Ordner
+  help_de: Ordner auf der NAS für Odoos Etc odoo. Wird im Container unter /etc/odoo eingebunden; Odoo hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Mnt extra addons folder
   help: Folder on the NAS for Odoo's mnt extra addons. It is mounted into the container at /mnt/extra-addons; Odoo has full read and write access to it.
+  label_de: Mnt extra addons-Ordner
+  help_de: Ordner auf der NAS für Odoos Mnt extra addons. Wird im Container unter /mnt/extra-addons eingebunden; Odoo hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Var lib postgresql data folder
   help: Folder on the NAS for Odoo's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Odoo has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für Odoos Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; Odoo hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: PASSWORD
   label: PASSWORD

@@ -17,14 +17,20 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for emulatorjs's config. It is mounted into the container at /config; emulatorjs has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für emulatorjss Konfiguration. Wird im Container unter /config eingebunden; emulatorjs hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Data folder
   help: Folder on the NAS for emulatorjs's data. It is mounted into the container at /data; emulatorjs has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für emulatorjss Daten. Wird im Container unter /data eingebunden; emulatorjs hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Data nes roms folder
   help: Folder on the NAS for emulatorjs's data nes roms. It is mounted into the container at /data/nes/roms; emulatorjs has full read and write access to it.
+  label_de: Daten nes roms-Ordner
+  help_de: Ordner auf der NAS für emulatorjss Daten nes roms. Wird im Container unter /data/nes/roms eingebunden; emulatorjs hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

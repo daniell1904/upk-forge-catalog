@@ -60,6 +60,8 @@ parameters:
 - key: VOL_1
   label: Root .flowise folder
   help: Folder on the NAS for Flowise's root .flowise. It is mounted into the container at /root/.flowise; Flowise has full read and write access to it.
+  label_de: Root .flowise-Ordner
+  help_de: Ordner auf der NAS für Flowises Root .flowise. Wird im Container unter /root/.flowise eingebunden; Flowise hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: FLOWISE_PASSWORD
   label: FLOWISE PASSWORD

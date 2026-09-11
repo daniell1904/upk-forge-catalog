@@ -13,14 +13,20 @@ parameters:
 - key: VOL_1
   label: Usr src app uploads folder
   help: Folder on the NAS for CodeX Docs's usr src app uploads. It is mounted into the container at /usr/src/app/uploads; CodeX Docs has full read and write access to it.
+  label_de: Usr src App Uploads-Ordner
+  help_de: Ordner auf der NAS für CodeX Docss Usr src App Uploads. Wird im Container unter /usr/src/app/uploads eingebunden; CodeX Docs hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Usr src app db folder
   help: Folder on the NAS for CodeX Docs's usr src app db. It is mounted into the container at /usr/src/app/db; CodeX Docs has full read and write access to it.
+  label_de: Usr src App db-Ordner
+  help_de: Ordner auf der NAS für CodeX Docss Usr src App db. Wird im Container unter /usr/src/app/db eingebunden; CodeX Docs hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Usr src app docs config.yaml folder
   help: Folder on the NAS for CodeX Docs's usr src app docs config.yaml. It is mounted into the container at /usr/src/app/docs-config.yaml; CodeX Docs has full read and write access to it.
+  label_de: Usr src App docs config.yaml-Ordner
+  help_de: Ordner auf der NAS für CodeX Docss Usr src App docs config.yaml. Wird im Container unter /usr/src/app/docs-config.yaml eingebunden; CodeX Docs hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /usr/src/app/uploads

@@ -18,26 +18,38 @@ parameters:
 - key: VOL_1
   label: App Data folder
   help: Folder on the NAS for FileFlows's app data. It is mounted into the container at /app/Data; FileFlows has full read and write access to it.
+  label_de: App Daten-Ordner
+  help_de: Ordner auf der NAS für FileFlowss App Daten. Wird im Container unter /app/Data eingebunden; FileFlows hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: App Logs folder
   help: Folder on the NAS for FileFlows's app logs. It is mounted into the container at /app/Logs; FileFlows has full read and write access to it.
+  label_de: App Protokolle-Ordner
+  help_de: Ordner auf der NAS für FileFlowss App Protokolle. Wird im Container unter /app/Logs eingebunden; FileFlows hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: App common folder
   help: Folder on the NAS for FileFlows's app common. It is mounted into the container at /app/common; FileFlows has full read and write access to it.
+  label_de: App common-Ordner
+  help_de: Ordner auf der NAS für FileFlowss App common. Wird im Container unter /app/common eingebunden; FileFlows hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Temp folder
   help: Folder on the NAS for FileFlows's temp. It is mounted into the container at /temp; FileFlows has full read and write access to it.
+  label_de: Temp-Ordner
+  help_de: Ordner auf der NAS für FileFlowss Temp. Wird im Container unter /temp eingebunden; FileFlows hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_5
   label: Media folder
   help: Folder on the NAS for FileFlows's media. It is mounted into the container at /Media; FileFlows has full read and write access to it.
+  label_de: Medien-Ordner
+  help_de: Ordner auf der NAS für FileFlowss Medien. Wird im Container unter /Media eingebunden; FileFlows hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_6
   label: Var run docker.sock folder
   help: Folder on the NAS for FileFlows's var run docker.sock. It is mounted into the container at /var/run/docker.sock; FileFlows has full read and write access to it.
+  label_de: Var run docker.sock-Ordner
+  help_de: Ordner auf der NAS für FileFlowss Var run docker.sock. Wird im Container unter /var/run/docker.sock eingebunden; FileFlows hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /app/Data

@@ -38,10 +38,14 @@ parameters:
 - key: VOL_1
   label: Opt app backend data folder
   help: Folder on the NAS for Pingvin-Share's opt app backend data. It is mounted into the container at /opt/app/backend/data; Pingvin-Share has full read and write access to it.
+  label_de: Opt App backend Daten-Ordner
+  help_de: Ordner auf der NAS für Pingvin-Shares Opt App backend Daten. Wird im Container unter /opt/app/backend/data eingebunden; Pingvin-Share hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Opt app frontend public img folder
   help: Folder on the NAS for Pingvin-Share's opt app frontend public img. It is mounted into the container at /opt/app/frontend/public/img; Pingvin-Share has full read and write access to it.
+  label_de: Opt App frontend public img-Ordner
+  help_de: Ordner auf der NAS für Pingvin-Shares Opt App frontend public img. Wird im Container unter /opt/app/frontend/public/img eingebunden; Pingvin-Share hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /opt/app/backend/data

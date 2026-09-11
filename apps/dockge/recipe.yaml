@@ -13,14 +13,20 @@ parameters:
 - key: VOL_1
   label: Var run docker.sock folder
   help: Folder on the NAS for Dockge's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Dockge has full read and write access to it.
+  label_de: Var run docker.sock-Ordner
+  help_de: Ordner auf der NAS für Dockges Var run docker.sock. Wird im Container unter /var/run/docker.sock eingebunden; Dockge hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: App data folder
   help: Folder on the NAS for Dockge's app data. It is mounted into the container at /app/data; Dockge has full read and write access to it.
+  label_de: App Daten-Ordner
+  help_de: Ordner auf der NAS für Dockges App Daten. Wird im Container unter /app/data eingebunden; Dockge hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: DATA AppData app dockge stacks folder
   help: Folder on the NAS for Dockge's data appdata app dockge stacks. It is mounted into the container at /DATA/AppData/app-dockge/stacks; Dockge has full read and write access to it.
+  label_de: Daten AppData App dockge stacks-Ordner
+  help_de: Ordner auf der NAS für Dockges Daten AppData App dockge stacks. Wird im Container unter /DATA/AppData/app-dockge/stacks eingebunden; Dockge hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/run/docker.sock

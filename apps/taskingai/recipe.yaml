@@ -15,26 +15,38 @@ parameters:
 - key: VOL_1
   label: Var lib data folder
   help: Folder on the NAS for TaskingAI's var lib data. It is mounted into the container at /var/lib/data; TaskingAI has full read and write access to it.
+  label_de: Var lib Daten-Ordner
+  help_de: Ordner auf der NAS für TaskingAIs Var lib Daten. Wird im Container unter /var/lib/data eingebunden; TaskingAI hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib data folder
   help: Folder on the NAS for TaskingAI's var lib data. It is mounted into the container at /var/lib/data; TaskingAI has full read and write access to it.
+  label_de: Var lib Daten-Ordner
+  help_de: Ordner auf der NAS für TaskingAIs Var lib Daten. Wird im Container unter /var/lib/data eingebunden; TaskingAI hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Var lib data folder
   help: Folder on the NAS for TaskingAI's var lib data. It is mounted into the container at /var/lib/data; TaskingAI has full read and write access to it.
+  label_de: Var lib Daten-Ordner
+  help_de: Ordner auf der NAS für TaskingAIs Var lib Daten. Wird im Container unter /var/lib/data eingebunden; TaskingAI hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Var lib postgresql data folder
   help: Folder on the NAS for TaskingAI's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; TaskingAI has full read and write access to it.
+  label_de: Var lib postgresql Daten-Ordner
+  help_de: Ordner auf der NAS für TaskingAIs Var lib postgresql Daten. Wird im Container unter /var/lib/postgresql/data eingebunden; TaskingAI hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_5
   label: Data folder
   help: Folder on the NAS for TaskingAI's data. It is mounted into the container at /data; TaskingAI has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für TaskingAIs Daten. Wird im Container unter /data eingebunden; TaskingAI hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_6
   label: Var cache nginx folder
   help: Folder on the NAS for TaskingAI's var cache nginx. It is mounted into the container at /var/cache/nginx; TaskingAI has full read and write access to it.
+  label_de: Var Cache nginx-Ordner
+  help_de: Ordner auf der NAS für TaskingAIs Var Cache nginx. Wird im Container unter /var/cache/nginx eingebunden; TaskingAI hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: AES_ENCRYPTION_KEY
   label: AES ENCRYPTION KEY

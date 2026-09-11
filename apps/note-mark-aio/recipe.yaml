@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Data folder
   help: Folder on the NAS for Note Mark AIO's data. It is mounted into the container at /data; Note Mark AIO has full read and write access to it.
+  label_de: Daten-Ordner
+  help_de: Ordner auf der NAS für Note Mark AIOs Daten. Wird im Container unter /data eingebunden; Note Mark AIO hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: JWT_SECRET
   label: JWT SECRET

@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: App vikunja files folder
   help: Folder on the NAS for Vikunja v2's app vikunja files. It is mounted into the container at /app/vikunja/files; Vikunja v2 has full read and write access to it.
+  label_de: App vikunja files-Ordner
+  help_de: Ordner auf der NAS für Vikunja v2s App vikunja files. Wird im Container unter /app/vikunja/files eingebunden; Vikunja v2 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib mysql folder
   help: Folder on the NAS for Vikunja v2's var lib mysql. It is mounted into the container at /var/lib/mysql; Vikunja v2 has full read and write access to it.
+  label_de: Var lib mysql-Ordner
+  help_de: Ordner auf der NAS für Vikunja v2s Var lib mysql. Wird im Container unter /var/lib/mysql eingebunden; Vikunja v2 hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VIKUNJA_DATABASE_PASSWORD
   label: VIKUNJA DATABASE PASSWORD

@@ -13,10 +13,14 @@ parameters:
 - key: VOL_1
   label: Var www html folder
   help: Folder on the NAS for WordPress (Legacy)'s var www html. It is mounted into the container at /var/www/html; WordPress (Legacy) has full read and write access to it.
+  label_de: Var www html-Ordner
+  help_de: Ordner auf der NAS für WordPress (Legacy)s Var www html. Wird im Container unter /var/www/html eingebunden; WordPress (Legacy) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var lib mysql folder
   help: Folder on the NAS for WordPress (Legacy)'s var lib mysql. It is mounted into the container at /var/lib/mysql; WordPress (Legacy) has full read and write access to it.
+  label_de: Var lib mysql-Ordner
+  help_de: Ordner auf der NAS für WordPress (Legacy)s Var lib mysql. Wird im Container unter /var/lib/mysql eingebunden; WordPress (Legacy) hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: WORDPRESS_DB_PASSWORD
   label: WORDPRESS DB PASSWORD

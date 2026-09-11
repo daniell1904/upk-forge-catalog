@@ -14,10 +14,14 @@ parameters:
 - key: MOVIE_DIR
   label: Movies folder
   help: Folder on the NAS for tinyMediaManager's movies. It is mounted into the container at /data/movies; tinyMediaManager has full read and write access to it.
+  label_de: Filme-Ordner
+  help_de: Ordner auf der NAS für tinyMediaManagers Filme. Wird im Container unter /data/movies eingebunden; tinyMediaManager hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: TVSHOW_DIR
   label: Tvshows folder
   help: Folder on the NAS for tinyMediaManager's tvshows. It is mounted into the container at /data/tvshows; tinyMediaManager has full read and write access to it.
+  label_de: Tvshows-Ordner
+  help_de: Ordner auf der NAS für tinyMediaManagers Tvshows. Wird im Container unter /data/tvshows eingebunden; tinyMediaManager hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

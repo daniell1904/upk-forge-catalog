@@ -28,10 +28,14 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Unifi Network Application's config. It is mounted into the container at /config; Unifi Network Application has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Unifi Network Applications Konfiguration. Wird im Container unter /config eingebunden; Unifi Network Application hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Data db folder
   help: Folder on the NAS for Unifi Network Application's data db. It is mounted into the container at /data/db; Unifi Network Application has full read and write access to it.
+  label_de: Daten db-Ordner
+  help_de: Ordner auf der NAS für Unifi Network Applications Daten db. Wird im Container unter /data/db eingebunden; Unifi Network Application hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: MONGO_PASS
   label: MONGO PASS

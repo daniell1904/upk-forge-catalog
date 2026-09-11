@@ -13,14 +13,20 @@ parameters:
 - key: VOL_1
   label: Upload dir folder
   help: Folder on the NAS for Plant-it's upload dir. It is mounted into the container at /upload-dir; Plant-it has full read and write access to it.
+  label_de: Upload dir-Ordner
+  help_de: Ordner auf der NAS für Plant-its Upload dir. Wird im Container unter /upload-dir eingebunden; Plant-it hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Certificates folder
   help: Folder on the NAS for Plant-it's certificates. It is mounted into the container at /certificates; Plant-it has full read and write access to it.
+  label_de: Certificates-Ordner
+  help_de: Ordner auf der NAS für Plant-its Certificates. Wird im Container unter /certificates eingebunden; Plant-it hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Var lib mysql folder
   help: Folder on the NAS for Plant-it's var lib mysql. It is mounted into the container at /var/lib/mysql; Plant-it has full read and write access to it.
+  label_de: Var lib mysql-Ordner
+  help_de: Ordner auf der NAS für Plant-its Var lib mysql. Wird im Container unter /var/lib/mysql eingebunden; Plant-it hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: MYSQL_ROOT_PASSWORD
   label: MYSQL ROOT PASSWORD

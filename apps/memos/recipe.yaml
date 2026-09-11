@@ -22,6 +22,8 @@ parameters:
 - key: VOL_1
   label: Var opt memos folder
   help: Folder on the NAS for Memos's var opt memos. It is mounted into the container at /var/opt/memos; Memos has full read and write access to it.
+  label_de: Var opt memos-Ordner
+  help_de: Ordner auf der NAS für Memoss Var opt memos. Wird im Container unter /var/opt/memos eingebunden; Memos hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/opt/memos

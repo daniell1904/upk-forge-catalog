@@ -13,30 +13,44 @@ parameters:
 - key: VOL_1
   label: Srv app data folder
   help: Folder on the NAS for Filebrowser's srv app data. It is mounted into the container at /srv/app-data; Filebrowser has full read and write access to it.
+  label_de: Srv App Daten-Ordner
+  help_de: Ordner auf der NAS für Filebrowsers Srv App Daten. Wird im Container unter /srv/app-data eingebunden; Filebrowser hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Srv documents folder
   help: Folder on the NAS for Filebrowser's srv documents. It is mounted into the container at /srv/documents; Filebrowser has full read and write access to it.
+  label_de: Srv Dokumente-Ordner
+  help_de: Ordner auf der NAS für Filebrowsers Srv Dokumente. Wird im Container unter /srv/documents eingebunden; Filebrowser hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Srv downloads folder
   help: Folder on the NAS for Filebrowser's srv downloads. It is mounted into the container at /srv/downloads; Filebrowser has full read and write access to it.
+  label_de: Srv Downloads-Ordner
+  help_de: Ordner auf der NAS für Filebrowsers Srv Downloads. Wird im Container unter /srv/downloads eingebunden; Filebrowser hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Srv gallery folder
   help: Folder on the NAS for Filebrowser's srv gallery. It is mounted into the container at /srv/gallery; Filebrowser has full read and write access to it.
+  label_de: Srv gallery-Ordner
+  help_de: Ordner auf der NAS für Filebrowsers Srv gallery. Wird im Container unter /srv/gallery eingebunden; Filebrowser hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_5
   label: Srv media folder
   help: Folder on the NAS for Filebrowser's srv media. It is mounted into the container at /srv/media; Filebrowser has full read and write access to it.
+  label_de: Srv Medien-Ordner
+  help_de: Ordner auf der NAS für Filebrowsers Srv Medien. Wird im Container unter /srv/media eingebunden; Filebrowser hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_6
   label: Database folder
   help: Folder on the NAS for Filebrowser's database. It is mounted into the container at /database; Filebrowser has full read and write access to it.
+  label_de: Datenbank-Ordner
+  help_de: Ordner auf der NAS für Filebrowsers Datenbank. Wird im Container unter /database eingebunden; Filebrowser hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_7
   label: Config folder
   help: Folder on the NAS for Filebrowser's config. It is mounted into the container at /config; Filebrowser has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Filebrowsers Konfiguration. Wird im Container unter /config eingebunden; Filebrowser hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /srv/app-data

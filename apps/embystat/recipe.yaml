@@ -14,6 +14,8 @@ parameters:
 - key: VOL_1
   label: Config folder
   help: Folder on the NAS for Embystat's config. It is mounted into the container at /config; Embystat has full read and write access to it.
+  label_de: Konfiguration-Ordner
+  help_de: Ordner auf der NAS für Embystats Konfiguration. Wird im Container unter /config eingebunden; Embystat hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /config

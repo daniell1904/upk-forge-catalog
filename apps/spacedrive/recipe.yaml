@@ -13,6 +13,8 @@ parameters:
 - key: VOL_1
   label: Var spacedrive folder
   help: Folder on the NAS for Spacedrive's var spacedrive. It is mounted into the container at /var/spacedrive; Spacedrive has full read and write access to it.
+  label_de: Var spacedrive-Ordner
+  help_de: Ordner auf der NAS für Spacedrives Var spacedrive. Wird im Container unter /var/spacedrive eingebunden; Spacedrive hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/spacedrive

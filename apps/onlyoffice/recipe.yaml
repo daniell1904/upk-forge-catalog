@@ -13,26 +13,38 @@ parameters:
 - key: VOL_1
   label: Var log onlyoffice folder
   help: Folder on the NAS for OnlyOffice's var log onlyoffice. It is mounted into the container at /var/log/onlyoffice; OnlyOffice has full read and write access to it.
+  label_de: Var Protokoll onlyoffice-Ordner
+  help_de: Ordner auf der NAS für OnlyOffices Var Protokoll onlyoffice. Wird im Container unter /var/log/onlyoffice eingebunden; OnlyOffice hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_2
   label: Var www onlyoffice Data folder
   help: Folder on the NAS for OnlyOffice's var www onlyoffice data. It is mounted into the container at /var/www/onlyoffice/Data; OnlyOffice has full read and write access to it.
+  label_de: Var www onlyoffice Daten-Ordner
+  help_de: Ordner auf der NAS für OnlyOffices Var www onlyoffice Daten. Wird im Container unter /var/www/onlyoffice/Data eingebunden; OnlyOffice hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_3
   label: Var lib onlyoffice folder
   help: Folder on the NAS for OnlyOffice's var lib onlyoffice. It is mounted into the container at /var/lib/onlyoffice; OnlyOffice has full read and write access to it.
+  label_de: Var lib onlyoffice-Ordner
+  help_de: Ordner auf der NAS für OnlyOffices Var lib onlyoffice. Wird im Container unter /var/lib/onlyoffice eingebunden; OnlyOffice hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_4
   label: Var lib rabbitmq folder
   help: Folder on the NAS for OnlyOffice's var lib rabbitmq. It is mounted into the container at /var/lib/rabbitmq; OnlyOffice has full read and write access to it.
+  label_de: Var lib rabbitmq-Ordner
+  help_de: Ordner auf der NAS für OnlyOffices Var lib rabbitmq. Wird im Container unter /var/lib/rabbitmq eingebunden; OnlyOffice hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_5
   label: Var lib redis folder
   help: Folder on the NAS for OnlyOffice's var lib redis. It is mounted into the container at /var/lib/redis; OnlyOffice has full read and write access to it.
+  label_de: Var lib redis-Ordner
+  help_de: Ordner auf der NAS für OnlyOffices Var lib redis. Wird im Container unter /var/lib/redis eingebunden; OnlyOffice hat vollen Lese- und Schreibzugriff darauf.
   type: path
 - key: VOL_6
   label: Var lib postgresql folder
   help: Folder on the NAS for OnlyOffice's var lib postgresql. It is mounted into the container at /var/lib/postgresql; OnlyOffice has full read and write access to it.
+  label_de: Var lib postgresql-Ordner
+  help_de: Ordner auf der NAS für OnlyOffices Var lib postgresql. Wird im Container unter /var/lib/postgresql eingebunden; OnlyOffice hat vollen Lese- und Schreibzugriff darauf.
   type: path
 volumes:
 - container_path: /var/log/onlyoffice
