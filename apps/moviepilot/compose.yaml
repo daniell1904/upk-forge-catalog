@@ -6,8 +6,8 @@ services:
     volumes:
       - ./config:/config
       - ./core:/moviepilot
-      - ./media:/media
-      - ./downloads:/downloads
+      - ${VOL_1}:/media
+      - ${VOL_2}:/downloads
     environment:
       - TZ=${TZ}
       - PUID=1000

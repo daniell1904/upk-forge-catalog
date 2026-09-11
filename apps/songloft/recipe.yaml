@@ -11,6 +11,10 @@ ugos:
   open_type: tab
   tag_type: media
 parameters:
+- key: VOL_1
+  label: Music folder
+  help: Folder on the NAS for Songloft's music. It is mounted into the container at /app/music; Songloft has full read and write access to it.
+  type: path
 - key: wizard_admin_username
   label: Wizard admin username
   type: string
@@ -22,8 +26,6 @@ parameters:
 volumes:
 - container_path: /app/music
   label: Music
-  user_chosen: false
-  default_host_subpath: music
 - container_path: /app/data
   label: Data
   user_chosen: false

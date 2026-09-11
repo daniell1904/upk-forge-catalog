@@ -11,6 +11,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Media folder
+  help: Folder on the NAS for MoviePilot's media. It is mounted into the container at /media; MoviePilot has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Downloads folder
+  help: Folder on the NAS for MoviePilot's downloads. It is mounted into the container at /downloads; MoviePilot has full read and write access to it.
+  type: path
 - key: VERSION_MAJOR
   label: Version major
   type: string
@@ -30,9 +38,5 @@ volumes:
   default_host_subpath: core
 - container_path: /media
   label: Media
-  user_chosen: false
-  default_host_subpath: media
 - container_path: /downloads
   label: Downloads
-  user_chosen: false
-  default_host_subpath: downloads

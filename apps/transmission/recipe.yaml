@@ -17,6 +17,11 @@ ugos:
   port: 9091
   open_type: tab
   tag_type: download
+parameters:
+- key: VOL_1
+  label: Downloads folder
+  help: Folder on the NAS for Transmission's downloads. It is mounted into the container at /downloads; Transmission has full read and write access to it.
+  type: path
 volumes:
 - container_path: /config
   label: Config
@@ -24,8 +29,6 @@ volumes:
   default_host_subpath: config
 - container_path: /downloads
   label: Downloads
-  user_chosen: false
-  default_host_subpath: downloads
 - container_path: /watch
   label: Watch
   user_chosen: false

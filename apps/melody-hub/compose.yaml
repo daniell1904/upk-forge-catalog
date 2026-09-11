@@ -5,7 +5,7 @@ services:
       - "3006:3000"
     volumes:
       - ./data:/app/data
-      - ./music:/app/music
+      - ${VOL_1}:/app/music
     environment:
       - NODE_ENV=production
       - PORT=3000

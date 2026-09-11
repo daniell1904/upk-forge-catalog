@@ -10,6 +10,11 @@ ugos:
   port: 7789
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Downloads folder
+  help: Folder on the NAS for ANI-RSS's downloads. It is mounted into the container at /downloads; ANI-RSS has full read and write access to it.
+  type: path
 volumes:
 - container_path: /config
   label: Config
@@ -17,5 +22,3 @@ volumes:
   default_host_subpath: config
 - container_path: /downloads
   label: Downloads
-  user_chosen: false
-  default_host_subpath: downloads

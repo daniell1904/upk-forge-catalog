@@ -1,30 +1,49 @@
 id: paperless-ngx
 name: Paperless-ngx
-version: 3.1.3
-author: Paperless-ngx
-category: Content
-description: Paperless-ngx is a community-supported open-source document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.
+version: 3.1
+author: paperless-ngx team
+category: Documents
+description: 'Scan, index and archive your paper documents. Images: paperless-ngx, postgres, valkey.'
 homepage: https://docs.paperless-ngx.com
+source_code: https://github.com/paperless-ngx/paperless-ngx
+license: https://github.com/paperless-ngx/paperless-ngx/blob/main/LICENSE
 ugos:
   app_id: com.upkforge.docker.paperlessngx
   version: 0.1.0
   port: 8000
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Documents folder
+  help: The document archive. Point this at a NAS share you back up — everything Paperless keeps lives here.
+  type: path
+- key: VOL_2
+  label: Consume folder
+  help: Drop files in here (or let a scanner write to it) and Paperless imports them automatically.
+  type: path
+- key: PAPERLESS_SECRET_KEY
+  label: Secret key
+  type: password
+  changeable: false
+  generate_bytes: 48
+- key: PAPERLESS_ADMIN_USER
+  label: Admin user
+  type: string
+  default: admin
+- key: PAPERLESS_ADMIN_PASSWORD
+  label: Admin password
+  type: password
 volumes:
 - container_path: /usr/src/paperless/data
-  label: Data
+  label: Application data
   user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: paperless/data
+- container_path: /var/lib/postgresql/data
+  label: Database
+  user_chosen: false
+  default_host_subpath: paperless/db
 - container_path: /usr/src/paperless/media
-  label: Media
-  user_chosen: false
-  default_host_subpath: media
-- container_path: /usr/src/paperless/export
-  label: Export
-  user_chosen: false
-  default_host_subpath: export
+  label: Documents
 - container_path: /usr/src/paperless/consume
-  label: Consume
-  user_chosen: false
-  default_host_subpath: consume
+  label: Consume folder

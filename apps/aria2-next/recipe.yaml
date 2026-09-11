@@ -10,6 +10,11 @@ ugos:
   port: 6800
   open_type: tab
   tag_type: download
+parameters:
+- key: VOL_1
+  label: Downloads folder
+  help: Folder on the NAS for Aria2 Next's downloads. It is mounted into the container at /downloads; Aria2 Next has full read and write access to it.
+  type: path
 volumes:
 - container_path: /config
   label: Config
@@ -21,5 +26,3 @@ volumes:
   default_host_subpath: state
 - container_path: /downloads
   label: Downloads
-  user_chosen: false
-  default_host_subpath: downloads

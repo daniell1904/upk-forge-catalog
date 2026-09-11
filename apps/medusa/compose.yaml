@@ -5,8 +5,8 @@ services:
       - "8081:8081"
     volumes:
       - ./config:/config
-      - ./downloads:/downloads
-      - ./tv:/tv
+      - ${VOL_1}:/downloads
+      - ${VOL_2}:/tv
     environment:
       - TZ=${TZ}
       - PUID=1000

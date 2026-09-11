@@ -7,7 +7,7 @@ services:
       - "51413:51413/udp"
     volumes:
       - ./config:/config
-      - ./downloads:/downloads
+      - ${VOL_1}:/downloads
       - ./watch:/watch
     environment:
       - PUID=1000

@@ -1,23 +1,32 @@
 services:
-  redis:
-    image: docker.io/library/redis:7-alpine
+  broker:
+    image: docker.io/library/valkey:9-alpine
     restart: unless-stopped
-
-  paperless:
+  db:
+    volumes:
+      - ./paperless/db:/var/lib/postgresql/data
+    image: docker.io/library/postgres:18
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: paperless
+      POSTGRES_USER: paperless
+      POSTGRES_PASSWORD: paperless
+  webserver:
+    volumes:
+      - ./paperless/data:/usr/src/paperless/data
+      - ${VOL_1}:/usr/src/paperless/media
+      - ${VOL_2}:/usr/src/paperless/consume
     image: ghcr.io/paperless-ngx/paperless-ngx:3.1.3
+    restart: unless-stopped
     depends_on:
-      - redis
+      - db
+      - broker
     ports:
       - "8000:8000"
-    volumes:
-      - ./data:/usr/src/paperless/data
-      - ./media:/usr/src/paperless/media
-      - ./export:/usr/src/paperless/export
-      - ./consume:/usr/src/paperless/consume
     environment:
-      - PAPERLESS_REDIS=redis://redis:6379
-      - PAPERLESS_DBENGINE=sqlite
-      - PAPERLESS_PORT=8000
-      - PAPERLESS_URL=http://localhost:8000
-      - TZ=${TZ}
-    restart: unless-stopped
+      PAPERLESS_REDIS: redis://broker:6379
+      PAPERLESS_DBHOST: db
+      PAPERLESS_SECRET_KEY: ${PAPERLESS_SECRET_KEY}
+      PAPERLESS_ADMIN_USER: ${PAPERLESS_ADMIN_USER}
+      PAPERLESS_ADMIN_PASSWORD: ${PAPERLESS_ADMIN_PASSWORD}
+      TZ: ${TZ}

@@ -5,7 +5,7 @@ services:
       - "8780:8080"
     volumes:
       - ./config:/config
-      - ./downloads:/downloads
+      - ${VOL_1}:/downloads
       - ./incomplete:/incomplete-downloads
     environment:
       - TZ=${TZ}

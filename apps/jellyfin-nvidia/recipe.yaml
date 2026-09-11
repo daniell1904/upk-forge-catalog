@@ -1,5 +1,5 @@
 id: jellyfin-nvidia
-name: Jellyfin(Nvidia GPU)
+name: Jellyfin (linuxserver/jellyfin, Nvidia GPU)
 author: Team
 category: Media
 description: Imagine having all your movies, TV shows, and music at your fingertips, ready on any device. Jellyfin transforms your media collection into a personalized entertainment hub, surpassing traditional photo albums. Your media is accessible anywhere and beautifully organized. Jellyfin is free and open-source, offering high-quality streaming, detailed metadata, and personalized recommendations. Multiple users can have their own media libraries. Deploying Jellyfin on private cloud devices like provides virtually unlimited storage, seamless streaming, and secure, multi-device access. It's perfect for NAS enthusiasts looking to enhance their home media setup.

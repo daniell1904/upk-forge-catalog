@@ -10,6 +10,11 @@ ugos:
   port: 3006
   open_type: tab
   tag_type: media
+parameters:
+- key: VOL_1
+  label: Music folder
+  help: Folder on the NAS for MelodyHub's music. It is mounted into the container at /app/music; MelodyHub has full read and write access to it.
+  type: path
 volumes:
 - container_path: /app/data
   label: Data
@@ -17,5 +22,3 @@ volumes:
   default_host_subpath: data
 - container_path: /app/music
   label: Music
-  user_chosen: false
-  default_host_subpath: music

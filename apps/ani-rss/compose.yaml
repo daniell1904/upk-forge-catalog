@@ -5,7 +5,7 @@ services:
       - "7789:7789"
     volumes:
       - ./config:/config
-      - ./downloads:/downloads
+      - ${VOL_1}:/downloads
     environment:
       - TZ=${TZ}
       - PUID=1000

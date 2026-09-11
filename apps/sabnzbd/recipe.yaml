@@ -11,6 +11,11 @@ ugos:
   port: 8780
   open_type: tab
   tag_type: download
+parameters:
+- key: VOL_1
+  label: Downloads folder
+  help: Folder on the NAS for SABnzbd's downloads. It is mounted into the container at /downloads; SABnzbd has full read and write access to it.
+  type: path
 volumes:
 - container_path: /config
   label: Config
@@ -18,8 +23,6 @@ volumes:
   default_host_subpath: config
 - container_path: /downloads
   label: Downloads
-  user_chosen: false
-  default_host_subpath: downloads
 - container_path: /incomplete-downloads
   label: Incomplete downloads
   user_chosen: false

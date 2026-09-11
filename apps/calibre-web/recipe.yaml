@@ -11,6 +11,11 @@ ugos:
   port: 8083
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Books folder
+  help: Folder on the NAS for Calibre-Web's books. It is mounted into the container at /books; Calibre-Web has full read and write access to it.
+  type: path
 volumes:
 - container_path: /config
   label: Config
@@ -18,5 +23,3 @@ volumes:
   default_host_subpath: data
 - container_path: /books
   label: Books
-  user_chosen: false
-  default_host_subpath: books
