@@ -9,8 +9,12 @@ ugos:
   port: 10300
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Faster-whisper's config. It is mounted into the container at /config; Faster-whisper has full read and write access to it.
+  type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: faster-whisper-config

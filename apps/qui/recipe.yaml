@@ -12,15 +12,21 @@ ugos:
   open_type: tab
   tag_type: media
 parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Qui's config. It is mounted into the container at /config; Qui has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Qui's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Qui has full read and write access to it.
+  type: path
 - key: POSTGRES_PASSWORD
   label: POSTGRES PASSWORD
   type: password
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: qui
+  default_host_subpath: qui-config
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: postgres
+  default_host_subpath: postgres-var-lib-postgresql-data

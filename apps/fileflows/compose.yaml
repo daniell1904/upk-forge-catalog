@@ -6,12 +6,12 @@ services:
     ports:
       - 19200:5000
     volumes:
-      - ./data:/app/Data
-      - ./logs:/app/Logs
-      - ./common:/app/common
-      - ./temp:/temp
-      - ${VOL_1}:/Media
-      - ./fileflows-var-run-docker-sock:/var/run/docker.sock
+      - ${VOL_1}:/app/Data
+      - ${VOL_2}:/app/Logs
+      - ${VOL_3}:/app/common
+      - ${VOL_4}:/temp
+      - ${VOL_5}:/Media
+      - ${VOL_6}:/var/run/docker.sock
     environment:
       - PGID=1000
       - PUID=1000

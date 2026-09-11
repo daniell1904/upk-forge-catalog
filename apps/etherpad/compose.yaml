@@ -1,12 +1,12 @@
 services:
   etherpad:
-    image: etherpad/etherpad:3.1.0
+    image: etherpad/etherpad:3.3.3
     restart: unless-stopped
     network_mode: bridge
     ports:
       - 9001:9001
     volumes:
-      - ./var:/opt/etherpad-lite/var
+      - ${VOL_1}:/opt/etherpad-lite/var
     environment:
       - TITLE=Etherpad
       - >

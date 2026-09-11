@@ -1,12 +1,12 @@
 services:
   semaphore:
-    image: semaphoreui/semaphore:v2.19.7@sha256:8886d55da349f6d600f66f2c6dd2be01a3a5b4265542b04cb6c10ae47e4306d2
+    image: semaphoreui/semaphore:v2.19.14
     restart: unless-stopped
     ports:
       - 3000:3000
     volumes:
-      - ./home:/etc/semaphore
-      - ./lib:/var/lib/semaphore
+      - ${VOL_1}:/etc/semaphore
+      - ${VOL_2}:/var/lib/semaphore
     environment:
       - SEMAPHORE_DB_USER=${SEMAPHORE_DB_PASS}
       - SEMAPHORE_DB_PASS=${SEMAPHORE_DB_PASS}
@@ -20,10 +20,10 @@ services:
       - SEMAPHORE_ADMIN=admin
       - TZ=UTC
   semaphore-db:
-    image: mysql:8.0@sha256:7dcddc01f13bab2f15cde676d44d01f61fc9f99fe7785e86196dfc07d358ae2b
+    image: mysql:26.7.0
     restart: unless-stopped
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ${VOL_3}:/var/lib/mysql
     environment:
       - MYSQL_RANDOM_ROOT_PASSWORD=${MYSQL_RANDOM_ROOT_PASSWORD}
       - MYSQL_DATABASE=${SEMAPHORE_DB_PASS}

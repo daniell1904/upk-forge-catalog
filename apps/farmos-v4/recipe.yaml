@@ -10,15 +10,21 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Opt drupal web sites folder
+  help: Folder on the NAS for FarmOS v4's opt drupal web sites. It is mounted into the container at /opt/drupal/web/sites; FarmOS v4 has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib mysql folder
+  help: Folder on the NAS for FarmOS v4's var lib mysql. It is mounted into the container at /var/lib/mysql; FarmOS v4 has full read and write access to it.
+  type: path
 - key: MYSQL_ROOT_PASSWORD
   label: MYSQL ROOT PASSWORD
   type: password
 volumes:
 - container_path: /opt/drupal/web/sites
   label: Opt drupal web sites
-  user_chosen: false
-  default_host_subpath: sites
+  default_host_subpath: farmos-v4-opt-drupal-web-sites
 - container_path: /var/lib/mysql
   label: Var lib mysql
-  user_chosen: false
-  default_host_subpath: db
+  default_host_subpath: farmos-v4-db-var-lib-mysql

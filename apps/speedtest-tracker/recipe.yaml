@@ -10,6 +10,18 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Speedtest Tracker's config. It is mounted into the container at /config; Speedtest Tracker has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Etc ssl web folder
+  help: Folder on the NAS for Speedtest Tracker's etc ssl web. It is mounted into the container at /etc/ssl/web; Speedtest Tracker has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Var lib mysql folder
+  help: Folder on the NAS for Speedtest Tracker's var lib mysql. It is mounted into the container at /var/lib/mysql; Speedtest Tracker has full read and write access to it.
+  type: path
 - key: DB_PASSWORD
   label: DB PASSWORD
   type: password
@@ -19,13 +31,10 @@ parameters:
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: speedtest-tracker-config
 - container_path: /etc/ssl/web
   label: Etc ssl web
-  user_chosen: false
-  default_host_subpath: web
+  default_host_subpath: speedtest-tracker-etc-ssl-web
 - container_path: /var/lib/mysql
   label: Var lib mysql
-  user_chosen: false
-  default_host_subpath: mysql
+  default_host_subpath: speedtest-tracker-db-var-lib-mysql

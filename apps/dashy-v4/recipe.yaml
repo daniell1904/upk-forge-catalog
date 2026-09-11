@@ -9,8 +9,12 @@ ugos:
   port: 4001
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: App user data folder
+  help: Folder on the NAS for Dashy v4's app user data. It is mounted into the container at /app/user-data; Dashy v4 has full read and write access to it.
+  type: path
 volumes:
 - container_path: /app/user-data
   label: App user data
-  user_chosen: false
-  default_host_subpath: user-data
+  default_host_subpath: dashy-v4-app-user-data

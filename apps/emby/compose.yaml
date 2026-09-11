@@ -7,9 +7,9 @@ services:
       - 8096:8096
       - 8920:8920
     volumes:
-      - ./config:/config
-      - ${VOL_1}:/data/tvshows
-      - ${VOL_2}:/data/movies
+      - ${VOL_1}:/config
+      - ${VOL_2}:/data/tvshows
+      - ${VOL_3}:/data/movies
     environment:
       - PGID=1000
       - PUID=1000

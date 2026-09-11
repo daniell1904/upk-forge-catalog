@@ -8,8 +8,8 @@ services:
     ports:
       - 27860:7860
     volumes:
-      - ./models:/workspace/TurboDiffusion/checkpoints_host
-      - ./outputs:/workspace/TurboDiffusion/outputs
+      - ${VOL_1}:/workspace/TurboDiffusion/checkpoints_host
+      - ${VOL_2}:/workspace/TurboDiffusion/outputs
     environment:
       - MODEL_PATHS=/workspace/TurboDiffusion/checkpoints_host,/workspace/TurboDiffusion/checkpoints
       - NVIDIA_VISIBLE_DEVICES=all

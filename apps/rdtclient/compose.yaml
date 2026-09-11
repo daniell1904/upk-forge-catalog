@@ -1,13 +1,13 @@
 services:
   rdtclient:
-    image: rogerfar/rdtclient:2.0.136
+    image: rogerfar/rdtclient:2.0.142
     restart: unless-stopped
     network_mode: bridge
     ports:
       - 6500:6500
     volumes:
       - ${VOL_1}:/data/downloads
-      - ./db:/data/db
+      - ${VOL_2}:/data/db
     environment:
       - PGID=1000
       - PUID=1000

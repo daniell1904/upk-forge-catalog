@@ -5,6 +5,6 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ./data/spacedrive:/var/spacedrive
+      - ${VOL_1}:/var/spacedrive
     environment:
       - SD_AUTH=app:app

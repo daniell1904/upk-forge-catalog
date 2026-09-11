@@ -10,6 +10,18 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Opt recipes staticfiles folder
+  help: Folder on the NAS for Tandoor's opt recipes staticfiles. It is mounted into the container at /opt/recipes/staticfiles; Tandoor has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Opt recipes mediafiles folder
+  help: Folder on the NAS for Tandoor's opt recipes mediafiles. It is mounted into the container at /opt/recipes/mediafiles; Tandoor has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Tandoor's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Tandoor has full read and write access to it.
+  type: path
 - key: SECRET_KEY
   label: SECRET KEY
   type: password
@@ -19,13 +31,10 @@ parameters:
 volumes:
 - container_path: /opt/recipes/staticfiles
   label: Opt recipes staticfiles
-  user_chosen: false
-  default_host_subpath: staticfiles
+  default_host_subpath: tandoor-opt-recipes-staticfiles
 - container_path: /opt/recipes/mediafiles
   label: Opt recipes mediafiles
-  user_chosen: false
-  default_host_subpath: mediafiles
+  default_host_subpath: tandoor-opt-recipes-mediafiles
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: postgresql
+  default_host_subpath: tandoor-db-var-lib-postgresql-data

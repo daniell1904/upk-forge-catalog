@@ -11,8 +11,12 @@ ugos:
   port: 8090
   open_type: tab
   tag_type: devtool
+parameters:
+- key: VOL_1
+  label: Pb data folder
+  help: Folder on the NAS for PocketBase's pb data. It is mounted into the container at /pb_data; PocketBase has full read and write access to it.
+  type: path
 volumes:
 - container_path: /pb_data
   label: Pb data
-  user_chosen: false
-  default_host_subpath: pb_data
+  default_host_subpath: pocketbase-pb-data

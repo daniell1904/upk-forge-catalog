@@ -5,8 +5,8 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - ./db:/app/db
-      - ./.local:/home/libretranslate/.local
+      - ${VOL_1}:/app/db
+      - ${VOL_2}:/home/libretranslate/.local
     environment:
       - LT_API_KEYS=true
       - LT_API_KEYS_DB_PATH=/app/db/api_keys.db

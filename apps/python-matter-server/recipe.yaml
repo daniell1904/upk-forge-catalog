@@ -11,8 +11,12 @@ ugos:
   port: 5580
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Data folder
+  help: Folder on the NAS for Python Matter Server's data. It is mounted into the container at /data/; Python Matter Server has full read and write access to it.
+  type: path
 volumes:
 - container_path: /data/
   label: Data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: app-data

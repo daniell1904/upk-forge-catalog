@@ -11,8 +11,12 @@ ugos:
   port: 8090
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: App pb data folder
+  help: Folder on the NAS for Upsnap's app pb data. It is mounted into the container at /app/pb_data; Upsnap has full read and write access to it.
+  type: path
 volumes:
 - container_path: /app/pb_data
   label: App pb data
-  user_chosen: false
-  default_host_subpath: pb/data
+  default_host_subpath: upsnap-app-pb-data

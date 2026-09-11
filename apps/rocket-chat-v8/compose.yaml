@@ -11,4 +11,4 @@ services:
     image: mongo:8.2.0
     restart: unless-stopped
     volumes:
-      - ./db:/data/db
+      - ${VOL_1}:/data/db

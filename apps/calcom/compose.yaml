@@ -6,7 +6,7 @@ services:
       - 3000:3000
       - 3001:3001
     volumes:
-      - ./config:/config
+      - ${VOL_1}:/config
     environment:
       - DATABASE_HOST=calcom-db
       - DATABASE_URL=postgresql://app:9e45944b-37bb-41f7-aa6f-b74195fb58ec@calcom-db/app_calcom
@@ -34,7 +34,7 @@ services:
     image: postgres:16.1@sha256:09f23e02d76670d3b346a3c00aa33a27cf57aab8341eedfcdaed41459d14f5c4
     restart: unless-stopped
     volumes:
-      - ./data/db:/var/lib/postgresql/data
+      - ${VOL_2}:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_USER=app

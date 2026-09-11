@@ -10,12 +10,19 @@ ugos:
   port: 34400
   open_type: tab
   tag_type: media
+parameters:
+- key: VOL_1
+  label: Home threadfin conf data folder
+  help: Folder on the NAS for Threadfin's home threadfin conf data. It is mounted into the container at /home/threadfin/conf/data; Threadfin has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Home threadfin conf backup folder
+  help: Folder on the NAS for Threadfin's home threadfin conf backup. It is mounted into the container at /home/threadfin/conf/backup; Threadfin has full read and write access to it.
+  type: path
 volumes:
 - container_path: /home/threadfin/conf/data
   label: Home threadfin conf data
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: threadfin-home-threadfin-conf-data
 - container_path: /home/threadfin/conf/backup
   label: Home threadfin conf backup
-  user_chosen: false
-  default_host_subpath: backup
+  default_host_subpath: threadfin-home-threadfin-conf-backup

@@ -1,12 +1,12 @@
 services:
   healthchecks:
-    image: linuxserver/healthchecks:4.3.20260803@sha256:f8a148973d8b90587549674db70836f154eda474c0b87382b86064f2442c2f43
+    image: linuxserver/healthchecks:4.4.20260907
     restart: unless-stopped
     ports:
       - 8000:8000
       - 2525:2525
     volumes:
-      - ./config:/config
+      - ${VOL_1}:/config
     environment:
       - PUID=1000
       - PGID=1000

@@ -11,8 +11,12 @@ ugos:
   port: 6806
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Siyuan workspace folder
+  help: Folder on the NAS for SiYuan Note's siyuan workspace. It is mounted into the container at /siyuan/workspace; SiYuan Note has full read and write access to it.
+  type: path
 volumes:
 - container_path: /siyuan/workspace
   label: Siyuan workspace
-  user_chosen: false
-  default_host_subpath: workspace
+  default_host_subpath: siyuan-note-siyuan-workspace

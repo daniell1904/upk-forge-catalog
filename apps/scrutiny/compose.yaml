@@ -6,6 +6,6 @@ services:
       - 38080:8080
       - 38086:8086
     volumes:
-      - ./config:/opt/scrutiny/config
-      - ./influxdb:/opt/scrutiny/influxdb
+      - ${VOL_1}:/opt/scrutiny/config
+      - ${VOL_2}:/opt/scrutiny/influxdb
       - /run/udev:/run/udev

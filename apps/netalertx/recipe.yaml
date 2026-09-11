@@ -12,12 +12,19 @@ ugos:
   port: 8080
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: App config folder
+  help: Folder on the NAS for NetAlertX (Legacy)'s app config. It is mounted into the container at /app/config; NetAlertX (Legacy) has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: App db folder
+  help: Folder on the NAS for NetAlertX (Legacy)'s app db. It is mounted into the container at /app/db; NetAlertX (Legacy) has full read and write access to it.
+  type: path
 volumes:
 - container_path: /app/config
   label: App config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: netalertx-app-config
 - container_path: /app/db
   label: App db
-  user_chosen: false
-  default_host_subpath: db
+  default_host_subpath: netalertx-app-db

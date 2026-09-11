@@ -20,6 +20,10 @@ parameters:
   label: Books folder
   help: Folder on the NAS for Lazylibrarian's books. It is mounted into the container at /books; Lazylibrarian has full read and write access to it.
   type: path
+- key: VOL_3
+  label: Config folder
+  help: Folder on the NAS for Lazylibrarian's config. It is mounted into the container at /config; Lazylibrarian has full read and write access to it.
+  type: path
 volumes:
 - container_path: /downloads
   label: Downloads
@@ -29,5 +33,4 @@ volumes:
   default_host_subpath: lazylibrarian-books
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: lazylibrarian-config

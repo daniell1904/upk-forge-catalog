@@ -1,11 +1,11 @@
 services:
   app:
-    image: wordpress:7.0.2@sha256:b2d7e3153c8a96f90305a3102fb6439335237fb1a9655b617d15c5168ce2f7a3
+    image: wordpress:7.1.0
     restart: unless-stopped
     ports:
       - 8084:80
     volumes:
-      - ./html:/var/www/html
+      - ${VOL_1}:/var/www/html
     environment:
       - WORDPRESS_DB_HOST=db
       - WORDPRESS_DB_USER=${WORDPRESS_DB_PASSWORD}
@@ -15,7 +15,7 @@ services:
     image: mysql:8.0@sha256:7dcddc01f13bab2f15cde676d44d01f61fc9f99fe7785e86196dfc07d358ae2b
     restart: unless-stopped
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ${VOL_2}:/var/lib/mysql
     environment:
       - MYSQL_DATABASE=wordpress
       - MYSQL_USER=${WORDPRESS_DB_PASSWORD}

@@ -6,8 +6,8 @@ services:
     ports:
       - 8945:8945
     volumes:
-      - ./config:/config
-      - ${VOL_1}:/downloads
+      - ${VOL_1}:/config
+      - ${VOL_2}:/downloads
     environment:
       - TZ=$TZ
       - PUID=1000

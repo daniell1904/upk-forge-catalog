@@ -1,6 +1,6 @@
 services:
   appflowy:
-    image: docker.io/appflowyinc/appflowy_cloud:0.9.64
+    image: docker.io/appflowyinc/appflowy_cloud:0.18.6
     ports:
       - "8501:8025"
     volumes:

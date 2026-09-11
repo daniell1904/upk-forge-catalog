@@ -10,6 +10,10 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Gem digest bot extra configs folder
+  help: Folder on the NAS for GemDigest Bot's gem digest bot extra configs. It is mounted into the container at /gem_digest_bot/extra_configs; GemDigest Bot has full read and write access to it.
+  type: path
 - key: TELEGRAM_API_KEY
   label: TELEGRAM API KEY
   type: password
@@ -19,5 +23,4 @@ parameters:
 volumes:
 - container_path: /gem_digest_bot/extra_configs
   label: Gem digest bot extra configs
-  user_chosen: false
-  default_host_subpath: extra/configs
+  default_host_subpath: gem-digest-bot-gem-digest-bot-extra-configs

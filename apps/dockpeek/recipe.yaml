@@ -10,6 +10,10 @@ ugos:
   open_type: tab
   tag_type: devtool
 parameters:
+- key: VOL_1
+  label: Var run docker.sock folder
+  help: Folder on the NAS for Dockpeek's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Dockpeek has full read and write access to it.
+  type: path
 - key: SECRET_KEY
   label: SECRET KEY
   type: password
@@ -19,5 +23,4 @@ parameters:
 volumes:
 - container_path: /var/run/docker.sock
   label: Var run docker.sock
-  user_chosen: false
   default_host_subpath: dockpeek-var-run-docker-sock

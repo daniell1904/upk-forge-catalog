@@ -1,6 +1,6 @@
 services:
   llama-factory-nvidia:
-    image: hiyouga/llamafactory:0.9.4
+    image: hiyouga/llamafactory:0.9.5
     restart: unless-stopped
     command:
       - llamafactory-cli

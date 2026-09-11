@@ -40,12 +40,19 @@ ugos:
   port: 27860
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Workspace TurboDiffusion checkpoints host folder
+  help: Folder on the NAS for TurboDiffusion(Nvidia GPU)'s workspace turbodiffusion checkpoints host. It is mounted into the container at /workspace/TurboDiffusion/checkpoints_host; TurboDiffusion(Nvidia GPU) has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Workspace TurboDiffusion outputs folder
+  help: Folder on the NAS for TurboDiffusion(Nvidia GPU)'s workspace turbodiffusion outputs. It is mounted into the container at /workspace/TurboDiffusion/outputs; TurboDiffusion(Nvidia GPU) has full read and write access to it.
+  type: path
 volumes:
 - container_path: /workspace/TurboDiffusion/checkpoints_host
   label: Workspace TurboDiffusion checkpoints host
-  user_chosen: false
-  default_host_subpath: models
+  default_host_subpath: turbodiffusion-workspace-turbodiffusion-checkpoints-host
 - container_path: /workspace/TurboDiffusion/outputs
   label: Workspace TurboDiffusion outputs
-  user_chosen: false
-  default_host_subpath: outputs
+  default_host_subpath: turbodiffusion-workspace-turbodiffusion-outputs

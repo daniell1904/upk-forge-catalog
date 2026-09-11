@@ -11,8 +11,12 @@ ugos:
   port: 3001
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Mnt host folder
+  help: Folder on the NAS for Dashdot's mnt host. It is mounted into the container at /mnt/host; Dashdot has full read and write access to it.
+  type: path
 volumes:
 - container_path: /mnt/host
   label: Mnt host
-  user_chosen: false
   default_host_subpath: app-mnt-host

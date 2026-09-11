@@ -9,12 +9,19 @@ ugos:
   port: 8280
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: App config folder
+  help: Folder on the NAS for Glance's app config. It is mounted into the container at /app/config; Glance has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var run docker.sock folder
+  help: Folder on the NAS for Glance's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Glance has full read and write access to it.
+  type: path
 volumes:
 - container_path: /app/config
   label: App config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: app-app-config
 - container_path: /var/run/docker.sock
   label: Var run docker.sock
-  user_chosen: false
   default_host_subpath: app-var-run-docker-sock

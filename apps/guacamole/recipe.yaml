@@ -10,6 +10,10 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Var lib mysql folder
+  help: Folder on the NAS for Guacamole's var lib mysql. It is mounted into the container at /var/lib/mysql; Guacamole has full read and write access to it.
+  type: path
 - key: MYSQL_PASSWORD
   label: MYSQL PASSWORD
   type: password
@@ -19,5 +23,4 @@ parameters:
 volumes:
 - container_path: /var/lib/mysql
   label: Var lib mysql
-  user_chosen: false
-  default_host_subpath: mysql
+  default_host_subpath: mysql-var-lib-mysql

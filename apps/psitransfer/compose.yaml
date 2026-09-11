@@ -1,10 +1,10 @@
 services:
   psitransfer:
-    image: psitrax/psitransfer:v2.4.1
+    image: psitrax/psitransfer:v2.4.4
     restart: unless-stopped
     ports:
       - 13001:3000
     volumes:
-      - ./data:/data
+      - ${VOL_1}:/data
     environment:
       - PSITRANSFER_ADMIN_PASS=${PSITRANSFER_ADMIN_PASS}

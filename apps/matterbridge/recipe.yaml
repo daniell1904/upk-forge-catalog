@@ -11,12 +11,19 @@ ugos:
   port: 8283
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Root Matterbridge folder
+  help: Folder on the NAS for Matterbridge's root matterbridge. It is mounted into the container at /root/Matterbridge; Matterbridge has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Root .matterbridge folder
+  help: Folder on the NAS for Matterbridge's root .matterbridge. It is mounted into the container at /root/.matterbridge; Matterbridge has full read and write access to it.
+  type: path
 volumes:
 - container_path: /root/Matterbridge
   label: Root Matterbridge
-  user_chosen: false
-  default_host_subpath: Matterbridge
+  default_host_subpath: matterbridge-root-matterbridge
 - container_path: /root/.matterbridge
   label: Root .matterbridge
-  user_chosen: false
-  default_host_subpath: .matterbridge
+  default_host_subpath: matterbridge-root-matterbridge

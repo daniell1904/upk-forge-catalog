@@ -12,11 +12,14 @@ ugos:
   open_type: tab
   tag_type: media
 parameters:
+- key: VOL_1
+  label: Var games minecraft folder
+  help: Folder on the NAS for MineOS's var games minecraft. It is mounted into the container at /var/games/minecraft; MineOS has full read and write access to it.
+  type: path
 - key: USER_PASSWORD
   label: USER PASSWORD
   type: password
 volumes:
 - container_path: /var/games/minecraft
   label: Var games minecraft
-  user_chosen: false
   default_host_subpath: mineos-var-games-minecraft

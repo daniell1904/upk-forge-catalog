@@ -1,12 +1,12 @@
 services:
   nextcloud-ls:
-    image: linuxserver/nextcloud:34.0.2@sha256:b7b489b4023ce51e043e586c60f730ab8d93fcf030b23e35ddeab83999a65cfa
+    image: linuxserver/nextcloud:34.0.4
     restart: unless-stopped
     ports:
       - 10443:443
     volumes:
-      - ./config:/config
-      - ./data:/data
+      - ${VOL_1}:/config
+      - ${VOL_2}:/data
     environment:
       - PUID=1000
       - PGID=1000

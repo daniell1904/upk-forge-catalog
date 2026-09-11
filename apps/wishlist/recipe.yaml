@@ -9,12 +9,19 @@ ugos:
   port: 3280
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Usr src app uploads folder
+  help: Folder on the NAS for Wishlist's usr src app uploads. It is mounted into the container at /usr/src/app/uploads; Wishlist has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Usr src app data folder
+  help: Folder on the NAS for Wishlist's usr src app data. It is mounted into the container at /usr/src/app/data; Wishlist has full read and write access to it.
+  type: path
 volumes:
 - container_path: /usr/src/app/uploads
   label: Usr src app uploads
-  user_chosen: false
-  default_host_subpath: uploads
+  default_host_subpath: wishlist-usr-src-app-uploads
 - container_path: /usr/src/app/data
   label: Usr src app data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: wishlist-usr-src-app-data

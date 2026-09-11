@@ -5,6 +5,6 @@ services:
     ports:
       - 6989:6989
     volumes:
-      - ./data:/app/data
+      - ${VOL_1}:/app/data
     environment:
       - ENCRYPTION_KEY=

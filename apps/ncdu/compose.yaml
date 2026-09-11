@@ -9,6 +9,6 @@ services:
       - /sys:/sys
       - /dev:/dev
       - /etc/localtime:/etc/localtime
-      - ./ncdu-app:/app
+      - ${VOL_1}:/app
     environment:
       - NCDU_PATH=/

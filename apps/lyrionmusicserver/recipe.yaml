@@ -40,18 +40,24 @@ ugos:
   tag_type: media
 parameters:
 - key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for LyrionMusicServer's config. It is mounted into the container at /config; LyrionMusicServer has full read and write access to it.
+  type: path
+- key: VOL_2
   label: Music folder
   help: Folder on the NAS for LyrionMusicServer's music. It is mounted into the container at /music; LyrionMusicServer has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Playlist folder
+  help: Folder on the NAS for LyrionMusicServer's playlist. It is mounted into the container at /playlist; LyrionMusicServer has full read and write access to it.
   type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: lyrionmusicserver-config
 - container_path: /music
   label: Music
   default_host_subpath: lyrionmusicserver-music
 - container_path: /playlist
   label: Playlist
-  user_chosen: false
-  default_host_subpath: playlists
+  default_host_subpath: lyrionmusicserver-playlist

@@ -28,8 +28,12 @@ ugos:
   port: 18080
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Models folder
+  help: Folder on the NAS for llama.cpp's models. It is mounted into the container at /models; llama.cpp has full read and write access to it.
+  type: path
 volumes:
 - container_path: /models
   label: Models
-  user_chosen: false
-  default_host_subpath: models
+  default_host_subpath: llamacpp-models

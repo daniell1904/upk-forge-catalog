@@ -10,6 +10,10 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Healthchecks's config. It is mounted into the container at /config; Healthchecks has full read and write access to it.
+  type: path
 - key: SUPERUSER_PASSWORD
   label: SUPERUSER PASSWORD
   type: password
@@ -19,5 +23,4 @@ parameters:
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: healthchecks-config

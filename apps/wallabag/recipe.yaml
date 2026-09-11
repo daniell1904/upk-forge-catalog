@@ -48,8 +48,12 @@ ugos:
   port: 25661
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Var www wallabag web assets images folder
+  help: Folder on the NAS for Wallabag's var www wallabag web assets images. It is mounted into the container at /var/www/wallabag/web/assets/images; Wallabag has full read and write access to it.
+  type: path
 volumes:
 - container_path: /var/www/wallabag/web/assets/images
   label: Var www wallabag web assets images
-  user_chosen: false
-  default_host_subpath: images
+  default_host_subpath: wallabag-var-www-wallabag-web-assets-images

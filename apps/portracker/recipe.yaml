@@ -9,12 +9,19 @@ ugos:
   port: 4999
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Data folder
+  help: Folder on the NAS for Portracker's data. It is mounted into the container at /data; Portracker has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var run docker.sock folder
+  help: Folder on the NAS for Portracker's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Portracker has full read and write access to it.
+  type: path
 volumes:
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: portracker-data
 - container_path: /var/run/docker.sock
   label: Var run docker.sock
-  user_chosen: false
   default_host_subpath: portracker-var-run-docker-sock

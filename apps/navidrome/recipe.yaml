@@ -13,14 +13,17 @@ ugos:
   tag_type: media
 parameters:
 - key: VOL_1
+  label: Data folder
+  help: Folder on the NAS for Navidrome's data. It is mounted into the container at /data; Navidrome has full read and write access to it.
+  type: path
+- key: VOL_2
   label: Music folder
   help: Folder on the NAS for Navidrome's music. It is mounted into the container at /music; Navidrome has full read and write access to it.
   type: path
 volumes:
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: navidrome-data
 - container_path: /music
   label: Music
   default_host_subpath: navidrome-music

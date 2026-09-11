@@ -10,6 +10,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Data folder
+  help: Folder on the NAS for Davis's data. It is mounted into the container at /data; Davis has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib mysql folder
+  help: Folder on the NAS for Davis's var lib mysql. It is mounted into the container at /var/lib/mysql; Davis has full read and write access to it.
+  type: path
 - key: ADMIN_PASSWORD
   label: ADMIN PASSWORD
   type: password
@@ -19,9 +27,7 @@ parameters:
 volumes:
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: mailpit/data
+  default_host_subpath: davis-mailpit-data
 - container_path: /var/lib/mysql
   label: Var lib mysql
-  user_chosen: false
-  default_host_subpath: mysql
+  default_host_subpath: davis-mysql-var-lib-mysql

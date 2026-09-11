@@ -9,28 +9,47 @@ ugos:
   port: 7400
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Var log onlyoffice folder
+  help: Folder on the NAS for OnlyOffice's var log onlyoffice. It is mounted into the container at /var/log/onlyoffice; OnlyOffice has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var www onlyoffice Data folder
+  help: Folder on the NAS for OnlyOffice's var www onlyoffice data. It is mounted into the container at /var/www/onlyoffice/Data; OnlyOffice has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Var lib onlyoffice folder
+  help: Folder on the NAS for OnlyOffice's var lib onlyoffice. It is mounted into the container at /var/lib/onlyoffice; OnlyOffice has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Var lib rabbitmq folder
+  help: Folder on the NAS for OnlyOffice's var lib rabbitmq. It is mounted into the container at /var/lib/rabbitmq; OnlyOffice has full read and write access to it.
+  type: path
+- key: VOL_5
+  label: Var lib redis folder
+  help: Folder on the NAS for OnlyOffice's var lib redis. It is mounted into the container at /var/lib/redis; OnlyOffice has full read and write access to it.
+  type: path
+- key: VOL_6
+  label: Var lib postgresql folder
+  help: Folder on the NAS for OnlyOffice's var lib postgresql. It is mounted into the container at /var/lib/postgresql; OnlyOffice has full read and write access to it.
+  type: path
 volumes:
 - container_path: /var/log/onlyoffice
   label: Var log onlyoffice
-  user_chosen: false
-  default_host_subpath: onlyoffice/logs
+  default_host_subpath: app-var-log-onlyoffice
 - container_path: /var/www/onlyoffice/Data
   label: Var www onlyoffice Data
-  user_chosen: false
-  default_host_subpath: onlyoffice/data
+  default_host_subpath: app-var-www-onlyoffice-data
 - container_path: /var/lib/onlyoffice
   label: Var lib onlyoffice
-  user_chosen: false
-  default_host_subpath: onlyoffice/lib
+  default_host_subpath: app-var-lib-onlyoffice
 - container_path: /var/lib/rabbitmq
   label: Var lib rabbitmq
-  user_chosen: false
-  default_host_subpath: onlyoffice/rabbitmq
+  default_host_subpath: app-var-lib-rabbitmq
 - container_path: /var/lib/redis
   label: Var lib redis
-  user_chosen: false
-  default_host_subpath: onlyoffice/redis
+  default_host_subpath: app-var-lib-redis
 - container_path: /var/lib/postgresql
   label: Var lib postgresql
-  user_chosen: false
-  default_host_subpath: onlyoffice/db
+  default_host_subpath: app-var-lib-postgresql

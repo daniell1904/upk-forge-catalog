@@ -13,16 +13,26 @@ ugos:
   port: 3001
   open_type: tab
   tag_type: media
+parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for emulatorjs's config. It is mounted into the container at /config; emulatorjs has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Data folder
+  help: Folder on the NAS for emulatorjs's data. It is mounted into the container at /data; emulatorjs has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Data nes roms folder
+  help: Folder on the NAS for emulatorjs's data nes roms. It is mounted into the container at /data/nes/roms; emulatorjs has full read and write access to it.
+  type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: emulatorjs-config
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: emulatorjs-data
 - container_path: /data/nes/roms
   label: Data nes roms
-  user_chosen: false
   default_host_subpath: emulatorjs-data-nes-roms

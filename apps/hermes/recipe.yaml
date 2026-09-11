@@ -36,8 +36,12 @@ ugos:
   port: 8642
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Opt data folder
+  help: Folder on the NAS for Hermes's opt data. It is mounted into the container at /opt/data; Hermes has full read and write access to it.
+  type: path
 volumes:
 - container_path: /opt/data
   label: Opt data
-  user_chosen: false
   default_host_subpath: hermes-opt-data

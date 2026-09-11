@@ -9,12 +9,19 @@ ugos:
   port: 8700
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Home filebrowser data folder
+  help: Folder on the NAS for FileBrowser Quantum's home filebrowser data. It is mounted into the container at /home/filebrowser/data; FileBrowser Quantum has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Srv folder
+  help: Folder on the NAS for FileBrowser Quantum's srv. It is mounted into the container at /srv; FileBrowser Quantum has full read and write access to it.
+  type: path
 volumes:
 - container_path: /home/filebrowser/data
   label: Home filebrowser data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: app-home-filebrowser-data
 - container_path: /srv
   label: Srv
-  user_chosen: false
-  default_host_subpath: srv
+  default_host_subpath: app-srv

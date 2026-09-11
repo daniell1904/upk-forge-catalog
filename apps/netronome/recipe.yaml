@@ -14,11 +14,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Data folder
+  help: Folder on the NAS for Netronome's data. It is mounted into the container at /data; Netronome has full read and write access to it.
+  type: path
 - key: config
   label: Config
   type: string
 volumes:
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: netronome-data

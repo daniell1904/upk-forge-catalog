@@ -9,7 +9,7 @@ services:
     ports:
       - 1616:5000
     volumes:
-      - ./uploads:/uploads/
+      - ${VOL_1}:/uploads/
   parsr:
     image: axarev/parsr:v1.2.2@sha256:9b2b844474cd750aa026cc4bcbba55fb807f93cead9f0bec47f8ac1dc9e33280
     restart: unless-stopped
@@ -27,13 +27,13 @@ services:
       - --results-ttl
       - "86400"
     volumes:
-      - ./cache:/root/.cache/
-      - ./to-ocr:/to-ocr/
-      - ./uploads:/uploads/
+      - ${VOL_2}:/root/.cache/
+      - ${VOL_3}:/to-ocr/
+      - ${VOL_4}:/uploads/
     environment:
       - KEEP_RESULTS_HOURS=24
   ocr_worker:
     image: pd3f/pd3f-ocr:latest@sha256:7bd3d4c8ba1816932e1f631d207056eb1f421f53f205b305372af8340db16a1b
     restart: unless-stopped
     volumes:
-      - ./to-ocr:/to-ocr/
+      - ${VOL_5}:/to-ocr/

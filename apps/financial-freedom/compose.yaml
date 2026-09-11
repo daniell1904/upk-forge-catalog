@@ -6,8 +6,8 @@ services:
       - 8080:80
       - 8443:443
     volumes:
-      - ./logs:/var/www/html/storage/logs
-      - ./sessions:/var/www/html/storage/framework/sessions
+      - ${VOL_1}:/var/www/html/storage/logs
+      - ${VOL_2}:/var/www/html/storage/framework/sessions
     environment:
       - APP_NAME="Financial Freedom"
       - APP_ENV=production
@@ -48,7 +48,7 @@ services:
     image: mariadb:10.11@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350
     restart: unless-stopped
     volumes:
-      - ./mariadb:/var/lib/mysql
+      - ${VOL_3}:/var/lib/mysql
     environment:
       - PUID=1000
       - PGID=1000

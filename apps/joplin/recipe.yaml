@@ -10,11 +10,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for joplin's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; joplin has full read and write access to it.
+  type: path
 - key: POSTGRES_PASSWORD
   label: POSTGRES PASSWORD
   type: password
 volumes:
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: postgresql/data
+  default_host_subpath: joplin-db-var-lib-postgresql-data

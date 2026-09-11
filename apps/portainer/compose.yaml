@@ -1,6 +1,6 @@
 services:
   portainer:
-    image: portainer/portainer-ce:2.31.3
+    image: portainer/portainer-ce:2.45.0
     restart: unless-stopped
     network_mode: bridge
     ports:
@@ -8,5 +8,5 @@ services:
       - 9000:9000
       - 9443:9443
     volumes:
-      - ./portainer-data:/data
-      - ./portainer-var-run-docker-sock:/var/run/docker.sock
+      - ${VOL_1}:/data
+      - ${VOL_2}:/var/run/docker.sock

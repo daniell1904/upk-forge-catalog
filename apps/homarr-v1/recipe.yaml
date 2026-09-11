@@ -9,12 +9,19 @@ ugos:
   port: 7575
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Var run docker.sock folder
+  help: Folder on the NAS for Homarr v1's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Homarr v1 has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Appdata folder
+  help: Folder on the NAS for Homarr v1's appdata. It is mounted into the container at /appdata; Homarr v1 has full read and write access to it.
+  type: path
 volumes:
 - container_path: /var/run/docker.sock
   label: Var run docker.sock
-  user_chosen: false
   default_host_subpath: homarr-v1-var-run-docker-sock
 - container_path: /appdata
   label: Appdata
-  user_chosen: false
-  default_host_subpath: appdata
+  default_host_subpath: homarr-v1-appdata

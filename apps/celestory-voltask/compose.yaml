@@ -39,7 +39,7 @@ services:
     image: celestory/api:1.1.3@sha256:a2a63d3c86b8b1b4922a31b111783f79b661dea403978dfc5e99dabca45adb2b
     restart: unless-stopped
     volumes:
-      - ./projectFiles:/app/projectFiles
+      - ${VOL_1}:/app/projectFiles
     environment:
       - PORT=80
       - SELF_HOSTED=true
@@ -56,7 +56,7 @@ services:
     image: celestory/generator:1.1.2@sha256:1c3f34312b73f0eec5ad6aabe8a7592e989137852d0e2b8b5e13fa02d95e290e
     restart: unless-stopped
     volumes:
-      - ./projectFiles:/usr/src/app/projectFiles
+      - ${VOL_2}:/usr/src/app/projectFiles
     environment:
       - PORT=80
       - PROJECT_FILES_PATH=/usr/src/app/projectFiles
@@ -82,7 +82,7 @@ services:
     image: celestory/voltask:1.0.8@sha256:0a015c6e24e0c933718629534bb9e18a7de3466698dcc954e924d92e88df540c
     restart: unless-stopped
     volumes:
-      - ./uploads:/app/uploads
+      - ${VOL_3}:/app/uploads
     environment:
       - PORT=1401
       - DATABASE_URL=postgresql://celestory_admin:celestory_postgres_password_@db:5432/voltask?schema=voltask
@@ -119,7 +119,7 @@ services:
     image: celestory/postgres:1.0.0@sha256:5ceb259468b3a38a73f8cc2d038a78a02f244aa5d81338dd66e77ddd532c49a8
     restart: unless-stopped
     volumes:
-      - ./db:/var/lib/postgresql/data
+      - ${VOL_4}:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=celestory_admin
       - POSTGRES_PASSWORD=${DB_PASSWORD}

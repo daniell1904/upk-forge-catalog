@@ -12,11 +12,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: 2fauth folder
+  help: Folder on the NAS for 2FAuth's 2fauth. It is mounted into the container at /2fauth; 2FAuth has full read and write access to it.
+  type: path
 - key: APP_KEY
   label: APP KEY
   type: password
 volumes:
 - container_path: /2fauth
   label: 2fauth
-  user_chosen: false
   default_host_subpath: 2fauth-2fauth

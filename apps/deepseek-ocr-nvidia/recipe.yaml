@@ -29,8 +29,12 @@ ugos:
   port: 23000
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Models folder
+  help: Folder on the NAS for DeepSeek OCR(Nvidia GPU)'s models. It is mounted into the container at /models; DeepSeek OCR(Nvidia GPU) has full read and write access to it.
+  type: path
 volumes:
 - container_path: /models
   label: Models
-  user_chosen: false
-  default_host_subpath: models
+  default_host_subpath: deepseek-ocr-backend-models

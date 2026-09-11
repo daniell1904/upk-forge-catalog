@@ -1,11 +1,11 @@
 services:
   pwpush-v2:
-    image: pglombardo/pwpush:2.9.7@sha256:1cb29ca9badcd5cacd77aee62c3530d5691a3e84fdd3824a1b1a75d56ef9f00c
+    image: pglombardo/pwpush:2.11.6
     restart: unless-stopped
     ports:
       - 5101:5100
     volumes:
-      - ./storage:/opt/PasswordPusher/storage
+      - ${VOL_1}:/opt/PasswordPusher/storage
     environment:
       - DATABASE_URL=postgresql://pwpusher:6280144a-56af-486f-9088-ac7301399328@pwpush-v2-db:5432/passwordpusher_db
       - PWP__PW__EXPIRE_AFTER_DAYS_DEFAULT=1
@@ -15,7 +15,7 @@ services:
     image: postgres:16-alpine@sha256:57c72fd2a128e416c7fcc499958864df5301e940bca0a56f58fddf30ffc07777
     restart: unless-stopped
     volumes:
-      - ./postgres:/var/lib/postgresql/data
+      - ${VOL_2}:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=pwpusher
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}

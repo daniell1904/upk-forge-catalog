@@ -10,15 +10,21 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Uploads folder
+  help: Folder on the NAS for Send Visee's uploads. It is mounted into the container at /uploads; Send Visee has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Data folder
+  help: Folder on the NAS for Send Visee's data. It is mounted into the container at /data; Send Visee has full read and write access to it.
+  type: path
 - key: APP_DOMAIN
   label: APP DOMAIN
   type: string
 volumes:
 - container_path: /uploads
   label: Uploads
-  user_chosen: false
-  default_host_subpath: uploads
+  default_host_subpath: send-visee-uploads
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: redis
+  default_host_subpath: send-visee-redis-data

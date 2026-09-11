@@ -1,6 +1,6 @@
 services:
   excalidraw:
-    image: excalidraw/excalidraw:latest
+    image: excalidraw/excalidraw:sha-ff29780
     restart: unless-stopped
     ports:
       - 17638:80

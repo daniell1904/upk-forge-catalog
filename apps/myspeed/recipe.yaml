@@ -11,8 +11,12 @@ ugos:
   port: 5216
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Myspeed data folder
+  help: Folder on the NAS for MySpeed's myspeed data. It is mounted into the container at /myspeed/data; MySpeed has full read and write access to it.
+  type: path
 volumes:
 - container_path: /myspeed/data
   label: Myspeed data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: myspeed-myspeed-data

@@ -10,15 +10,21 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Var www html folder
+  help: Folder on the NAS for WordPress (Legacy)'s var www html. It is mounted into the container at /var/www/html; WordPress (Legacy) has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib mysql folder
+  help: Folder on the NAS for WordPress (Legacy)'s var lib mysql. It is mounted into the container at /var/lib/mysql; WordPress (Legacy) has full read and write access to it.
+  type: path
 - key: WORDPRESS_DB_PASSWORD
   label: WORDPRESS DB PASSWORD
   type: password
 volumes:
 - container_path: /var/www/html
   label: Var www html
-  user_chosen: false
-  default_host_subpath: html
+  default_host_subpath: app-var-www-html
 - container_path: /var/lib/mysql
   label: Var lib mysql
-  user_chosen: false
-  default_host_subpath: mysql
+  default_host_subpath: db-var-lib-mysql

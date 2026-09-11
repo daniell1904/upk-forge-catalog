@@ -9,24 +9,40 @@ ugos:
   port: 1616
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Uploads folder
+  help: Folder on the NAS for PD3F's uploads. It is mounted into the container at /uploads/; PD3F has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Root .cache folder
+  help: Folder on the NAS for PD3F's root .cache. It is mounted into the container at /root/.cache/; PD3F has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: To ocr folder
+  help: Folder on the NAS for PD3F's to ocr. It is mounted into the container at /to-ocr/; PD3F has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Uploads folder
+  help: Folder on the NAS for PD3F's uploads. It is mounted into the container at /uploads/; PD3F has full read and write access to it.
+  type: path
+- key: VOL_5
+  label: To ocr folder
+  help: Folder on the NAS for PD3F's to ocr. It is mounted into the container at /to-ocr/; PD3F has full read and write access to it.
+  type: path
 volumes:
 - container_path: /uploads/
   label: Uploads
-  user_chosen: false
-  default_host_subpath: uploads
+  default_host_subpath: web-uploads
 - container_path: /root/.cache/
   label: Root .cache
-  user_chosen: false
-  default_host_subpath: cache
+  default_host_subpath: worker-root-cache
 - container_path: /to-ocr/
   label: To ocr
-  user_chosen: false
-  default_host_subpath: to-ocr
+  default_host_subpath: worker-to-ocr
 - container_path: /uploads/
   label: Uploads
-  user_chosen: false
-  default_host_subpath: uploads
+  default_host_subpath: worker-uploads
 - container_path: /to-ocr/
   label: To ocr
-  user_chosen: false
-  default_host_subpath: to-ocr
+  default_host_subpath: ocr-worker-to-ocr

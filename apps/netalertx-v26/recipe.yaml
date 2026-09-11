@@ -12,12 +12,19 @@ ugos:
   port: 8080
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Data config folder
+  help: Folder on the NAS for NetAlertX v26's data config. It is mounted into the container at /data/config; NetAlertX v26 has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Data db folder
+  help: Folder on the NAS for NetAlertX v26's data db. It is mounted into the container at /data/db; NetAlertX v26 has full read and write access to it.
+  type: path
 volumes:
 - container_path: /data/config
   label: Data config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: netalertx-v26-data-config
 - container_path: /data/db
   label: Data db
-  user_chosen: false
-  default_host_subpath: db
+  default_host_subpath: netalertx-v26-data-db

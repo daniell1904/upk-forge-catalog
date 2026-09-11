@@ -6,9 +6,9 @@ services:
     ports:
       - 8989:8989
     volumes:
-      - ./config:/config
-      - ${VOL_1}:/tv
-      - ${VOL_2}:/downloads
+      - ${VOL_1}:/config
+      - ${VOL_2}:/tv
+      - ${VOL_3}:/downloads
     environment:
       - PGID=1000
       - PUID=1000

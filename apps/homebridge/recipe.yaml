@@ -13,8 +13,12 @@ ugos:
   port: 8581
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Homebridge folder
+  help: Folder on the NAS for Homebridge's homebridge. It is mounted into the container at /homebridge; Homebridge has full read and write access to it.
+  type: path
 volumes:
 - container_path: /homebridge
   label: Homebridge
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: homebridge-homebridge

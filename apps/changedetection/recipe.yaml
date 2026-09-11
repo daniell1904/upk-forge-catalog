@@ -9,8 +9,12 @@ ugos:
   port: 5000
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Datastore folder
+  help: Folder on the NAS for Change Detection's datastore. It is mounted into the container at /datastore; Change Detection has full read and write access to it.
+  type: path
 volumes:
 - container_path: /datastore
   label: Datastore
-  user_chosen: false
-  default_host_subpath: datastore
+  default_host_subpath: changedetection-datastore

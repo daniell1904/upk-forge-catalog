@@ -5,7 +5,7 @@ services:
     ports:
       - 23000:3000
     volumes:
-      - ./app/storage:/rails/storage
+      - ${VOL_1}:/rails/storage
     environment:
       - POSTGRES_USER=maybe_user
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -41,7 +41,7 @@ services:
     image: postgres:16
     restart: unless-stopped
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - ${VOL_2}:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=maybe_user
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -50,4 +50,4 @@ services:
     image: redis:8.2.1-alpine3.22
     restart: unless-stopped
     volumes:
-      - ./redis/data:/data
+      - ${VOL_3}:/data

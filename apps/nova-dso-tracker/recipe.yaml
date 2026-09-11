@@ -9,8 +9,12 @@ ugos:
   port: 5001
   open_type: tab
   tag_type: media
+parameters:
+- key: VOL_1
+  label: App instance folder
+  help: Folder on the NAS for Nova DSO Tracker's app instance. It is mounted into the container at /app/instance; Nova DSO Tracker has full read and write access to it.
+  type: path
 volumes:
 - container_path: /app/instance
   label: App instance
-  user_chosen: false
-  default_host_subpath: instance
+  default_host_subpath: nova-app-instance

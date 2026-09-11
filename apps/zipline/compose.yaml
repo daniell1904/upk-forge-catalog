@@ -1,12 +1,12 @@
 services:
   zipline:
-    image: ghcr.io/diced/zipline:3.7.13@sha256:f0209223b159be9460bf1454b1908417877fef6a1f3a31d5e682885fb9431f30
+    image: ghcr.io/diced/zipline:4.7.0
     restart: unless-stopped
     ports:
       - 3000:3000
     volumes:
-      - ./uploads:/zipline/uploads
-      - ./public:/zipline/public
+      - ${VOL_1}:/zipline/uploads
+      - ${VOL_2}:/zipline/public
     environment:
       - CORE_RETURN_HTTPS=false
       - CORE_SECRET=${CORE_SECRET}
@@ -18,7 +18,7 @@ services:
     image: postgres:15@sha256:bcab099bfaab33333a73a2ebe8c1d615c9f4c2402dd43452f989a36c6da9a5ba
     restart: unless-stopped
     volumes:
-      - ./postgres:/var/lib/postgresql/data
+      - ${VOL_3}:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}

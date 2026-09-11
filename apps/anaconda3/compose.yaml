@@ -10,7 +10,7 @@ services:
     ports:
       - 8888:8888
     volumes:
-      - ./notebooks:/opt/notebooks
+      - ${VOL_1}:/opt/notebooks
     environment:
       - LANG=C.UTF-8
       - LC_ALL=C.UTF-8

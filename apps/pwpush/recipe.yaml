@@ -10,6 +10,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Opt PasswordPusher storage folder
+  help: Folder on the NAS for Password Pusher (Legacy)'s opt passwordpusher storage. It is mounted into the container at /opt/PasswordPusher/storage; Password Pusher (Legacy) has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib mysql folder
+  help: Folder on the NAS for Password Pusher (Legacy)'s var lib mysql. It is mounted into the container at /var/lib/mysql; Password Pusher (Legacy) has full read and write access to it.
+  type: path
 - key: MARIADB_PASSWORD
   label: MARIADB PASSWORD
   type: password
@@ -19,9 +27,7 @@ parameters:
 volumes:
 - container_path: /opt/PasswordPusher/storage
   label: Opt PasswordPusher storage
-  user_chosen: false
-  default_host_subpath: storage
+  default_host_subpath: pwpush-opt-passwordpusher-storage
 - container_path: /var/lib/mysql
   label: Var lib mysql
-  user_chosen: false
-  default_host_subpath: mysql
+  default_host_subpath: pwpush-db-var-lib-mysql

@@ -13,17 +13,23 @@ ugos:
   tag_type: devtool
 parameters:
 - key: VOL_1
+  label: Var run libvirt libvirt sock folder
+  help: Folder on the NAS for Virtual Machine Manager's var run libvirt libvirt sock. It is mounted into the container at /var/run/libvirt/libvirt-sock; Virtual Machine Manager has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib libvirt folder
+  help: Folder on the NAS for Virtual Machine Manager's var lib libvirt. It is mounted into the container at /var/lib/libvirt; Virtual Machine Manager has full read and write access to it.
+  type: path
+- key: VOL_3
   label: DATA Downloads folder
   help: Folder on the NAS for Virtual Machine Manager's data downloads. It is mounted into the container at /DATA/Downloads; Virtual Machine Manager has full read and write access to it.
   type: path
 volumes:
 - container_path: /var/run/libvirt/libvirt-sock
   label: Var run libvirt libvirt sock
-  user_chosen: false
   default_host_subpath: virt-manager-var-run-libvirt-libvirt-sock
 - container_path: /var/lib/libvirt
   label: Var lib libvirt
-  user_chosen: false
   default_host_subpath: virt-manager-var-lib-libvirt
 - container_path: /DATA/Downloads
   label: DATA Downloads

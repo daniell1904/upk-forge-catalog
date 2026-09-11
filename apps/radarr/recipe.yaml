@@ -13,18 +13,21 @@ ugos:
   tag_type: media
 parameters:
 - key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Radarr's config. It is mounted into the container at /config; Radarr has full read and write access to it.
+  type: path
+- key: VOL_2
   label: Movies folder
   help: Folder on the NAS for Radarr's movies. It is mounted into the container at /movies; Radarr has full read and write access to it.
   type: path
-- key: VOL_2
+- key: VOL_3
   label: Downloads folder
   help: Folder on the NAS for Radarr's downloads. It is mounted into the container at /downloads; Radarr has full read and write access to it.
   type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: radarr-config
 - container_path: /movies
   label: Movies
   default_host_subpath: radarr-movies

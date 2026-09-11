@@ -5,8 +5,8 @@ services:
     ports:
       - 34400:34400
     volumes:
-      - ./config:/home/threadfin/conf/data
-      - ./backup:/home/threadfin/conf/backup
+      - ${VOL_1}:/home/threadfin/conf/data
+      - ${VOL_2}:/home/threadfin/conf/backup
     environment:
       - THREADFIN_BRANCH=main
       - THREADFIN_DEBUG=0

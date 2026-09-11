@@ -1,11 +1,11 @@
 services:
   tududi:
-    image: chrisvel/tududi:0.87@sha256:733bceb71e60ba73d75e33d66569edaf8be55b5cd113830ecaee11b48e8e392a
+    image: chrisvel/tududi:1.4.2
     restart: unless-stopped
     ports:
       - 9292:9292
     volumes:
-      - ./tududi/db:/usr/src/app/tududi_db
+      - ${VOL_1}:/usr/src/app/tududi_db
     environment:
       - TUDUDI_USER_EMAIL=admin@example.com
       - TUDUDI_USER_PASSWORD=${TUDUDI_USER_PASSWORD}

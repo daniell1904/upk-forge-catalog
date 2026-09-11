@@ -1,13 +1,13 @@
 services:
   gitea:
-    image: gitea/gitea:1.26.2
+    image: gitea/gitea:1.27.3
     restart: unless-stopped
     network_mode: bridge
     ports:
       - 3002:3000
       - 222:22
     volumes:
-      - ./data:/data
+      - ${VOL_1}:/data
     environment:
       - USER_GID=1000
       - USER_UID=1000

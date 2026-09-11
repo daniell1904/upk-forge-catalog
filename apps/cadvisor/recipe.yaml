@@ -9,16 +9,26 @@ ugos:
   port: 8085
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Rootfs folder
+  help: Folder on the NAS for cAdvisor's rootfs. It is mounted into the container at /rootfs; cAdvisor has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var run docker.sock folder
+  help: Folder on the NAS for cAdvisor's var run docker.sock. It is mounted into the container at /var/run/docker.sock; cAdvisor has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Var lib docker folder
+  help: Folder on the NAS for cAdvisor's var lib docker. It is mounted into the container at /var/lib/docker; cAdvisor has full read and write access to it.
+  type: path
 volumes:
 - container_path: /rootfs
   label: Rootfs
-  user_chosen: false
   default_host_subpath: app-rootfs
 - container_path: /var/run/docker.sock
   label: Var run docker.sock
-  user_chosen: false
   default_host_subpath: app-var-run-docker-sock
 - container_path: /var/lib/docker
   label: Var lib docker
-  user_chosen: false
   default_host_subpath: app-var-lib-docker

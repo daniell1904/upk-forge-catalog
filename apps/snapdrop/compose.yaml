@@ -7,7 +7,7 @@ services:
       - 10443:443
       - 89:80
     volumes:
-      - ./config:/config
+      - ${VOL_1}:/config
     environment:
       - PGID=1000
       - PUID=1000

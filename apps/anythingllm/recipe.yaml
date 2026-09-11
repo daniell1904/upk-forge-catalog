@@ -13,8 +13,12 @@ ugos:
   port: 3051
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: App server storage folder
+  help: Folder on the NAS for AnythingLLM's app server storage. It is mounted into the container at /app/server/storage; AnythingLLM has full read and write access to it.
+  type: path
 volumes:
 - container_path: /app/server/storage
   label: App server storage
-  user_chosen: false
-  default_host_subpath: storage
+  default_host_subpath: anythingllm-app-server-storage

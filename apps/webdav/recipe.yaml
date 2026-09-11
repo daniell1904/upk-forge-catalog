@@ -11,11 +11,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Media folder
+  help: Folder on the NAS for WebDAV's media. It is mounted into the container at /media; WebDAV has full read and write access to it.
+  type: path
 - key: PASSWORD
   label: PASSWORD
   type: password
 volumes:
 - container_path: /media
   label: Media
-  user_chosen: false
   default_host_subpath: webdav-media

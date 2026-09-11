@@ -11,8 +11,12 @@ ugos:
   port: 8888
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Opt notebooks folder
+  help: Folder on the NAS for Anaconda3's opt notebooks. It is mounted into the container at /opt/notebooks; Anaconda3 has full read and write access to it.
+  type: path
 volumes:
 - container_path: /opt/notebooks
   label: Opt notebooks
-  user_chosen: false
-  default_host_subpath: notebooks
+  default_host_subpath: anaconda3-opt-notebooks

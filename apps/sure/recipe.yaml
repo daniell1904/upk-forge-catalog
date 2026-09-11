@@ -46,6 +46,22 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Rails storage folder
+  help: Folder on the NAS for Sure's rails storage. It is mounted into the container at /rails/storage; Sure has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Rails storage folder
+  help: Folder on the NAS for Sure's rails storage. It is mounted into the container at /rails/storage; Sure has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Sure's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Sure has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Data folder
+  help: Folder on the NAS for Sure's data. It is mounted into the container at /data; Sure has full read and write access to it.
+  type: path
 - key: POSTGRES_PASSWORD
   label: POSTGRES PASSWORD
   type: password
@@ -55,17 +71,13 @@ parameters:
 volumes:
 - container_path: /rails/storage
   label: Rails storage
-  user_chosen: false
-  default_host_subpath: app/storage
+  default_host_subpath: sure-web-rails-storage
 - container_path: /rails/storage
   label: Rails storage
-  user_chosen: false
-  default_host_subpath: app/storage
+  default_host_subpath: sure-worker-rails-storage
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: pgdata
+  default_host_subpath: sure-db-var-lib-postgresql-data
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: redis/data
+  default_host_subpath: sure-redis-data

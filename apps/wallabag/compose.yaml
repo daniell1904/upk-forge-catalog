@@ -6,7 +6,7 @@ services:
     ports:
       - 25661:80
     volumes:
-      - ./images:/var/www/wallabag/web/assets/images
+      - ${VOL_1}:/var/www/wallabag/web/assets/images
     environment:
       - SYMFONY__ENV__DOMAIN_NAME=http://<IP>:25661
       - SYMFONY__ENV__SERVER_NAME=Wallabag

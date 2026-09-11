@@ -10,6 +10,18 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Var www html storage logs folder
+  help: Folder on the NAS for Financial Freedom's var www html storage logs. It is mounted into the container at /var/www/html/storage/logs; Financial Freedom has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var www html storage framework sessions folder
+  help: Folder on the NAS for Financial Freedom's var www html storage framework sessions. It is mounted into the container at /var/www/html/storage/framework/sessions; Financial Freedom has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Var lib mysql folder
+  help: Folder on the NAS for Financial Freedom's var lib mysql. It is mounted into the container at /var/lib/mysql; Financial Freedom has full read and write access to it.
+  type: path
 - key: APP_KEY
   label: APP KEY
   type: password
@@ -25,13 +37,10 @@ parameters:
 volumes:
 - container_path: /var/www/html/storage/logs
   label: Var www html storage logs
-  user_chosen: false
-  default_host_subpath: logs
+  default_host_subpath: app-var-www-html-storage-logs
 - container_path: /var/www/html/storage/framework/sessions
   label: Var www html storage framework sessions
-  user_chosen: false
-  default_host_subpath: sessions
+  default_host_subpath: app-var-www-html-storage-framework-sessions
 - container_path: /var/lib/mysql
   label: Var lib mysql
-  user_chosen: false
-  default_host_subpath: mariadb
+  default_host_subpath: mariadb-var-lib-mysql

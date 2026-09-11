@@ -1,6 +1,6 @@
 services:
   ghostfolio:
-    image: ghostfolio/ghostfolio:3.47.0@sha256:98d873ef174248896b38e3fc287c1c49d2368883eb90c9e41121c3cf1cba8771
+    image: ghostfolio/ghostfolio:3.69.0
     restart: unless-stopped
     ports:
       - 3333:3333
@@ -21,7 +21,7 @@ services:
     image: postgres:15.4-alpine@sha256:35ce2187f2f7fb75e8e79493e13743596c21eb3789ff41ece145ae04d06e93a5
     restart: unless-stopped
     volumes:
-      - ./data/db:/var/lib/postgresql/data
+      - ${VOL_1}:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=ghostfolio
       - POSTGRES_USER=ghostfolio
@@ -33,4 +33,4 @@ services:
     command: >
       --requirepass appredispassword
     volumes:
-      - ./data/redis:/data
+      - ${VOL_2}:/data

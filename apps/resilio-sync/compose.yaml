@@ -7,9 +7,9 @@ services:
       - 55555:55555
       - 8888:8888
     volumes:
-      - ./data:/sync
-      - ./config:/config
-      - ${VOL_1}:/downloads
+      - ${VOL_1}:/sync
+      - ${VOL_2}:/config
+      - ${VOL_3}:/downloads
     environment:
       - PGID=1000
       - PUID=1000

@@ -6,7 +6,7 @@ services:
     ports:
       - 1349:1349
     volumes:
-      - ./data:/data
+      - ${VOL_1}:/data
       - /DATA/AppData/snapotter/workspace:/tmp/workspace
     environment:
       - AUTH_ENABLED=true

@@ -16,7 +16,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ${VOL_1}:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=ihatemoney

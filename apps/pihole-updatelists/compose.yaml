@@ -9,9 +9,9 @@ services:
       - 8080:80
       - 10443:443
     volumes:
-      - ./etc:/etc/pihole/
-      - ./etc/pihole-updatelists:/etc/pihole-updatelists/
-      - ./dnsmasq.d:/etc/dnsmasq.d/
+      - ${VOL_1}:/etc/pihole/
+      - ${VOL_2}:/etc/pihole-updatelists/
+      - ${VOL_3}:/etc/dnsmasq.d/
     environment:
       - TZ=UTC
       - FTLCONF_webserver_api_password=${FTLCONF_webserver_api_password}

@@ -9,12 +9,19 @@ ugos:
   port: 7200
   open_type: tab
   tag_type: devtool
+parameters:
+- key: VOL_1
+  label: Var cache ntfy folder
+  help: Folder on the NAS for Ntfy.sh's var cache ntfy. It is mounted into the container at /var/cache/ntfy; Ntfy.sh has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Etc ntfy folder
+  help: Folder on the NAS for Ntfy.sh's etc ntfy. It is mounted into the container at /etc/ntfy; Ntfy.sh has full read and write access to it.
+  type: path
 volumes:
 - container_path: /var/cache/ntfy
   label: Var cache ntfy
-  user_chosen: false
-  default_host_subpath: cache
+  default_host_subpath: app-var-cache-ntfy
 - container_path: /etc/ntfy
   label: Etc ntfy
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: app-etc-ntfy

@@ -31,6 +31,22 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Clumoove folder
+  help: Folder on the NAS for Clumoove's clumoove. It is mounted into the container at /clumoove; Clumoove has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Clumoove folder
+  help: Folder on the NAS for Clumoove's clumoove. It is mounted into the container at /clumoove; Clumoove has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Clumoove's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Clumoove has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Data folder
+  help: Folder on the NAS for Clumoove's data. It is mounted into the container at /data; Clumoove has full read and write access to it.
+  type: path
 - key: ENCRYPTION_SECRET_KEY
   label: ENCRYPTION SECRET KEY
   type: password
@@ -43,17 +59,13 @@ parameters:
 volumes:
 - container_path: /clumoove
   label: Clumoove
-  user_chosen: false
-  default_host_subpath: storage
+  default_host_subpath: api-backend-clumoove
 - container_path: /clumoove
   label: Clumoove
-  user_chosen: false
-  default_host_subpath: storage
+  default_host_subpath: migration-worker-clumoove
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: postgres
+  default_host_subpath: postgres-db-var-lib-postgresql-data
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: redis
+  default_host_subpath: redis-queue-data

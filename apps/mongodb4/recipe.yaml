@@ -11,12 +11,19 @@ ugos:
   port: 27017
   open_type: tab
   tag_type: devtool
+parameters:
+- key: VOL_1
+  label: Data configdb folder
+  help: Folder on the NAS for MongoDB 4's data configdb. It is mounted into the container at /data/configdb; MongoDB 4 has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Data db folder
+  help: Folder on the NAS for MongoDB 4's data db. It is mounted into the container at /data/db; MongoDB 4 has full read and write access to it.
+  type: path
 volumes:
 - container_path: /data/configdb
   label: Data configdb
-  user_chosen: false
-  default_host_subpath: data/configdb
+  default_host_subpath: mongodb4-data-configdb
 - container_path: /data/db
   label: Data db
-  user_chosen: false
-  default_host_subpath: data/db
+  default_host_subpath: mongodb4-data-db

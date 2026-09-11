@@ -6,7 +6,7 @@ services:
       - 51820:51820
       - 51821:51821
     volumes:
-      - ./data:/etc/wireguard
+      - ${VOL_1}:/etc/wireguard
     environment:
       - INIT_ENABLED=true
       - INIT_USERNAME=app

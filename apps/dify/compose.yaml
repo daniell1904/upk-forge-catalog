@@ -3,14 +3,14 @@ services:
     image: ns2kracy/dify-config:latest
     restart: unless-stopped
     volumes:
-      - ./data/nginx:/configs/nginx
-      - ./data/ssrf_proxy:/configs/ssrf_proxy
-      - ./data/sandbox:/configs/sandbox
+      - ${VOL_1}:/configs/nginx
+      - ${VOL_2}:/configs/ssrf_proxy
+      - ${VOL_3}:/configs/sandbox
   api:
-    image: langgenius/dify-api:0.15.8
+    image: langgenius/dify-api:1.17.1
     restart: unless-stopped
     volumes:
-      - ./data/app/api/storage:/app/api/storage
+      - ${VOL_4}:/app/api/storage
     environment:
       - MODE=api
       - LOG_LEVEL=INFO
@@ -53,10 +53,10 @@ services:
       - SSRF_PROXY_HTTPS_URL=http://ssrf_proxy:3128
       - INDEXING_MAX_SEGMENTATION_TOKENS_LENGTH=1000
   worker:
-    image: langgenius/dify-api:0.15.8
+    image: langgenius/dify-api:1.17.1
     restart: unless-stopped
     volumes:
-      - ./data/app/api/storage:/app/api/storage
+      - ${VOL_5}:/app/api/storage
     environment:
       - MODE=worker
       - LOG_LEVEL=INFO
@@ -78,7 +78,7 @@ services:
       - WEAVIATE_ENDPOINT=http://weaviate:8080
       - WEAVIATE_API_KEY=${WEAVIATE_API_KEY}
   web:
-    image: langgenius/dify-web:0.15.8
+    image: langgenius/dify-web:1.17.1
     restart: unless-stopped
     environment:
       - CONSOLE_API_URL=
@@ -93,7 +93,7 @@ services:
                -c 'maintenance_work_mem=64MB'
                -c 'effective_cache_size=4096MB'
     volumes:
-      - ./data/db/data:/var/lib/postgresql/data
+      - ${VOL_6}:/var/lib/postgresql/data
     environment:
       - PGUSER=postgres
       - POSTGRES_PASSWORD=${DB_PASSWORD}
@@ -104,14 +104,14 @@ services:
     restart: unless-stopped
     command: redis-server --requirepass difyai123456
     volumes:
-      - ./data/redis/data:/data
+      - ${VOL_7}:/data
     environment:
       - REDISCLI_AUTH=${DB_PASSWORD}
   weaviate:
     image: semitechnologies/weaviate:1.19.0
     restart: unless-stopped
     volumes:
-      - ./data/weaviate:/var/lib/weaviate
+      - ${VOL_8}:/var/lib/weaviate
     environment:
       - QUERY_DEFAULTS_LIMIT=25
       - AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED=false
@@ -124,10 +124,10 @@ services:
       - AUTHORIZATION_ADMINLIST_ENABLED=true
       - AUTHORIZATION_ADMINLIST_USERS=hello@dify.ai
   sandbox:
-    image: langgenius/dify-sandbox:0.2.11
+    image: langgenius/dify-sandbox:0.2.15
     restart: unless-stopped
     volumes:
-      - ./data/sandbox/dependencies:/dependencies
+      - ${VOL_9}:/dependencies
     environment:
       - API_KEY=${CODE_EXECUTION_API_KEY}
       - GIN_MODE=release
@@ -137,10 +137,10 @@ services:
       - HTTPS_PROXY=http://ssrf_proxy:3128
       - SANDBOX_PORT=8194
   ssrf_proxy:
-    image: ubuntu/squid:latest
+    image: ubuntu/squid:7.2-26.04_edge
     restart: unless-stopped
     volumes:
-      - ./data/ssrf_proxy:/etc/squid
+      - ${VOL_10}:/etc/squid
     environment:
       - HTTP_PORT=3128
       - COREDUMP_DIR=/var/spool/squid
@@ -153,4 +153,4 @@ services:
     ports:
       - 3701:80
     volumes:
-      - ./data/nginx:/etc/nginx
+      - ${VOL_11}:/etc/nginx

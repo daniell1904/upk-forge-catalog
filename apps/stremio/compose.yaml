@@ -1,13 +1,13 @@
 services:
   stremio:
-    image: tsaridas/stremio-docker:v1.3.4
+    image: tsaridas/stremio-docker:v1.3.10
     restart: unless-stopped
     network_mode: bridge
     ports:
       - 11470:11470
       - 8100:8080
     volumes:
-      - ./config:/root/.stremio-server
+      - ${VOL_1}:/root/.stremio-server
     environment:
       - NO_CORS=1
       - AUTO_SERVER_URL=1

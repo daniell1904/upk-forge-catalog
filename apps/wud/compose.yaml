@@ -5,4 +5,4 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./app-var-run-docker-sock:/var/run/docker.sock
+      - ${VOL_1}:/var/run/docker.sock

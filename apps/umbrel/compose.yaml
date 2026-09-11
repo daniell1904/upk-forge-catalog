@@ -5,5 +5,5 @@ services:
     ports:
       - 8080:80
     volumes:
-      - ./data:/data
-      - ./umbrel-var-run-docker-sock:/var/run/docker.sock
+      - ${VOL_1}:/data
+      - ${VOL_2}:/var/run/docker.sock

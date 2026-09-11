@@ -12,11 +12,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Data folder
+  help: Folder on the NAS for Eufy Security WS's data. It is mounted into the container at /data; Eufy Security WS has full read and write access to it.
+  type: path
 - key: PASSWORD
   label: PASSWORD
   type: password
 volumes:
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: eufy-security-ws-data

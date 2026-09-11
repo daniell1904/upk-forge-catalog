@@ -10,27 +10,42 @@ ugos:
   open_type: tab
   tag_type: devtool
 parameters:
+- key: VOL_1
+  label: App var folder
+  help: Folder on the NAS for Pterodactyl Panel's app var. It is mounted into the container at /app/var/; Pterodactyl Panel has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Etc nginx http.d folder
+  help: Folder on the NAS for Pterodactyl Panel's etc nginx http.d. It is mounted into the container at /etc/nginx/http.d/; Pterodactyl Panel has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Etc letsencrypt folder
+  help: Folder on the NAS for Pterodactyl Panel's etc letsencrypt. It is mounted into the container at /etc/letsencrypt/; Pterodactyl Panel has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: App storage logs folder
+  help: Folder on the NAS for Pterodactyl Panel's app storage logs. It is mounted into the container at /app/storage/logs; Pterodactyl Panel has full read and write access to it.
+  type: path
+- key: VOL_5
+  label: Var lib mysql folder
+  help: Folder on the NAS for Pterodactyl Panel's var lib mysql. It is mounted into the container at /var/lib/mysql; Pterodactyl Panel has full read and write access to it.
+  type: path
 - key: DB_PASSWORD
   label: DB PASSWORD
   type: password
 volumes:
 - container_path: /app/var/
   label: App var
-  user_chosen: false
-  default_host_subpath: var
+  default_host_subpath: app-app-var
 - container_path: /etc/nginx/http.d/
   label: Etc nginx http.d
-  user_chosen: false
-  default_host_subpath: nginx
+  default_host_subpath: app-etc-nginx-http-d
 - container_path: /etc/letsencrypt/
   label: Etc letsencrypt
-  user_chosen: false
-  default_host_subpath: certs
+  default_host_subpath: app-etc-letsencrypt
 - container_path: /app/storage/logs
   label: App storage logs
-  user_chosen: false
-  default_host_subpath: logs
+  default_host_subpath: app-app-storage-logs
 - container_path: /var/lib/mysql
   label: Var lib mysql
-  user_chosen: false
-  default_host_subpath: database
+  default_host_subpath: database-var-lib-mysql

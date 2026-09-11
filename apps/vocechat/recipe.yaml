@@ -18,8 +18,12 @@ ugos:
   port: 3009
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Home vocechat server data folder
+  help: Folder on the NAS for VoceChat's home vocechat server data. It is mounted into the container at /home/vocechat-server/data; VoceChat has full read and write access to it.
+  type: path
 volumes:
 - container_path: /home/vocechat-server/data
   label: Home vocechat server data
-  user_chosen: false
-  default_host_subpath: home/vocechat-server/data
+  default_host_subpath: vocechat-home-vocechat-server-data

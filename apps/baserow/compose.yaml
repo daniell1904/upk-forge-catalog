@@ -6,6 +6,6 @@ services:
       - 7350:80
       - 7351:443
     volumes:
-      - ./data:/baserow/data
+      - ${VOL_1}:/baserow/data
     environment:
       - BASEROW_PUBLIC_URL=http://[YOUR_app_IP]:7350

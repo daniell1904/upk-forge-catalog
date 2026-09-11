@@ -1,8 +1,8 @@
 services:
   opodsync:
-    image: ganeshlab/opodsync:latest
+    image: ganeshlab/opodsync:0.5.3-arm64v8
     restart: unless-stopped
     ports:
       - 8086:8080
     volumes:
-      - ./opodsync-var-www-server-data:/var/www/server/data
+      - ${VOL_1}:/var/www/server/data

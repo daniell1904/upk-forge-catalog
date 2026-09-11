@@ -10,15 +10,21 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Opt PasswordPusher storage folder
+  help: Folder on the NAS for Password Pusher v2's opt passwordpusher storage. It is mounted into the container at /opt/PasswordPusher/storage; Password Pusher v2 has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Password Pusher v2's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Password Pusher v2 has full read and write access to it.
+  type: path
 - key: POSTGRES_PASSWORD
   label: POSTGRES PASSWORD
   type: password
 volumes:
 - container_path: /opt/PasswordPusher/storage
   label: Opt PasswordPusher storage
-  user_chosen: false
-  default_host_subpath: storage
+  default_host_subpath: pwpush-v2-opt-passwordpusher-storage
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: postgres
+  default_host_subpath: pwpush-v2-db-var-lib-postgresql-data

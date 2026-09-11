@@ -36,16 +36,26 @@ ugos:
   port: 13333
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Var run docker.sock folder
+  help: Folder on the NAS for OpenHands's var run docker.sock. It is mounted into the container at /var/run/docker.sock; OpenHands has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: .openhands folder
+  help: Folder on the NAS for OpenHands's .openhands. It is mounted into the container at /.openhands; OpenHands has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Opt workspace base folder
+  help: Folder on the NAS for OpenHands's opt workspace base. It is mounted into the container at /opt/workspace_base; OpenHands has full read and write access to it.
+  type: path
 volumes:
 - container_path: /var/run/docker.sock
   label: Var run docker.sock
-  user_chosen: false
   default_host_subpath: openhands-var-run-docker-sock
 - container_path: /.openhands
   label: .openhands
-  user_chosen: false
-  default_host_subpath: openhands
+  default_host_subpath: openhands-openhands
 - container_path: /opt/workspace_base
   label: Opt workspace base
-  user_chosen: false
-  default_host_subpath: workspace
+  default_host_subpath: openhands-opt-workspace-base

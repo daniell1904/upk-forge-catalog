@@ -1,6 +1,6 @@
 services:
   frontend:
-    image: docker.io/spupuz/vibenvr-frontend:1.35.5
+    image: docker.io/spupuz/vibenvr-frontend:1.35.6
     ports:
       - "8087:80"
     volumes:
@@ -15,7 +15,7 @@ services:
       - vibe-network
 
   backend:
-    image: docker.io/spupuz/vibenvr-backend:1.35.5
+    image: docker.io/spupuz/vibenvr-backend:1.35.6
     volumes:
       - ./data:/data
     environment:
@@ -46,7 +46,7 @@ services:
       - vibe-network
 
   engine:
-    image: docker.io/spupuz/vibenvr-engine:1.35.5
+    image: docker.io/spupuz/vibenvr-engine:1.35.6
     expose:
       - "8000"
     volumes:

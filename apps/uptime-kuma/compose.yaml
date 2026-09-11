@@ -1,6 +1,6 @@
 services:
   uptime-kuma:
-    image: docker.io/louislam/uptime-kuma:2.5.3
+    image: docker.io/louislam/uptime-kuma:2.5.4
     ports:
       - "3001:3001"
     volumes:

@@ -18,8 +18,12 @@ ugos:
   port: 5230
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Var opt memos folder
+  help: Folder on the NAS for Memos's var opt memos. It is mounted into the container at /var/opt/memos; Memos has full read and write access to it.
+  type: path
 volumes:
 - container_path: /var/opt/memos
   label: Var opt memos
-  user_chosen: false
-  default_host_subpath: memos
+  default_host_subpath: memos-var-opt-memos

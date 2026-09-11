@@ -1,6 +1,6 @@
 services:
   immich-kiosk:
-    image: ghcr.io/damongolding/immich-kiosk:0.38.1@sha256:28cf751b556e5c9fefc18f0c2b0ed2d6fe672df734ca3c860d6adc9b2b7fdffb
+    image: ghcr.io/damongolding/immich-kiosk:0.43.2
     restart: unless-stopped
     ports:
       - 3000:3000

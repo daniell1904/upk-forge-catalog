@@ -6,8 +6,8 @@ services:
       - 3000:3000
       - 8080:8080
     volumes:
-      - ./upload-dir:/upload-dir
-      - ./certificates:/certificates
+      - ${VOL_1}:/upload-dir
+      - ${VOL_2}:/certificates
     environment:
       - MYSQL_HOST=plant-it-db
       - MYSQL_PORT=3306
@@ -29,15 +29,15 @@ services:
       - SSL_ENABLED=false
       - CERTIFICATE_PATH=/certificates/
   plant-it-db:
-    image: mysql:8.0@sha256:7dcddc01f13bab2f15cde676d44d01f61fc9f99fe7785e86196dfc07d358ae2b
+    image: mysql:26.7.0
     restart: unless-stopped
     ports:
       - 3306:3306
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ${VOL_3}:/var/lib/mysql
     environment:
       - MYSQL_DATABASE=plantit
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
   plant-it-cache:
-    image: redis:7.2.11@sha256:9c44a721d444690605ffa32d6b6e1ac565060676386f88bbbb376f56cef2f724
+    image: redis:8.10.1
     restart: unless-stopped

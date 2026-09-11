@@ -9,8 +9,8 @@ services:
       - 8080:80
       - 10443:443
     volumes:
-      - ./etc:/etc/pihole/
-      - ./dnsmasq.d:/etc/dnsmasq.d/
+      - ${VOL_1}:/etc/pihole/
+      - ${VOL_2}:/etc/dnsmasq.d/
     environment:
       - TZ=America/Chicago
       - FTLCONF_webserver_api_password=${FTLCONF_webserver_api_password}

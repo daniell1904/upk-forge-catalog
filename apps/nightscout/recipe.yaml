@@ -10,11 +10,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Data db folder
+  help: Folder on the NAS for nightscout's data db. It is mounted into the container at /data/db; nightscout has full read and write access to it.
+  type: path
 - key: API_SECRET
   label: API SECRET
   type: password
 volumes:
 - container_path: /data/db
   label: Data db
-  user_chosen: false
-  default_host_subpath: mongo-data
+  default_host_subpath: nightscout-mongo-data-db

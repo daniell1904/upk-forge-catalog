@@ -5,7 +5,7 @@ services:
     ports:
       - 18080:8080
     volumes:
-      - ./models:/models
+      - ${VOL_1}:/models
     environment:
       - LLAMA_ARG_N_GPU_LAYERS=999
       - LLAMA_ARG_CONTEXT_SIZE=8192

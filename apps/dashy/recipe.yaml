@@ -9,8 +9,12 @@ ugos:
   port: 4000
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: App public folder
+  help: Folder on the NAS for Dashy (Legacy)'s app public. It is mounted into the container at /app/public; Dashy (Legacy) has full read and write access to it.
+  type: path
 volumes:
 - container_path: /app/public
   label: App public
-  user_chosen: false
-  default_host_subpath: public
+  default_host_subpath: dashy-app-public

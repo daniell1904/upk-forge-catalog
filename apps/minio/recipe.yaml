@@ -10,11 +10,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Data folder
+  help: Folder on the NAS for Minio's data. It is mounted into the container at /data; Minio has full read and write access to it.
+  type: path
 - key: MINIO_ROOT_PASSWORD
   label: MINIO ROOT PASSWORD
   type: password
 volumes:
 - container_path: /data
   label: Data
-  user_chosen: false
   default_host_subpath: app-data

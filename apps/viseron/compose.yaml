@@ -1,15 +1,15 @@
 services:
   viseron:
-    image: roflcoopter/viseron:3.5.3@sha256:2ed603e5a3ae02eefbb8a17736b1fb40ed071fc65e8e16918ab4cfeebce834b4
+    image: roflcoopter/viseron:3.6.2
     restart: unless-stopped
     ports:
       - 8888:8888
     volumes:
-      - ./segments:/segments
-      - ./snapshots:/snapshots
-      - ./thumbnails:/thumbnails
-      - ./event/clips:/event_clips
-      - ./config:/config
+      - ${VOL_1}:/segments
+      - ${VOL_2}:/snapshots
+      - ${VOL_3}:/thumbnails
+      - ${VOL_4}:/event_clips
+      - ${VOL_5}:/config
       - /etc/localtime:/etc/localtime
     environment:
       - PUID=1000

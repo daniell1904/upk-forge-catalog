@@ -1,11 +1,11 @@
 services:
   2fauth:
-    image: 2fauth/2fauth:6.1.3
+    image: 2fauth/2fauth:8.0.2
     restart: unless-stopped
     network_mode: bridge
     ports:
       - 8000:8000
     volumes:
-      - ./2fauth-2fauth:/2fauth
+      - ${VOL_1}:/2fauth
     environment:
       - APP_KEY=${APP_KEY}

@@ -9,9 +9,9 @@ services:
       - 7359:7359
       - 1901:1900
     volumes:
-      - ./config:/config
-      - ${VOL_1}:/Media
-      - ./jellyfin-opt-vc-lib:/opt/vc/lib
+      - ${VOL_1}:/config
+      - ${VOL_2}:/Media
+      - ${VOL_3}:/opt/vc/lib
     environment:
       - PGID=1000
       - PUID=1000

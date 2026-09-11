@@ -5,6 +5,6 @@ services:
     ports:
       - 11434:11434
     volumes:
-      - ./.ollama:/root/.ollama
+      - ${VOL_1}:/root/.ollama
     environment:
       - PORT=11434

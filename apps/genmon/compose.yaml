@@ -7,8 +7,8 @@ services:
       - 38443:443
       - 8000:8000
     volumes:
-      - ./git/genmon:/git/genmon
-      - ./etc/genmon:/etc/genmon
-      - ./var/log:/var/log
+      - ${VOL_1}:/git/genmon
+      - ${VOL_2}:/etc/genmon
+      - ${VOL_3}:/var/log
     environment:
       - TZ=America/Chicago

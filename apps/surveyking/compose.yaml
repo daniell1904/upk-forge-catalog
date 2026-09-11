@@ -1,6 +1,6 @@
 services:
   surveyking:
-    image: docker.io/surveyking/surveyking:v1.13.0
+    image: docker.io/surveyking/surveyking:v1.13.1
     ports:
       - "1991:1991"
     volumes:

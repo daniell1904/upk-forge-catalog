@@ -5,7 +5,7 @@ services:
     ports:
       - 6901:6901
     volumes:
-      - ./Downloads:/home/kasm-user/Downloads
+      - ${VOL_1}:/home/kasm-user/Downloads
     environment:
       - VNC_PW=app
       - LAUNCH_URL=https://community.app.com/

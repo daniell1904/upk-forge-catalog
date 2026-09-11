@@ -1,13 +1,13 @@
 services:
   app:
-    image: binwiederhier/ntfy:v2.27.0@sha256:f2419f405127afa868f10985c1a41449e673477cee1eb19994339a5ae8b592e7
+    image: binwiederhier/ntfy:v2.28.0
     restart: unless-stopped
     command:
       - serve
     ports:
       - 7200:80
     volumes:
-      - ./cache:/var/cache/ntfy
-      - ./config:/etc/ntfy
+      - ${VOL_1}:/var/cache/ntfy
+      - ${VOL_2}:/etc/ntfy
     environment:
       - TZ=UTC

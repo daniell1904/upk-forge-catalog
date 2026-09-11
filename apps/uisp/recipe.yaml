@@ -9,8 +9,12 @@ ugos:
   port: 8080
   open_type: tab
   tag_type: devtool
+parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for UISP's config. It is mounted into the container at /config; UISP has full read and write access to it.
+  type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: uisp-config

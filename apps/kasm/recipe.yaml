@@ -11,12 +11,19 @@ ugos:
   port: 3000
   open_type: tab
   tag_type: media
+parameters:
+- key: VOL_1
+  label: Opt folder
+  help: Folder on the NAS for Kasm's opt. It is mounted into the container at /opt; Kasm has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Profiles folder
+  help: Folder on the NAS for Kasm's profiles. It is mounted into the container at /profiles; Kasm has full read and write access to it.
+  type: path
 volumes:
 - container_path: /opt
   label: Opt
-  user_chosen: false
-  default_host_subpath: opt
+  default_host_subpath: app-opt
 - container_path: /profiles
   label: Profiles
-  user_chosen: false
-  default_host_subpath: profiles
+  default_host_subpath: app-profiles

@@ -6,7 +6,7 @@ services:
     ports:
       - 9696:9696
     volumes:
-      - ./config:/config
+      - ${VOL_1}:/config
     environment:
       - PGID=1000
       - PUID=1000

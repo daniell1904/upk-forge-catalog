@@ -10,6 +10,38 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Media folder
+  help: Folder on the NAS for Authentik's media. It is mounted into the container at /media; Authentik has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Templates folder
+  help: Folder on the NAS for Authentik's templates. It is mounted into the container at /templates; Authentik has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Var run docker.sock folder
+  help: Folder on the NAS for Authentik's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Authentik has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Media folder
+  help: Folder on the NAS for Authentik's media. It is mounted into the container at /media; Authentik has full read and write access to it.
+  type: path
+- key: VOL_5
+  label: Certs folder
+  help: Folder on the NAS for Authentik's certs. It is mounted into the container at /certs; Authentik has full read and write access to it.
+  type: path
+- key: VOL_6
+  label: Templates folder
+  help: Folder on the NAS for Authentik's templates. It is mounted into the container at /templates; Authentik has full read and write access to it.
+  type: path
+- key: VOL_7
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Authentik's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Authentik has full read and write access to it.
+  type: path
+- key: VOL_8
+  label: Data folder
+  help: Folder on the NAS for Authentik's data. It is mounted into the container at /data; Authentik has full read and write access to it.
+  type: path
 - key: AUTHENTIK_POSTGRESQL__PASSWORD
   label: AUTHENTIK POSTGRESQL PASSWORD
   type: password
@@ -19,33 +51,25 @@ parameters:
 volumes:
 - container_path: /media
   label: Media
-  user_chosen: false
-  default_host_subpath: data/authentik-media
+  default_host_subpath: authentik-media
 - container_path: /templates
   label: Templates
-  user_chosen: false
-  default_host_subpath: data/authentik-custom-templates
+  default_host_subpath: authentik-templates
 - container_path: /var/run/docker.sock
   label: Var run docker.sock
-  user_chosen: false
   default_host_subpath: authentik-worker-var-run-docker-sock
 - container_path: /media
   label: Media
-  user_chosen: false
-  default_host_subpath: data/authentik-media
+  default_host_subpath: authentik-worker-media
 - container_path: /certs
   label: Certs
-  user_chosen: false
-  default_host_subpath: data/authentik-certs
+  default_host_subpath: authentik-worker-certs
 - container_path: /templates
   label: Templates
-  user_chosen: false
-  default_host_subpath: data/authentik-custom-templates
+  default_host_subpath: authentik-worker-templates
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: data/postgres
+  default_host_subpath: authentik-db-var-lib-postgresql-data
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: data/redis
+  default_host_subpath: authentik-redis-data

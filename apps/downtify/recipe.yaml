@@ -16,11 +16,14 @@ parameters:
   label: Downloads folder
   help: Folder on the NAS for Downtify's downloads. It is mounted into the container at /downloads; Downtify has full read and write access to it.
   type: path
+- key: VOL_2
+  label: Data folder
+  help: Folder on the NAS for Downtify's data. It is mounted into the container at /data; Downtify has full read and write access to it.
+  type: path
 volumes:
 - container_path: /downloads
   label: Downloads
   default_host_subpath: downtify-downloads
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: downtify-data

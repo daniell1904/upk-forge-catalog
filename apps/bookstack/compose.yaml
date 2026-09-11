@@ -5,7 +5,7 @@ services:
     ports:
       - 8080:80
     volumes:
-      - ./config:/config
+      - ${VOL_1}:/config
     environment:
       - APP_KEY=${APP_KEY}
       - APP_URL=http://[change to your IP]:8080
@@ -14,10 +14,10 @@ services:
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_DATABASE=bookstackapp
   bookstack-db:
-    image: linuxserver/mariadb:10.11.6@sha256:7e34d92147dd7e1b63f43b3e76af73c273d7c3677786c32164a485f2a04964d8
+    image: linuxserver/mariadb:11.8.8
     restart: unless-stopped
     volumes:
-      - ./mysql:/config
+      - ${VOL_2}:/config
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=bookstackapp

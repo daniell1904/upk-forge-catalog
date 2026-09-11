@@ -1,15 +1,15 @@
 services:
   romm:
-    image: rommapp/romm:4.8.1
+    image: rommapp/romm:5.2.0
     restart: unless-stopped
     ports:
       - 8285:8080
     volumes:
-      - ./resources:/romm/resources
-      - ./redis-data:/redis-data
-      - ./library:/romm/library
-      - ./assets:/romm/assets
-      - ./config:/romm/config
+      - ${VOL_1}:/romm/resources
+      - ${VOL_2}:/redis-data
+      - ${VOL_3}:/romm/library
+      - ${VOL_4}:/romm/assets
+      - ${VOL_5}:/romm/config
     environment:
       - DB_HOST=romm-db
       - DB_NAME=romm
@@ -22,10 +22,10 @@ services:
       - SCREENSCRAPER_PASSWORD=${ROMM_AUTH_SECRET_KEY}
       - STEAMGRIDDB_API_KEY=${ROMM_AUTH_SECRET_KEY}
   romm-db:
-    image: mariadb:11.8.2
+    image: mariadb:12.3.3
     restart: unless-stopped
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ${VOL_6}:/var/lib/mysql
     environment:
       - MARIADB_ROOT_PASSWORD=${DB_PASSWD}
       - MARIADB_DATABASE=romm

@@ -15,12 +15,19 @@ ugos:
   port: 7777
   open_type: tab
   tag_type: media
+parameters:
+- key: VOL_1
+  label: App api config folder
+  help: Folder on the NAS for Petio's app api config. It is mounted into the container at /app/api/config; Petio has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: App logs folder
+  help: Folder on the NAS for Petio's app logs. It is mounted into the container at /app/logs; Petio has full read and write access to it.
+  type: path
 volumes:
 - container_path: /app/api/config
   label: App api config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: petio-app-api-config
 - container_path: /app/logs
   label: App logs
-  user_chosen: false
-  default_host_subpath: logs
+  default_host_subpath: petio-app-logs

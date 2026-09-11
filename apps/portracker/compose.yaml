@@ -5,8 +5,8 @@ services:
     ports:
       - 4999:4999
     volumes:
-      - ./data:/data
-      - ./portracker-var-run-docker-sock:/var/run/docker.sock
+      - ${VOL_1}:/data
+      - ${VOL_2}:/var/run/docker.sock
     environment:
       - PORT=4999
       - DATABASE_PATH=/data/portracker.db

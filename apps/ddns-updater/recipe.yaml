@@ -10,8 +10,12 @@ ugos:
   port: 8000
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Updater data folder
+  help: Folder on the NAS for ddns-updater's updater data. It is mounted into the container at /updater/data; ddns-updater has full read and write access to it.
+  type: path
 volumes:
 - container_path: /updater/data
   label: Updater data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: ddns-updater-updater-data

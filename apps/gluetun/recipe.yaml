@@ -11,8 +11,12 @@ ugos:
   port: 8888
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Gluetun folder
+  help: Folder on the NAS for Gluetun's gluetun. It is mounted into the container at /gluetun; Gluetun has full read and write access to it.
+  type: path
 volumes:
 - container_path: /gluetun
   label: Gluetun
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: gluetun-gluetun

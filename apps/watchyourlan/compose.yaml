@@ -4,7 +4,7 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ./data:/data/WatchYourLAN
+      - ${VOL_1}:/data/WatchYourLAN
     environment:
       - IFACES="eth0"
       - TZ="UTC"

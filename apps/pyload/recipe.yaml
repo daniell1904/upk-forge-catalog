@@ -13,14 +13,17 @@ ugos:
   tag_type: media
 parameters:
 - key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for PyLoad's config. It is mounted into the container at /config; PyLoad has full read and write access to it.
+  type: path
+- key: VOL_2
   label: Downloads folder
   help: Folder on the NAS for PyLoad's downloads. It is mounted into the container at /downloads; PyLoad has full read and write access to it.
   type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: pyload-config
 - container_path: /downloads
   label: Downloads
   default_host_subpath: pyload-downloads

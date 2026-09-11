@@ -15,12 +15,19 @@ ugos:
   port: 8000
   open_type: tab
   tag_type: media
+parameters:
+- key: VOL_1
+  label: App podcasts folder
+  help: Folder on the NAS for PodFetch's app podcasts. It is mounted into the container at /app/podcasts; PodFetch has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: App db folder
+  help: Folder on the NAS for PodFetch's app db. It is mounted into the container at /app/db; PodFetch has full read and write access to it.
+  type: path
 volumes:
 - container_path: /app/podcasts
   label: App podcasts
-  user_chosen: false
-  default_host_subpath: podcasts
+  default_host_subpath: podfetch-app-podcasts
 - container_path: /app/db
   label: App db
-  user_chosen: false
-  default_host_subpath: db
+  default_host_subpath: podfetch-app-db

@@ -11,12 +11,19 @@ ugos:
   port: 8181
   open_type: tab
   tag_type: media
+parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for qBittorrent's config. It is mounted into the container at /config; qBittorrent has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: DATA folder
+  help: Folder on the NAS for qBittorrent's data. It is mounted into the container at /DATA; qBittorrent has full read and write access to it.
+  type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: qbittorrent-config
 - container_path: /DATA
   label: DATA
-  user_chosen: false
   default_host_subpath: qbittorrent-data

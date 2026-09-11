@@ -1,12 +1,12 @@
 services:
   albyhub:
-    image: ghcr.io/getalby/hub:v1.22.2
+    image: ghcr.io/getalby/hub:v1.24.0
     restart: unless-stopped
     network_mode: bridge
     ports:
       - 58000:8080
     volumes:
-      - ./data:/data
+      - ${VOL_1}:/data
     environment:
       - PGID=1000
       - PUID=1000

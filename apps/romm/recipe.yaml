@@ -49,6 +49,30 @@ ugos:
   open_type: tab
   tag_type: media
 parameters:
+- key: VOL_1
+  label: Romm resources folder
+  help: Folder on the NAS for RomM's romm resources. It is mounted into the container at /romm/resources; RomM has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Redis data folder
+  help: Folder on the NAS for RomM's redis data. It is mounted into the container at /redis-data; RomM has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Romm library folder
+  help: Folder on the NAS for RomM's romm library. It is mounted into the container at /romm/library; RomM has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Romm assets folder
+  help: Folder on the NAS for RomM's romm assets. It is mounted into the container at /romm/assets; RomM has full read and write access to it.
+  type: path
+- key: VOL_5
+  label: Romm config folder
+  help: Folder on the NAS for RomM's romm config. It is mounted into the container at /romm/config; RomM has full read and write access to it.
+  type: path
+- key: VOL_6
+  label: Var lib mysql folder
+  help: Folder on the NAS for RomM's var lib mysql. It is mounted into the container at /var/lib/mysql; RomM has full read and write access to it.
+  type: path
 - key: DB_PASSWD
   label: DB PASSWD
   type: string
@@ -58,25 +82,19 @@ parameters:
 volumes:
 - container_path: /romm/resources
   label: Romm resources
-  user_chosen: false
-  default_host_subpath: resources
+  default_host_subpath: romm-romm-resources
 - container_path: /redis-data
   label: Redis data
-  user_chosen: false
-  default_host_subpath: redis-data
+  default_host_subpath: romm-redis-data
 - container_path: /romm/library
   label: Romm library
-  user_chosen: false
-  default_host_subpath: library
+  default_host_subpath: romm-romm-library
 - container_path: /romm/assets
   label: Romm assets
-  user_chosen: false
-  default_host_subpath: assets
+  default_host_subpath: romm-romm-assets
 - container_path: /romm/config
   label: Romm config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: romm-romm-config
 - container_path: /var/lib/mysql
   label: Var lib mysql
-  user_chosen: false
-  default_host_subpath: mysql
+  default_host_subpath: romm-db-var-lib-mysql

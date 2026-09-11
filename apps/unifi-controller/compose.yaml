@@ -1,6 +1,6 @@
 services:
   unifi-controller:
-    image: linuxserver/unifi-controller:8.0.7
+    image: linuxserver/unifi-controller:8.0.24
     restart: unless-stopped
     network_mode: bridge
     ports:
@@ -14,7 +14,7 @@ services:
       - 6789:6789
       - 5514:5514
     volumes:
-      - ./config:/config
+      - ${VOL_1}:/config
     environment:
       - MEM_LIMIT=1024
       - MEM_STARTUP=1024

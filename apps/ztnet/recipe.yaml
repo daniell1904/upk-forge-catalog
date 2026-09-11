@@ -43,6 +43,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Var lib zerotier one folder
+  help: Folder on the NAS for ZTnet's var lib zerotier one. It is mounted into the container at /var/lib/zerotier-one; ZTnet has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for ZTnet's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; ZTnet has full read and write access to it.
+  type: path
 - key: POSTGRES_PASSWORD
   label: POSTGRES PASSWORD
   type: password
@@ -52,9 +60,7 @@ parameters:
 volumes:
 - container_path: /var/lib/zerotier-one
   label: Var lib zerotier one
-  user_chosen: false
   default_host_subpath: ztnet-var-lib-zerotier-one
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: postgres-data
+  default_host_subpath: ztnet-postgres-var-lib-postgresql-data

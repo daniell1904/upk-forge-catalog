@@ -1,9 +1,9 @@
 services:
   nova:
-    image: mrantonsg/nova-dso-tracker:6.2.2@sha256:1412e856855bce10147154ba207c11b904d3de50dbbfbb6a5fe0378a329620f0
+    image: mrantonsg/nova-dso-tracker:6.5.0
     restart: unless-stopped
     network_mode: bridge
     ports:
       - 5001:5001
     volumes:
-      - ./instance:/app/instance
+      - ${VOL_1}:/app/instance

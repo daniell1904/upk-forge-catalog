@@ -10,6 +10,26 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: App data folder
+  help: Folder on the NAS for Odysseus's app data. It is mounted into the container at /app/data; Odysseus has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: App logs folder
+  help: Folder on the NAS for Odysseus's app logs. It is mounted into the container at /app/logs; Odysseus has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Chroma chroma folder
+  help: Folder on the NAS for Odysseus's chroma chroma. It is mounted into the container at /chroma/chroma; Odysseus has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Etc searxng folder
+  help: Folder on the NAS for Odysseus's etc searxng. It is mounted into the container at /etc/searxng; Odysseus has full read and write access to it.
+  type: path
+- key: VOL_5
+  label: Var cache ntfy folder
+  help: Folder on the NAS for Odysseus's var cache ntfy. It is mounted into the container at /var/cache/ntfy; Odysseus has full read and write access to it.
+  type: path
 - key: ODYSSEUS_ADMIN_PASSWORD
   label: ODYSSEUS ADMIN PASSWORD
   type: password
@@ -19,21 +39,16 @@ parameters:
 volumes:
 - container_path: /app/data
   label: App data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: odysseus-app-data
 - container_path: /app/logs
   label: App logs
-  user_chosen: false
-  default_host_subpath: logs
+  default_host_subpath: odysseus-app-logs
 - container_path: /chroma/chroma
   label: Chroma chroma
-  user_chosen: false
-  default_host_subpath: chromadb
+  default_host_subpath: chromadb-chroma-chroma
 - container_path: /etc/searxng
   label: Etc searxng
-  user_chosen: false
-  default_host_subpath: searxng
+  default_host_subpath: searxng-etc-searxng
 - container_path: /var/cache/ntfy
   label: Var cache ntfy
-  user_chosen: false
-  default_host_subpath: ntfy
+  default_host_subpath: ntfy-var-cache-ntfy

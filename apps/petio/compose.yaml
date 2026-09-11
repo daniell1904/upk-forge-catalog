@@ -5,14 +5,14 @@ services:
     ports:
       - 7777:7777
     volumes:
-      - ./config:/app/api/config
-      - ./logs:/app/logs
+      - ${VOL_1}:/app/api/config
+      - ${VOL_2}:/app/logs
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=$TZ
   mongo:
-    image: mongo:4.4.22
+    image: mongo:8.3.9
     restart: unless-stopped
     environment:
       - PUID=1000

@@ -42,15 +42,21 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: App langflow folder
+  help: Folder on the NAS for Langflow's app langflow. It is mounted into the container at /app/langflow; Langflow has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Langflow's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Langflow has full read and write access to it.
+  type: path
 - key: POSTGRES_PASSWORD
   label: POSTGRES PASSWORD
   type: password
 volumes:
 - container_path: /app/langflow
   label: App langflow
-  user_chosen: false
-  default_host_subpath: backend
+  default_host_subpath: langflow-app-langflow
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: postgres
+  default_host_subpath: langflow-postgres-var-lib-postgresql-data

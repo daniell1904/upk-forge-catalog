@@ -38,8 +38,12 @@ ugos:
   port: 15580
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: App .user folder
+  help: Folder on the NAS for BeaverHabitTracker's app .user. It is mounted into the container at /app/.user; BeaverHabitTracker has full read and write access to it.
+  type: path
 volumes:
 - container_path: /app/.user
   label: App .user
-  user_chosen: false
   default_host_subpath: beaverhabittracker-app-user

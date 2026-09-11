@@ -5,8 +5,8 @@ services:
     ports:
       - 7000:7000
     volumes:
-      - ./data:/app/data
-      - ./logs:/app/logs
+      - ${VOL_1}:/app/data
+      - ${VOL_2}:/app/logs
     environment:
       - PUID=1000
       - PGID=1000
@@ -19,22 +19,22 @@ services:
     image: chromadb/chroma:1.5.9@sha256:1e0b73a187a28757c572acba508c46f48c9e8b0acaf5c20e6d95cdedce1acdf6
     restart: unless-stopped
     volumes:
-      - ./chromadb:/chroma/chroma
+      - ${VOL_3}:/chroma/chroma
     environment:
       - ANONYMIZED_TELEMETRY=FALSE
   searxng:
     image: searxng/searxng:2026.6.2-e964708c0@sha256:0872beb1d495d41f2dda73d7aea83746657afdd2be3010eb1b11f5a541555c9e
     restart: unless-stopped
     volumes:
-      - ./searxng:/etc/searxng
+      - ${VOL_4}:/etc/searxng
     environment:
       - SEARXNG_BASE_URL=http://localhost:8080/
       - SEARXNG_SECRET=${SEARXNG_SECRET}
   ntfy:
-    image: binwiederhier/ntfy:v2.27.0@sha256:f2419f405127afa868f10985c1a41449e673477cee1eb19994339a5ae8b592e7
+    image: binwiederhier/ntfy:v2.28.0
     restart: unless-stopped
     command: serve
     volumes:
-      - ./ntfy:/var/cache/ntfy
+      - ${VOL_5}:/var/cache/ntfy
     environment:
       - NTFY_BASE_URL=http://localhost:8091

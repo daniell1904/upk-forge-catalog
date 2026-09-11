@@ -11,8 +11,12 @@ ugos:
   port: 8840
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Data WatchYourLAN folder
+  help: Folder on the NAS for WatchYourLAN's data watchyourlan. It is mounted into the container at /data/WatchYourLAN; WatchYourLAN has full read and write access to it.
+  type: path
 volumes:
 - container_path: /data/WatchYourLAN
   label: Data WatchYourLAN
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: watchyourlan-data-watchyourlan

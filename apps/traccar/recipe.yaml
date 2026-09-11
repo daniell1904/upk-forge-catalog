@@ -9,12 +9,19 @@ ugos:
   port: 8080
   open_type: tab
   tag_type: devtool
+parameters:
+- key: VOL_1
+  label: Opt traccar logs folder
+  help: Folder on the NAS for Traccar's opt traccar logs. It is mounted into the container at /opt/traccar/logs; Traccar has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Opt traccar conf traccar.xml folder
+  help: Folder on the NAS for Traccar's opt traccar conf traccar.xml. It is mounted into the container at /opt/traccar/conf/traccar.xml; Traccar has full read and write access to it.
+  type: path
 volumes:
 - container_path: /opt/traccar/logs
   label: Opt traccar logs
-  user_chosen: false
-  default_host_subpath: logs
+  default_host_subpath: app-opt-traccar-logs
 - container_path: /opt/traccar/conf/traccar.xml
   label: Opt traccar conf traccar.xml
-  user_chosen: false
-  default_host_subpath: traccar.xml
+  default_host_subpath: app-opt-traccar-conf-traccar-xml

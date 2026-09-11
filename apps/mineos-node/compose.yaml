@@ -1,11 +1,11 @@
 services:
   mineos:
-    image: hexparrot/mineos:latest
+    image: hexparrot/mineos:node-wily
     restart: unless-stopped
     ports:
       - 8444:8443
     volumes:
-      - ./mineos-var-games-minecraft:/var/games/minecraft
+      - ${VOL_1}:/var/games/minecraft
     environment:
       - USE_HTTPS=true
       - SERVER_PORT=8443

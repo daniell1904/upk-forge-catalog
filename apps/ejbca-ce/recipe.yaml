@@ -9,8 +9,12 @@ ugos:
   port: 8080
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Mnt persistent folder
+  help: Folder on the NAS for EJBCA Community's mnt persistent. It is mounted into the container at /mnt/persistent; EJBCA Community has full read and write access to it.
+  type: path
 volumes:
 - container_path: /mnt/persistent
   label: Mnt persistent
-  user_chosen: false
-  default_host_subpath: persistent
+  default_host_subpath: ejbca-ce-mnt-persistent

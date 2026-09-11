@@ -1,14 +1,14 @@
 services:
   openhab:
-    image: openhab/openhab:5.1.4
+    image: openhab/openhab:5.2.1
     restart: unless-stopped
     network_mode: host
     volumes:
       - /etc/localtime:/etc/localtime
       - /etc/timezone:/etc/timezone
-      - ./addons:/openhab/addons
-      - ./conf:/openhab/conf
-      - ./userdata:/openhab/userdata
+      - ${VOL_1}:/openhab/addons
+      - ${VOL_2}:/openhab/conf
+      - ${VOL_3}:/openhab/userdata
     environment:
       - CRYPTO_POLICY=unlimited
       - PGID=1000

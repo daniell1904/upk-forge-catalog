@@ -1,12 +1,12 @@
 services:
   app:
-    image: linuxserver/code-server:4.132.0@sha256:a6d1aa1083f224d1ebb47bf9e2eb9a5624c5107447014912b768c27bb30293fc
+    image: linuxserver/code-server:4.137.0
     restart: unless-stopped
     ports:
       - 8080:8443
     volumes:
-      - ./config:/config
-      - ./projects:/projects
+      - ${VOL_1}:/config
+      - ${VOL_2}:/projects
     environment:
       - PUID=1000
       - PGID=1000

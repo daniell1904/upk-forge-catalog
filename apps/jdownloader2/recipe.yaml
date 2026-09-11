@@ -11,6 +11,10 @@ ugos:
   tag_type: media
 parameters:
 - key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for JDownloader2's config. It is mounted into the container at /config; JDownloader2 has full read and write access to it.
+  type: path
+- key: VOL_2
   label: Output folder
   help: Folder on the NAS for JDownloader2's output. It is mounted into the container at /output; JDownloader2 has full read and write access to it.
   type: path
@@ -29,8 +33,7 @@ parameters:
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: jdownloader2-config
 - container_path: /output
   label: Output
   default_host_subpath: jdownloader2-output

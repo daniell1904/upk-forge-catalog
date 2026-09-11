@@ -6,4 +6,4 @@ services:
       - 1080:80
       - 10443:443
     volumes:
-      - ./stacks:/appsmith-stacks
+      - ${VOL_1}:/appsmith-stacks

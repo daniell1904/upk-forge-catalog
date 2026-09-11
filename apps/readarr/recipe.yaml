@@ -13,18 +13,21 @@ ugos:
   tag_type: media
 parameters:
 - key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Readarr's config. It is mounted into the container at /config; Readarr has full read and write access to it.
+  type: path
+- key: VOL_2
   label: Books folder
   help: Folder on the NAS for Readarr's books. It is mounted into the container at /books; Readarr has full read and write access to it.
   type: path
-- key: VOL_2
+- key: VOL_3
   label: Downloads folder
   help: Folder on the NAS for Readarr's downloads. It is mounted into the container at /downloads; Readarr has full read and write access to it.
   type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: readarr-config
 - container_path: /books
   label: Books
   default_host_subpath: readarr-books

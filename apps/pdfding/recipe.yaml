@@ -12,15 +12,21 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Home nonroot pdfding db folder
+  help: Folder on the NAS for PdfDing's home nonroot pdfding db. It is mounted into the container at /home/nonroot/pdfding/db; PdfDing has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Home nonroot pdfding media folder
+  help: Folder on the NAS for PdfDing's home nonroot pdfding media. It is mounted into the container at /home/nonroot/pdfding/media; PdfDing has full read and write access to it.
+  type: path
 - key: SECRET_KEY
   label: SECRET KEY
   type: password
 volumes:
 - container_path: /home/nonroot/pdfding/db
   label: Home nonroot pdfding db
-  user_chosen: false
-  default_host_subpath: db
+  default_host_subpath: pdfding-home-nonroot-pdfding-db
 - container_path: /home/nonroot/pdfding/media
   label: Home nonroot pdfding media
-  user_chosen: false
-  default_host_subpath: media
+  default_host_subpath: pdfding-home-nonroot-pdfding-media

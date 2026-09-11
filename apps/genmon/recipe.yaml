@@ -9,16 +9,26 @@ ugos:
   port: 20022
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Git genmon folder
+  help: Folder on the NAS for Genmon's git genmon. It is mounted into the container at /git/genmon; Genmon has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Etc genmon folder
+  help: Folder on the NAS for Genmon's etc genmon. It is mounted into the container at /etc/genmon; Genmon has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Var log folder
+  help: Folder on the NAS for Genmon's var log. It is mounted into the container at /var/log; Genmon has full read and write access to it.
+  type: path
 volumes:
 - container_path: /git/genmon
   label: Git genmon
-  user_chosen: false
-  default_host_subpath: git/genmon
+  default_host_subpath: genmon-git-genmon
 - container_path: /etc/genmon
   label: Etc genmon
-  user_chosen: false
-  default_host_subpath: etc/genmon
+  default_host_subpath: genmon-etc-genmon
 - container_path: /var/log
   label: Var log
-  user_chosen: false
-  default_host_subpath: var/log
+  default_host_subpath: genmon-var-log

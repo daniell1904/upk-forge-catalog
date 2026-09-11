@@ -12,11 +12,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Cloudflared Web's config. It is mounted into the container at /config; Cloudflared Web has full read and write access to it.
+  type: path
 - key: BASIC_AUTH_PASS
   label: BASIC AUTH PASS
   type: string
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: cloudflared-web-config

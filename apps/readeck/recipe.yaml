@@ -9,8 +9,12 @@ ugos:
   port: 8000
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Readeck folder
+  help: Folder on the NAS for Readeck's readeck. It is mounted into the container at /readeck; Readeck has full read and write access to it.
+  type: path
 volumes:
 - container_path: /readeck
   label: Readeck
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: readeck-readeck

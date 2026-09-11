@@ -11,21 +11,36 @@ ugos:
   tag_type: utility
 parameters:
 - key: VOL_1
+  label: Srv app data folder
+  help: Folder on the NAS for Filebrowser's srv app data. It is mounted into the container at /srv/app-data; Filebrowser has full read and write access to it.
+  type: path
+- key: VOL_2
   label: Srv documents folder
   help: Folder on the NAS for Filebrowser's srv documents. It is mounted into the container at /srv/documents; Filebrowser has full read and write access to it.
   type: path
-- key: VOL_2
+- key: VOL_3
   label: Srv downloads folder
   help: Folder on the NAS for Filebrowser's srv downloads. It is mounted into the container at /srv/downloads; Filebrowser has full read and write access to it.
   type: path
-- key: VOL_3
+- key: VOL_4
+  label: Srv gallery folder
+  help: Folder on the NAS for Filebrowser's srv gallery. It is mounted into the container at /srv/gallery; Filebrowser has full read and write access to it.
+  type: path
+- key: VOL_5
   label: Srv media folder
   help: Folder on the NAS for Filebrowser's srv media. It is mounted into the container at /srv/media; Filebrowser has full read and write access to it.
+  type: path
+- key: VOL_6
+  label: Database folder
+  help: Folder on the NAS for Filebrowser's database. It is mounted into the container at /database; Filebrowser has full read and write access to it.
+  type: path
+- key: VOL_7
+  label: Config folder
+  help: Folder on the NAS for Filebrowser's config. It is mounted into the container at /config; Filebrowser has full read and write access to it.
   type: path
 volumes:
 - container_path: /srv/app-data
   label: Srv app data
-  user_chosen: false
   default_host_subpath: filebrowser-srv-app-data
 - container_path: /srv/documents
   label: Srv documents
@@ -35,16 +50,13 @@ volumes:
   default_host_subpath: filebrowser-srv-downloads
 - container_path: /srv/gallery
   label: Srv gallery
-  user_chosen: false
   default_host_subpath: filebrowser-srv-gallery
 - container_path: /srv/media
   label: Srv media
   default_host_subpath: filebrowser-srv-media
 - container_path: /database
   label: Database
-  user_chosen: false
-  default_host_subpath: data/db
+  default_host_subpath: filebrowser-database
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: data/config
+  default_host_subpath: filebrowser-config

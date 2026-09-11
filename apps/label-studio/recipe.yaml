@@ -11,8 +11,12 @@ ugos:
   port: 3080
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Label studio data folder
+  help: Folder on the NAS for Label Studio's label studio data. It is mounted into the container at /label-studio/data; Label Studio has full read and write access to it.
+  type: path
 volumes:
 - container_path: /label-studio/data
   label: Label studio data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: label-studio-label-studio-data

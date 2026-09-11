@@ -1,11 +1,11 @@
 services:
   netalertx:
-    image: jokobsk/netalertx:25.11.29@sha256:fd1a4ca4bd4c0f38797b36b4ec5b0928d7add7b9add788d9cedb11fd25a42a65
+    image: jokobsk/netalertx:26.9.0
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ./config:/app/config
-      - ./db:/app/db
+      - ${VOL_1}:/app/config
+      - ${VOL_2}:/app/db
     environment:
       - TZ=UTC
       - PORT=8080

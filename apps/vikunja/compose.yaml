@@ -1,11 +1,11 @@
 services:
   vikunja:
-    image: vikunja/vikunja:1.1.0@sha256:84b56920e2860c67cb889bce0e0950aa529e42838b45bdf81eb2422178e90cc7
+    image: vikunja/vikunja:2.6.0
     restart: unless-stopped
     ports:
       - 8081:3456
     volumes:
-      - ./files:/app/vikunja/files
+      - ${VOL_1}:/app/vikunja/files
     environment:
       - VIKUNJA_SERVICE_PUBLICURL=http://<your public frontend url with slash>/
       - VIKUNJA_DATABASE_HOST=vikunja-db
@@ -21,7 +21,7 @@ services:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ${VOL_2}:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_USER=vikunja

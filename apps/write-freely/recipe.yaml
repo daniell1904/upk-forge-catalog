@@ -9,8 +9,12 @@ ugos:
   port: 70
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Mnt config folder
+  help: Folder on the NAS for Write Freely's mnt config. It is mounted into the container at /mnt/config; Write Freely has full read and write access to it.
+  type: path
 volumes:
 - container_path: /mnt/config
   label: Mnt config
-  user_chosen: false
-  default_host_subpath: data/config
+  default_host_subpath: write-freely-mnt-config

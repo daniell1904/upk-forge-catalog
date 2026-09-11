@@ -1,14 +1,14 @@
 services:
   speedtest-tracker:
-    image: linuxserver/speedtest-tracker:1.14.7@sha256:31aa3b5db19ec05f392ed53e26ebb06b73e88e1c915a2799d30d436ef4376041
+    image: linuxserver/speedtest-tracker:1.15.0
     restart: unless-stopped
     ports:
       - 8080:80
       - 8443:443
     volumes:
       - /etc/localtime:/etc/localtime
-      - ./config:/config
-      - ./web:/etc/ssl/web
+      - ${VOL_1}:/config
+      - ${VOL_2}:/etc/ssl/web
     environment:
       - PUID=1000
       - PGID=1000
@@ -23,7 +23,7 @@ services:
     image: mariadb:10@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350
     restart: unless-stopped
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ${VOL_3}:/var/lib/mysql
     environment:
       - MARIADB_DATABASE=speedtest_tracker
       - MARIADB_USER=${DB_PASSWORD}

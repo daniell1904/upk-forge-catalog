@@ -5,7 +5,7 @@ services:
     ports:
       - 5005:5005
     volumes:
-      - ./data:/app/data
-      - ./app-var-run-docker-sock:/var/run/docker.sock
+      - ${VOL_1}:/app/data
+      - ${VOL_2}:/var/run/docker.sock
     environment:
       - PASSWORD=${PASSWORD}

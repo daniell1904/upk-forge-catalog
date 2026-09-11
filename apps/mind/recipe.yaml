@@ -9,8 +9,12 @@ ugos:
   port: 8080
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: App db folder
+  help: Folder on the NAS for MIND's app db. It is mounted into the container at /app/db; MIND has full read and write access to it.
+  type: path
 volumes:
 - container_path: /app/db
   label: App db
-  user_chosen: false
-  default_host_subpath: db
+  default_host_subpath: app-app-db

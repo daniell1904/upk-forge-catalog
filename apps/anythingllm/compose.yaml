@@ -5,6 +5,6 @@ services:
     ports:
       - 3051:3001
     volumes:
-      - ./storage:/app/server/storage
+      - ${VOL_1}:/app/server/storage
     environment:
       - STORAGE_DIR=/app/server/storage

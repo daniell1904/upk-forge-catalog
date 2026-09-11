@@ -10,6 +10,18 @@ ugos:
   open_type: tab
   tag_type: devtool
 parameters:
+- key: VOL_1
+  label: Usr src app data folder
+  help: Folder on the NAS for NocoDB's usr src app data. It is mounted into the container at /usr/src/app/data; NocoDB has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for NocoDB's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; NocoDB has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Data folder
+  help: Folder on the NAS for NocoDB's data. It is mounted into the container at /data; NocoDB has full read and write access to it.
+  type: path
 - key: NC_AUTH_JWT_SECRET
   label: NC AUTH JWT SECRET
   type: password
@@ -19,13 +31,10 @@ parameters:
 volumes:
 - container_path: /usr/src/app/data
   label: Usr src app data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: nocodb-usr-src-app-data
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: pgdata
+  default_host_subpath: nocodb-db-var-lib-postgresql-data
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: redis
+  default_host_subpath: nocodb-redis-data

@@ -12,12 +12,19 @@ ugos:
   port: 1080
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Var run docker.sock folder
+  help: Folder on the NAS for Gladys Assistant's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Gladys Assistant has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib gladysassistant folder
+  help: Folder on the NAS for Gladys Assistant's var lib gladysassistant. It is mounted into the container at /var/lib/gladysassistant; Gladys Assistant has full read and write access to it.
+  type: path
 volumes:
 - container_path: /var/run/docker.sock
   label: Var run docker.sock
-  user_chosen: false
   default_host_subpath: app-var-run-docker-sock
 - container_path: /var/lib/gladysassistant
   label: Var lib gladysassistant
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: app-var-lib-gladysassistant

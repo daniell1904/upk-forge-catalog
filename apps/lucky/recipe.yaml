@@ -13,8 +13,12 @@ ugos:
   port: 16601
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Goodluck folder
+  help: Folder on the NAS for Lucky's goodluck. It is mounted into the container at /goodluck; Lucky has full read and write access to it.
+  type: path
 volumes:
 - container_path: /goodluck
   label: Goodluck
-  user_chosen: false
   default_host_subpath: lucky-goodluck

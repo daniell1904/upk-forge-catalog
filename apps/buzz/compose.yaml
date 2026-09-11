@@ -5,7 +5,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./git_data:/data/git
+      - ${VOL_1}:/data/git
     environment:
       - BUZZ_BIND_ADDR=0.0.0.0:3000
       - BUZZ_HEALTH_PORT=8080
@@ -30,7 +30,7 @@ services:
     image: postgres:17-alpine@sha256:742f40ea20b9ff2ff31db5458d127452988a2164df9e17441e191f3b72252193
     restart: unless-stopped
     volumes:
-      - ./postgres_data:/var/lib/postgresql/data
+      - ${VOL_2}:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=buzz
       - POSTGRES_USER=buzz
@@ -46,7 +46,7 @@ services:
       - --requirepass
       - change-me-redis-3Fn8pL5wZ6yB
     volumes:
-      - ./redis_data:/data
+      - ${VOL_3}:/data
     environment:
       - REDIS_PASSWORD=${REDIS_PASSWORD}
   minio:
@@ -54,7 +54,7 @@ services:
     restart: unless-stopped
     command: server /data --console-address ":9001"
     volumes:
-      - ./minio_data:/data
+      - ${VOL_4}:/data
     environment:
       - MINIO_ROOT_USER=${BUZZ_S3_ACCESS_KEY}
       - MINIO_ROOT_PASSWORD=${BUZZ_S3_SECRET_KEY}

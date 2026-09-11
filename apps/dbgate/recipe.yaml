@@ -9,8 +9,12 @@ ugos:
   port: 3000
   open_type: tab
   tag_type: devtool
+parameters:
+- key: VOL_1
+  label: Root .dbgate folder
+  help: Folder on the NAS for DBGate's root .dbgate. It is mounted into the container at /root/.dbgate; DBGate has full read and write access to it.
+  type: path
 volumes:
 - container_path: /root/.dbgate
   label: Root .dbgate
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: dbgate-root-dbgate

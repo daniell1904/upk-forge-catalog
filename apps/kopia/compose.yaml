@@ -5,12 +5,12 @@ services:
     ports:
       - 51515:51515
     volumes:
-      - ./config:/config
-      - ./home:/backups/home
-      - ./kopia-backups-docker:/backups/docker
-      - ./repository:/repository
+      - ${VOL_1}:/config
+      - ${VOL_2}:/backups/home
+      - ${VOL_3}:/backups/docker
+      - ${VOL_4}:/repository
       - /tmp:/tmp
-      - ./kopia-var-run-docker-sock:/var/run/docker.sock
+      - ${VOL_5}:/var/run/docker.sock
     environment:
       - PUID=0
       - PGID=0

@@ -5,7 +5,7 @@ services:
     ports:
       - 2368:2368
     volumes:
-      - ./content:/var/lib/ghost/content
+      - ${VOL_1}:/var/lib/ghost/content
     environment:
       - database__client=mysql
       - database__connection__host=db
@@ -14,10 +14,10 @@ services:
       - database__connection__database=ghost
       - url=http://localhost:2368
   db:
-    image: mysql:8.0@sha256:7dcddc01f13bab2f15cde676d44d01f61fc9f99fe7785e86196dfc07d358ae2b
+    image: mysql:26.7.0
     restart: unless-stopped
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ${VOL_2}:/var/lib/mysql
     environment:
       - MYSQL_USER=ghost
       - MYSQL_DATABASE=ghost

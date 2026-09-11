@@ -6,8 +6,8 @@ services:
       - 8080:80
       - 10443:443
     volumes:
-      - ./cache:/data/cache
-      - ./logs:/data/logs
+      - ${VOL_1}:/data/cache
+      - ${VOL_2}:/data/logs
     environment:
       - USE_GENERIC_CACHE=true
       - LANCACHE_IP=10.0.39.1

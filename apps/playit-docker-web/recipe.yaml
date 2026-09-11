@@ -11,8 +11,12 @@ ugos:
   port: 8008
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Playit Docker Web's config. It is mounted into the container at /config; Playit Docker Web has full read and write access to it.
+  type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: playit-docker-web-config

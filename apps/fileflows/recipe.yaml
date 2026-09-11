@@ -16,30 +16,45 @@ ugos:
   tag_type: media
 parameters:
 - key: VOL_1
+  label: App Data folder
+  help: Folder on the NAS for FileFlows's app data. It is mounted into the container at /app/Data; FileFlows has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: App Logs folder
+  help: Folder on the NAS for FileFlows's app logs. It is mounted into the container at /app/Logs; FileFlows has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: App common folder
+  help: Folder on the NAS for FileFlows's app common. It is mounted into the container at /app/common; FileFlows has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Temp folder
+  help: Folder on the NAS for FileFlows's temp. It is mounted into the container at /temp; FileFlows has full read and write access to it.
+  type: path
+- key: VOL_5
   label: Media folder
   help: Folder on the NAS for FileFlows's media. It is mounted into the container at /Media; FileFlows has full read and write access to it.
+  type: path
+- key: VOL_6
+  label: Var run docker.sock folder
+  help: Folder on the NAS for FileFlows's var run docker.sock. It is mounted into the container at /var/run/docker.sock; FileFlows has full read and write access to it.
   type: path
 volumes:
 - container_path: /app/Data
   label: App Data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: fileflows-app-data
 - container_path: /app/Logs
   label: App Logs
-  user_chosen: false
-  default_host_subpath: logs
+  default_host_subpath: fileflows-app-logs
 - container_path: /app/common
   label: App common
-  user_chosen: false
-  default_host_subpath: common
+  default_host_subpath: fileflows-app-common
 - container_path: /temp
   label: Temp
-  user_chosen: false
-  default_host_subpath: temp
+  default_host_subpath: fileflows-temp
 - container_path: /Media
   label: Media
   default_host_subpath: fileflows-media
 - container_path: /var/run/docker.sock
   label: Var run docker.sock
-  user_chosen: false
   default_host_subpath: fileflows-var-run-docker-sock

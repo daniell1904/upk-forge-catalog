@@ -5,8 +5,8 @@ services:
     ports:
       - 8069:8069
     volumes:
-      - ./data/etc:/etc/odoo
-      - ./data/addons:/mnt/extra-addons
+      - ${VOL_1}:/etc/odoo
+      - ${VOL_2}:/mnt/extra-addons
     environment:
       - HOST=odoo-db
       - USER=odoo
@@ -15,7 +15,7 @@ services:
     image: postgres:15@sha256:bcab099bfaab33333a73a2ebe8c1d615c9f4c2402dd43452f989a36c6da9a5ba
     restart: unless-stopped
     volumes:
-      - ./data/postgresql:/var/lib/postgresql/data
+      - ${VOL_3}:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=odoo
       - POSTGRES_PASSWORD=${PASSWORD}

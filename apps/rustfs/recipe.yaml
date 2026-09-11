@@ -10,6 +10,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Data folder
+  help: Folder on the NAS for RustFS's data. It is mounted into the container at /data; RustFS has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Logs folder
+  help: Folder on the NAS for RustFS's logs. It is mounted into the container at /logs; RustFS has full read and write access to it.
+  type: path
 - key: RUSTFS_ACCESS_KEY
   label: RUSTFS ACCESS KEY
   type: password
@@ -19,9 +27,7 @@ parameters:
 volumes:
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: app-data
 - container_path: /logs
   label: Logs
-  user_chosen: false
-  default_host_subpath: logs
+  default_host_subpath: app-logs

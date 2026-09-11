@@ -9,12 +9,19 @@ ugos:
   port: 8080
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Data cache folder
+  help: Folder on the NAS for LAN Cache's data cache. It is mounted into the container at /data/cache; LAN Cache has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Data logs folder
+  help: Folder on the NAS for LAN Cache's data logs. It is mounted into the container at /data/logs; LAN Cache has full read and write access to it.
+  type: path
 volumes:
 - container_path: /data/cache
   label: Data cache
-  user_chosen: false
-  default_host_subpath: cache
+  default_host_subpath: app-data-cache
 - container_path: /data/logs
   label: Data logs
-  user_chosen: false
-  default_host_subpath: logs
+  default_host_subpath: app-data-logs

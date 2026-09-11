@@ -13,16 +13,26 @@ ugos:
   port: 8080
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Openhab addons folder
+  help: Folder on the NAS for OpenHAB's openhab addons. It is mounted into the container at /openhab/addons; OpenHAB has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Openhab conf folder
+  help: Folder on the NAS for OpenHAB's openhab conf. It is mounted into the container at /openhab/conf; OpenHAB has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Openhab userdata folder
+  help: Folder on the NAS for OpenHAB's openhab userdata. It is mounted into the container at /openhab/userdata; OpenHAB has full read and write access to it.
+  type: path
 volumes:
 - container_path: /openhab/addons
   label: Openhab addons
-  user_chosen: false
-  default_host_subpath: addons
+  default_host_subpath: openhab-openhab-addons
 - container_path: /openhab/conf
   label: Openhab conf
-  user_chosen: false
-  default_host_subpath: conf
+  default_host_subpath: openhab-openhab-conf
 - container_path: /openhab/userdata
   label: Openhab userdata
-  user_chosen: false
-  default_host_subpath: userdata
+  default_host_subpath: openhab-openhab-userdata

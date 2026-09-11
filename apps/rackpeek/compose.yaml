@@ -5,4 +5,4 @@ services:
     ports:
       - 8095:8080
     volumes:
-      - ./config:/app/config
+      - ${VOL_1}:/app/config

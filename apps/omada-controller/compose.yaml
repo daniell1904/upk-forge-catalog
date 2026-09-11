@@ -4,8 +4,8 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ./data:/opt/tplink/EAPController/data
-      - ./logs:/opt/tplink/EAPController/logs
+      - ${VOL_1}:/opt/tplink/EAPController/data
+      - ${VOL_2}:/opt/tplink/EAPController/logs
     environment:
       - PUID=508
       - PGID=508

@@ -4,10 +4,10 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ./discopanel-var-run-docker-sock:/var/run/docker.sock
-      - ./data:/app/data
-      - ./backups:/app/backups
-      - ./tmp:/app/tmp
+      - ${VOL_1}:/var/run/docker.sock
+      - ${VOL_2}:/app/data
+      - ${VOL_3}:/app/backups
+      - ${VOL_4}:/app/tmp
     environment:
       - DISCOPANEL_DATA_DIR=/app/data
       - DISCOPANEL_HOST_DATA_PATH=/DATA/AppData/discopanel/data

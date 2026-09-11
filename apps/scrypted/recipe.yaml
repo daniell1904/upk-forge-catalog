@@ -12,15 +12,21 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Server volume folder
+  help: Folder on the NAS for Scrypted's server volume. It is mounted into the container at /server/volume; Scrypted has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var run docker.sock folder
+  help: Folder on the NAS for Scrypted's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Scrypted has full read and write access to it.
+  type: path
 - key: WATCHTOWER_HTTP_API_TOKEN
   label: WATCHTOWER HTTP API TOKEN
   type: password
 volumes:
 - container_path: /server/volume
   label: Server volume
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: scrypted-server-volume
 - container_path: /var/run/docker.sock
   label: Var run docker.sock
-  user_chosen: false
   default_host_subpath: watchtower-var-run-docker-sock

@@ -76,8 +76,12 @@ ugos:
   port: 8088
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Home node trilium data folder
+  help: Folder on the NAS for Trilium's home node trilium data. It is mounted into the container at /home/node/trilium-data; Trilium has full read and write access to it.
+  type: path
 volumes:
 - container_path: /home/node/trilium-data
   label: Home node trilium data
-  user_chosen: false
   default_host_subpath: trilium-home-node-trilium-data

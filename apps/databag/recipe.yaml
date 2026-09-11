@@ -10,8 +10,12 @@ ugos:
   port: 7000
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Var lib databag folder
+  help: Folder on the NAS for Databag's var lib databag. It is mounted into the container at /var/lib/databag; Databag has full read and write access to it.
+  type: path
 volumes:
 - container_path: /var/lib/databag
   label: Var lib databag
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: databag-var-lib-databag

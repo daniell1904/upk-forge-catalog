@@ -10,7 +10,7 @@ services:
     restart: unless-stopped
 
   wikijs:
-    image: ghcr.io/requarks/wiki:2.5.277
+    image: ghcr.io/requarks/wiki:2.5.314
     depends_on:
       - postgres
     ports:

@@ -6,8 +6,8 @@ services:
     ports:
       - 9117:9117
     volumes:
-      - ./config:/config
-      - ${VOL_1}:/downloads
+      - ${VOL_1}:/config
+      - ${VOL_2}:/downloads
     environment:
       - AUTO_UPDATE=true
       - PGID=1000

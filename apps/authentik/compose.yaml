@@ -1,13 +1,13 @@
 services:
   authentik:
-    image: ghcr.io/goauthentik/server:2026.2.2@sha256:40f0df709957c11324420fa387f1135c427f16086f12ca266b2d883d39c71fe3
+    image: ghcr.io/goauthentik/server:2026.8.2
     restart: unless-stopped
     command: server
     ports:
       - 19443:9443
     volumes:
-      - ./data/authentik-media:/media
-      - ./data/authentik-custom-templates:/templates
+      - ${VOL_1}:/media
+      - ${VOL_2}:/templates
     environment:
       - AUTHENTIK_REDIS__HOST=authentik-redis
       - AUTHENTIK_POSTGRESQL__HOST=authentik-db
@@ -16,14 +16,14 @@ services:
       - AUTHENTIK_POSTGRESQL__PASSWORD=${AUTHENTIK_POSTGRESQL__PASSWORD}
       - AUTHENTIK_SECRET_KEY=${AUTHENTIK_SECRET_KEY}
   authentik-worker:
-    image: ghcr.io/goauthentik/server:2026.2.2@sha256:40f0df709957c11324420fa387f1135c427f16086f12ca266b2d883d39c71fe3
+    image: ghcr.io/goauthentik/server:2026.8.2
     restart: unless-stopped
     command: worker
     volumes:
-      - ./authentik-worker-var-run-docker-sock:/var/run/docker.sock
-      - ./data/authentik-media:/media
-      - ./data/authentik-certs:/certs
-      - ./data/authentik-custom-templates:/templates
+      - ${VOL_3}:/var/run/docker.sock
+      - ${VOL_4}:/media
+      - ${VOL_5}:/certs
+      - ${VOL_6}:/templates
     environment:
       - AUTHENTIK_REDIS__HOST=authentik-redis
       - AUTHENTIK_POSTGRESQL__HOST=authentik-db
@@ -35,7 +35,7 @@ services:
     image: postgres:14-alpine@sha256:f1341c01408dc7278e9d365ed4f860cd3f87dd16b4464ac326fc0f422083a579
     restart: unless-stopped
     volumes:
-      - ./data/postgres:/var/lib/postgresql/data
+      - ${VOL_7}:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=${AUTHENTIK_POSTGRESQL__PASSWORD}
       - POSTGRES_USER=authentik
@@ -50,4 +50,4 @@ services:
       - --loglevel
       - warning
     volumes:
-      - ./data/redis:/data
+      - ${VOL_8}:/data

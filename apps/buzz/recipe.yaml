@@ -10,6 +10,22 @@ ugos:
   open_type: tab
   tag_type: devtool
 parameters:
+- key: VOL_1
+  label: Data git folder
+  help: Folder on the NAS for Buzz's data git. It is mounted into the container at /data/git; Buzz has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Buzz's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Buzz has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Data folder
+  help: Folder on the NAS for Buzz's data. It is mounted into the container at /data; Buzz has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Data folder
+  help: Folder on the NAS for Buzz's data. It is mounted into the container at /data; Buzz has full read and write access to it.
+  type: path
 - key: BUZZ_S3_ACCESS_KEY
   label: BUZZ S3 ACCESS KEY
   type: password
@@ -31,17 +47,13 @@ parameters:
 volumes:
 - container_path: /data/git
   label: Data git
-  user_chosen: false
-  default_host_subpath: git_data
+  default_host_subpath: relay-data-git
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: postgres_data
+  default_host_subpath: postgres-var-lib-postgresql-data
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: redis_data
+  default_host_subpath: redis-data
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: minio_data
+  default_host_subpath: minio-data

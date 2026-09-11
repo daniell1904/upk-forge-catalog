@@ -10,6 +10,30 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: App data folder
+  help: Folder on the NAS for Planka v2's app data. It is mounted into the container at /app/data; Planka v2 has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: App public background images folder
+  help: Folder on the NAS for Planka v2's app public background images. It is mounted into the container at /app/public/background-images; Planka v2 has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: App public user avatars folder
+  help: Folder on the NAS for Planka v2's app public user avatars. It is mounted into the container at /app/public/user-avatars; Planka v2 has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: App public project background images folder
+  help: Folder on the NAS for Planka v2's app public project background images. It is mounted into the container at /app/public/project-background-images; Planka v2 has full read and write access to it.
+  type: path
+- key: VOL_5
+  label: App private attachments folder
+  help: Folder on the NAS for Planka v2's app private attachments. It is mounted into the container at /app/private/attachments; Planka v2 has full read and write access to it.
+  type: path
+- key: VOL_6
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Planka v2's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Planka v2 has full read and write access to it.
+  type: path
 - key: SECRET_KEY
   label: SECRET KEY
   type: password
@@ -19,25 +43,19 @@ parameters:
 volumes:
 - container_path: /app/data
   label: App data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: planka-v2-app-data
 - container_path: /app/public/background-images
   label: App public background images
-  user_chosen: false
-  default_host_subpath: background-images
+  default_host_subpath: planka-v2-app-public-background-images
 - container_path: /app/public/user-avatars
   label: App public user avatars
-  user_chosen: false
-  default_host_subpath: user-avatars
+  default_host_subpath: planka-v2-app-public-user-avatars
 - container_path: /app/public/project-background-images
   label: App public project background images
-  user_chosen: false
-  default_host_subpath: project-background-images
+  default_host_subpath: planka-v2-app-public-project-background-images
 - container_path: /app/private/attachments
   label: App private attachments
-  user_chosen: false
-  default_host_subpath: attachments
+  default_host_subpath: planka-v2-app-private-attachments
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: postgresql
+  default_host_subpath: planka-v2-postgres-var-lib-postgresql-data

@@ -11,12 +11,19 @@ ugos:
   port: 8080
   open_type: tab
   tag_type: devtool
+parameters:
+- key: VOL_1
+  label: Data folder
+  help: Folder on the NAS for Jenkins CI/CD's data. It is mounted into the container at /data; Jenkins CI/CD has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var jenkins home folder
+  help: Folder on the NAS for Jenkins CI/CD's var jenkins home. It is mounted into the container at /var/jenkins_home; Jenkins CI/CD has full read and write access to it.
+  type: path
 volumes:
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: jenkins-data
 - container_path: /var/jenkins_home
   label: Var jenkins home
-  user_chosen: false
   default_host_subpath: jenkins-var-jenkins-home

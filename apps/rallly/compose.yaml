@@ -1,6 +1,6 @@
 services:
   rallly:
-    image: lukevella/rallly:4.12.2@sha256:1b5d20f93b531edf6c79c3de038622142e2209ae7f989c8479c75dde99dcf7e6
+    image: lukevella/rallly:4.15.0
     restart: unless-stopped
     ports:
       - 3000:3000
@@ -21,7 +21,7 @@ services:
     image: postgres:14@sha256:9e279cc7fc6e908da071befe389c576bd6752dbd295a9c078f96a75bab03e54c
     restart: unless-stopped
     volumes:
-      - ./postgresql:/var/lib/postgresql/data
+      - ${VOL_1}:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=rallly

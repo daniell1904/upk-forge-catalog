@@ -12,18 +12,21 @@ ugos:
   tag_type: media
 parameters:
 - key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Mylar3's config. It is mounted into the container at /config; Mylar3 has full read and write access to it.
+  type: path
+- key: VOL_2
   label: Comics folder
   help: Folder on the NAS for Mylar3's comics. It is mounted into the container at /comics; Mylar3 has full read and write access to it.
   type: path
-- key: VOL_2
+- key: VOL_3
   label: Downloads folder
   help: Folder on the NAS for Mylar3's downloads. It is mounted into the container at /downloads; Mylar3 has full read and write access to it.
   type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: mylar3-config
 - container_path: /comics
   label: Comics
   default_host_subpath: mylar3-comics

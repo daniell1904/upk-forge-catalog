@@ -9,8 +9,12 @@ ugos:
   port: 6901
   open_type: tab
   tag_type: media
+parameters:
+- key: VOL_1
+  label: Home kasm user Downloads folder
+  help: Folder on the NAS for Brave's home kasm user downloads. It is mounted into the container at /home/kasm-user/Downloads; Brave has full read and write access to it.
+  type: path
 volumes:
 - container_path: /home/kasm-user/Downloads
   label: Home kasm user Downloads
-  user_chosen: false
-  default_host_subpath: Downloads
+  default_host_subpath: brave-home-kasm-user-downloads

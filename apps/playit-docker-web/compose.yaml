@@ -4,6 +4,6 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ./config:/config
+      - ${VOL_1}:/config
     environment:
       - WEBUI_PORT=8008

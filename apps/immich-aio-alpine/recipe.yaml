@@ -10,19 +10,28 @@ ugos:
   open_type: tab
   tag_type: media
 parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Immich AIO Alpine's config. It is mounted into the container at /config; Immich AIO Alpine has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Usr src app photos folder
+  help: Folder on the NAS for Immich AIO Alpine's usr src app photos. It is mounted into the container at /usr/src/app/photos; Immich AIO Alpine has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Immich AIO Alpine's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Immich AIO Alpine has full read and write access to it.
+  type: path
 - key: DB_PASSWORD
   label: DB PASSWORD
   type: password
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: immich-aio-alpine-config
 - container_path: /usr/src/app/photos
   label: Usr src app photos
-  user_chosen: false
-  default_host_subpath: photos
+  default_host_subpath: immich-aio-alpine-usr-src-app-photos
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: pgdata
+  default_host_subpath: immich-db-var-lib-postgresql-data

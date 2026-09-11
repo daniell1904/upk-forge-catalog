@@ -9,8 +9,12 @@ ugos:
   port: 7912
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Home app .local share spoolman folder
+  help: Folder on the NAS for Spoolman's home app .local share spoolman. It is mounted into the container at /home/app/.local/share/spoolman; Spoolman has full read and write access to it.
+  type: path
 volumes:
 - container_path: /home/app/.local/share/spoolman
   label: Home app .local share spoolman
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: app-home-app-local-share-spoolman

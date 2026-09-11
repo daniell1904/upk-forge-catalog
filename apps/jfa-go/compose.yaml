@@ -5,6 +5,6 @@ services:
     ports:
       - 8056:8056
     volumes:
-      - ./.config/jfa-go:/data
-      - ./jellyfin:/jf
+      - ${VOL_1}:/data
+      - ${VOL_2}:/jf
       - /etc/localtime:/etc/localtime

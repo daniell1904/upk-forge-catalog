@@ -57,11 +57,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Root .flowise folder
+  help: Folder on the NAS for Flowise's root .flowise. It is mounted into the container at /root/.flowise; Flowise has full read and write access to it.
+  type: path
 - key: FLOWISE_PASSWORD
   label: FLOWISE PASSWORD
   type: password
 volumes:
 - container_path: /root/.flowise
   label: Root .flowise
-  user_chosen: false
   default_host_subpath: flowise-root-flowise

@@ -6,9 +6,9 @@ services:
     ports:
       - 8787:8787
     volumes:
-      - ./config:/config
-      - ${VOL_1}:/books
-      - ${VOL_2}:/downloads
+      - ${VOL_1}:/config
+      - ${VOL_2}:/books
+      - ${VOL_3}:/downloads
     environment:
       - PGID=1000
       - PUID=1000

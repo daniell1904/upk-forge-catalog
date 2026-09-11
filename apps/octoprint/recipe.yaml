@@ -9,8 +9,12 @@ ugos:
   port: 1080
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Octoprint folder
+  help: Folder on the NAS for OctoPrint's octoprint. It is mounted into the container at /octoprint; OctoPrint has full read and write access to it.
+  type: path
 volumes:
 - container_path: /octoprint
   label: Octoprint
-  user_chosen: false
-  default_host_subpath: octoprint
+  default_host_subpath: app-octoprint

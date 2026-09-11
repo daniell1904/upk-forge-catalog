@@ -1,8 +1,8 @@
 services:
   ollama:
-    image: ollama/ollama:0.9.5
+    image: ollama/ollama:0.34.0
     restart: unless-stopped
     ports:
       - 11434:11434
     volumes:
-      - ./ollama-root-ollama:/root/.ollama
+      - ${VOL_1}:/root/.ollama

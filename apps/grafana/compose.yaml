@@ -6,4 +6,4 @@ services:
     ports:
       - 3003:3000
     volumes:
-      - ./data:/var/lib/grafana
+      - ${VOL_1}:/var/lib/grafana

@@ -1,7 +1,7 @@
 services:
   homebridge:
-    image: homebridge/homebridge:latest
+    image: homebridge/homebridge:ubuntu
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ./config:/homebridge
+      - ${VOL_1}:/homebridge

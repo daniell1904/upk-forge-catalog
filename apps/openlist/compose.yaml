@@ -1,12 +1,12 @@
 services:
   openlist:
-    image: openlistteam/openlist:v4.2.2
+    image: openlistteam/openlist:v4.2.6
     restart: unless-stopped
     network_mode: bridge
     ports:
       - 5244:5244
     volumes:
-      - ./data:/opt/openlist/data
+      - ${VOL_1}:/opt/openlist/data
     environment:
       - UMASK=022
       - OPENLIST_ADMIN_PASSWORD=${OPENLIST_ADMIN_PASSWORD}

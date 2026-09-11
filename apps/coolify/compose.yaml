@@ -5,13 +5,13 @@ services:
     ports:
       - 8000:8080
     volumes:
-      - ./ssh:/var/www/html/storage/app/ssh
-      - ./applications:/var/www/html/storage/app/applications
-      - ./databases:/var/www/html/storage/app/databases
-      - ./services:/var/www/html/storage/app/services
-      - ./backups:/var/www/html/storage/app/backups
-      - ./webhooks-during-maintenance:/var/www/html/storage/app/webhooks-during-maintenance
-      - ./logs:/var/www/html/storage/logs
+      - ${VOL_1}:/var/www/html/storage/app/ssh
+      - ${VOL_2}:/var/www/html/storage/app/applications
+      - ${VOL_3}:/var/www/html/storage/app/databases
+      - ${VOL_4}:/var/www/html/storage/app/services
+      - ${VOL_5}:/var/www/html/storage/app/backups
+      - ${VOL_6}:/var/www/html/storage/app/webhooks-during-maintenance
+      - ${VOL_7}:/var/www/html/storage/logs
     environment:
       - PHP_MEMORY_LIMIT="512M"
       - APP_ID="coolify"
@@ -75,7 +75,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - ${VOL_8}:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=coolify
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -95,7 +95,7 @@ services:
     ports:
       - 6379:6379
     volumes:
-      - ./redis:/data
+      - ${VOL_9}:/data
     environment:
       - REDIS_PASSWORD=${REDIS_PASSWORD}
   coolify-soketi:

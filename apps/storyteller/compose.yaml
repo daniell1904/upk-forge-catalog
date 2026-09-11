@@ -6,7 +6,7 @@ services:
     ports:
       - 8015:8001
     volumes:
-      - ./data:/data
+      - ${VOL_1}:/data
     environment:
       - STORYTELLER_SECRET_KEY=${STORYTELLER_SECRET_KEY}
       - STORYTELLER_LOG_LEVEL=${STORYTELLER_LOG_LEVEL:-info}

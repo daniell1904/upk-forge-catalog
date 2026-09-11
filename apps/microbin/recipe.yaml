@@ -10,11 +10,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: App microbin data folder
+  help: Folder on the NAS for Microbin's app microbin data. It is mounted into the container at /app/microbin_data; Microbin has full read and write access to it.
+  type: path
 - key: MICROBIN_ADMIN_PASSWORD
   label: MICROBIN ADMIN PASSWORD
   type: password
 volumes:
 - container_path: /app/microbin_data
   label: App microbin data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: microbin-app-microbin-data

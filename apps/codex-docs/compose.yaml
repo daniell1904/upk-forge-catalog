@@ -1,10 +1,10 @@
 services:
   app:
-    image: ghcr.io/codex-team/codex.docs:v2.2@sha256:c25f47c7f5af84206cef1fcedb2debcd25ba9ce1d4c6e5a33a0f273faff5a41f
+    image: ghcr.io/codex-team/codex.docs:v2.3.3
     restart: unless-stopped
     ports:
       - 3000:3000
     volumes:
-      - ./uploads:/usr/src/app/uploads
-      - ./db:/usr/src/app/db
-      - ./codex-docs-config.local.yaml:/usr/src/app/docs-config.yaml
+      - ${VOL_1}:/usr/src/app/uploads
+      - ${VOL_2}:/usr/src/app/db
+      - ${VOL_3}:/usr/src/app/docs-config.yaml

@@ -10,23 +10,35 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Jlesage Handbrake's config. It is mounted into the container at /config; Jlesage Handbrake has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Storage folder
+  help: Folder on the NAS for Jlesage Handbrake's storage. It is mounted into the container at /storage; Jlesage Handbrake has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Watch folder
+  help: Folder on the NAS for Jlesage Handbrake's watch. It is mounted into the container at /watch; Jlesage Handbrake has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Output folder
+  help: Folder on the NAS for Jlesage Handbrake's output. It is mounted into the container at /output; Jlesage Handbrake has full read and write access to it.
+  type: path
 - key: VNC_PASSWORD
   label: VNC PASSWORD
   type: password
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: jlesage-handbrake-config
 - container_path: /storage
   label: Storage
-  user_chosen: false
-  default_host_subpath: storage
+  default_host_subpath: jlesage-handbrake-storage
 - container_path: /watch
   label: Watch
-  user_chosen: false
-  default_host_subpath: watch
+  default_host_subpath: jlesage-handbrake-watch
 - container_path: /output
   label: Output
-  user_chosen: false
-  default_host_subpath: output
+  default_host_subpath: jlesage-handbrake-output

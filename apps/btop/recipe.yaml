@@ -12,11 +12,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Root .config btop folder
+  help: Folder on the NAS for btop's root .config btop. It is mounted into the container at /root/.config/btop; btop has full read and write access to it.
+  type: path
 - key: GOTTY_AUTH_PASS
   label: GOTTY AUTH PASS
   type: string
 volumes:
 - container_path: /root/.config/btop
   label: Root .config btop
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: btop-root-config-btop

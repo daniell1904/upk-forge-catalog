@@ -10,6 +10,18 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Mnt data folder
+  help: Folder on the NAS for ownCloud's mnt data. It is mounted into the container at /mnt/data; ownCloud has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib mysql folder
+  help: Folder on the NAS for ownCloud's var lib mysql. It is mounted into the container at /var/lib/mysql; ownCloud has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Data folder
+  help: Folder on the NAS for ownCloud's data. It is mounted into the container at /data; ownCloud has full read and write access to it.
+  type: path
 - key: OWNCLOUD_DB_PASSWORD
   label: OWNCLOUD DB PASSWORD
   type: password
@@ -19,13 +31,10 @@ parameters:
 volumes:
 - container_path: /mnt/data
   label: Mnt data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: owncloud-mnt-data
 - container_path: /var/lib/mysql
   label: Var lib mysql
-  user_chosen: false
-  default_host_subpath: mysql
+  default_host_subpath: owncloud-db-var-lib-mysql
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: redis
+  default_host_subpath: owncloud-redis-data

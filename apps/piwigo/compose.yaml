@@ -5,8 +5,8 @@ services:
     ports:
       - 8080:80
     volumes:
-      - ./config:/config
-      - ./gallery:/gallery
+      - ${VOL_1}:/config
+      - ${VOL_2}:/gallery
     environment:
       - PUID=1000
       - PGID=1000
@@ -15,7 +15,7 @@ services:
     image: mariadb:10.6@sha256:114d40be36852d0a019afd8458f7e1cc63fd300403b115b1f32e31130d5f671b
     restart: unless-stopped
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ${VOL_3}:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=piwigo

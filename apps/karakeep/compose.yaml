@@ -5,7 +5,7 @@ services:
     ports:
       - 14592:3000
     volumes:
-      - ./data:/data
+      - ${VOL_1}:/data
     environment:
       - MEILI_ADDR=http://karakeep-meilisearch:7700
       - BROWSER_WEB_URL=http://karakeep-chrome:9222
@@ -24,10 +24,10 @@ services:
       - --disable-blink-features=AutomationControlled
       - --window-size=1440,900
   karakeep-meilisearch:
-    image: getmeili/meilisearch:v1.41.0
+    image: getmeili/meilisearch:v1.53.2
     restart: unless-stopped
     volumes:
-      - ./meilisearch:/meili_data
+      - ${VOL_2}:/meili_data
     environment:
       - MEILI_MASTER_KEY=${NEXTAUTH_SECRET}
       - MEILI_NO_ANALYTICS=true

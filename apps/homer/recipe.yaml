@@ -9,8 +9,12 @@ ugos:
   port: 8080
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Www assets folder
+  help: Folder on the NAS for Homer's www assets. It is mounted into the container at /www/assets; Homer has full read and write access to it.
+  type: path
 volumes:
 - container_path: /www/assets
   label: Www assets
-  user_chosen: false
-  default_host_subpath: assets
+  default_host_subpath: app-www-assets

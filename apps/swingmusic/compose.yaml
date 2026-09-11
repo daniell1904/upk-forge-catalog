@@ -1,9 +1,9 @@
 services:
   swingmusic:
-    image: ghcr.io/swingmx/swingmusic:v2.1.4
+    image: ghcr.io/swingmx/swingmusic:v3.0.0
     restart: unless-stopped
     ports:
       - 1970:1970
     volumes:
-      - ./config:/config
-      - ${VOL_1}:/music
+      - ${VOL_1}:/config
+      - ${VOL_2}:/music

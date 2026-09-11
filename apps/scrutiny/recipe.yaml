@@ -12,12 +12,19 @@ ugos:
   port: 38080
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Opt scrutiny config folder
+  help: Folder on the NAS for Scrutiny's opt scrutiny config. It is mounted into the container at /opt/scrutiny/config; Scrutiny has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Opt scrutiny influxdb folder
+  help: Folder on the NAS for Scrutiny's opt scrutiny influxdb. It is mounted into the container at /opt/scrutiny/influxdb; Scrutiny has full read and write access to it.
+  type: path
 volumes:
 - container_path: /opt/scrutiny/config
   label: Opt scrutiny config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: scrutiny-opt-scrutiny-config
 - container_path: /opt/scrutiny/influxdb
   label: Opt scrutiny influxdb
-  user_chosen: false
-  default_host_subpath: influxdb
+  default_host_subpath: scrutiny-opt-scrutiny-influxdb

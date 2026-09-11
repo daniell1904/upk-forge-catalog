@@ -5,13 +5,13 @@ services:
     ports:
       - 8080:80
     volumes:
-      - ./filebrowser-srv-app-data:/srv/app-data
-      - ${VOL_1}:/srv/documents
-      - ${VOL_2}:/srv/downloads
-      - ./filebrowser-srv-gallery:/srv/gallery
-      - ${VOL_3}:/srv/media
-      - ./data/db:/database
-      - ./data/config:/config
+      - ${VOL_1}:/srv/app-data
+      - ${VOL_2}:/srv/documents
+      - ${VOL_3}:/srv/downloads
+      - ${VOL_4}:/srv/gallery
+      - ${VOL_5}:/srv/media
+      - ${VOL_6}:/database
+      - ${VOL_7}:/config
     environment:
       - PUID=0
       - PGID=0

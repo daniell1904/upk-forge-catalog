@@ -6,7 +6,7 @@ services:
     ports:
       - 3080:8080
     volumes:
-      - ./data:/label-studio/data
+      - ${VOL_1}:/label-studio/data
     environment:
       - PGID=1000
       - PUID=1000

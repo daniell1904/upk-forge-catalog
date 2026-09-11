@@ -10,6 +10,42 @@ ugos:
   open_type: tab
   tag_type: media
 parameters:
+- key: VOL_1
+  label: Var www html storage app ssh folder
+  help: Folder on the NAS for Coolify's var www html storage app ssh. It is mounted into the container at /var/www/html/storage/app/ssh; Coolify has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var www html storage app applications folder
+  help: Folder on the NAS for Coolify's var www html storage app applications. It is mounted into the container at /var/www/html/storage/app/applications; Coolify has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Var www html storage app databases folder
+  help: Folder on the NAS for Coolify's var www html storage app databases. It is mounted into the container at /var/www/html/storage/app/databases; Coolify has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Var www html storage app services folder
+  help: Folder on the NAS for Coolify's var www html storage app services. It is mounted into the container at /var/www/html/storage/app/services; Coolify has full read and write access to it.
+  type: path
+- key: VOL_5
+  label: Var www html storage app backups folder
+  help: Folder on the NAS for Coolify's var www html storage app backups. It is mounted into the container at /var/www/html/storage/app/backups; Coolify has full read and write access to it.
+  type: path
+- key: VOL_6
+  label: Var www html storage app webhooks during maintenance folder
+  help: Folder on the NAS for Coolify's var www html storage app webhooks during maintenance. It is mounted into the container at /var/www/html/storage/app/webhooks-during-maintenance; Coolify has full read and write access to it.
+  type: path
+- key: VOL_7
+  label: Var www html storage logs folder
+  help: Folder on the NAS for Coolify's var www html storage logs. It is mounted into the container at /var/www/html/storage/logs; Coolify has full read and write access to it.
+  type: path
+- key: VOL_8
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Coolify's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Coolify has full read and write access to it.
+  type: path
+- key: VOL_9
+  label: Data folder
+  help: Folder on the NAS for Coolify's data. It is mounted into the container at /data; Coolify has full read and write access to it.
+  type: path
 - key: APP_KEY
   label: APP KEY
   type: password
@@ -25,37 +61,28 @@ parameters:
 volumes:
 - container_path: /var/www/html/storage/app/ssh
   label: Var www html storage app ssh
-  user_chosen: false
-  default_host_subpath: ssh
+  default_host_subpath: coolify-var-www-html-storage-app-ssh
 - container_path: /var/www/html/storage/app/applications
   label: Var www html storage app applications
-  user_chosen: false
-  default_host_subpath: applications
+  default_host_subpath: coolify-var-www-html-storage-app-applications
 - container_path: /var/www/html/storage/app/databases
   label: Var www html storage app databases
-  user_chosen: false
-  default_host_subpath: databases
+  default_host_subpath: coolify-var-www-html-storage-app-databases
 - container_path: /var/www/html/storage/app/services
   label: Var www html storage app services
-  user_chosen: false
-  default_host_subpath: services
+  default_host_subpath: coolify-var-www-html-storage-app-services
 - container_path: /var/www/html/storage/app/backups
   label: Var www html storage app backups
-  user_chosen: false
-  default_host_subpath: backups
+  default_host_subpath: coolify-var-www-html-storage-app-backups
 - container_path: /var/www/html/storage/app/webhooks-during-maintenance
   label: Var www html storage app webhooks during maintenance
-  user_chosen: false
-  default_host_subpath: webhooks-during-maintenance
+  default_host_subpath: coolify-var-www-html-storage-app-webhooks-during-maintenance
 - container_path: /var/www/html/storage/logs
   label: Var www html storage logs
-  user_chosen: false
-  default_host_subpath: logs
+  default_host_subpath: coolify-var-www-html-storage-logs
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: pgdata
+  default_host_subpath: coolify-postgres-var-lib-postgresql-data
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: redis
+  default_host_subpath: coolify-redis-data

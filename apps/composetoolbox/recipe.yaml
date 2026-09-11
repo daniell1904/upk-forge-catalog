@@ -9,8 +9,12 @@ ugos:
   port: 3002
   open_type: tab
   tag_type: devtool
+parameters:
+- key: VOL_1
+  label: App data folder
+  help: Folder on the NAS for Compose Toolbox's app data. It is mounted into the container at /app/data; Compose Toolbox has full read and write access to it.
+  type: path
 volumes:
 - container_path: /app/data
   label: App data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: composetoolbox-app-data

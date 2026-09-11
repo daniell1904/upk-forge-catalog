@@ -5,7 +5,7 @@ services:
     ports:
       - 18010:8000
     volumes:
-      - ./data:/data
+      - ${VOL_1}:/data
     environment:
       - ADMIN_USERNAME=${ADMIN_PASSWORD}
       - ADMIN_PASSWORD=${ADMIN_PASSWORD}
@@ -26,7 +26,7 @@ services:
       - --update
       - --every=day
     volumes:
-      - ./data:/data
+      - ${VOL_2}:/data
     environment:
       - TIMEOUT=120
       - SEARCH_BACKEND_ENGINE=sonic
@@ -36,7 +36,7 @@ services:
     image: archivebox/sonic:1.4.9
     restart: unless-stopped
     volumes:
-      - ./data/sonic:/var/lib/sonic/store
+      - ${VOL_3}:/var/lib/sonic/store
     environment:
       - SEARCH_BACKEND_PASSWORD=${SEARCH_BACKEND_PASSWORD}
   archivebox_novnc:

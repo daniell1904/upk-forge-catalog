@@ -10,6 +10,22 @@ ugos:
   open_type: tab
   tag_type: devtool
 parameters:
+- key: VOL_1
+  label: App projectFiles folder
+  help: Folder on the NAS for Celestory & Voltask's app projectfiles. It is mounted into the container at /app/projectFiles; Celestory & Voltask has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Usr src app projectFiles folder
+  help: Folder on the NAS for Celestory & Voltask's usr src app projectfiles. It is mounted into the container at /usr/src/app/projectFiles; Celestory & Voltask has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: App uploads folder
+  help: Folder on the NAS for Celestory & Voltask's app uploads. It is mounted into the container at /app/uploads; Celestory & Voltask has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Celestory & Voltask's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Celestory & Voltask has full read and write access to it.
+  type: path
 - key: AUTH_CLIENT_SECRET
   label: AUTH CLIENT SECRET
   type: password
@@ -46,17 +62,13 @@ parameters:
 volumes:
 - container_path: /app/projectFiles
   label: App projectFiles
-  user_chosen: false
-  default_host_subpath: projectFiles
+  default_host_subpath: api-app-projectfiles
 - container_path: /usr/src/app/projectFiles
   label: Usr src app projectFiles
-  user_chosen: false
-  default_host_subpath: projectFiles
+  default_host_subpath: generator-usr-src-app-projectfiles
 - container_path: /app/uploads
   label: App uploads
-  user_chosen: false
-  default_host_subpath: uploads
+  default_host_subpath: voltask-app-uploads
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: db
+  default_host_subpath: db-var-lib-postgresql-data

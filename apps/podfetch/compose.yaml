@@ -6,8 +6,8 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - ./podcasts:/app/podcasts
-      - ./db:/app/db
+      - ${VOL_1}:/app/podcasts
+      - ${VOL_2}:/app/db
     environment:
       - DATABASE_URL=sqlite:///app/db/podcast.db
       - POLLING_INTERVAL=300

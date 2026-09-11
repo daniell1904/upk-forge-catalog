@@ -9,7 +9,7 @@ services:
       - /sys:/sys
       - /dev:/dev
       - /etc/localtime:/etc/localtime
-      - ./config:/root/.config/btop
+      - ${VOL_1}:/root/.config/btop
     environment:
       - GOTTY_AUTH_USER=app
       - GOTTY_AUTH_PASS=${GOTTY_AUTH_PASS}

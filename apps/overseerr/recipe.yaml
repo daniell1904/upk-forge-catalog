@@ -11,8 +11,12 @@ ugos:
   port: 5055
   open_type: tab
   tag_type: media
+parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Overseerr's config. It is mounted into the container at /config; Overseerr has full read and write access to it.
+  type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: overseerr-config

@@ -12,14 +12,17 @@ ugos:
   tag_type: utility
 parameters:
 - key: VOL_1
+  label: Etc motioneye folder
+  help: Folder on the NAS for Motioneye's etc motioneye. It is mounted into the container at /etc/motioneye; Motioneye has full read and write access to it.
+  type: path
+- key: VOL_2
   label: Var lib motioneye folder
   help: Folder on the NAS for Motioneye's var lib motioneye. It is mounted into the container at /var/lib/motioneye; Motioneye has full read and write access to it.
   type: path
 volumes:
 - container_path: /etc/motioneye
   label: Etc motioneye
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: motioneye-etc-motioneye
 - container_path: /var/lib/motioneye
   label: Var lib motioneye
   default_host_subpath: motioneye-var-lib-motioneye

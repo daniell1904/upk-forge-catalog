@@ -12,7 +12,7 @@ services:
     image: postgres:15-alpine@sha256:3d0f7584ed7d04e27fa050d6683a74746608faf21f202be78460d679cc56461f
     restart: unless-stopped
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - ${VOL_1}:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=${POSTGRES_PASSWORD}
       - POSTGRES_USER=${POSTGRES_PASSWORD}

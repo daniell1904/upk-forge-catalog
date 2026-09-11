@@ -6,6 +6,6 @@ services:
       - 8080:80
       - 10443:443
     volumes:
-      - ./config:/config
+      - ${VOL_1}:/config
     environment:
       - TZ=UTC

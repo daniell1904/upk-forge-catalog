@@ -1,11 +1,11 @@
 services:
   dockpeek:
-    image: ghcr.io/dockpeek/dockpeek:v1.7.2@sha256:87654d0104eacff48a70c7c1eea6126f19f5803b21bfdace842ae765351593b4
+    image: ghcr.io/dockpeek/dockpeek:v1.7.3
     restart: unless-stopped
     ports:
       - 3420:8000
     volumes:
-      - ./dockpeek-var-run-docker-sock:/var/run/docker.sock
+      - ${VOL_1}:/var/run/docker.sock
     environment:
       - SECRET_KEY=${SECRET_KEY}
       - USERNAME=${PASSWORD}

@@ -11,8 +11,12 @@ ugos:
   port: 3080
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Root .dsh folder
+  help: Folder on the NAS for DeepSeekHarness's root .dsh. It is mounted into the container at /root/.dsh; DeepSeekHarness has full read and write access to it.
+  type: path
 volumes:
 - container_path: /root/.dsh
   label: Root .dsh
-  user_chosen: false
   default_host_subpath: dsh-root-dsh

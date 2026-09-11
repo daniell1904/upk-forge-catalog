@@ -10,19 +10,28 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Etc odoo folder
+  help: Folder on the NAS for Odoo's etc odoo. It is mounted into the container at /etc/odoo; Odoo has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Mnt extra addons folder
+  help: Folder on the NAS for Odoo's mnt extra addons. It is mounted into the container at /mnt/extra-addons; Odoo has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Odoo's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Odoo has full read and write access to it.
+  type: path
 - key: PASSWORD
   label: PASSWORD
   type: password
 volumes:
 - container_path: /etc/odoo
   label: Etc odoo
-  user_chosen: false
-  default_host_subpath: data/etc
+  default_host_subpath: odoo-etc-odoo
 - container_path: /mnt/extra-addons
   label: Mnt extra addons
-  user_chosen: false
-  default_host_subpath: data/addons
+  default_host_subpath: odoo-mnt-extra-addons
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: data/postgresql
+  default_host_subpath: odoo-db-var-lib-postgresql-data

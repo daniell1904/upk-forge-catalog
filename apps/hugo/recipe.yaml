@@ -70,12 +70,19 @@ ugos:
   port: 1313
   open_type: tab
   tag_type: devtool
+parameters:
+- key: VOL_1
+  label: Project folder
+  help: Folder on the NAS for Hugo's project. It is mounted into the container at /project; Hugo has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Cache folder
+  help: Folder on the NAS for Hugo's cache. It is mounted into the container at /cache; Hugo has full read and write access to it.
+  type: path
 volumes:
 - container_path: /project
   label: Project
-  user_chosen: false
-  default_host_subpath: project
+  default_host_subpath: hugo-project
 - container_path: /cache
   label: Cache
-  user_chosen: false
-  default_host_subpath: cache
+  default_host_subpath: hugo-cache

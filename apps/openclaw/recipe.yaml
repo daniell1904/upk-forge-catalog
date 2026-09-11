@@ -14,11 +14,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Home node .openclaw folder
+  help: Folder on the NAS for OpenClaw's home node .openclaw. It is mounted into the container at /home/node/.openclaw; OpenClaw has full read and write access to it.
+  type: path
 - key: OPENCLAW_GATEWAY_TOKEN
   label: OPENCLAW GATEWAY TOKEN
   type: password
 volumes:
 - container_path: /home/node/.openclaw
   label: Home node .openclaw
-  user_chosen: false
   default_host_subpath: openclaw-home-node-openclaw

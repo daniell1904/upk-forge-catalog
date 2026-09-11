@@ -5,9 +5,9 @@ services:
     ports:
       - 13333:3000
     volumes:
-      - ./openhands-var-run-docker-sock:/var/run/docker.sock
-      - ./openhands:/.openhands
-      - ./workspace:/opt/workspace_base
+      - ${VOL_1}:/var/run/docker.sock
+      - ${VOL_2}:/.openhands
+      - ${VOL_3}:/opt/workspace_base
     environment:
       - SANDBOX_RUNTIME_CONTAINER_IMAGE=ghcr.io/all-hands-ai/runtime:main-nikolaik
       - WORKSPACE_MOUNT_PATH=/DATA/AppData/openhands/workspace

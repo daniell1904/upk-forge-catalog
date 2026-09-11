@@ -9,8 +9,12 @@ ugos:
   port: 8080
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Opt stalwart folder
+  help: Folder on the NAS for Stalwart Mail's opt stalwart. It is mounted into the container at /opt/stalwart; Stalwart Mail has full read and write access to it.
+  type: path
 volumes:
 - container_path: /opt/stalwart
   label: Opt stalwart
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: stalwart-mail-opt-stalwart

@@ -11,8 +11,12 @@ ugos:
   port: 53
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: App config folder
+  help: Folder on the NAS for GoAway's app config. It is mounted into the container at /app/config; GoAway has full read and write access to it.
+  type: path
 volumes:
 - container_path: /app/config
   label: App config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: goaway-app-config

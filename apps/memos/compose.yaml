@@ -1,12 +1,12 @@
 services:
   memos:
-    image: neosmemo/memos:0.28.0
+    image: neosmemo/memos:0.30.0
     restart: unless-stopped
     network_mode: bridge
     ports:
       - 5230:5230
     volumes:
-      - ./memos:/var/opt/memos
+      - ${VOL_1}:/var/opt/memos
     environment:
       - PGID=1000
       - PUID=1000

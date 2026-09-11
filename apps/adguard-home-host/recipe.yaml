@@ -11,12 +11,19 @@ ugos:
   port: 10080
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Opt adguardhome work folder
+  help: Folder on the NAS for AdGuard Home (HOST)'s opt adguardhome work. It is mounted into the container at /opt/adguardhome/work; AdGuard Home (HOST) has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Opt adguardhome conf folder
+  help: Folder on the NAS for AdGuard Home (HOST)'s opt adguardhome conf. It is mounted into the container at /opt/adguardhome/conf; AdGuard Home (HOST) has full read and write access to it.
+  type: path
 volumes:
 - container_path: /opt/adguardhome/work
   label: Opt adguardhome work
-  user_chosen: false
-  default_host_subpath: data/work
+  default_host_subpath: adguard-home-host-opt-adguardhome-work
 - container_path: /opt/adguardhome/conf
   label: Opt adguardhome conf
-  user_chosen: false
-  default_host_subpath: data/conf
+  default_host_subpath: adguard-home-host-opt-adguardhome-conf

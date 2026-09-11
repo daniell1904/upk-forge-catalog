@@ -12,27 +12,42 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Kopia's config. It is mounted into the container at /config; Kopia has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Backups home folder
+  help: Folder on the NAS for Kopia's backups home. It is mounted into the container at /backups/home; Kopia has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Backups docker folder
+  help: Folder on the NAS for Kopia's backups docker. It is mounted into the container at /backups/docker; Kopia has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Repository folder
+  help: Folder on the NAS for Kopia's repository. It is mounted into the container at /repository; Kopia has full read and write access to it.
+  type: path
+- key: VOL_5
+  label: Var run docker.sock folder
+  help: Folder on the NAS for Kopia's var run docker.sock. It is mounted into the container at /var/run/docker.sock; Kopia has full read and write access to it.
+  type: path
 - key: KOPIA_UI_PASSWORD
   label: KOPIA UI PASSWORD
   type: password
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: kopia-config
 - container_path: /backups/home
   label: Backups home
-  user_chosen: false
-  default_host_subpath: home
+  default_host_subpath: kopia-backups-home
 - container_path: /backups/docker
   label: Backups docker
-  user_chosen: false
   default_host_subpath: kopia-backups-docker
 - container_path: /repository
   label: Repository
-  user_chosen: false
-  default_host_subpath: repository
+  default_host_subpath: kopia-repository
 - container_path: /var/run/docker.sock
   label: Var run docker.sock
-  user_chosen: false
   default_host_subpath: kopia-var-run-docker-sock

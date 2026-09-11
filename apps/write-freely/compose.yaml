@@ -6,7 +6,7 @@ services:
       - 70:70
       - 8080:8080
     volumes:
-      - ./data/config:/mnt/config
+      - ${VOL_1}:/mnt/config
     environment:
       - TZ=UTC
       - PUID=1000

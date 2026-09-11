@@ -6,4 +6,4 @@ services:
     ports:
       - 5216:5216
     volumes:
-      - ./data:/myspeed/data
+      - ${VOL_1}:/myspeed/data

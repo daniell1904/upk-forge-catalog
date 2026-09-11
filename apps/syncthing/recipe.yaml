@@ -11,12 +11,19 @@ ugos:
   port: 8384
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Syncthing's config. It is mounted into the container at /config; Syncthing has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: DATA folder
+  help: Folder on the NAS for Syncthing's data. It is mounted into the container at /DATA; Syncthing has full read and write access to it.
+  type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: syncthing-config
 - container_path: /DATA
   label: DATA
-  user_chosen: false
   default_host_subpath: syncthing-data

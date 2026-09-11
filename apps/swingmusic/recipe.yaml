@@ -20,14 +20,17 @@ ugos:
   tag_type: media
 parameters:
 - key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Swing Music's config. It is mounted into the container at /config; Swing Music has full read and write access to it.
+  type: path
+- key: VOL_2
   label: Music folder
   help: Folder on the NAS for Swing Music's music. It is mounted into the container at /music; Swing Music has full read and write access to it.
   type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: swingmusic-config
 - container_path: /music
   label: Music
   default_host_subpath: swingmusic-music

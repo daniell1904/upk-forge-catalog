@@ -7,8 +7,8 @@ services:
       - 3000:3000
       - 443:443
     volumes:
-      - ./opt:/opt
-      - ./profiles:/profiles
+      - ${VOL_1}:/opt
+      - ${VOL_2}:/profiles
       - /dev/input:/dev/input
       - /run/udev/data:/run/udev/data
     environment:

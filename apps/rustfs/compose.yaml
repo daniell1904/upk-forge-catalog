@@ -6,8 +6,8 @@ services:
       - 9000:9000
       - 9001:9001
     volumes:
-      - ./data:/data
-      - ./logs:/logs
+      - ${VOL_1}:/data
+      - ${VOL_2}:/logs
     environment:
       - RUSTFS_ACCESS_KEY=${RUSTFS_ACCESS_KEY}
       - RUSTFS_SECRET_KEY=${RUSTFS_SECRET_KEY}

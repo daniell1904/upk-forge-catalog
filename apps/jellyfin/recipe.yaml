@@ -1,6 +1,6 @@
 id: jellyfin
 name: Jellyfin
-version: 10.11
+version: 12.0
 author: Jellyfin Project
 category: Media
 description: Free software media system. Config, cache and library map to NAS folders in the App configuration dialog.

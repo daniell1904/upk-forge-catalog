@@ -10,6 +10,18 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Zipline uploads folder
+  help: Folder on the NAS for zipline's zipline uploads. It is mounted into the container at /zipline/uploads; zipline has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Zipline public folder
+  help: Folder on the NAS for zipline's zipline public. It is mounted into the container at /zipline/public; zipline has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for zipline's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; zipline has full read and write access to it.
+  type: path
 - key: CORE_SECRET
   label: CORE SECRET
   type: password
@@ -19,13 +31,10 @@ parameters:
 volumes:
 - container_path: /zipline/uploads
   label: Zipline uploads
-  user_chosen: false
-  default_host_subpath: uploads
+  default_host_subpath: zipline-zipline-uploads
 - container_path: /zipline/public
   label: Zipline public
-  user_chosen: false
-  default_host_subpath: public
+  default_host_subpath: zipline-zipline-public
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: postgres
+  default_host_subpath: zipline-db-var-lib-postgresql-data

@@ -9,8 +9,12 @@ ugos:
   port: 1080
   open_type: tab
   tag_type: devtool
+parameters:
+- key: VOL_1
+  label: Appsmith stacks folder
+  help: Folder on the NAS for Appsmith's appsmith stacks. It is mounted into the container at /appsmith-stacks; Appsmith has full read and write access to it.
+  type: path
 volumes:
 - container_path: /appsmith-stacks
   label: Appsmith stacks
-  user_chosen: false
-  default_host_subpath: stacks
+  default_host_subpath: app-appsmith-stacks

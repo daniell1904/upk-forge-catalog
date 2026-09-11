@@ -4,7 +4,7 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ./data:/server/volume
+      - ${VOL_1}:/server/volume
     environment:
       - SCRYPTED_WEBHOOK_UPDATE_AUTHORIZATION=Bearer SET_THIS_TO_SOME_RANDOM_TEXT
       - SCRYPTED_WEBHOOK_UPDATE=http://localhost:10444/v1/update
@@ -15,7 +15,7 @@ services:
     ports:
       - 10444:8080
     volumes:
-      - ./watchtower-var-run-docker-sock:/var/run/docker.sock
+      - ${VOL_2}:/var/run/docker.sock
     environment:
       - WATCHTOWER_HTTP_API_TOKEN=${WATCHTOWER_HTTP_API_TOKEN}
       - WATCHTOWER_HTTP_API_UPDATE=true

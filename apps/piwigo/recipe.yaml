@@ -10,6 +10,18 @@ ugos:
   open_type: tab
   tag_type: media
 parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Piwigo's config. It is mounted into the container at /config; Piwigo has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Gallery folder
+  help: Folder on the NAS for Piwigo's gallery. It is mounted into the container at /gallery; Piwigo has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Var lib mysql folder
+  help: Folder on the NAS for Piwigo's var lib mysql. It is mounted into the container at /var/lib/mysql; Piwigo has full read and write access to it.
+  type: path
 - key: MYSQL_ROOT_PASSWORD
   label: MYSQL ROOT PASSWORD
   type: password
@@ -19,13 +31,10 @@ parameters:
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: piwigo-config
 - container_path: /gallery
   label: Gallery
-  user_chosen: false
-  default_host_subpath: gallery
+  default_host_subpath: piwigo-gallery
 - container_path: /var/lib/mysql
   label: Var lib mysql
-  user_chosen: false
-  default_host_subpath: mysql
+  default_host_subpath: piwigo-db-var-lib-mysql

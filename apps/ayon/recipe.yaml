@@ -10,23 +10,35 @@ ugos:
   open_type: tab
   tag_type: devtool
 parameters:
+- key: VOL_1
+  label: Addons folder
+  help: Folder on the NAS for Ayon's addons. It is mounted into the container at /addons; Ayon has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Storage folder
+  help: Folder on the NAS for Ayon's storage. It is mounted into the container at /storage; Ayon has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Ayon's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Ayon has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Data folder
+  help: Folder on the NAS for Ayon's data. It is mounted into the container at /data; Ayon has full read and write access to it.
+  type: path
 - key: POSTGRES_PASSWORD
   label: POSTGRES PASSWORD
   type: password
 volumes:
 - container_path: /addons
   label: Addons
-  user_chosen: false
-  default_host_subpath: addons
+  default_host_subpath: ayon-addons
 - container_path: /storage
   label: Storage
-  user_chosen: false
-  default_host_subpath: storage
+  default_host_subpath: ayon-storage
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: postgres
+  default_host_subpath: postgres-var-lib-postgresql-data
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: redis
+  default_host_subpath: redis-data

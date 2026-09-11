@@ -9,8 +9,12 @@ ugos:
   port: 8000
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Opt focalboard data folder
+  help: Folder on the NAS for Focalboard's opt focalboard data. It is mounted into the container at /opt/focalboard/data; Focalboard has full read and write access to it.
+  type: path
 volumes:
 - container_path: /opt/focalboard/data
   label: Opt focalboard data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: app-opt-focalboard-data

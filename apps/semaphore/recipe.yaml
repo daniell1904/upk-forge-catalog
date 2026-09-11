@@ -10,6 +10,18 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Etc semaphore folder
+  help: Folder on the NAS for Ansible Semaphore's etc semaphore. It is mounted into the container at /etc/semaphore; Ansible Semaphore has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib semaphore folder
+  help: Folder on the NAS for Ansible Semaphore's var lib semaphore. It is mounted into the container at /var/lib/semaphore; Ansible Semaphore has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Var lib mysql folder
+  help: Folder on the NAS for Ansible Semaphore's var lib mysql. It is mounted into the container at /var/lib/mysql; Ansible Semaphore has full read and write access to it.
+  type: path
 - key: SEMAPHORE_DB_PASS
   label: SEMAPHORE DB PASS
   type: string
@@ -22,13 +34,10 @@ parameters:
 volumes:
 - container_path: /etc/semaphore
   label: Etc semaphore
-  user_chosen: false
-  default_host_subpath: home
+  default_host_subpath: semaphore-etc-semaphore
 - container_path: /var/lib/semaphore
   label: Var lib semaphore
-  user_chosen: false
-  default_host_subpath: lib
+  default_host_subpath: semaphore-var-lib-semaphore
 - container_path: /var/lib/mysql
   label: Var lib mysql
-  user_chosen: false
-  default_host_subpath: mysql
+  default_host_subpath: semaphore-db-var-lib-mysql

@@ -11,8 +11,12 @@ ugos:
   port: 7681
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: App folder
+  help: Folder on the NAS for Ncdu's app. It is mounted into the container at /app; Ncdu has full read and write access to it.
+  type: path
 volumes:
 - container_path: /app
   label: App
-  user_chosen: false
   default_host_subpath: ncdu-app

@@ -13,18 +13,21 @@ ugos:
   tag_type: media
 parameters:
 - key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Emby(Nvidia GPU)'s config. It is mounted into the container at /config; Emby(Nvidia GPU) has full read and write access to it.
+  type: path
+- key: VOL_2
   label: Data tvshows folder
   help: Folder on the NAS for Emby(Nvidia GPU)'s data tvshows. It is mounted into the container at /data/tvshows; Emby(Nvidia GPU) has full read and write access to it.
   type: path
-- key: VOL_2
+- key: VOL_3
   label: Data movies folder
   help: Folder on the NAS for Emby(Nvidia GPU)'s data movies. It is mounted into the container at /data/movies; Emby(Nvidia GPU) has full read and write access to it.
   type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: emby-config
 - container_path: /data/tvshows
   label: Data tvshows
   default_host_subpath: emby-data-tvshows

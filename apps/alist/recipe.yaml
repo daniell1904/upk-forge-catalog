@@ -11,8 +11,12 @@ ugos:
   port: 5244
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Opt alist data folder
+  help: Folder on the NAS for Alist's opt alist data. It is mounted into the container at /opt/alist/data; Alist has full read and write access to it.
+  type: path
 volumes:
 - container_path: /opt/alist/data
   label: Opt alist data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: alist-opt-alist-data

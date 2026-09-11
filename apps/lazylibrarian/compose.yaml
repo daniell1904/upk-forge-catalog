@@ -8,7 +8,7 @@ services:
     volumes:
       - ${VOL_1}:/downloads
       - ${VOL_2}:/books
-      - ./config:/config
+      - ${VOL_3}:/config
     environment:
       - DOCKER_MODS=linuxserver/calibre-web:calibre|linuxserver/mods:lazylibrarian-ffmpeg
       - PGID=1000

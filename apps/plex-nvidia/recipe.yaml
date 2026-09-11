@@ -15,14 +15,17 @@ ugos:
   tag_type: media
 parameters:
 - key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Plex(Nvidia GPU)'s config. It is mounted into the container at /config; Plex(Nvidia GPU) has full read and write access to it.
+  type: path
+- key: VOL_2
   label: Media folder
   help: Folder on the NAS for Plex(Nvidia GPU)'s media. It is mounted into the container at /Media; Plex(Nvidia GPU) has full read and write access to it.
   type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: plex-config
 - container_path: /Media
   label: Media
   default_host_subpath: plex-media

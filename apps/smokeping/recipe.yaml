@@ -11,12 +11,19 @@ ugos:
   port: 10280
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Smokeping's config. It is mounted into the container at /config; Smokeping has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Data folder
+  help: Folder on the NAS for Smokeping's data. It is mounted into the container at /data; Smokeping has full read and write access to it.
+  type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: smokeping-config
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: smokeping-data

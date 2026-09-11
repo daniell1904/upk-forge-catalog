@@ -10,6 +10,10 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Umami's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Umami has full read and write access to it.
+  type: path
 - key: APP_SECRET
   label: APP SECRET
   type: password
@@ -19,5 +23,4 @@ parameters:
 volumes:
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: pgdata
+  default_host_subpath: db-var-lib-postgresql-data

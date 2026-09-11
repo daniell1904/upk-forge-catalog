@@ -1,13 +1,13 @@
 services:
   pdfding:
-    image: mrmn/pdfding:v1.7.2
+    image: mrmn/pdfding:v1.14.0
     restart: unless-stopped
     network_mode: bridge
     ports:
       - 8000:8000
     volumes:
-      - ./db:/home/nonroot/pdfding/db
-      - ./media:/home/nonroot/pdfding/media
+      - ${VOL_1}:/home/nonroot/pdfding/db
+      - ${VOL_2}:/home/nonroot/pdfding/media
     environment:
       - HOST_NAME=*
       - SECRET_KEY=${SECRET_KEY}

@@ -10,6 +10,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: App vikunja files folder
+  help: Folder on the NAS for Vikunja v2's app vikunja files. It is mounted into the container at /app/vikunja/files; Vikunja v2 has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib mysql folder
+  help: Folder on the NAS for Vikunja v2's var lib mysql. It is mounted into the container at /var/lib/mysql; Vikunja v2 has full read and write access to it.
+  type: path
 - key: VIKUNJA_DATABASE_PASSWORD
   label: VIKUNJA DATABASE PASSWORD
   type: password
@@ -19,9 +27,7 @@ parameters:
 volumes:
 - container_path: /app/vikunja/files
   label: App vikunja files
-  user_chosen: false
-  default_host_subpath: files
+  default_host_subpath: vikunja-v2-app-vikunja-files
 - container_path: /var/lib/mysql
   label: Var lib mysql
-  user_chosen: false
-  default_host_subpath: mysql
+  default_host_subpath: vikunja-v2-db-var-lib-mysql

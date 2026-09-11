@@ -5,4 +5,4 @@ services:
     ports:
       - 7000:7000
     volumes:
-      - ./data:/var/lib/databag
+      - ${VOL_1}:/var/lib/databag

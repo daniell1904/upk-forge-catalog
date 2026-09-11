@@ -10,11 +10,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: App data folder
+  help: Folder on the NAS for Gotify's app data. It is mounted into the container at /app/data; Gotify has full read and write access to it.
+  type: path
 - key: GOTIFY_DEFAULTUSER_PASS
   label: GOTIFY DEFAULTUSER PASS
   type: string
 volumes:
 - container_path: /app/data
   label: App data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: app-app-data

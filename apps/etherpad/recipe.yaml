@@ -39,11 +39,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Opt etherpad lite var folder
+  help: Folder on the NAS for Etherpad's opt etherpad lite var. It is mounted into the container at /opt/etherpad-lite/var; Etherpad has full read and write access to it.
+  type: path
 - key: ADMIN_PASSWORD
   label: ADMIN PASSWORD
   type: password
 volumes:
 - container_path: /opt/etherpad-lite/var
   label: Opt etherpad lite var
-  user_chosen: false
-  default_host_subpath: var
+  default_host_subpath: etherpad-opt-etherpad-lite-var

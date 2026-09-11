@@ -1,11 +1,11 @@
 services:
   flowise:
-    image: flowiseai/flowise:3.1.2
+    image: flowiseai/flowise:3.1.4
     restart: unless-stopped
     ports:
       - 3025:3025
     volumes:
-      - ./flowise-root-flowise:/root/.flowise
+      - ${VOL_1}:/root/.flowise
     environment:
       - PORT=3025
       - DATABASE_PATH=/root/.flowise

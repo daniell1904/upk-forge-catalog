@@ -1,12 +1,12 @@
 services:
   convertx:
-    image: c4illin/convertx:v0.17.0
+    image: c4illin/convertx:v0.18.0
     restart: unless-stopped
     network_mode: bridge
     ports:
       - 3333:3000
     volumes:
-      - ./data:/app/data
+      - ${VOL_1}:/app/data
     environment:
       - JWT_SECRET=${JWT_SECRET}
       - HTTP_ALLOWED=true

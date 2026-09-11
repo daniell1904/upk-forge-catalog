@@ -6,9 +6,9 @@ services:
     ports:
       - 8686:8686
     volumes:
-      - ./config:/config
-      - ${VOL_1}:/music
-      - ${VOL_2}:/downloads
+      - ${VOL_1}:/config
+      - ${VOL_2}:/music
+      - ${VOL_3}:/downloads
     environment:
       - PGID=1000
       - PUID=1000

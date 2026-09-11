@@ -9,24 +9,40 @@ ugos:
   port: 8888
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Segments folder
+  help: Folder on the NAS for Viseron's segments. It is mounted into the container at /segments; Viseron has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Snapshots folder
+  help: Folder on the NAS for Viseron's snapshots. It is mounted into the container at /snapshots; Viseron has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Thumbnails folder
+  help: Folder on the NAS for Viseron's thumbnails. It is mounted into the container at /thumbnails; Viseron has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Event clips folder
+  help: Folder on the NAS for Viseron's event clips. It is mounted into the container at /event_clips; Viseron has full read and write access to it.
+  type: path
+- key: VOL_5
+  label: Config folder
+  help: Folder on the NAS for Viseron's config. It is mounted into the container at /config; Viseron has full read and write access to it.
+  type: path
 volumes:
 - container_path: /segments
   label: Segments
-  user_chosen: false
-  default_host_subpath: segments
+  default_host_subpath: viseron-segments
 - container_path: /snapshots
   label: Snapshots
-  user_chosen: false
-  default_host_subpath: snapshots
+  default_host_subpath: viseron-snapshots
 - container_path: /thumbnails
   label: Thumbnails
-  user_chosen: false
-  default_host_subpath: thumbnails
+  default_host_subpath: viseron-thumbnails
 - container_path: /event_clips
   label: Event clips
-  user_chosen: false
-  default_host_subpath: event/clips
+  default_host_subpath: viseron-event-clips
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: viseron-config

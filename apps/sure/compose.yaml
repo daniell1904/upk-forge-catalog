@@ -5,7 +5,7 @@ services:
     ports:
       - 23000:3000
     volumes:
-      - ./app/storage:/rails/storage
+      - ${VOL_1}:/rails/storage
     environment:
       - POSTGRES_USER=sure_user
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -26,7 +26,7 @@ services:
       - exec
       - sidekiq
     volumes:
-      - ./app/storage:/rails/storage
+      - ${VOL_2}:/rails/storage
     environment:
       - POSTGRES_USER=sure_user
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -43,7 +43,7 @@ services:
     image: postgres:16
     restart: unless-stopped
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - ${VOL_3}:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=sure_user
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -52,4 +52,4 @@ services:
     image: redis:8.2.1-alpine3.22
     restart: unless-stopped
     volumes:
-      - ./redis/data:/data
+      - ${VOL_4}:/data

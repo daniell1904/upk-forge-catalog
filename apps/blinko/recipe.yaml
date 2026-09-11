@@ -39,6 +39,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: App .blinko folder
+  help: Folder on the NAS for Blinko's app .blinko. It is mounted into the container at /app/.blinko; Blinko has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Blinko's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Blinko has full read and write access to it.
+  type: path
 - key: NEXTAUTH_SECRET
   label: NEXTAUTH SECRET
   type: password
@@ -48,9 +56,7 @@ parameters:
 volumes:
 - container_path: /app/.blinko
   label: App .blinko
-  user_chosen: false
-  default_host_subpath: blinko_data
+  default_host_subpath: blinko-app-blinko
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: postgres_data
+  default_host_subpath: blinko-postgres-var-lib-postgresql-data

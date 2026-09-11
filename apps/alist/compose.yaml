@@ -1,9 +1,9 @@
 services:
   alist:
-    image: xhofe/alist:v3.40.0
+    image: xhofe/alist:v3.64.0
     restart: unless-stopped
     network_mode: bridge
     ports:
       - 5244:5244
     volumes:
-      - ./data:/opt/alist/data
+      - ${VOL_1}:/opt/alist/data

@@ -1,11 +1,11 @@
 services:
   teable:
-    image: teableio/teable:latest
+    image: teableio/teable:sha-ffd5d196f1904c85c38c0722bb4e0a4e2af028c6-amd64
     restart: unless-stopped
     ports:
       - 3200:3000
     volumes:
-      - ./assets:/app/.assets
+      - ${VOL_1}:/app/.assets
     environment:
       - TZ=$TZ
       - NEXT_ENV_IMAGES_ALL_REMOTE=true
@@ -17,17 +17,17 @@ services:
     image: postgres:15
     restart: unless-stopped
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - ${VOL_2}:/var/lib/postgresql/data
     environment:
       - TZ=$TZ
       - POSTGRES_DB=teable-db
       - POSTGRES_USER=${POSTGRES_PASSWORD}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
   teable-cache:
-    image: redis:7.2.4
+    image: redis:8.10.1
     restart: unless-stopped
     command:
       - redis-server
       - --requirepass password
     volumes:
-      - ./teable-cache-data:/data
+      - ${VOL_3}:/data

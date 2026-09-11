@@ -40,7 +40,7 @@ services:
     restart: unless-stopped
 
   zerotier:
-    image: docker.io/zyclonite/zerotier:1.14.2
+    image: docker.io/zyclonite/zerotier:1.16.2
     hostname: zerotier
     volumes:
       - ./zerotier:/var/lib/zerotier-one

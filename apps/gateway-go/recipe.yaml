@@ -12,8 +12,12 @@ ugos:
   port: 34323
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Root folder
+  help: Folder on the NAS for gateway-go's root. It is mounted into the container at /root; gateway-go has full read and write access to it.
+  type: path
 volumes:
 - container_path: /root
   label: Root
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: gateway-go-root

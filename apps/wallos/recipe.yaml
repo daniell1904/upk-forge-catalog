@@ -9,12 +9,19 @@ ugos:
   port: 8282
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Var www html db folder
+  help: Folder on the NAS for Wallos's var www html db. It is mounted into the container at /var/www/html/db; Wallos has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var www html images uploads logos folder
+  help: Folder on the NAS for Wallos's var www html images uploads logos. It is mounted into the container at /var/www/html/images/uploads/logos; Wallos has full read and write access to it.
+  type: path
 volumes:
 - container_path: /var/www/html/db
   label: Var www html db
-  user_chosen: false
-  default_host_subpath: db
+  default_host_subpath: wallos-var-www-html-db
 - container_path: /var/www/html/images/uploads/logos
   label: Var www html images uploads logos
-  user_chosen: false
-  default_host_subpath: logos
+  default_host_subpath: wallos-var-www-html-images-uploads-logos

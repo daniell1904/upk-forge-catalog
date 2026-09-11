@@ -6,5 +6,5 @@ services:
     ports:
       - 8765:8765
     volumes:
-      - ./config:/etc/motioneye
-      - ${VOL_1}:/var/lib/motioneye
+      - ${VOL_1}:/etc/motioneye
+      - ${VOL_2}:/var/lib/motioneye

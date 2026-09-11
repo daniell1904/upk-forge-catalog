@@ -12,8 +12,12 @@ ugos:
   port: 943
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Openvpn folder
+  help: Folder on the NAS for OpenVPN's openvpn. It is mounted into the container at /openvpn; OpenVPN has full read and write access to it.
+  type: path
 volumes:
 - container_path: /openvpn
   label: Openvpn
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: openvpn-as-openvpn

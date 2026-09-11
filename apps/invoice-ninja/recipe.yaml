@@ -10,6 +10,34 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Var www app public folder
+  help: Folder on the NAS for Invoice Ninja's var www app public. It is mounted into the container at /var/www/app/public; Invoice Ninja has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var www app storage folder
+  help: Folder on the NAS for Invoice Ninja's var www app storage. It is mounted into the container at /var/www/app/storage; Invoice Ninja has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Usr local etc php php.ini folder
+  help: Folder on the NAS for Invoice Ninja's usr local etc php php.ini. It is mounted into the container at /usr/local/etc/php/php.ini; Invoice Ninja has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Usr local etc php php cli.ini folder
+  help: Folder on the NAS for Invoice Ninja's usr local etc php php cli.ini. It is mounted into the container at /usr/local/etc/php/php-cli.ini; Invoice Ninja has full read and write access to it.
+  type: path
+- key: VOL_5
+  label: Etc nginx conf.d default.conf folder
+  help: Folder on the NAS for Invoice Ninja's etc nginx conf.d default.conf. It is mounted into the container at /etc/nginx/conf.d/default.conf; Invoice Ninja has full read and write access to it.
+  type: path
+- key: VOL_6
+  label: Var www app public folder
+  help: Folder on the NAS for Invoice Ninja's var www app public. It is mounted into the container at /var/www/app/public; Invoice Ninja has full read and write access to it.
+  type: path
+- key: VOL_7
+  label: Var lib mysql folder
+  help: Folder on the NAS for Invoice Ninja's var lib mysql. It is mounted into the container at /var/lib/mysql; Invoice Ninja has full read and write access to it.
+  type: path
 - key: IN_PASSWORD
   label: IN PASSWORD
   type: password
@@ -22,29 +50,22 @@ parameters:
 volumes:
 - container_path: /var/www/app/public
   label: Var www app public
-  user_chosen: false
-  default_host_subpath: data/public
+  default_host_subpath: invoice-ninja-var-www-app-public
 - container_path: /var/www/app/storage
   label: Var www app storage
-  user_chosen: false
-  default_host_subpath: data/storage
+  default_host_subpath: invoice-ninja-var-www-app-storage
 - container_path: /usr/local/etc/php/php.ini
   label: Usr local etc php php.ini
-  user_chosen: false
-  default_host_subpath: data/php/php.ini
+  default_host_subpath: invoice-ninja-usr-local-etc-php-php-ini
 - container_path: /usr/local/etc/php/php-cli.ini
   label: Usr local etc php php cli.ini
-  user_chosen: false
-  default_host_subpath: data/php/php-cli.ini
+  default_host_subpath: invoice-ninja-usr-local-etc-php-php-cli-ini
 - container_path: /etc/nginx/conf.d/default.conf
   label: Etc nginx conf.d default.conf
-  user_chosen: false
-  default_host_subpath: data/nginx/invoice-ninja.conf
+  default_host_subpath: invoice-ninja-web-etc-nginx-conf-d-default-conf
 - container_path: /var/www/app/public
   label: Var www app public
-  user_chosen: false
-  default_host_subpath: data/public
+  default_host_subpath: invoice-ninja-web-var-www-app-public
 - container_path: /var/lib/mysql
   label: Var lib mysql
-  user_chosen: false
-  default_host_subpath: data/mysql
+  default_host_subpath: invoice-ninja-db-var-lib-mysql

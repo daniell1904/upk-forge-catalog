@@ -4,6 +4,6 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ./data:/data
+      - ${VOL_1}:/data
     environment:
       - TZ=America/Chicago

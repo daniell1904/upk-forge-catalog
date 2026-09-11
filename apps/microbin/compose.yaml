@@ -5,7 +5,7 @@ services:
     ports:
       - 8888:8080
     volumes:
-      - ./data:/app/microbin_data
+      - ${VOL_1}:/app/microbin_data
     environment:
       - MICROBIN_ADMIN_USERNAME=admin
       - MICROBIN_ADMIN_PASSWORD=${MICROBIN_ADMIN_PASSWORD}

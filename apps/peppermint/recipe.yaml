@@ -10,6 +10,10 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Peppermint's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Peppermint has full read and write access to it.
+  type: path
 - key: DB_PASSWORD
   label: DB PASSWORD
   type: password
@@ -19,5 +23,4 @@ parameters:
 volumes:
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: postgres/data
+  default_host_subpath: db-var-lib-postgresql-data

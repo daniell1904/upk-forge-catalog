@@ -6,7 +6,7 @@ services:
     ports:
       - 5005:80
     volumes:
-      - ./webdav-media:/media
+      - ${VOL_1}:/media
     environment:
       - GID=1000
       - PASSWORD=${PASSWORD}

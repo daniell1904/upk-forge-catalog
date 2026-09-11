@@ -15,14 +15,17 @@ ugos:
   tag_type: utility
 parameters:
 - key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Logseq's config. It is mounted into the container at /config; Logseq has full read and write access to it.
+  type: path
+- key: VOL_2
   label: Notes folder
   help: Folder on the NAS for Logseq's notes. It is mounted into the container at /notes; Logseq has full read and write access to it.
   type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: logseq-config
 - container_path: /notes
   label: Notes
   default_host_subpath: logseq-notes

@@ -13,18 +13,24 @@ ugos:
   tag_type: utility
 parameters:
 - key: VOL_1
+  label: Sync folder
+  help: Folder on the NAS for resilio-sync's sync. It is mounted into the container at /sync; resilio-sync has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Config folder
+  help: Folder on the NAS for resilio-sync's config. It is mounted into the container at /config; resilio-sync has full read and write access to it.
+  type: path
+- key: VOL_3
   label: Downloads folder
   help: Folder on the NAS for resilio-sync's downloads. It is mounted into the container at /downloads; resilio-sync has full read and write access to it.
   type: path
 volumes:
 - container_path: /sync
   label: Sync
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: resilio-sync-sync
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: resilio-sync-config
 - container_path: /downloads
   label: Downloads
   default_host_subpath: resilio-sync-downloads

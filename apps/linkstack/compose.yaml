@@ -9,7 +9,7 @@ services:
       - 8080:80
       - 10443:443
     volumes:
-      - ./data:/data
+      - ${VOL_1}:/data
     environment:
       - HTTP_SERVER_NAME=www.example.xyz
       - HTTPS_SERVER_NAME=www.example.xyz

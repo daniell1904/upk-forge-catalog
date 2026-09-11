@@ -1,11 +1,11 @@
 services:
   blinko:
-    image: blinkospace/blinko:1.8.7
+    image: blinkospace/blinko:1.8.8
     restart: unless-stopped
     ports:
       - 1111:1111
     volumes:
-      - ./blinko_data:/app/.blinko
+      - ${VOL_1}:/app/.blinko
     environment:
       - NODE_ENV=production
       - NEXTAUTH_URL=http://localhost:1111
@@ -16,7 +16,7 @@ services:
     image: postgres:14
     restart: unless-stopped
     volumes:
-      - ./postgres_data:/var/lib/postgresql/data
+      - ${VOL_2}:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres

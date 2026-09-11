@@ -12,19 +12,28 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Etc pihole folder
+  help: Folder on the NAS for Pi-hole® Updatelists's etc pihole. It is mounted into the container at /etc/pihole/; Pi-hole® Updatelists has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Etc pihole updatelists folder
+  help: Folder on the NAS for Pi-hole® Updatelists's etc pihole updatelists. It is mounted into the container at /etc/pihole-updatelists/; Pi-hole® Updatelists has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Etc dnsmasq.d folder
+  help: Folder on the NAS for Pi-hole® Updatelists's etc dnsmasq.d. It is mounted into the container at /etc/dnsmasq.d/; Pi-hole® Updatelists has full read and write access to it.
+  type: path
 - key: FTLCONF_webserver_api_password
   label: FTLCONF webserver api password
   type: password
 volumes:
 - container_path: /etc/pihole/
   label: Etc pihole
-  user_chosen: false
-  default_host_subpath: etc
+  default_host_subpath: pihole-updatelists-etc-pihole
 - container_path: /etc/pihole-updatelists/
   label: Etc pihole updatelists
-  user_chosen: false
-  default_host_subpath: etc/pihole-updatelists
+  default_host_subpath: pihole-updatelists-etc-pihole-updatelists
 - container_path: /etc/dnsmasq.d/
   label: Etc dnsmasq.d
-  user_chosen: false
-  default_host_subpath: dnsmasq.d
+  default_host_subpath: pihole-updatelists-etc-dnsmasq-d

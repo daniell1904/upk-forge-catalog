@@ -9,8 +9,8 @@ services:
     ports:
       - 9000:9000
     volumes:
-      - ./uploads:/libredesk/uploads
-      - ./config:/libredesk/config
+      - ${VOL_1}:/libredesk/uploads
+      - ${VOL_2}:/libredesk/config
     environment:
       - LIBREDESK_SYSTEM_USER_PASSWORD=${LIBREDESK_SYSTEM_USER_PASSWORD}
   libredesk-db:
@@ -19,7 +19,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ./data/postgres:/var/lib/postgresql/data
+      - ${VOL_3}:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=${POSTGRES_PASSWORD}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -30,4 +30,4 @@ services:
     ports:
       - 6379:6379
     volumes:
-      - ./data/redis:/data
+      - ${VOL_4}:/data

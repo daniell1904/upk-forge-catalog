@@ -12,6 +12,50 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Configs nginx folder
+  help: Folder on the NAS for Dify's configs nginx. It is mounted into the container at /configs/nginx; Dify has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Configs ssrf proxy folder
+  help: Folder on the NAS for Dify's configs ssrf proxy. It is mounted into the container at /configs/ssrf_proxy; Dify has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Configs sandbox folder
+  help: Folder on the NAS for Dify's configs sandbox. It is mounted into the container at /configs/sandbox; Dify has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: App api storage folder
+  help: Folder on the NAS for Dify's app api storage. It is mounted into the container at /app/api/storage; Dify has full read and write access to it.
+  type: path
+- key: VOL_5
+  label: App api storage folder
+  help: Folder on the NAS for Dify's app api storage. It is mounted into the container at /app/api/storage; Dify has full read and write access to it.
+  type: path
+- key: VOL_6
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Dify's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Dify has full read and write access to it.
+  type: path
+- key: VOL_7
+  label: Data folder
+  help: Folder on the NAS for Dify's data. It is mounted into the container at /data; Dify has full read and write access to it.
+  type: path
+- key: VOL_8
+  label: Var lib weaviate folder
+  help: Folder on the NAS for Dify's var lib weaviate. It is mounted into the container at /var/lib/weaviate; Dify has full read and write access to it.
+  type: path
+- key: VOL_9
+  label: Dependencies folder
+  help: Folder on the NAS for Dify's dependencies. It is mounted into the container at /dependencies; Dify has full read and write access to it.
+  type: path
+- key: VOL_10
+  label: Etc squid folder
+  help: Folder on the NAS for Dify's etc squid. It is mounted into the container at /etc/squid; Dify has full read and write access to it.
+  type: path
+- key: VOL_11
+  label: Etc nginx folder
+  help: Folder on the NAS for Dify's etc nginx. It is mounted into the container at /etc/nginx; Dify has full read and write access to it.
+  type: path
 - key: SECRET_KEY
   label: SECRET KEY
   type: password
@@ -27,45 +71,34 @@ parameters:
 volumes:
 - container_path: /configs/nginx
   label: Configs nginx
-  user_chosen: false
-  default_host_subpath: data/nginx
+  default_host_subpath: config-configs-nginx
 - container_path: /configs/ssrf_proxy
   label: Configs ssrf proxy
-  user_chosen: false
-  default_host_subpath: data/ssrf_proxy
+  default_host_subpath: config-configs-ssrf-proxy
 - container_path: /configs/sandbox
   label: Configs sandbox
-  user_chosen: false
-  default_host_subpath: data/sandbox
+  default_host_subpath: config-configs-sandbox
 - container_path: /app/api/storage
   label: App api storage
-  user_chosen: false
-  default_host_subpath: data/app/api/storage
+  default_host_subpath: api-app-api-storage
 - container_path: /app/api/storage
   label: App api storage
-  user_chosen: false
-  default_host_subpath: data/app/api/storage
+  default_host_subpath: worker-app-api-storage
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: data/db/data
+  default_host_subpath: db-var-lib-postgresql-data
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: data/redis/data
+  default_host_subpath: redis-data
 - container_path: /var/lib/weaviate
   label: Var lib weaviate
-  user_chosen: false
-  default_host_subpath: data/weaviate
+  default_host_subpath: weaviate-var-lib-weaviate
 - container_path: /dependencies
   label: Dependencies
-  user_chosen: false
-  default_host_subpath: data/sandbox/dependencies
+  default_host_subpath: sandbox-dependencies
 - container_path: /etc/squid
   label: Etc squid
-  user_chosen: false
-  default_host_subpath: data/ssrf_proxy
+  default_host_subpath: ssrf-proxy-etc-squid
 - container_path: /etc/nginx
   label: Etc nginx
-  user_chosen: false
-  default_host_subpath: data/nginx
+  default_host_subpath: nginx-etc-nginx

@@ -10,6 +10,22 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Libredesk uploads folder
+  help: Folder on the NAS for Libredesk's libredesk uploads. It is mounted into the container at /libredesk/uploads; Libredesk has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Libredesk config folder
+  help: Folder on the NAS for Libredesk's libredesk config. It is mounted into the container at /libredesk/config; Libredesk has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Libredesk's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Libredesk has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Data folder
+  help: Folder on the NAS for Libredesk's data. It is mounted into the container at /data; Libredesk has full read and write access to it.
+  type: path
 - key: LIBREDESK_SYSTEM_USER_PASSWORD
   label: LIBREDESK SYSTEM USER PASSWORD
   type: password
@@ -19,17 +35,13 @@ parameters:
 volumes:
 - container_path: /libredesk/uploads
   label: Libredesk uploads
-  user_chosen: false
-  default_host_subpath: uploads
+  default_host_subpath: libredesk-libredesk-uploads
 - container_path: /libredesk/config
   label: Libredesk config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: libredesk-libredesk-config
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: data/postgres
+  default_host_subpath: libredesk-db-var-lib-postgresql-data
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: data/redis
+  default_host_subpath: libredesk-redis-data

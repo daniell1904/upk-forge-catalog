@@ -1,13 +1,13 @@
 services:
   navidrome:
-    image: deluan/navidrome:0.61.2
+    image: deluan/navidrome:0.63.2
     restart: unless-stopped
     network_mode: bridge
     ports:
       - 4533:4533
     volumes:
-      - ./data:/data
-      - ${VOL_1}:/music
+      - ${VOL_1}:/data
+      - ${VOL_2}:/music
     environment:
       - ND_SCANSCHEDULE=1h
       - ND_LOGLEVEL=info

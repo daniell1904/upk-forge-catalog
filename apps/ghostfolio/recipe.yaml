@@ -10,6 +10,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Ghostfolio's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Ghostfolio has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Data folder
+  help: Folder on the NAS for Ghostfolio's data. It is mounted into the container at /data; Ghostfolio has full read and write access to it.
+  type: path
 - key: JWT_SECRET_KEY
   label: JWT SECRET KEY
   type: password
@@ -22,9 +30,7 @@ parameters:
 volumes:
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: data/db
+  default_host_subpath: ghostfolio-db-var-lib-postgresql-data
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: data/redis
+  default_host_subpath: ghostfolio-redis-data

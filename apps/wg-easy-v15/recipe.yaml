@@ -12,11 +12,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Etc wireguard folder
+  help: Folder on the NAS for WireGuard Easy v15's etc wireguard. It is mounted into the container at /etc/wireguard; WireGuard Easy v15 has full read and write access to it.
+  type: path
 - key: INIT_PASSWORD
   label: INIT PASSWORD
   type: password
 volumes:
 - container_path: /etc/wireguard
   label: Etc wireguard
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: wg-easy-v15-etc-wireguard

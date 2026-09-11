@@ -11,24 +11,40 @@ ugos:
   port: 8111
   open_type: tab
   tag_type: media
+parameters:
+- key: VOL_1
+  label: Crafty backups folder
+  help: Folder on the NAS for Crafty's crafty backups. It is mounted into the container at /crafty/backups; Crafty has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Crafty logs folder
+  help: Folder on the NAS for Crafty's crafty logs. It is mounted into the container at /crafty/logs; Crafty has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Crafty servers folder
+  help: Folder on the NAS for Crafty's crafty servers. It is mounted into the container at /crafty/servers; Crafty has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Crafty app config folder
+  help: Folder on the NAS for Crafty's crafty app config. It is mounted into the container at /crafty/app/config; Crafty has full read and write access to it.
+  type: path
+- key: VOL_5
+  label: Crafty import folder
+  help: Folder on the NAS for Crafty's crafty import. It is mounted into the container at /crafty/import; Crafty has full read and write access to it.
+  type: path
 volumes:
 - container_path: /crafty/backups
   label: Crafty backups
-  user_chosen: false
-  default_host_subpath: backups
+  default_host_subpath: crafty-crafty-backups
 - container_path: /crafty/logs
   label: Crafty logs
-  user_chosen: false
-  default_host_subpath: logs
+  default_host_subpath: crafty-crafty-logs
 - container_path: /crafty/servers
   label: Crafty servers
-  user_chosen: false
-  default_host_subpath: servers
+  default_host_subpath: crafty-crafty-servers
 - container_path: /crafty/app/config
   label: Crafty app config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: crafty-crafty-app-config
 - container_path: /crafty/import
   label: Crafty import
-  user_chosen: false
-  default_host_subpath: import
+  default_host_subpath: crafty-crafty-import

@@ -32,8 +32,12 @@ ugos:
   port: 8086
   open_type: tab
   tag_type: media
+parameters:
+- key: VOL_1
+  label: Var www server data folder
+  help: Folder on the NAS for oPodSync's var www server data. It is mounted into the container at /var/www/server/data; oPodSync has full read and write access to it.
+  type: path
 volumes:
 - container_path: /var/www/server/data
   label: Var www server data
-  user_chosen: false
   default_host_subpath: opodsync-var-www-server-data

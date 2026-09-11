@@ -13,18 +13,21 @@ ugos:
   tag_type: media
 parameters:
 - key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Lidarr's config. It is mounted into the container at /config; Lidarr has full read and write access to it.
+  type: path
+- key: VOL_2
   label: Music folder
   help: Folder on the NAS for Lidarr's music. It is mounted into the container at /music; Lidarr has full read and write access to it.
   type: path
-- key: VOL_2
+- key: VOL_3
   label: Downloads folder
   help: Folder on the NAS for Lidarr's downloads. It is mounted into the container at /downloads; Lidarr has full read and write access to it.
   type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: lidarr-config
 - container_path: /music
   label: Music
   default_host_subpath: lidarr-music

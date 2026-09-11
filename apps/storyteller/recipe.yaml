@@ -10,6 +10,10 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Data folder
+  help: Folder on the NAS for Storyteller's data. It is mounted into the container at /data; Storyteller has full read and write access to it.
+  type: path
 - key: STORYTELLER_SECRET_KEY
   label: STORYTELLER SECRET KEY
   type: password
@@ -22,5 +26,4 @@ parameters:
 volumes:
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: app-data

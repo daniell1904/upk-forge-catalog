@@ -9,12 +9,19 @@ ugos:
   port: 8056
   open_type: tab
   tag_type: media
+parameters:
+- key: VOL_1
+  label: Data folder
+  help: Folder on the NAS for jfa-go's data. It is mounted into the container at /data; jfa-go has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Jf folder
+  help: Folder on the NAS for jfa-go's jf. It is mounted into the container at /jf; jfa-go has full read and write access to it.
+  type: path
 volumes:
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: .config/jfa-go
+  default_host_subpath: jfa-go-data
 - container_path: /jf
   label: Jf
-  user_chosen: false
-  default_host_subpath: jellyfin
+  default_host_subpath: jfa-go-jf

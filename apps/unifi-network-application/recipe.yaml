@@ -25,15 +25,21 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Unifi Network Application's config. It is mounted into the container at /config; Unifi Network Application has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Data db folder
+  help: Folder on the NAS for Unifi Network Application's data db. It is mounted into the container at /data/db; Unifi Network Application has full read and write access to it.
+  type: path
 - key: MONGO_PASS
   label: MONGO PASS
   type: string
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
   default_host_subpath: unifi-network-application-config
 - container_path: /data/db
   label: Data db
-  user_chosen: false
   default_host_subpath: unifi-db-data-db

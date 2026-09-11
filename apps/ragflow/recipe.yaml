@@ -44,6 +44,42 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Ragflow logs folder
+  help: Folder on the NAS for RagFlow's ragflow logs. It is mounted into the container at /ragflow/logs; RagFlow has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Ragflow history data agent folder
+  help: Folder on the NAS for RagFlow's ragflow history data agent. It is mounted into the container at /ragflow/history_data_agent; RagFlow has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Usr share elasticsearch data folder
+  help: Folder on the NAS for RagFlow's usr share elasticsearch data. It is mounted into the container at /usr/share/elasticsearch/data; RagFlow has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Var infinity folder
+  help: Folder on the NAS for RagFlow's var infinity. It is mounted into the container at /var/infinity; RagFlow has full read and write access to it.
+  type: path
+- key: VOL_5
+  label: Data folder
+  help: Folder on the NAS for RagFlow's data. It is mounted into the container at /data; RagFlow has full read and write access to it.
+  type: path
+- key: VOL_6
+  label: Var lib mysql folder
+  help: Folder on the NAS for RagFlow's var lib mysql. It is mounted into the container at /var/lib/mysql; RagFlow has full read and write access to it.
+  type: path
+- key: VOL_7
+  label: Usr share opensearch data folder
+  help: Folder on the NAS for RagFlow's usr share opensearch data. It is mounted into the container at /usr/share/opensearch/data; RagFlow has full read and write access to it.
+  type: path
+- key: VOL_8
+  label: Data folder
+  help: Folder on the NAS for RagFlow's data. It is mounted into the container at /data; RagFlow has full read and write access to it.
+  type: path
+- key: VOL_9
+  label: Var run docker.sock folder
+  help: Folder on the NAS for RagFlow's var run docker.sock. It is mounted into the container at /var/run/docker.sock; RagFlow has full read and write access to it.
+  type: path
 - key: ELASTIC_PASSWORD
   label: ELASTIC PASSWORD
   type: password
@@ -56,37 +92,28 @@ parameters:
 volumes:
 - container_path: /ragflow/logs
   label: Ragflow logs
-  user_chosen: false
-  default_host_subpath: ragflow-logs
+  default_host_subpath: ragflow-ragflow-logs
 - container_path: /ragflow/history_data_agent
   label: Ragflow history data agent
-  user_chosen: false
-  default_host_subpath: history_data_agent
+  default_host_subpath: ragflow-ragflow-history-data-agent
 - container_path: /usr/share/elasticsearch/data
   label: Usr share elasticsearch data
-  user_chosen: false
-  default_host_subpath: es01
+  default_host_subpath: ragflow-es01-usr-share-elasticsearch-data
 - container_path: /var/infinity
   label: Var infinity
-  user_chosen: false
-  default_host_subpath: infinity
+  default_host_subpath: ragflow-infinity-var-infinity
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: minio
+  default_host_subpath: ragflow-minio-data
 - container_path: /var/lib/mysql
   label: Var lib mysql
-  user_chosen: false
-  default_host_subpath: mysql
+  default_host_subpath: ragflow-mysql-var-lib-mysql
 - container_path: /usr/share/opensearch/data
   label: Usr share opensearch data
-  user_chosen: false
-  default_host_subpath: opensearch01
+  default_host_subpath: ragflow-opensearch01-usr-share-opensearch-data
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: redis
+  default_host_subpath: ragflow-redis-data
 - container_path: /var/run/docker.sock
   label: Var run docker.sock
-  user_chosen: false
   default_host_subpath: ragflow-sandbox-executor-manager-var-run-docker-sock

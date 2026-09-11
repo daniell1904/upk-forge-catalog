@@ -35,6 +35,30 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Data files folder
+  help: Folder on the NAS for WeKnora's data files. It is mounted into the container at /data/files; WeKnora has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for WeKnora's var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; WeKnora has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Data folder
+  help: Folder on the NAS for WeKnora's data. It is mounted into the container at /data; WeKnora has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Var lib jaeger folder
+  help: Folder on the NAS for WeKnora's var lib jaeger. It is mounted into the container at /var/lib/jaeger; WeKnora has full read and write access to it.
+  type: path
+- key: VOL_5
+  label: Data folder
+  help: Folder on the NAS for WeKnora's data. It is mounted into the container at /data; WeKnora has full read and write access to it.
+  type: path
+- key: VOL_6
+  label: Qdrant storage folder
+  help: Folder on the NAS for WeKnora's qdrant storage. It is mounted into the container at /qdrant/storage; WeKnora has full read and write access to it.
+  type: path
 - key: MINIO_SECRET_ACCESS_KEY
   label: MINIO SECRET ACCESS KEY
   type: password
@@ -53,25 +77,19 @@ parameters:
 volumes:
 - container_path: /data/files
   label: Data files
-  user_chosen: false
-  default_host_subpath: files
+  default_host_subpath: app-data-files
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: weknora-postgres-var-lib-postgresql-data
 - container_path: /data
   label: Data
-  user_chosen: false
   default_host_subpath: minio-data
 - container_path: /var/lib/jaeger
   label: Var lib jaeger
-  user_chosen: false
-  default_host_subpath: jaeger
+  default_host_subpath: jaeger-var-lib-jaeger
 - container_path: /data
   label: Data
-  user_chosen: false
   default_host_subpath: neo4j-data
 - container_path: /qdrant/storage
   label: Qdrant storage
-  user_chosen: false
-  default_host_subpath: storage
+  default_host_subpath: qdrant-qdrant-storage

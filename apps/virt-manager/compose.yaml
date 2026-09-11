@@ -6,9 +6,9 @@ services:
     ports:
       - 8185:80
     volumes:
-      - ./virt-manager-var-run-libvirt-libvirt-sock:/var/run/libvirt/libvirt-sock
-      - ./virt-manager-var-lib-libvirt:/var/lib/libvirt
-      - ${VOL_1}:/DATA/Downloads
+      - ${VOL_1}:/var/run/libvirt/libvirt-sock
+      - ${VOL_2}:/var/lib/libvirt
+      - ${VOL_3}:/DATA/Downloads
     environment:
       - DARK_MODE=false
       - HOSTS=['qemu:///system']

@@ -1,9 +1,9 @@
 services:
   ddns-go:
-    image: jeessy/ddns-go:v6.17.1
+    image: jeessy/ddns-go:v6.17.7
     restart: unless-stopped
     network_mode: bridge
     ports:
       - 9876:9876
     volumes:
-      - ./config:/root
+      - ${VOL_1}:/root

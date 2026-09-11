@@ -9,16 +9,26 @@ ugos:
   port: 3000
   open_type: tab
   tag_type: devtool
+parameters:
+- key: VOL_1
+  label: Usr src app uploads folder
+  help: Folder on the NAS for CodeX Docs's usr src app uploads. It is mounted into the container at /usr/src/app/uploads; CodeX Docs has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Usr src app db folder
+  help: Folder on the NAS for CodeX Docs's usr src app db. It is mounted into the container at /usr/src/app/db; CodeX Docs has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Usr src app docs config.yaml folder
+  help: Folder on the NAS for CodeX Docs's usr src app docs config.yaml. It is mounted into the container at /usr/src/app/docs-config.yaml; CodeX Docs has full read and write access to it.
+  type: path
 volumes:
 - container_path: /usr/src/app/uploads
   label: Usr src app uploads
-  user_chosen: false
-  default_host_subpath: uploads
+  default_host_subpath: app-usr-src-app-uploads
 - container_path: /usr/src/app/db
   label: Usr src app db
-  user_chosen: false
-  default_host_subpath: db
+  default_host_subpath: app-usr-src-app-db
 - container_path: /usr/src/app/docs-config.yaml
   label: Usr src app docs config.yaml
-  user_chosen: false
-  default_host_subpath: codex-docs-config.local.yaml
+  default_host_subpath: app-usr-src-app-docs-config-yaml

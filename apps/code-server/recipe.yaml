@@ -10,6 +10,14 @@ ugos:
   open_type: tab
   tag_type: devtool
 parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Code Server's config. It is mounted into the container at /config; Code Server has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Projects folder
+  help: Folder on the NAS for Code Server's projects. It is mounted into the container at /projects; Code Server has full read and write access to it.
+  type: path
 - key: PASSWORD
   label: PASSWORD
   type: password
@@ -19,9 +27,7 @@ parameters:
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: app-config
 - container_path: /projects
   label: Projects
-  user_chosen: false
-  default_host_subpath: projects
+  default_host_subpath: app-projects

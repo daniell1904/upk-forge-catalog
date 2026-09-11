@@ -5,7 +5,7 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ./data:/app/data
+      - ${VOL_1}:/app/data
       - /run/udev:/run/udev
     environment:
       - TZ=UTC

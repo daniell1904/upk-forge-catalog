@@ -6,8 +6,8 @@ services:
     ports:
       - 10280:80
     volumes:
-      - ./config:/config
-      - ./data:/data
+      - ${VOL_1}:/config
+      - ${VOL_2}:/data
     environment:
       - PGID=1000
       - PUID=1000

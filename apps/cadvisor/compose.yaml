@@ -5,9 +5,9 @@ services:
     ports:
       - 8085:8080
     volumes:
-      - ./app-rootfs:/rootfs
+      - ${VOL_1}:/rootfs
       - /var/run:/var/run
-      - ./app-var-run-docker-sock:/var/run/docker.sock
+      - ${VOL_2}:/var/run/docker.sock
       - /sys:/sys
-      - ./app-var-lib-docker:/var/lib/docker
+      - ${VOL_3}:/var/lib/docker
       - /dev/disk/:/dev/disk

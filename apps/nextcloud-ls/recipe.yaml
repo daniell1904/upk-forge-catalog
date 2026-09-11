@@ -9,12 +9,19 @@ ugos:
   port: 10443
   open_type: tab
   tag_type: media
+parameters:
+- key: VOL_1
+  label: Config folder
+  help: Folder on the NAS for Nextcloud LS's config. It is mounted into the container at /config; Nextcloud LS has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Data folder
+  help: Folder on the NAS for Nextcloud LS's data. It is mounted into the container at /data; Nextcloud LS has full read and write access to it.
+  type: path
 volumes:
 - container_path: /config
   label: Config
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: nextcloud-ls-config
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: nextcloud-ls-data

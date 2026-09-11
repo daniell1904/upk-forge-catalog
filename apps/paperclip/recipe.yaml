@@ -10,11 +10,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Paperclip folder
+  help: Folder on the NAS for Paperclip's paperclip. It is mounted into the container at /paperclip; Paperclip has full read and write access to it.
+  type: path
 - key: BETTER_AUTH_SECRET
   label: BETTER AUTH SECRET
   type: password
 volumes:
 - container_path: /paperclip
   label: Paperclip
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: paperclip-paperclip

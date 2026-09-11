@@ -5,7 +5,7 @@ services:
     ports:
       - 8700:80
     volumes:
-      - ./data:/home/filebrowser/data
-      - ./srv:/srv
+      - ${VOL_1}:/home/filebrowser/data
+      - ${VOL_2}:/srv
     environment:
       - TZ=UTC

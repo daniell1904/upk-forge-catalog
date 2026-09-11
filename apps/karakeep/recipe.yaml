@@ -39,15 +39,21 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Data folder
+  help: Folder on the NAS for Karakeep's data. It is mounted into the container at /data; Karakeep has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Meili data folder
+  help: Folder on the NAS for Karakeep's meili data. It is mounted into the container at /meili_data; Karakeep has full read and write access to it.
+  type: path
 - key: NEXTAUTH_SECRET
   label: NEXTAUTH SECRET
   type: password
 volumes:
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: karakeep-data
 - container_path: /meili_data
   label: Meili data
-  user_chosen: false
-  default_host_subpath: meilisearch
+  default_host_subpath: karakeep-meilisearch-meili-data

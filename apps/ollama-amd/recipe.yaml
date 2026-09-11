@@ -9,8 +9,12 @@ ugos:
   port: 11434
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Root .ollama folder
+  help: Folder on the NAS for Ollama - AMD's root .ollama. It is mounted into the container at /root/.ollama; Ollama - AMD has full read and write access to it.
+  type: path
 volumes:
 - container_path: /root/.ollama
   label: Root .ollama
-  user_chosen: false
-  default_host_subpath: .ollama
+  default_host_subpath: ollama-amd-root-ollama

@@ -5,6 +5,6 @@ services:
     ports:
       - 52441:52441
     volumes:
-      - ./data:/app/data
+      - ${VOL_1}:/app/data
     environment:
       - TZ=Asia/Shanghai

@@ -4,5 +4,5 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ./Matterbridge:/root/Matterbridge
-      - ./.matterbridge:/root/.matterbridge
+      - ${VOL_1}:/root/Matterbridge
+      - ${VOL_2}:/root/.matterbridge

@@ -1,11 +1,11 @@
 services:
   ztnet:
-    image: sinamics/ztnet:0.7.18
+    image: sinamics/ztnet:0.8.3
     restart: unless-stopped
     ports:
       - 3050:3000
     volumes:
-      - ./ztnet-var-lib-zerotier-one:/var/lib/zerotier-one
+      - ${VOL_1}:/var/lib/zerotier-one
     environment:
       - ZT_ADDR=http://172.17.0.1:9993
       - POSTGRES_HOST=ztnet-postgres
@@ -20,7 +20,7 @@ services:
     image: postgres:15.2-alpine
     restart: unless-stopped
     volumes:
-      - ./postgres-data:/var/lib/postgresql/data
+      - ${VOL_2}:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=ztnet
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}

@@ -40,14 +40,17 @@ ugos:
   tag_type: media
 parameters:
 - key: VOL_1
+  label: App storage folder
+  help: Folder on the NAS for Gopeed's app storage. It is mounted into the container at /app/storage; Gopeed has full read and write access to it.
+  type: path
+- key: VOL_2
   label: App Downloads folder
   help: Folder on the NAS for Gopeed's app downloads. It is mounted into the container at /app/Downloads; Gopeed has full read and write access to it.
   type: path
 volumes:
 - container_path: /app/storage
   label: App storage
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: gopeed-app-storage
 - container_path: /app/Downloads
   label: App Downloads
   default_host_subpath: gopeed-app-downloads

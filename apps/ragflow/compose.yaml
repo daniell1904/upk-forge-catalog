@@ -10,8 +10,8 @@ services:
       - 5679:5679
       - 9382:9382
     volumes:
-      - ./ragflow-logs:/ragflow/logs
-      - ./history_data_agent:/ragflow/history_data_agent
+      - ${VOL_1}:/ragflow/logs
+      - ${VOL_2}:/ragflow/history_data_agent
     environment:
       - ES_HOST=ragflow-es01
       - INFINITY_HOST=ragflow-infinity
@@ -21,12 +21,12 @@ services:
       - REDIS_HOST=ragflow-redis
       - TZ=$TZ
   ragflow-es01:
-    image: elasticsearch:8.11.3
+    image: elasticsearch:9.5.3
     restart: unless-stopped
     ports:
       - 9200:9200
     volumes:
-      - ./es01:/usr/share/elasticsearch/data
+      - ${VOL_3}:/usr/share/elasticsearch/data
     environment:
       - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
       - TZ=$TZ
@@ -47,7 +47,7 @@ services:
       - 23820:23820
       - 15432:5432
     volumes:
-      - ./infinity:/var/infinity
+      - ${VOL_4}:/var/infinity
     environment:
       - TZ=$TZ
   ragflow-minio:
@@ -62,7 +62,7 @@ services:
       - 9000:9000
       - 9001:9001
     volumes:
-      - ./minio:/data
+      - ${VOL_5}:/data
     environment:
       - MINIO_ROOT_PASSWORD=${ELASTIC_PASSWORD}
       - MINIO_ROOT_USER=rag_flow
@@ -80,18 +80,18 @@ services:
     ports:
       - 5455:3306
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ${VOL_6}:/var/lib/mysql
     environment:
       - MYSQL_PASSWORD=${ELASTIC_PASSWORD}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - TZ=$TZ
   ragflow-opensearch01:
-    image: opensearchproject/opensearch:2.19.1
+    image: opensearchproject/opensearch:3.8.0
     restart: unless-stopped
     ports:
       - 9201:9201
     volumes:
-      - ./opensearch01:/usr/share/opensearch/data
+      - ${VOL_7}:/usr/share/opensearch/data
     environment:
       - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_INITIAL_ADMIN_PASSWORD}
       - OPENSEARCH_PASSWORD=${OPENSEARCH_INITIAL_ADMIN_PASSWORD}
@@ -107,7 +107,7 @@ services:
       - plugins.security.ssl.http.enabled=false
       - plugins.security.ssl.transport.enabled=true
   ragflow-redis:
-    image: valkey/valkey:8
+    image: valkey/valkey:9.1.2
     restart: unless-stopped
     command:
       - redis-server
@@ -120,14 +120,14 @@ services:
     ports:
       - 6379:6379
     volumes:
-      - ./redis:/data
+      - ${VOL_8}:/data
   ragflow-sandbox-executor-manager:
     image: infiniflow/sandbox-executor-manager:latest
     restart: unless-stopped
     ports:
       - 9385:9385
     volumes:
-      - ./ragflow-sandbox-executor-manager-var-run-docker-sock:/var/run/docker.sock
+      - ${VOL_9}:/var/run/docker.sock
     environment:
       - SANDBOX_BASE_NODEJS_IMAGE=infiniflow/sandbox-base-nodejs:latest
       - SANDBOX_BASE_PYTHON_IMAGE=infiniflow/sandbox-base-python:latest

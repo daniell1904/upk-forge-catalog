@@ -11,8 +11,12 @@ ugos:
   port: 11470
   open_type: tab
   tag_type: media
+parameters:
+- key: VOL_1
+  label: Root .stremio server folder
+  help: Folder on the NAS for Stremio's root .stremio server. It is mounted into the container at /root/.stremio-server; Stremio has full read and write access to it.
+  type: path
 volumes:
 - container_path: /root/.stremio-server
   label: Root .stremio server
-  user_chosen: false
-  default_host_subpath: config
+  default_host_subpath: stremio-root-stremio-server

@@ -10,6 +10,10 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Usr src app tududi db folder
+  help: Folder on the NAS for Tududi's usr src app tududi db. It is mounted into the container at /usr/src/app/tududi_db; Tududi has full read and write access to it.
+  type: path
 - key: TUDUDI_USER_PASSWORD
   label: TUDUDI USER PASSWORD
   type: password
@@ -19,5 +23,4 @@ parameters:
 volumes:
 - container_path: /usr/src/app/tududi_db
   label: Usr src app tududi db
-  user_chosen: false
-  default_host_subpath: tududi/db
+  default_host_subpath: tududi-usr-src-app-tududi-db

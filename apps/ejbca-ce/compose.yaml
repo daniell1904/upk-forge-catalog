@@ -6,6 +6,6 @@ services:
       - 8080:8080
       - 8443:8443
     volumes:
-      - ./persistent:/mnt/persistent
+      - ${VOL_1}:/mnt/persistent
     environment:
       - TLS_SETUP_ENABLED=simple

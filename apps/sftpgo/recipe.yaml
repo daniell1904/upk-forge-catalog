@@ -9,12 +9,19 @@ ugos:
   port: 8080
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Srv sftpgo folder
+  help: Folder on the NAS for SFTPGO's srv sftpgo. It is mounted into the container at /srv/sftpgo; SFTPGO has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib sftpgo folder
+  help: Folder on the NAS for SFTPGO's var lib sftpgo. It is mounted into the container at /var/lib/sftpgo; SFTPGO has full read and write access to it.
+  type: path
 volumes:
 - container_path: /srv/sftpgo
   label: Srv sftpgo
-  user_chosen: false
-  default_host_subpath: srv
+  default_host_subpath: sftpgo-srv-sftpgo
 - container_path: /var/lib/sftpgo
   label: Var lib sftpgo
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: sftpgo-var-lib-sftpgo

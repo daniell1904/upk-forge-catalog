@@ -34,12 +34,19 @@ ugos:
   port: 3410
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Opt app backend data folder
+  help: Folder on the NAS for Pingvin-Share's opt app backend data. It is mounted into the container at /opt/app/backend/data; Pingvin-Share has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Opt app frontend public img folder
+  help: Folder on the NAS for Pingvin-Share's opt app frontend public img. It is mounted into the container at /opt/app/frontend/public/img; Pingvin-Share has full read and write access to it.
+  type: path
 volumes:
 - container_path: /opt/app/backend/data
   label: Opt app backend data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: pingvin-share-opt-app-backend-data
 - container_path: /opt/app/frontend/public/img
   label: Opt app frontend public img
-  user_chosen: false
-  default_host_subpath: images
+  default_host_subpath: pingvin-share-opt-app-frontend-public-img

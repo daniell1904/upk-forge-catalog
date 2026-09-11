@@ -5,7 +5,7 @@ services:
     ports:
       - 8005:80
     volumes:
-      - ./uploads:/data/uploads
+      - ${VOL_1}:/data/uploads
     environment:
       - DB_HOST=warrackerdb
       - DB_NAME=app_warracker
@@ -19,7 +19,7 @@ services:
     image: postgres:15-alpine@sha256:3d0f7584ed7d04e27fa050d6683a74746608faf21f202be78460d679cc56461f
     restart: unless-stopped
     volumes:
-      - ./warrackerdb:/var/lib/postgresql/data
+      - ${VOL_2}:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=app_warracker
       - POSTGRES_USER=app_warracker_user

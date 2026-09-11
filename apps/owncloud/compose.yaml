@@ -1,11 +1,11 @@
 services:
   owncloud:
-    image: owncloud/server:10.16.4@sha256:efb57ba71ec3321c83661fd4e9976d120e80a0e1ead53ea5b7821d036e7af2b6
+    image: owncloud/server:11.0.0
     restart: unless-stopped
     ports:
       - 8080:8080
     volumes:
-      - ./data:/mnt/data
+      - ${VOL_1}:/mnt/data
     environment:
       - OWNCLOUD_DOMAIN=http://[YOUR_app_IP]:8080
       - OWNCLOUD_TRUSTED_DOMAINS=[YOUR_app_IP]
@@ -26,7 +26,7 @@ services:
       - --max-allowed-packet=128M
       - --innodb-log-file-size=64M
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ${VOL_2}:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=${OWNCLOUD_DB_PASSWORD}
       - MYSQL_USER=app
@@ -34,10 +34,10 @@ services:
       - MYSQL_DATABASE=app_owncloud
       - MARIADB_AUTO_UPGRADE=1
   owncloud-redis:
-    image: redis:6.2.20@sha256:d06ff6ec778c7f2a5c0dfaf58141d598efaa50a89d0e966faedfdf122cef451b
+    image: redis:8.10.1
     restart: unless-stopped
     command:
       - --databases
       - "1"
     volumes:
-      - ./redis:/data
+      - ${VOL_3}:/data

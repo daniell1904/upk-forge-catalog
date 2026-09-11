@@ -6,4 +6,4 @@ services:
     ports:
       - 34323:34323
     volumes:
-      - ./config:/root
+      - ${VOL_1}:/root

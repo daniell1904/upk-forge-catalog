@@ -1,9 +1,9 @@
 services:
   lucky:
-    image: gdy666/lucky:2.27.2
+    image: gdy666/lucky:3.0.0
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ./lucky-goodluck:/goodluck
+      - ${VOL_1}:/goodluck
     environment:
       - TZ=$TZ

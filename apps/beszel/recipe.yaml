@@ -9,8 +9,12 @@ ugos:
   port: 8090
   open_type: tab
   tag_type: devtool
+parameters:
+- key: VOL_1
+  label: Beszel data folder
+  help: Folder on the NAS for Beszel's beszel data. It is mounted into the container at /beszel_data; Beszel has full read and write access to it.
+  type: path
 volumes:
 - container_path: /beszel_data
   label: Beszel data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: beszel-beszel-data

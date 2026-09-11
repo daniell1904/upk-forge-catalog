@@ -10,6 +10,22 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: App public user avatars folder
+  help: Folder on the NAS for Planka (Legacy)'s app public user avatars. It is mounted into the container at /app/public/user-avatars; Planka (Legacy) has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: App public project background images folder
+  help: Folder on the NAS for Planka (Legacy)'s app public project background images. It is mounted into the container at /app/public/project-background-images; Planka (Legacy) has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: App private attachments folder
+  help: Folder on the NAS for Planka (Legacy)'s app private attachments. It is mounted into the container at /app/private/attachments; Planka (Legacy) has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Planka (Legacy)'s var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Planka (Legacy) has full read and write access to it.
+  type: path
 - key: SECRET_KEY
   label: SECRET KEY
   type: password
@@ -19,17 +35,13 @@ parameters:
 volumes:
 - container_path: /app/public/user-avatars
   label: App public user avatars
-  user_chosen: false
-  default_host_subpath: user-avatars
+  default_host_subpath: planka-app-public-user-avatars
 - container_path: /app/public/project-background-images
   label: App public project background images
-  user_chosen: false
-  default_host_subpath: project-background-images
+  default_host_subpath: planka-app-public-project-background-images
 - container_path: /app/private/attachments
   label: App private attachments
-  user_chosen: false
-  default_host_subpath: attachments
+  default_host_subpath: planka-app-private-attachments
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: postgresql
+  default_host_subpath: planka-postgres-var-lib-postgresql-data

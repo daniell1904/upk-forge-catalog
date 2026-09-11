@@ -37,11 +37,14 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Opt openlist data folder
+  help: Folder on the NAS for OpenList's opt openlist data. It is mounted into the container at /opt/openlist/data; OpenList has full read and write access to it.
+  type: path
 - key: OPENLIST_ADMIN_PASSWORD
   label: OPENLIST ADMIN PASSWORD
   type: password
 volumes:
 - container_path: /opt/openlist/data
   label: Opt openlist data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: openlist-opt-openlist-data

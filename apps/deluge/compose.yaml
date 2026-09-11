@@ -8,8 +8,8 @@ services:
       - 6881:6881
       - 6881:6881
     volumes:
-      - ./config:/config
-      - ./deluge-data:/DATA
+      - ${VOL_1}:/config
+      - ${VOL_2}:/DATA
     environment:
       - DELUGE_LOGLEVEL=error
       - PGID=1000

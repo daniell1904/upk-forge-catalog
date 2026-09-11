@@ -7,8 +7,8 @@ services:
       - 5900:5900
       - 3129:3129
     volumes:
-      - ./config:/config
-      - ${VOL_1}:/output
+      - ${VOL_1}:/config
+      - ${VOL_2}:/output
     environment:
       - USER_ID=1000
       - GROUP_ID=1000

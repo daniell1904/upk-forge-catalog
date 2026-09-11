@@ -1,18 +1,18 @@
 services:
   farmos:
-    image: farmos/farmos:3.5.1@sha256:7eca19088bcfc290d9811cf013ded4b4c1552f5cc65d9fc8766c532351748626
+    image: farmos/farmos:4.0.5
     restart: unless-stopped
     ports:
       - 8080:80
     volumes:
-      - ./sites:/opt/drupal/web/sites
+      - ${VOL_1}:/opt/drupal/web/sites
   farmos-db:
     image: mariadb:10@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350
     restart: unless-stopped
     ports:
       - 3306:3306
     volumes:
-      - ./db:/var/lib/mysql
+      - ${VOL_2}:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=app_farmos

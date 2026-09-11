@@ -11,8 +11,12 @@ ugos:
   port: 8978
   open_type: tab
   tag_type: devtool
+parameters:
+- key: VOL_1
+  label: Opt cloudbeaver workspace folder
+  help: Folder on the NAS for CloudBeaver's opt cloudbeaver workspace. It is mounted into the container at /opt/cloudbeaver/workspace; CloudBeaver has full read and write access to it.
+  type: path
 volumes:
 - container_path: /opt/cloudbeaver/workspace
   label: Opt cloudbeaver workspace
-  user_chosen: false
-  default_host_subpath: workspace
+  default_host_subpath: cloudbeaver-opt-cloudbeaver-workspace

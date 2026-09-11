@@ -10,23 +10,35 @@ ugos:
   open_type: tab
   tag_type: media
 parameters:
+- key: VOL_1
+  label: Var www html folder
+  help: Folder on the NAS for Nextcloud with SMB (Legacy)'s var www html. It is mounted into the container at /var/www/html; Nextcloud with SMB (Legacy) has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Var lib postgresql data folder
+  help: Folder on the NAS for Nextcloud with SMB (Legacy)'s var lib postgresql data. It is mounted into the container at /var/lib/postgresql/data; Nextcloud with SMB (Legacy) has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Data folder
+  help: Folder on the NAS for Nextcloud with SMB (Legacy)'s data. It is mounted into the container at /data; Nextcloud with SMB (Legacy) has full read and write access to it.
+  type: path
+- key: VOL_4
+  label: Var www html folder
+  help: Folder on the NAS for Nextcloud with SMB (Legacy)'s var www html. It is mounted into the container at /var/www/html; Nextcloud with SMB (Legacy) has full read and write access to it.
+  type: path
 - key: POSTGRES_PASSWORD
   label: POSTGRES PASSWORD
   type: password
 volumes:
 - container_path: /var/www/html
   label: Var www html
-  user_chosen: false
-  default_host_subpath: html
+  default_host_subpath: nextcloud-smb-var-www-html
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data
-  user_chosen: false
-  default_host_subpath: pgdata
+  default_host_subpath: nextcloud-smb-db-var-lib-postgresql-data
 - container_path: /data
   label: Data
-  user_chosen: false
-  default_host_subpath: redis
+  default_host_subpath: nextcloud-smb-redis-data
 - container_path: /var/www/html
   label: Var www html
-  user_chosen: false
-  default_host_subpath: html
+  default_host_subpath: nextcloud-smb-cron-var-www-html

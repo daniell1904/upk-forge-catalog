@@ -4,6 +4,6 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ./v2raya-lib-modules:/lib/modules
-      - ./v2raya-etc-resolv-conf:/etc/resolv.conf
-      - ./v2raya-etc-v2raya:/etc/v2raya
+      - ${VOL_1}:/lib/modules
+      - ${VOL_2}:/etc/resolv.conf
+      - ${VOL_3}:/etc/v2raya

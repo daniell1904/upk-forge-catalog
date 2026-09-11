@@ -15,15 +15,21 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: VOL_1
+  label: Lib modules folder
+  help: Folder on the NAS for Firefly's lib modules. It is mounted into the container at /lib/modules; Firefly has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Firefly conf folder
+  help: Folder on the NAS for Firefly's firefly conf. It is mounted into the container at /firefly/conf; Firefly has full read and write access to it.
+  type: path
 - key: FIREFLY_PASSWORD
   label: FIREFLY PASSWORD
   type: password
 volumes:
 - container_path: /lib/modules
   label: Lib modules
-  user_chosen: false
   default_host_subpath: firefly-lib-modules
 - container_path: /firefly/conf
   label: Firefly conf
-  user_chosen: false
-  default_host_subpath: conf
+  default_host_subpath: firefly-firefly-conf

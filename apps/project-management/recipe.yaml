@@ -10,11 +10,14 @@ ugos:
   open_type: tab
   tag_type: devtool
 parameters:
+- key: VOL_1
+  label: Var lib mysql folder
+  help: Folder on the NAS for Project Management's var lib mysql. It is mounted into the container at /var/lib/mysql; Project Management has full read and write access to it.
+  type: path
 - key: DB_PASSWORD
   label: DB PASSWORD
   type: password
 volumes:
 - container_path: /var/lib/mysql
   label: Var lib mysql
-  user_chosen: false
-  default_host_subpath: mysql
+  default_host_subpath: project-management-db-var-lib-mysql

@@ -1,15 +1,15 @@
 services:
   app:
-    image: ghcr.io/pterodactyl/panel:v1.12.2@sha256:dd2687b00a532117fe25a88a8acbb34a6fb23a9ca59a76a405735e3cb729efca
+    image: ghcr.io/pterodactyl/panel:v1.15.1
     restart: unless-stopped
     ports:
       - 1180:80
       - 11443:443
     volumes:
-      - ./var:/app/var/
-      - ./nginx:/etc/nginx/http.d/
-      - ./certs:/etc/letsencrypt/
-      - ./logs:/app/storage/logs
+      - ${VOL_1}:/app/var/
+      - ${VOL_2}:/etc/nginx/http.d/
+      - ${VOL_3}:/etc/letsencrypt/
+      - ${VOL_4}:/app/storage/logs
     environment:
       - APP_URL=http://example.com
       - APP_TIMEZONE=UTC
@@ -32,11 +32,11 @@ services:
       - DB_PORT=3306
       - DB_CONNECTION=mariadb
   database:
-    image: mariadb:10.5@sha256:a530aeeefd82f4fa5150f391b6c75462140904780338766f6b03acecb1cca3ce
+    image: mariadb:12.3.3
     restart: unless-stopped
     command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - ./database:/var/lib/mysql
+      - ${VOL_5}:/var/lib/mysql
     environment:
       - MYSQL_DATABASE=panel
       - MYSQL_USER=pterodactyl

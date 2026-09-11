@@ -8,9 +8,9 @@ services:
       - 4001:4001
       - 88:80
     volumes:
-      - ./config:/config
-      - ./data:/data
-      - ./emulatorjs-data-nes-roms:/data/nes/roms
+      - ${VOL_1}:/config
+      - ${VOL_2}:/data
+      - ${VOL_3}:/data/nes/roms
     environment:
       - PGID=1000
       - PUID=1000

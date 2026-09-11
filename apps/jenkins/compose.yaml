@@ -6,5 +6,5 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ./data:/data
-      - ./jenkins-var-jenkins-home:/var/jenkins_home
+      - ${VOL_1}:/data
+      - ${VOL_2}:/var/jenkins_home

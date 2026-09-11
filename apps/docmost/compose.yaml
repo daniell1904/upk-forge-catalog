@@ -1,11 +1,11 @@
 services:
   docmost:
-    image: docmost/docmost:0.90.0
+    image: docmost/docmost:0.96.0
     restart: unless-stopped
     ports:
       - 3000:3000
     volumes:
-      - ./storage:/app/data/storage
+      - ${VOL_1}:/app/data/storage
     environment:
       - APP_URL=http://localhost:3000
       - APP_SECRET=${APP_SECRET}
@@ -15,7 +15,7 @@ services:
     image: postgres:16-alpine
     restart: unless-stopped
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - ${VOL_2}:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=docmost
       - POSTGRES_USER=docmost
@@ -24,4 +24,4 @@ services:
     image: redis:7.2-alpine
     restart: unless-stopped
     volumes:
-      - ./redis:/data
+      - ${VOL_3}:/data

@@ -4,7 +4,7 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ./firefly-lib-modules:/lib/modules
-      - ./conf:/firefly/conf
+      - ${VOL_1}:/lib/modules
+      - ${VOL_2}:/firefly/conf
     environment:
       - FIREFLY_PASSWORD=${FIREFLY_PASSWORD}

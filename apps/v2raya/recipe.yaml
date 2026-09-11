@@ -43,16 +43,26 @@ ugos:
   port: 2017
   open_type: tab
   tag_type: utility
+parameters:
+- key: VOL_1
+  label: Lib modules folder
+  help: Folder on the NAS for V2rayA's lib modules. It is mounted into the container at /lib/modules; V2rayA has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Etc resolv.conf folder
+  help: Folder on the NAS for V2rayA's etc resolv.conf. It is mounted into the container at /etc/resolv.conf; V2rayA has full read and write access to it.
+  type: path
+- key: VOL_3
+  label: Etc v2raya folder
+  help: Folder on the NAS for V2rayA's etc v2raya. It is mounted into the container at /etc/v2raya; V2rayA has full read and write access to it.
+  type: path
 volumes:
 - container_path: /lib/modules
   label: Lib modules
-  user_chosen: false
   default_host_subpath: v2raya-lib-modules
 - container_path: /etc/resolv.conf
   label: Etc resolv.conf
-  user_chosen: false
   default_host_subpath: v2raya-etc-resolv-conf
 - container_path: /etc/v2raya
   label: Etc v2raya
-  user_chosen: false
   default_host_subpath: v2raya-etc-v2raya

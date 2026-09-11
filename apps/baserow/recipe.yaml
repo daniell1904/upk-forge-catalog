@@ -9,8 +9,12 @@ ugos:
   port: 7350
   open_type: tab
   tag_type: devtool
+parameters:
+- key: VOL_1
+  label: Baserow data folder
+  help: Folder on the NAS for Baserow's baserow data. It is mounted into the container at /baserow/data; Baserow has full read and write access to it.
+  type: path
 volumes:
 - container_path: /baserow/data
   label: Baserow data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: app-baserow-data

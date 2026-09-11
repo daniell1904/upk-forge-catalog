@@ -5,7 +5,7 @@ services:
     ports:
       - 3333:8080
     volumes:
-      - ./extra/configs:/gem_digest_bot/extra_configs
+      - ${VOL_1}:/gem_digest_bot/extra_configs
     environment:
       - TELEGRAM_API_KEY=${TELEGRAM_API_KEY}
       - GEMINI_API_KEY=${GEMINI_API_KEY}

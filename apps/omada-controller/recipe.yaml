@@ -11,12 +11,19 @@ ugos:
   port: 8088
   open_type: tab
   tag_type: devtool
+parameters:
+- key: VOL_1
+  label: Opt tplink EAPController data folder
+  help: Folder on the NAS for TP-Link Omada Controller's opt tplink eapcontroller data. It is mounted into the container at /opt/tplink/EAPController/data; TP-Link Omada Controller has full read and write access to it.
+  type: path
+- key: VOL_2
+  label: Opt tplink EAPController logs folder
+  help: Folder on the NAS for TP-Link Omada Controller's opt tplink eapcontroller logs. It is mounted into the container at /opt/tplink/EAPController/logs; TP-Link Omada Controller has full read and write access to it.
+  type: path
 volumes:
 - container_path: /opt/tplink/EAPController/data
   label: Opt tplink EAPController data
-  user_chosen: false
-  default_host_subpath: data
+  default_host_subpath: app-opt-tplink-eapcontroller-data
 - container_path: /opt/tplink/EAPController/logs
   label: Opt tplink EAPController logs
-  user_chosen: false
-  default_host_subpath: logs
+  default_host_subpath: app-opt-tplink-eapcontroller-logs

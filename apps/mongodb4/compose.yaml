@@ -1,12 +1,12 @@
 services:
   mongodb4:
-    image: mongo:4.4.22
+    image: mongo:8.3.9
     restart: unless-stopped
     ports:
       - 27017:27017
     volumes:
-      - ./data/configdb:/data/configdb
-      - ./data/db:/data/db
+      - ${VOL_1}:/data/configdb
+      - ${VOL_2}:/data/db
     environment:
       - PUID=1000
       - PGID=1000
