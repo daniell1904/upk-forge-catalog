@@ -1,6 +1,6 @@
 services:
   pingvin-share:
-    image: stonith404/pingvin-share
+    image: stonith404/pingvin-share:v1.13
     restart: unless-stopped
     ports:
       - 3410:3000

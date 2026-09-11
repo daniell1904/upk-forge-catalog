@@ -9,6 +9,10 @@ ugos:
   port: 8080
   open_type: tab
   tag_type: utility
+parameters:
+- key: ORIGIN_PASSWORD
+  label: ORIGIN PASSWORD
+  type: password
 volumes:
 - container_path: /config
   label: Config

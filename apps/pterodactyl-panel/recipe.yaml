@@ -9,6 +9,10 @@ ugos:
   port: 1180
   open_type: tab
   tag_type: devtool
+parameters:
+- key: DB_PASSWORD
+  label: DB PASSWORD
+  type: password
 volumes:
 - container_path: /app/var/
   label: App var

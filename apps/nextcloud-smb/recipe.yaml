@@ -9,6 +9,10 @@ ugos:
   port: 7580
   open_type: tab
   tag_type: media
+parameters:
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
 volumes:
 - container_path: /var/www/html
   label: Var www html

@@ -12,4 +12,4 @@ services:
       - HOST=0.0.0.0
       - PORT=4321
       - BETTER_AUTH_URL=http://0.0.0.0:4321
-      - BETTER_AUTH_SECRET=your-secret-key-change-this-in-production
+      - BETTER_AUTH_SECRET=${BETTER_AUTH_SECRET}

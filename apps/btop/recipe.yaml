@@ -11,6 +11,10 @@ ugos:
   port: 7681
   open_type: tab
   tag_type: utility
+parameters:
+- key: GOTTY_AUTH_PASS
+  label: GOTTY AUTH PASS
+  type: string
 volumes:
 - container_path: /root/.config/btop
   label: Root .config btop

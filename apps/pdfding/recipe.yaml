@@ -11,6 +11,10 @@ ugos:
   port: 8000
   open_type: tab
   tag_type: utility
+parameters:
+- key: SECRET_KEY
+  label: SECRET KEY
+  type: password
 volumes:
 - container_path: /home/nonroot/pdfding/db
   label: Home nonroot pdfding db

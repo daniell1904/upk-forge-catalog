@@ -18,6 +18,10 @@ ugos:
   port: 5432
   open_type: tab
   tag_type: devtool
+parameters:
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
 volumes:
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data

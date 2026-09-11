@@ -13,6 +13,9 @@ parameters:
 - key: SUPERUSER_PASSWORD
   label: SUPERUSER PASSWORD
   type: password
+- key: SECRET_KEY
+  label: SECRET KEY
+  type: password
 volumes:
 - container_path: /config
   label: Config

@@ -1,6 +1,6 @@
 services:
   deepseek-ocr-backend:
-    image: app/deepseek-ocr-backend:v2.2.0
+    image: icewhaletech/deepseek-ocr-backend:v2.2.0
     restart: unless-stopped
     ports:
       - 22523:8000
@@ -17,7 +17,7 @@ services:
       - IMAGE_SIZE=640
       - CROP_MODE=true
   deepseek-ocr-frontend:
-    image: app/deepseek-ocr-frontend:v2.2.0
+    image: icewhaletech/deepseek-ocr-frontend:v2.2.0
     restart: unless-stopped
     ports:
       - 23000:80

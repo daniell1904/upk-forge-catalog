@@ -11,6 +11,10 @@ ugos:
   port: 8444
   open_type: tab
   tag_type: media
+parameters:
+- key: USER_PASSWORD
+  label: USER PASSWORD
+  type: password
 volumes:
 - container_path: /var/games/minecraft
   label: Var games minecraft

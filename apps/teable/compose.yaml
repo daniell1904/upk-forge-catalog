@@ -21,10 +21,13 @@ services:
     environment:
       - TZ=$TZ
       - POSTGRES_DB=teable-db
-      - POSTGRES_USER=example
-      - POSTGRES_PASSWORD=example
+      - POSTGRES_USER=${POSTGRES_PASSWORD}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
   teable-cache:
     image: redis:7.2.4
     restart: unless-stopped
+    command:
+      - redis-server
+      - --requirepass password
     volumes:
       - ./teable-cache-data:/data

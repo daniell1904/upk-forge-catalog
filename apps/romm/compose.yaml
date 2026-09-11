@@ -14,20 +14,20 @@ services:
       - DB_HOST=romm-db
       - DB_NAME=romm
       - DB_USER=romm-user
-      - DB_PASSWD=app
-      - ROMM_AUTH_SECRET_KEY=""
-      - IGDB_CLIENT_ID=""
-      - IGDB_CLIENT_SECRET=""
-      - SCREENSCRAPER_USER=""
-      - SCREENSCRAPER_PASSWORD=""
-      - STEAMGRIDDB_API_KEY=""
+      - DB_PASSWD=${DB_PASSWD}
+      - ROMM_AUTH_SECRET_KEY=${ROMM_AUTH_SECRET_KEY}
+      - IGDB_CLIENT_ID=${ROMM_AUTH_SECRET_KEY}
+      - IGDB_CLIENT_SECRET=${ROMM_AUTH_SECRET_KEY}
+      - SCREENSCRAPER_USER=${ROMM_AUTH_SECRET_KEY}
+      - SCREENSCRAPER_PASSWORD=${ROMM_AUTH_SECRET_KEY}
+      - STEAMGRIDDB_API_KEY=${ROMM_AUTH_SECRET_KEY}
   romm-db:
     image: mariadb:11.8.2
     restart: unless-stopped
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
-      - MARIADB_ROOT_PASSWORD=app
+      - MARIADB_ROOT_PASSWORD=${DB_PASSWD}
       - MARIADB_DATABASE=romm
       - MARIADB_USER=romm-user
-      - MARIADB_PASSWORD=app
+      - MARIADB_PASSWORD=${DB_PASSWD}

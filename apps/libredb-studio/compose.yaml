@@ -9,8 +9,8 @@ services:
       - ./data:/app/data
     environment:
       - ADMIN_EMAIL=admin@libredb.org
-      - ADMIN_PASSWORD=changeme123
-      - JWT_SECRET=libredb-studio-change-this-to-a-long-random-secret-value-min-48
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - JWT_SECRET=${JWT_SECRET}
       - STORAGE_PROVIDER=sqlite
       - STORAGE_SQLITE_PATH=/app/data/libredb-storage.db
       - AUTH_COOKIE_SECURE=false

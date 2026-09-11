@@ -18,6 +18,9 @@ parameters:
 - key: JWT_SECRET_KEY
   label: JWT SECRET KEY
   type: password
+- key: DEFAULT_ADMIN_PASSWORD
+  label: DEFAULT ADMIN PASSWORD
+  type: password
 volumes:
 - container_path: /var/lib/data
   label: Var lib data

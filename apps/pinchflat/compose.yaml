@@ -1,6 +1,6 @@
 services:
   pinchflat:
-    image: ghcr.io/kieraneglin/pinchflat:latest
+    image: ghcr.io/kieraneglin/pinchflat:v2025.6.6
     restart: unless-stopped
     network_mode: bridge
     ports:

@@ -9,6 +9,13 @@ ugos:
   port: 8080
   open_type: tab
   tag_type: devtool
+parameters:
+- key: PASSWORD
+  label: PASSWORD
+  type: password
+- key: SUDO_PASSWORD
+  label: SUDO PASSWORD
+  type: password
 volumes:
 - container_path: /config
   label: Config

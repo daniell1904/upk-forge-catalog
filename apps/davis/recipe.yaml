@@ -16,9 +16,6 @@ parameters:
 - key: MYSQL_ROOT_PASSWORD
   label: MYSQL ROOT PASSWORD
   type: password
-- key: MYSQL_PASSWORD
-  label: MYSQL PASSWORD
-  type: password
 volumes:
 - container_path: /data
   label: Data

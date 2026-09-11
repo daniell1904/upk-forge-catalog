@@ -14,6 +14,6 @@ services:
       - ./dnsmasq.d:/etc/dnsmasq.d/
     environment:
       - TZ=UTC
-      - FTLCONF_webserver_api_password=your_password
+      - FTLCONF_webserver_api_password=${FTLCONF_webserver_api_password}
       - BLOCKLISTS_URL=https://v.firebog.net/hosts/lists.php?type=tick
       - REGEX_BLACKLIST_URL=https://raw.githubusercontent.com/mmotti/pihole-regex/master/regex.list

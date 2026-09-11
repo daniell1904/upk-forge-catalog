@@ -7,5 +7,5 @@ services:
     volumes:
       - ./config:/config
     environment:
-      - VNC_PASSWORD=app
+      - VNC_PASSWORD=${VNC_PASSWORD}
       - FF_OPEN_URL=https://community.app.com/

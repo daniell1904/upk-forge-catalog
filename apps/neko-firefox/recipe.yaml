@@ -9,3 +9,7 @@ ugos:
   port: 8080
   open_type: tab
   tag_type: devtool
+parameters:
+- key: NEKO_PASSWORD
+  label: NEKO PASSWORD
+  type: password

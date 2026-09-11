@@ -9,6 +9,10 @@ ugos:
   port: 5800
   open_type: tab
   tag_type: utility
+parameters:
+- key: VNC_PASSWORD
+  label: VNC PASSWORD
+  type: password
 volumes:
 - container_path: /config
   label: Config

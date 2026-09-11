@@ -1,6 +1,6 @@
 services:
   maybe-web:
-    image: ghcr.io/maybe-finance/maybe:latest
+    image: ghcr.io/maybe-finance/maybe:0.6.0
     restart: unless-stopped
     ports:
       - 23000:3000
@@ -8,7 +8,7 @@ services:
       - ./app/storage:/rails/storage
     environment:
       - POSTGRES_USER=maybe_user
-      - POSTGRES_PASSWORD=maybe_password
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=maybe_production
       - SECRET_KEY_BASE=a7523c3d0ae56415046ad8abae168d71074a79534a7062258f8d1d51ac2f76d3c3bc86d86b6b0b307df30d9a6a90a2066a3fa9e67c5e6f374dbd7dd4e0778e13
       - SELF_HOSTED=true
@@ -19,11 +19,15 @@ services:
       - REDIS_URL=redis://maybe-redis:6379/1
       - OPENAI_ACCESS_TOKEN=${OPENAI_ACCESS_TOKEN}
   maybe-worker:
-    image: ghcr.io/maybe-finance/maybe:latest
+    image: ghcr.io/maybe-finance/maybe:0.6.0
     restart: unless-stopped
+    command:
+      - bundle
+      - exec
+      - sidekiq
     environment:
       - POSTGRES_USER=maybe_user
-      - POSTGRES_PASSWORD=maybe_password
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=maybe_production
       - SECRET_KEY_BASE=a7523c3d0ae56415046ad8abae168d71074a79534a7062258f8d1d51ac2f76d3c3bc86d86b6b0b307df30d9a6a90a2066a3fa9e67c5e6f374dbd7dd4e0778e13
       - SELF_HOSTED=true
@@ -40,7 +44,7 @@ services:
       - ./pgdata:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=maybe_user
-      - POSTGRES_PASSWORD=maybe_password
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=maybe_production
   maybe-redis:
     image: redis:8.2.1-alpine3.22

@@ -1,6 +1,6 @@
 services:
   nextcloud:
-    image: docker.io/nextcloud:34.0.3-apache
+    image: docker.io/nextcloud:32.0.15-apache
     ports:
       - "8082:80"
     volumes:

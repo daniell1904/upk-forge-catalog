@@ -7,5 +7,5 @@ services:
     volumes:
       - ./data:/data
     environment:
-      - JWT_SECRET="MGZiMzlkM2EtNmYxNC00NzNlLWI2YjItYTViY2M0Mzg0NjNl"
+      - JWT_SECRET=${JWT_SECRET}
       - CORS_ORIGINS="http://example.com:8000"

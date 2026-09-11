@@ -1,6 +1,6 @@
 services:
   ani-rss:
-    image: docker.io/wushuo894/ani-rss:v3.2.30
+    image: docker.io/wushuo894/ani-rss:v3.2.31
     ports:
       - "7789:7789"
     volumes:

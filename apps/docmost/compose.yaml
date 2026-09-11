@@ -19,7 +19,7 @@ services:
     environment:
       - POSTGRES_DB=docmost
       - POSTGRES_USER=docmost
-      - POSTGRES_PASSWORD=jcui51lw747yuuk4zrpm
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
   docmost-redis:
     image: redis:7.2-alpine
     restart: unless-stopped

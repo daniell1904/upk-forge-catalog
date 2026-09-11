@@ -15,6 +15,10 @@ ugos:
   port: 3306
   open_type: tab
   tag_type: devtool
+parameters:
+- key: MYSQL_ROOT_PASSWORD
+  label: MYSQL ROOT PASSWORD
+  type: password
 volumes:
 - container_path: /config
   label: Config

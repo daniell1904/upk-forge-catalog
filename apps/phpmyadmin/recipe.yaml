@@ -9,3 +9,7 @@ ugos:
   port: 8080
   open_type: tab
   tag_type: utility
+parameters:
+- key: PMA_PASSWORD
+  label: PMA PASSWORD
+  type: password

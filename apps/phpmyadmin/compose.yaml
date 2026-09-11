@@ -8,4 +8,4 @@ services:
       - PMA_HOST=[YOUR-app-IP]
       - PMA_PORT=3306
       - PMA_USER=app
-      - PMA_PASSWORD=password
+      - PMA_PASSWORD=${PMA_PASSWORD}

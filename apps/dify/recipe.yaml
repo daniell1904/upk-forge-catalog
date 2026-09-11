@@ -12,8 +12,17 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: SECRET_KEY
+  label: SECRET KEY
+  type: password
+- key: DB_PASSWORD
+  label: DB PASSWORD
+  type: password
 - key: WEAVIATE_API_KEY
   label: WEAVIATE API KEY
+  type: password
+- key: CODE_EXECUTION_API_KEY
+  label: CODE EXECUTION API KEY
   type: password
 volumes:
 - container_path: /configs/nginx

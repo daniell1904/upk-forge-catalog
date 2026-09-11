@@ -15,9 +15,9 @@ services:
       - APP_CIPHER=AES-256-CBC
       - DB_HOST=invoice-ninja-db
       - DB_PORT=3306
-      - DB_DATABASE=ninja
-      - DB_USERNAME=ninja
-      - DB_PASSWORD=ninja
+      - DB_DATABASE=${DB_PASSWORD}
+      - DB_USERNAME=${DB_PASSWORD}
+      - DB_PASSWORD=${DB_PASSWORD}
       - REQUIRE_HTTPS=false
       - QUEUE_CONNECTION=database
       - IS_DOCKER=TRUE
@@ -32,15 +32,25 @@ services:
   invoice-ninja-db:
     image: mariadb:10.4@sha256:22edfe1c78349f8cae88bbb5c2873b7e6c515be767c91c691308ce57445806f3
     restart: unless-stopped
+    command:
+      - mysqld
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --wait_timeout=28800
+      - --log-warnings=0
     volumes:
       - ./data/mysql:/var/lib/mysql
     environment:
-      - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
-      - MARIADB_USER=ninja
-      - MARIADB_PASSWORD=ninja
-      - MARIADB_DATABASE=ninja
+      - MARIADB_ROOT_PASSWORD=${IN_PASSWORD}
+      - MARIADB_USER=${DB_PASSWORD}
+      - MARIADB_PASSWORD=${DB_PASSWORD}
+      - MARIADB_DATABASE=${DB_PASSWORD}
   invoice-ninja-init:
     image: bash:5.3.15@sha256:a19c811ee9e97fa8a080001d82b8e0ded303f0795cffdb1cbd162731bc8ce208
     restart: unless-stopped
+    command:
+      - /bin/sh
+      - -c
+      - "if [ ! -f /tmp/data/.init_complete ]; then echo 'Starting initialization process...' && if [ -f /tmp/data/init/init.sh ]; then echo 'Found init.sh, making it executable...' && chmod +x /tmp/data/init/init.sh && echo 'Executing init.sh...' && /tmp/data/init/init.sh && echo 'init.sh execution completed.' && touch /tmp/data/.init_complete && echo 'Initialization process finished.'; else echo 'Error: /tmp/data/init/init.sh not found!' && exit 1; fi; else echo 'Initialization already completed. Exiting.'; fi && exit 0"
     volumes:
       - /DATA/AppData/invoice-ninja/data:/tmp/data

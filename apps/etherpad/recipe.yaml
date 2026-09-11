@@ -38,6 +38,10 @@ ugos:
   port: 9001
   open_type: tab
   tag_type: utility
+parameters:
+- key: ADMIN_PASSWORD
+  label: ADMIN PASSWORD
+  type: password
 volumes:
 - container_path: /opt/etherpad-lite/var
   label: Opt etherpad lite var

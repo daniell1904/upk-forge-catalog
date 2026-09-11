@@ -1,6 +1,6 @@
 services:
   nanobot:
-    image: docker.io/kangkang223/nanobot-webui:latest
+    image: docker.io/kangkang223/nanobot-webui:0.2.9
     ports:
       - "18780:18780"
       - "18790:18790"

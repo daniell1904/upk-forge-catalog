@@ -13,6 +13,10 @@ ugos:
   port: 24190
   open_type: tab
   tag_type: utility
+parameters:
+- key: OPENCLAW_GATEWAY_TOKEN
+  label: OPENCLAW GATEWAY TOKEN
+  type: password
 volumes:
 - container_path: /home/node/.openclaw
   label: Home node .openclaw

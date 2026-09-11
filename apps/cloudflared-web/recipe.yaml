@@ -11,6 +11,10 @@ ugos:
   port: 14333
   open_type: tab
   tag_type: utility
+parameters:
+- key: BASIC_AUTH_PASS
+  label: BASIC AUTH PASS
+  type: string
 volumes:
 - container_path: /config
   label: Config

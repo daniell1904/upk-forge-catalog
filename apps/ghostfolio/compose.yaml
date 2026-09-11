@@ -13,9 +13,9 @@ services:
       - JWT_SECRET_KEY=${JWT_SECRET_KEY}
       - POSTGRES_DB=ghostfolio
       - POSTGRES_USER=ghostfolio
-      - POSTGRES_PASSWORD=apppassword
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - REDIS_HOST=ghostfolio-redis
-      - REDIS_PASSWORD=appredispassword
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
       - REDIS_PORT=6379
   ghostfolio-db:
     image: postgres:15.4-alpine@sha256:35ce2187f2f7fb75e8e79493e13743596c21eb3789ff41ece145ae04d06e93a5
@@ -25,10 +25,12 @@ services:
     environment:
       - POSTGRES_DB=ghostfolio
       - POSTGRES_USER=ghostfolio
-      - POSTGRES_PASSWORD=apppassword
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - PGDATA=/var/lib/postgresql/data
   ghostfolio-redis:
     image: redis:7.4.6-alpine@sha256:7a7c6b5c49a6896d0a58ee0c6dc0dcabe14f30f0a2f7d2d1362d276fa2d43166
     restart: unless-stopped
+    command: >
+      --requirepass appredispassword
     volumes:
       - ./data/redis:/data

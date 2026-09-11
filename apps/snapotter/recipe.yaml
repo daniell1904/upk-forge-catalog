@@ -11,6 +11,10 @@ ugos:
   port: 1349
   open_type: tab
   tag_type: utility
+parameters:
+- key: DEFAULT_PASSWORD
+  label: DEFAULT PASSWORD
+  type: password
 volumes:
 - container_path: /data
   label: Data

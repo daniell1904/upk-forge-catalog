@@ -9,4 +9,4 @@ services:
       - ./data:/opt/openlist/data
     environment:
       - UMASK=022
-      - OPENLIST_ADMIN_PASSWORD=app
+      - OPENLIST_ADMIN_PASSWORD=${OPENLIST_ADMIN_PASSWORD}

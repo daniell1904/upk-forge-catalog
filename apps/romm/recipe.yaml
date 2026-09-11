@@ -48,6 +48,13 @@ ugos:
   port: 8285
   open_type: tab
   tag_type: media
+parameters:
+- key: DB_PASSWD
+  label: DB PASSWD
+  type: string
+- key: ROMM_AUTH_SECRET_KEY
+  label: ROMM AUTH SECRET KEY
+  type: password
 volumes:
 - container_path: /romm/resources
   label: Romm resources

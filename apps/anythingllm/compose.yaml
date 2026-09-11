@@ -1,6 +1,6 @@
 services:
   anythingllm:
-    image: mintplexlabs/anythingllm
+    image: mintplexlabs/anythingllm:1.16.1
     restart: unless-stopped
     ports:
       - 3051:3001

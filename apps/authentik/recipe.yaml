@@ -6,9 +6,16 @@ description: Authentik is a self-hosted identity and access management platform 
 ugos:
   app_id: com.upkforge.docker.authentik
   version: 0.1.0
-  port: 9443
+  port: 19443
   open_type: tab
   tag_type: utility
+parameters:
+- key: AUTHENTIK_POSTGRESQL__PASSWORD
+  label: AUTHENTIK POSTGRESQL PASSWORD
+  type: password
+- key: AUTHENTIK_SECRET_KEY
+  label: AUTHENTIK SECRET KEY
+  type: password
 volumes:
 - container_path: /media
   label: Media

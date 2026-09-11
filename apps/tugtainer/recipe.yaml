@@ -9,6 +9,10 @@ ugos:
   port: 9412
   open_type: tab
   tag_type: devtool
+parameters:
+- key: JWT_SECRET_KEY
+  label: JWT SECRET KEY
+  type: password
 volumes:
 - container_path: /tugtainer
   label: Tugtainer

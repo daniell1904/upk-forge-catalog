@@ -16,8 +16,8 @@ parameters:
 - key: APP_KEY
   label: APP KEY
   type: password
-- key: MARIADB_ROOT_PASSWORD
-  label: MARIADB ROOT PASSWORD
+- key: DB_PASSWORD
+  label: DB PASSWORD
   type: password
 volumes:
 - container_path: /var/www/app/public

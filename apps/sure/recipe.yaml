@@ -46,6 +46,9 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
 - key: OPENAI_ACCESS_TOKEN
   label: OPENAI ACCESS TOKEN
   type: password

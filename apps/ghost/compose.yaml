@@ -10,7 +10,7 @@ services:
       - database__client=mysql
       - database__connection__host=db
       - database__connection__user=ghost
-      - database__connection__password=app
+      - database__connection__password=${database__connection__password}
       - database__connection__database=ghost
       - url=http://localhost:2368
   db:
@@ -21,5 +21,5 @@ services:
     environment:
       - MYSQL_USER=ghost
       - MYSQL_DATABASE=ghost
-      - MYSQL_PASSWORD=app
-      - MYSQL_ROOT_PASSWORD=app
+      - MYSQL_PASSWORD=${database__connection__password}
+      - MYSQL_ROOT_PASSWORD=${database__connection__password}

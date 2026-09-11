@@ -11,6 +11,10 @@ ugos:
   port: 10443
   open_type: tab
   tag_type: utility
+parameters:
+- key: WATCHTOWER_HTTP_API_TOKEN
+  label: WATCHTOWER HTTP API TOKEN
+  type: password
 volumes:
 - container_path: /server/volume
   label: Server volume

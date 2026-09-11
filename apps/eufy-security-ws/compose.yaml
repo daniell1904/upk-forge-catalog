@@ -7,6 +7,6 @@ services:
       - ./data:/data
     environment:
       - USERNAME=[EUFY_USERNAME]
-      - PASSWORD=[EUFY_PASSWORD]
+      - PASSWORD=${PASSWORD}
       - COUNTRY=US
       - LANGUAGE=en

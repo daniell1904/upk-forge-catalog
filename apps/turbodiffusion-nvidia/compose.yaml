@@ -1,7 +1,10 @@
 services:
   turbodiffusion:
-    image: app/turbodiffusion:20260312
+    image: icewhaletech/turbodiffusion:20260312
     restart: unless-stopped
+    command:
+      - python
+      - turbodiffusion/app_gradio.py
     ports:
       - 27860:7860
     volumes:

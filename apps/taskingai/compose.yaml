@@ -50,7 +50,7 @@ services:
       - JWT_SECRET_KEY=${JWT_SECRET_KEY}
       - PURPOSE=WEB
       - DEFAULT_ADMIN_USERNAME=admin
-      - DEFAULT_ADMIN_PASSWORD=TaskingAI321
+      - DEFAULT_ADMIN_PASSWORD=${DEFAULT_ADMIN_PASSWORD}
       - OBJECT_STORAGE_TYPE=local
       - HOST_URL=http://nginx:3080
       - PATH_TO_VOLUME=/var/lib/data
@@ -63,10 +63,14 @@ services:
     environment:
       - POSTGRES_DB=taskingai
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=TaskingAI321
+      - POSTGRES_PASSWORD=${DEFAULT_ADMIN_PASSWORD}
   cache:
     image: redis:7-alpine
     restart: unless-stopped
+    command:
+      - redis-server
+      - --requirepass
+      - TaskingAI321
     volumes:
       - ./data/redis:/data
   nginx:

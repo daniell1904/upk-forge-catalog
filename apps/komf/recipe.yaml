@@ -10,6 +10,9 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: KOMF_KOMGA_PASSWORD
+  label: KOMF KOMGA PASSWORD
+  type: password
 - key: KOMF_KAVITA_API_KEY
   label: KOMF KAVITA API KEY
   type: password

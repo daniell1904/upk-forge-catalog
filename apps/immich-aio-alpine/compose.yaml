@@ -12,8 +12,8 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
       - DB_HOSTNAME=immich-db
-      - DB_USERNAME=app
-      - DB_PASSWORD=app
+      - DB_USERNAME=${DB_PASSWORD}
+      - DB_PASSWORD=${DB_PASSWORD}
       - DB_DATABASE_NAME=immich
       - REDIS_HOSTNAME=immich-redis
       - DB_PORT=5432
@@ -31,7 +31,7 @@ services:
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     environment:
-      - POSTGRES_PASSWORD=app
-      - POSTGRES_USER=app
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_USER=${DB_PASSWORD}
       - POSTGRES_DB=immich
       - PG_DATA=/var/lib/postgresql/data

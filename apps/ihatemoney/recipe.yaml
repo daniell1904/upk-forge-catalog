@@ -13,6 +13,9 @@ parameters:
 - key: SECRET_KEY
   label: SECRET KEY
   type: password
+- key: MYSQL_ROOT_PASSWORD
+  label: MYSQL ROOT PASSWORD
+  type: password
 volumes:
 - container_path: /var/lib/mysql
   label: Var lib mysql

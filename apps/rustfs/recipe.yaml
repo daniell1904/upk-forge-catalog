@@ -10,6 +10,9 @@ ugos:
   open_type: tab
   tag_type: utility
 parameters:
+- key: RUSTFS_ACCESS_KEY
+  label: RUSTFS ACCESS KEY
+  type: password
 - key: RUSTFS_SECRET_KEY
   label: RUSTFS SECRET KEY
   type: password

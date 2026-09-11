@@ -13,6 +13,9 @@ parameters:
 - key: MYSQL_ROOT_PASSWORD
   label: MYSQL ROOT PASSWORD
   type: password
+- key: JWT_SECRET
+  label: JWT SECRET
+  type: password
 volumes:
 - container_path: /upload-dir
   label: Upload dir

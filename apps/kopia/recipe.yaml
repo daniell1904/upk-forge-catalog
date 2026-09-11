@@ -11,6 +11,10 @@ ugos:
   port: 51515
   open_type: tab
   tag_type: utility
+parameters:
+- key: KOPIA_UI_PASSWORD
+  label: KOPIA UI PASSWORD
+  type: password
 volumes:
 - container_path: /config
   label: Config

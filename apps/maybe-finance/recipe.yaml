@@ -9,6 +9,10 @@ ugos:
   port: 4000
   open_type: tab
   tag_type: utility
+parameters:
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
 volumes:
 - container_path: /rails/storage
   label: Rails storage

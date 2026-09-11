@@ -11,17 +11,23 @@ services:
       - BROWSER_WEB_URL=http://karakeep-chrome:9222
       - DATA_DIR=/data
       - NEXTAUTH_URL=http://localhost:14592
-      - NEXTAUTH_SECRET=change_this_to_a_long_random_string
-      - MEILI_MASTER_KEY=change_this_to_a_long_random_string
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+      - MEILI_MASTER_KEY=${NEXTAUTH_SECRET}
       - OPENAI_API_KEY=
   karakeep-chrome:
     image: ghcr.io/karakeep-app/karakeep-chrome:release
     restart: unless-stopped
+    command:
+      - --disable-gpu
+      - --disable-dev-shm-usage
+      - --hide-scrollbars
+      - --disable-blink-features=AutomationControlled
+      - --window-size=1440,900
   karakeep-meilisearch:
     image: getmeili/meilisearch:v1.41.0
     restart: unless-stopped
     volumes:
       - ./meilisearch:/meili_data
     environment:
-      - MEILI_MASTER_KEY=change_this_to_a_long_random_string
+      - MEILI_MASTER_KEY=${NEXTAUTH_SECRET}
       - MEILI_NO_ANALYTICS=true

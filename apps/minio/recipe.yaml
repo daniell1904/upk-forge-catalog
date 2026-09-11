@@ -9,6 +9,10 @@ ugos:
   port: 9010
   open_type: tab
   tag_type: utility
+parameters:
+- key: MINIO_ROOT_PASSWORD
+  label: MINIO ROOT PASSWORD
+  type: password
 volumes:
 - container_path: /data
   label: Data

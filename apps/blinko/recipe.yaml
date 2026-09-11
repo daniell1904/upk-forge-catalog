@@ -42,6 +42,9 @@ parameters:
 - key: NEXTAUTH_SECRET
   label: NEXTAUTH SECRET
   type: password
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
 volumes:
 - container_path: /app/.blinko
   label: App .blinko

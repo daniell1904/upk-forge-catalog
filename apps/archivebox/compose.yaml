@@ -7,8 +7,8 @@ services:
     volumes:
       - ./data:/data
     environment:
-      - ADMIN_USERNAME=app
-      - ADMIN_PASSWORD=app
+      - ADMIN_USERNAME=${ADMIN_PASSWORD}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
       - ALLOWED_HOSTS=*
       - CSRF_TRUSTED_ORIGINS=*
       - PUBLIC_INDEX=True
@@ -16,24 +16,29 @@ services:
       - PUBLIC_ADD_VIEW=False
       - SEARCH_BACKEND_ENGINE=sonic
       - SEARCH_BACKEND_HOST_NAME=archivebox_sonic
-      - SEARCH_BACKEND_PASSWORD=SomeSecretPassword
+      - SEARCH_BACKEND_PASSWORD=${SEARCH_BACKEND_PASSWORD}
   archivebox_scheduler:
     image: archivebox/archivebox:0.7.4
     restart: unless-stopped
+    command:
+      - schedule
+      - --foreground
+      - --update
+      - --every=day
     volumes:
       - ./data:/data
     environment:
       - TIMEOUT=120
       - SEARCH_BACKEND_ENGINE=sonic
       - SEARCH_BACKEND_HOST_NAME=archivebox_sonic
-      - SEARCH_BACKEND_PASSWORD=SomeSecretPassword
+      - SEARCH_BACKEND_PASSWORD=${SEARCH_BACKEND_PASSWORD}
   archivebox_sonic:
     image: archivebox/sonic:1.4.9
     restart: unless-stopped
     volumes:
       - ./data/sonic:/var/lib/sonic/store
     environment:
-      - SEARCH_BACKEND_PASSWORD=SomeSecretPassword
+      - SEARCH_BACKEND_PASSWORD=${SEARCH_BACKEND_PASSWORD}
   archivebox_novnc:
     image: theasp/novnc:latest
     restart: unless-stopped

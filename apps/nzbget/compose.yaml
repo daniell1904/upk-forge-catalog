@@ -9,7 +9,7 @@ services:
       - ./config:/config
       - ${VOL_1}:/downloads
     environment:
-      - NZBGET_PASS=tegbzn6789
+      - NZBGET_PASS=${NZBGET_PASS}
       - NZBGET_USER=nzbget
       - PGID=1000
       - PUID=1000

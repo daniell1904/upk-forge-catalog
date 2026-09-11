@@ -7,7 +7,7 @@ services:
     volumes:
       - ./dockpeek-var-run-docker-sock:/var/run/docker.sock
     environment:
-      - SECRET_KEY=change_this_secret_key
-      - USERNAME=app
-      - PASSWORD=app
+      - SECRET_KEY=${SECRET_KEY}
+      - USERNAME=${PASSWORD}
+      - PASSWORD=${PASSWORD}
       - DOCKER_HOST=unix:///var/run/docker.sock

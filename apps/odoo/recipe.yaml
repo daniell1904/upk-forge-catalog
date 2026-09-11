@@ -13,9 +13,6 @@ parameters:
 - key: PASSWORD
   label: PASSWORD
   type: password
-- key: POSTGRES_PASSWORD
-  label: POSTGRES PASSWORD
-  type: password
 volumes:
 - container_path: /etc/odoo
   label: Etc odoo

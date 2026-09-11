@@ -11,6 +11,10 @@ ugos:
   port: 51820
   open_type: tab
   tag_type: utility
+parameters:
+- key: INIT_PASSWORD
+  label: INIT PASSWORD
+  type: password
 volumes:
 - container_path: /etc/wireguard
   label: Etc wireguard

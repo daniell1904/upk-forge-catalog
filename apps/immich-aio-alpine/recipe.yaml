@@ -9,6 +9,10 @@ ugos:
   port: 2283
   open_type: tab
   tag_type: media
+parameters:
+- key: DB_PASSWORD
+  label: DB PASSWORD
+  type: password
 volumes:
 - container_path: /config
   label: Config

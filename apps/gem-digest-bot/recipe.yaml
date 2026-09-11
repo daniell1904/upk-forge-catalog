@@ -9,6 +9,13 @@ ugos:
   port: 3333
   open_type: tab
   tag_type: utility
+parameters:
+- key: TELEGRAM_API_KEY
+  label: TELEGRAM API KEY
+  type: password
+- key: GEMINI_API_KEY
+  label: GEMINI API KEY
+  type: password
 volumes:
 - container_path: /gem_digest_bot/extra_configs
   label: Gem digest bot extra configs

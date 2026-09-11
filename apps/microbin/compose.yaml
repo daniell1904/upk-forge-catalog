@@ -8,7 +8,7 @@ services:
       - ./data:/app/microbin_data
     environment:
       - MICROBIN_ADMIN_USERNAME=admin
-      - MICROBIN_ADMIN_PASSWORD=password
+      - MICROBIN_ADMIN_PASSWORD=${MICROBIN_ADMIN_PASSWORD}
       - MICROBIN_EDITABLE=true
       - MICROBIN_FOOTER_TEXT=
       - MICROBIN_HIDE_HEADER=false

@@ -17,7 +17,7 @@ services:
       - 52010:52010
     environment:
       - NEKO_SCREEN=1920x1080@30
-      - NEKO_PASSWORD=neko
+      - NEKO_PASSWORD=${NEKO_PASSWORD}
       - NEKO_PASSWORD_ADMIN=app
       - NEKO_EPR=52000-52010
       - NEKO_ICELITE=1

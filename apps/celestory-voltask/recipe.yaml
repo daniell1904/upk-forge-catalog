@@ -10,6 +10,9 @@ ugos:
   open_type: tab
   tag_type: devtool
 parameters:
+- key: AUTH_CLIENT_SECRET
+  label: AUTH CLIENT SECRET
+  type: password
 - key: AUTH_AUTHORITY_SECRET
   label: AUTH AUTHORITY SECRET
   type: password
@@ -25,6 +28,9 @@ parameters:
 - key: API_ORIGIN
   label: API ORIGIN
   type: string
+- key: DB_PASSWORD
+  label: DB PASSWORD
+  type: password
 - key: AUTH_REDIRECT_URI
   label: AUTH REDIRECT URI
   type: path

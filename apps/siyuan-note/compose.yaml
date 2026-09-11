@@ -2,6 +2,7 @@ services:
   siyuan-note:
     image: b3log/siyuan:v3.6.5
     restart: unless-stopped
+    command: --accessAuthCode=app --workspace=/siyuan/workspace/
     network_mode: bridge
     ports:
       - 6806:6806

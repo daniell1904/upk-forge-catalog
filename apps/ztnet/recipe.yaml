@@ -42,6 +42,13 @@ ugos:
   port: 3050
   open_type: tab
   tag_type: utility
+parameters:
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
+- key: NEXTAUTH_SECRET
+  label: NEXTAUTH SECRET
+  type: password
 volumes:
 - container_path: /var/lib/zerotier-one
   label: Var lib zerotier one

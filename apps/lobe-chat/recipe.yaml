@@ -9,3 +9,7 @@ ugos:
   port: 3210
   open_type: tab
   tag_type: utility
+parameters:
+- key: OPENAI_API_KEY
+  label: OPENAI API KEY
+  type: password

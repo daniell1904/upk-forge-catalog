@@ -11,4 +11,4 @@ services:
       - SERVER_PORT=8443
       - USER_NAME=mc
       - USER_UID=1000
-      - USER_PASSWORD=root
+      - USER_PASSWORD=${USER_PASSWORD}

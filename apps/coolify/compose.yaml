@@ -18,17 +18,17 @@ services:
       - APP_ENV="production"
       - APP_DEBUG="false"
       - APP_NAME="Coolify"
-      - APP_KEY="base64:lSStPbXB/yW6cxXIz8fauQ937PbSUktTdIf7R05szQ4="
+      - APP_KEY=${APP_KEY}
       - APP_URL="http://[app_IP]:8000"
       - DB_CONNECTION="pgsql"
       - DB_HOST="coolify-postgres"
       - DB_PORT="5432"
       - DB_DATABASE="coolify"
       - DB_USERNAME="coolify"
-      - DB_PASSWORD="f1986213-9d72-4c36-bbd4-adca2f414fa1"
+      - DB_PASSWORD=${DB_PASSWORD}
       - QUEUE_CONNECTION="redis"
       - REDIS_HOST="coolify-redis"
-      - REDIS_PASSWORD="9e3df6aa-ea48-4e59-a9c4-59798f1ba9b4"
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
       - HORIZON_BALANCE="100"
       - HORIZON_MAX_PROCESSES="10"
       - HORIZON_BALANCE_MAX_SHIFT="10"
@@ -83,6 +83,15 @@ services:
   coolify-redis:
     image: redis:8.2.2-alpine@sha256:1c78f5e7512cc8b22b0edc95c20e7abd9e1fd832e5dfd5c3c6b59ce82fb238d0
     restart: unless-stopped
+    command:
+      - redis-server
+      - --save
+      - "20"
+      - "1"
+      - --loglevel
+      - warning
+      - --requirepass
+      - 9e3df6aa-ea48-4e59-a9c4-59798f1ba9b4
     ports:
       - 6379:6379
     volumes:

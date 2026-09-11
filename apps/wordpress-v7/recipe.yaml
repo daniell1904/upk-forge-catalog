@@ -9,6 +9,10 @@ ugos:
   port: 8084
   open_type: tab
   tag_type: utility
+parameters:
+- key: WORDPRESS_DB_PASSWORD
+  label: WORDPRESS DB PASSWORD
+  type: password
 volumes:
 - container_path: /var/www/html
   label: Var www html

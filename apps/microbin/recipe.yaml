@@ -9,6 +9,10 @@ ugos:
   port: 8888
   open_type: tab
   tag_type: utility
+parameters:
+- key: MICROBIN_ADMIN_PASSWORD
+  label: MICROBIN ADMIN PASSWORD
+  type: password
 volumes:
 - container_path: /app/microbin_data
   label: App microbin data

@@ -1,6 +1,6 @@
 services:
   zonefoundry-bridge:
-    image: docker.io/zonefoundry/bridge:latest
+    image: docker.io/zonefoundry/bridge:v0.3.51
     network_mode: host
     pull_policy: always
     user: "0:0"

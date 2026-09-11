@@ -9,6 +9,10 @@ ugos:
   port: 5984
   open_type: tab
   tag_type: devtool
+parameters:
+- key: COUCHDB_PASSWORD
+  label: COUCHDB PASSWORD
+  type: password
 volumes:
 - container_path: /opt/couchdb/data
   label: Opt couchdb data

@@ -15,7 +15,7 @@ services:
       - hibernate_connection_username=app
       - hibernate_connection_password=${hibernate_connection_password}
       - initial_user=app
-      - initial_password=password
+      - initial_password=${initial_password}
       - initial_email=admin@example.com
       - initial_server_url=http://localhost:6610
   onedev-db:
@@ -25,5 +25,5 @@ services:
       - ./postgres/data:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=app
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_PASSWORD=${hibernate_connection_password}
       - POSTGRES_DB=onedev

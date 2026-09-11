@@ -43,6 +43,16 @@ ugos:
   port: 9380
   open_type: tab
   tag_type: utility
+parameters:
+- key: ELASTIC_PASSWORD
+  label: ELASTIC PASSWORD
+  type: password
+- key: MYSQL_ROOT_PASSWORD
+  label: MYSQL ROOT PASSWORD
+  type: password
+- key: OPENSEARCH_INITIAL_ADMIN_PASSWORD
+  label: OPENSEARCH INITIAL ADMIN PASSWORD
+  type: password
 volumes:
 - container_path: /ragflow/logs
   label: Ragflow logs

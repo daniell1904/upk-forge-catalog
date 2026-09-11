@@ -47,6 +47,13 @@ ugos:
   port: 18010
   open_type: tab
   tag_type: utility
+parameters:
+- key: ADMIN_PASSWORD
+  label: ADMIN PASSWORD
+  type: password
+- key: SEARCH_BACKEND_PASSWORD
+  label: SEARCH BACKEND PASSWORD
+  type: password
 volumes:
 - container_path: /data
   label: Data

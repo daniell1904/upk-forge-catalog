@@ -1,7 +1,11 @@
 services:
   openclaw:
-    image: app/openclaw:2026.5.7
+    image: icewhaletech/openclaw:2026.5.7
     restart: unless-stopped
+    command:
+      - /bin/bash
+      - -c
+      - /app/start.sh && node dist/index.js gateway --bind lan --allow-unconfigured --port '18789'
     network_mode: bridge
     ports:
       - 24190:18789
@@ -11,4 +15,4 @@ services:
     environment:
       - HOME=/home/node
       - TERM=xterm-256color
-      - OPENCLAW_GATEWAY_TOKEN=app
+      - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN}

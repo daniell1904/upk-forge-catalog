@@ -56,6 +56,10 @@ ugos:
   port: 3025
   open_type: tab
   tag_type: utility
+parameters:
+- key: FLOWISE_PASSWORD
+  label: FLOWISE PASSWORD
+  type: password
 volumes:
 - container_path: /root/.flowise
   label: Root .flowise

@@ -41,6 +41,10 @@ ugos:
   port: 17860
   open_type: tab
   tag_type: utility
+parameters:
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
 volumes:
 - container_path: /app/langflow
   label: App langflow

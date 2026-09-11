@@ -10,8 +10,8 @@ services:
       - /DATA/AppData/snapotter/workspace:/tmp/workspace
     environment:
       - AUTH_ENABLED=true
-      - DEFAULT_USERNAME=admin
-      - DEFAULT_PASSWORD=admin
+      - DEFAULT_USERNAME=${DEFAULT_PASSWORD}
+      - DEFAULT_PASSWORD=${DEFAULT_PASSWORD}
       - MAX_UPLOAD_SIZE_MB=0
       - MAX_BATCH_SIZE=0
       - CONCURRENT_JOBS=0

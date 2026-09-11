@@ -1,10 +1,10 @@
 services:
   firefly:
-    image: uusec/firefly:latest
+    image: uusec/firefly:4.4
     restart: unless-stopped
     network_mode: host
     volumes:
       - ./firefly-lib-modules:/lib/modules
       - ./conf:/firefly/conf
     environment:
-      - FIREFLY_PASSWORD=firefly
+      - FIREFLY_PASSWORD=${FIREFLY_PASSWORD}

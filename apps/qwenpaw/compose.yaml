@@ -1,6 +1,6 @@
 services:
   qwenpaw:
-    image: docker.io/agentscope/qwenpaw:v2.2.0
+    image: docker.io/agentscope/qwenpaw:v2.2.1
     init: true
     ports:
       - "8088:8088"

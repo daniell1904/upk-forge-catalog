@@ -1,6 +1,6 @@
 services:
   cowagent:
-    image: docker.io/zhayujie/chatgpt-on-wechat:2.1.7
+    image: docker.io/zhayujie/chatgpt-on-wechat:2.1.8
     ports:
       - "9899:9899"
     volumes:

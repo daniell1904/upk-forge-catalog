@@ -28,5 +28,5 @@ services:
       - INTEGRATIONS_ALLOW_PRIVATE_IPS=
       - PING_EMAIL_DOMAIN=
       - RP_ID=
-      - SECRET_KEY="b2ea4094-c950-4890-b85f-301d8a777af2"
+      - SECRET_KEY=${SECRET_KEY}
       - SITE_LOGO_URL=

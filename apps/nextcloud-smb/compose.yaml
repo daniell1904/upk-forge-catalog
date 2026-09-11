@@ -1,6 +1,6 @@
 services:
   nextcloud-smb:
-    image: app/app-nextcloud-with-smbclient:34.0.2@sha256:a8bbd030af0f21205a2bc4d3f9a71820f8565f4555ee26af950beefa73c0553f
+    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:34.0.2@sha256:a8bbd030af0f21205a2bc4d3f9a71820f8565f4555ee26af950beefa73c0553f
     restart: unless-stopped
     ports:
       - 7580:80
@@ -9,11 +9,11 @@ services:
     environment:
       - POSTGRES_HOST=nextcloud-smb-db
       - REDIS_HOST=nextcloud-smb-redis
-      - POSTGRES_PASSWORD=app
-      - POSTGRES_USER=app
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_USER=${POSTGRES_PASSWORD}
       - POSTGRES_DB=nextcloud
-      - NEXTCLOUD_ADMIN_USER=app
-      - NEXTCLOUD_ADMIN_PASSWORD=app
+      - NEXTCLOUD_ADMIN_USER=${POSTGRES_PASSWORD}
+      - NEXTCLOUD_ADMIN_PASSWORD=${POSTGRES_PASSWORD}
       - TRUSTED_PROXIES=
       - OVERWRITEPROTOCOL=http
       - PHP_MEMORY_LIMIT=1024M
@@ -24,8 +24,8 @@ services:
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     environment:
-      - POSTGRES_PASSWORD=app
-      - POSTGRES_USER=app
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_USER=${POSTGRES_PASSWORD}
       - POSTGRES_DB=nextcloud
   nextcloud-smb-redis:
     image: redis:6.2.20@sha256:d06ff6ec778c7f2a5c0dfaf58141d598efaa50a89d0e966faedfdf122cef451b
@@ -33,7 +33,7 @@ services:
     volumes:
       - ./redis:/data
   nextcloud-smb-cron:
-    image: app/app-nextcloud-with-smbclient:34.0.2@sha256:a8bbd030af0f21205a2bc4d3f9a71820f8565f4555ee26af950beefa73c0553f
+    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:34.0.2@sha256:a8bbd030af0f21205a2bc4d3f9a71820f8565f4555ee26af950beefa73c0553f
     restart: unless-stopped
     volumes:
       - ./html:/var/www/html

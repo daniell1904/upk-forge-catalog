@@ -2,6 +2,9 @@ services:
   hugo:
     image: ghcr.io/gohugoio/hugo:v0.161.1
     restart: unless-stopped
+    command:
+      - server
+      - --bind=0.0.0.0
     ports:
       - 1313:1313
     volumes:

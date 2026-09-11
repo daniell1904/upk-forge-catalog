@@ -9,7 +9,7 @@ services:
       - ./data:/data
       - ./logs:/logs
     environment:
-      - RUSTFS_ACCESS_KEY=app
+      - RUSTFS_ACCESS_KEY=${RUSTFS_ACCESS_KEY}
       - RUSTFS_SECRET_KEY=${RUSTFS_SECRET_KEY}
       - RUSTFS_CONSOLE_ENABLE=true
       - RUSTFS_ADDRESS=0.0.0.0:9000

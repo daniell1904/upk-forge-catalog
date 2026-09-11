@@ -9,6 +9,13 @@ ugos:
   port: 9000
   open_type: tab
   tag_type: utility
+parameters:
+- key: LIBREDESK_SYSTEM_USER_PASSWORD
+  label: LIBREDESK SYSTEM USER PASSWORD
+  type: password
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
 volumes:
 - container_path: /libredesk/uploads
   label: Libredesk uploads

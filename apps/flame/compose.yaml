@@ -8,4 +8,4 @@ services:
       - ./data:/app/data
       - ./app-var-run-docker-sock:/var/run/docker.sock
     environment:
-      - PASSWORD=app
+      - PASSWORD=${PASSWORD}

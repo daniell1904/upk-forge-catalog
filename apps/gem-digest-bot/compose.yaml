@@ -7,6 +7,6 @@ services:
     volumes:
       - ./extra/configs:/gem_digest_bot/extra_configs
     environment:
-      - TELEGRAM_API_KEY=TELEGRAM_API_KEY
-      - GEMINI_API_KEY=GEMINI_API_KEY
+      - TELEGRAM_API_KEY=${TELEGRAM_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
       - ADMIN_USER_ID=123;456

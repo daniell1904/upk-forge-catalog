@@ -24,6 +24,10 @@ ugos:
   port: 8443
   open_type: tab
   tag_type: utility
+parameters:
+- key: MONGO_PASS
+  label: MONGO PASS
+  type: string
 volumes:
 - container_path: /config
   label: Config

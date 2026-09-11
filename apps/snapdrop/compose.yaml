@@ -4,7 +4,7 @@ services:
     restart: unless-stopped
     network_mode: bridge
     ports:
-      - 443:443
+      - 10443:443
       - 89:80
     volumes:
       - ./config:/config

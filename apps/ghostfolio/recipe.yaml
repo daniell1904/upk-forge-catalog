@@ -13,6 +13,12 @@ parameters:
 - key: JWT_SECRET_KEY
   label: JWT SECRET KEY
   type: password
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
+- key: REDIS_PASSWORD
+  label: REDIS PASSWORD
+  type: password
 volumes:
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data

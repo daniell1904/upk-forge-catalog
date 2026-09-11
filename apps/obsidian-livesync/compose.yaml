@@ -8,5 +8,5 @@ services:
       - ./data/couchdb:/opt/couchdb/data
       - ./data/local.ini:/opt/couchdb/etc/local.ini
     environment:
-      - COUCHDB_USER=app
-      - COUCHDB_PASSWORD=app
+      - COUCHDB_USER=${COUCHDB_PASSWORD}
+      - COUCHDB_PASSWORD=${COUCHDB_PASSWORD}

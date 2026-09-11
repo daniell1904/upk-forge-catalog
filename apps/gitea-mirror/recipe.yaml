@@ -9,6 +9,10 @@ ugos:
   port: 4321
   open_type: tab
   tag_type: devtool
+parameters:
+- key: BETTER_AUTH_SECRET
+  label: BETTER AUTH SECRET
+  type: password
 volumes:
 - container_path: /app/data
   label: App data

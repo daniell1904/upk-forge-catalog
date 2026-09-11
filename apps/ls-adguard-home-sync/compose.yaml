@@ -12,11 +12,11 @@ services:
       - TZ=Etc/UTC
       - LOG_LEVEL=info
       - ORIGIN_URL=https://192.168.1.2:3000
-      - ORIGIN_USERNAME=app
-      - ORIGIN_PASSWORD=app
+      - ORIGIN_USERNAME=${ORIGIN_PASSWORD}
+      - ORIGIN_PASSWORD=${ORIGIN_PASSWORD}
       - REPLICA_URL=https://192.168.1.3:3000
-      - REPLICA_USERNAME=app
-      - REPLICA_PASSWORD=app
+      - REPLICA_USERNAME=${ORIGIN_PASSWORD}
+      - REPLICA_PASSWORD=${ORIGIN_PASSWORD}
       - CRON="0 */2 * * *"
       - RUN_ON_START=true
       - API_PORT=8080

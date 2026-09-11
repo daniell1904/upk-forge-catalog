@@ -33,6 +33,10 @@ ugos:
   port: 13001
   open_type: tab
   tag_type: utility
+parameters:
+- key: PSITRANSFER_ADMIN_PASS
+  label: PSITRANSFER ADMIN PASS
+  type: string
 volumes:
 - container_path: /data
   label: Data

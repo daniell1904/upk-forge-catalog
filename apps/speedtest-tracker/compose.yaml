@@ -16,8 +16,8 @@ services:
       - DB_HOST=speedtest-tracker-db
       - DB_PORT=3306
       - DB_DATABASE=speedtest_tracker
-      - DB_USERNAME=app
-      - DB_PASSWORD=app
+      - DB_USERNAME=${DB_PASSWORD}
+      - DB_PASSWORD=${DB_PASSWORD}
       - TZ=America/Chicago
   speedtest-tracker-db:
     image: mariadb:10@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350
@@ -26,6 +26,6 @@ services:
       - ./mysql:/var/lib/mysql
     environment:
       - MARIADB_DATABASE=speedtest_tracker
-      - MARIADB_USER=app
-      - MARIADB_PASSWORD=app
-      - MARIADB_RANDOM_ROOT_PASSWORD=true
+      - MARIADB_USER=${DB_PASSWORD}
+      - MARIADB_PASSWORD=${DB_PASSWORD}
+      - MARIADB_RANDOM_ROOT_PASSWORD=${MARIADB_RANDOM_ROOT_PASSWORD}

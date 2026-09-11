@@ -15,8 +15,8 @@ parameters:
 - key: DB_PASSWORD
   label: DB PASSWORD
   type: password
-- key: POSTGRES_PASSWORD
-  label: POSTGRES PASSWORD
+- key: SMTP_PASSWORD
+  label: SMTP PASSWORD
   type: password
 volumes:
 - container_path: /data/uploads

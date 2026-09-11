@@ -2,6 +2,15 @@ services:
   netronome:
     image: ghcr.io/autobrr/netronome:v0.13.0
     restart: unless-stopped
+    command:
+      - >-
+        config=/data/.config/netronome/config.toml
+
+        if [ ! -f "$$config" ]; then
+          netronome generate-config
+        fi
+
+        exec netronome serve
     ports:
       - 7575:7575
     volumes:

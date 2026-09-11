@@ -38,6 +38,10 @@ ugos:
   port: 14592
   open_type: tab
   tag_type: utility
+parameters:
+- key: NEXTAUTH_SECRET
+  label: NEXTAUTH SECRET
+  type: password
 volumes:
 - container_path: /data
   label: Data

@@ -1,6 +1,6 @@
 services:
   fastfetch:
-    image: app/fastfetch:0.0.5@sha256:fa84a845c95fdc1b9ee427786e7467c3909fbadfd98c4b32e0cf4a2f2a227751
+    image: bigbeartechworld/big-bear-fastfetch:0.0.5@sha256:fa84a845c95fdc1b9ee427786e7467c3909fbadfd98c4b32e0cf4a2f2a227751
     restart: unless-stopped
     ports:
       - 7681:7681

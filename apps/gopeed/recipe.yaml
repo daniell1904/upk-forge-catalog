@@ -35,7 +35,7 @@ source_code: https://github.com/gopeedlab/gopeed
 ugos:
   app_id: com.upkforge.docker.gopeed
   version: 0.1.0
-  port: 9999
+  port: 19999
   open_type: tab
   tag_type: media
 parameters:

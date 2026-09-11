@@ -36,6 +36,10 @@ ugos:
   port: 5244
   open_type: tab
   tag_type: utility
+parameters:
+- key: OPENLIST_ADMIN_PASSWORD
+  label: OPENLIST ADMIN PASSWORD
+  type: password
 volumes:
 - container_path: /opt/openlist/data
   label: Opt openlist data

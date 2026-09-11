@@ -14,8 +14,8 @@ services:
       - PAPERCLIP_PUBLIC_URL=http://localhost:3101
       - PAPERCLIP_DEPLOYMENT_MODE=authenticated
       - PAPERCLIP_DEPLOYMENT_EXPOSURE=private
-      - BETTER_AUTH_SECRET=change-this-run-openssl-rand-hex-32
-      - PAPERCLIP_TOOL_ACTION_SIGNING_SECRET=change-this-run-openssl-rand-hex-32
+      - BETTER_AUTH_SECRET=${BETTER_AUTH_SECRET}
+      - PAPERCLIP_TOOL_ACTION_SIGNING_SECRET=${BETTER_AUTH_SECRET}
       - ANTHROPIC_API_KEY=
       - OPENAI_API_KEY=
       - GEMINI_API_KEY=

@@ -19,7 +19,7 @@ services:
       - CLOUD_API_URL=http://api
       - ACCOUNT_API_URL=http://auth
       - AUTH_CLIENT_ID=self_hosted_client
-      - AUTH_CLIENT_SECRET=self_hosted_secret
+      - AUTH_CLIENT_SECRET=${AUTH_CLIENT_SECRET}
       - AUTH_AUDIENCE=self_hosted
   hub:
     image: celestory/hub:1.1.0@sha256:0a297ce4d96474096b81488de6ad4a566eba9144db26d491a31dab24d8f90678
@@ -48,7 +48,7 @@ services:
       - DB_URL=postgres://celestory_admin:celestory_postgres_password_@db/celestory
       - AUTH_JWKS_URI=http://auth/.well-known/jwks.json
       - AUTH_CLIENT_ID=self_hosted_client
-      - AUTH_CLIENT_SECRET=self_hosted_secret
+      - AUTH_CLIENT_SECRET=${AUTH_CLIENT_SECRET}
       - AUTH_AUDIENCE=self_hosted
       - GENERATOR_URL=http://generator
       - ORIGIN=${API_ORIGIN}
@@ -70,7 +70,7 @@ services:
       - DB_HOST=db
       - DB_DATABASE=auth
       - DB_USERNAME=celestory_admin
-      - DB_PASSWORD=celestory_postgres_password_
+      - DB_PASSWORD=${DB_PASSWORD}
       - API_AUTHORITY_SECRET=${AUTH_AUTHORITY_SECRET}
       - API_OAUTH_ISSUER=celestory_auth
       - SELF_HOSTED_REDIRECT_URI=${AUTH_REDIRECT_URI}
@@ -91,7 +91,7 @@ services:
       - WEBHOOK_URL=${VOLTASK_WEBHOOK_URL}
       - CELESTORY_AUTH_URL=http://auth
       - CELESTORY_AUTH_CLIENT_ID=self_hosted_client
-      - CELESTORY_AUTH_CLIENT_SECRET=self_hosted_secret
+      - CELESTORY_AUTH_CLIENT_SECRET=${AUTH_CLIENT_SECRET}
       - LICENSE_API_URL=http://hub:1402/hub
       - PLUGINS_BUN_URL=http://plugins-bun:8001
       - PLUGINS_DENO_URL=http://plugins-deno:8002
@@ -122,4 +122,4 @@ services:
       - ./db:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=celestory_admin
-      - POSTGRES_PASSWORD=celestory_postgres_password_
+      - POSTGRES_PASSWORD=${DB_PASSWORD}

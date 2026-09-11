@@ -9,6 +9,13 @@ ugos:
   port: 3001
   open_type: tab
   tag_type: utility
+parameters:
+- key: SECRET_KEY
+  label: SECRET KEY
+  type: password
+- key: DEFAULT_ADMIN_PASSWORD
+  label: DEFAULT ADMIN PASSWORD
+  type: password
 volumes:
 - container_path: /app/data
   label: App data

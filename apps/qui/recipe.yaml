@@ -11,6 +11,10 @@ ugos:
   port: 7476
   open_type: tab
   tag_type: media
+parameters:
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
 volumes:
 - container_path: /config
   label: Config

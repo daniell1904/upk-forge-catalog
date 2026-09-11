@@ -18,7 +18,7 @@ services:
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=ihatemoney
       - MYSQL_USER=app
-      - MYSQL_PASSWORD=password
+      - MYSQL_PASSWORD=${MYSQL_ROOT_PASSWORD}

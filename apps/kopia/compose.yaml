@@ -16,7 +16,7 @@ services:
       - PGID=0
       - TZ=UTC
       - KOPIA_HTTPS=true
-      - KOPIA_UI_USERNAME=app
-      - KOPIA_UI_PASSWORD=app
-      - KOPIA_PASSWORD=app
+      - KOPIA_UI_USERNAME=${KOPIA_UI_PASSWORD}
+      - KOPIA_UI_PASSWORD=${KOPIA_UI_PASSWORD}
+      - KOPIA_PASSWORD=${KOPIA_UI_PASSWORD}
       - REFRESH_INTERVAL=

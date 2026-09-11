@@ -34,6 +34,22 @@ ugos:
   port: 1080
   open_type: tab
   tag_type: utility
+parameters:
+- key: MINIO_SECRET_ACCESS_KEY
+  label: MINIO SECRET ACCESS KEY
+  type: password
+- key: DB_PASSWORD
+  label: DB PASSWORD
+  type: password
+- key: REDIS_PASSWORD
+  label: REDIS PASSWORD
+  type: password
+- key: TENANT_AES_KEY
+  label: TENANT AES KEY
+  type: password
+- key: JWT_SECRET
+  label: JWT SECRET
+  type: password
 volumes:
 - container_path: /data/files
   label: Data files

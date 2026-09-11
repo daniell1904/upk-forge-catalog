@@ -8,7 +8,7 @@ source_code: https://github.com/RobinLinus/snapdrop
 ugos:
   app_id: com.upkforge.docker.snapdrop
   version: 0.1.0
-  port: 443
+  port: 10443
   open_type: tab
   tag_type: utility
 volumes:

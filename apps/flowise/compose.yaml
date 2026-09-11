@@ -13,5 +13,5 @@ services:
       - SECRETKEY_PATH=/root/.flowise
       - LOG_PATH=/root/.flowise/logs
       - BLOB_STORAGE_PATH=/root/.flowise/storage
-      - FLOWISE_USERNAME=app
-      - FLOWISE_PASSWORD=app
+      - FLOWISE_USERNAME=${FLOWISE_PASSWORD}
+      - FLOWISE_PASSWORD=${FLOWISE_PASSWORD}

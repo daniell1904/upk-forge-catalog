@@ -13,11 +13,11 @@ services:
     environment:
       - BASE_URL=http://[YOUR_app_LAN_IP]:3001
       - DATABASE_URL=postgresql://postgres@planka-v2-postgres/planka
-      - SECRET_KEY=notsecretkey
+      - SECRET_KEY=${SECRET_KEY}
       - DEFAULT_ADMIN_EMAIL=demo@demo.demo
-      - DEFAULT_ADMIN_PASSWORD=demo
+      - DEFAULT_ADMIN_PASSWORD=${DEFAULT_ADMIN_PASSWORD}
       - DEFAULT_ADMIN_NAME=Demo Demo
-      - DEFAULT_ADMIN_USERNAME=demo
+      - DEFAULT_ADMIN_USERNAME=${DEFAULT_ADMIN_PASSWORD}
   planka-v2-postgres:
     image: postgres:14-alpine@sha256:f1341c01408dc7278e9d365ed4f860cd3f87dd16b4464ac326fc0f422083a579
     restart: unless-stopped

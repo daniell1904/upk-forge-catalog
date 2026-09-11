@@ -10,14 +10,14 @@ services:
       - APP_KEY=${APP_KEY}
       - DB_HOST=monica-db
       - DB_USERNAME=monicauser
-      - DB_PASSWORD=monicasecret
+      - DB_PASSWORD=${DB_PASSWORD}
   monica-db:
     image: mariadb:11.8.2
     restart: unless-stopped
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
-      - MARIADB_RANDOM_ROOT_PASSWORD=true
+      - MARIADB_RANDOM_ROOT_PASSWORD=${MARIADB_RANDOM_ROOT_PASSWORD}
       - MARIADB_DATABASE=monica
       - MARIADB_USER=monicauser
-      - MARIADB_PASSWORD=monicasecret
+      - MARIADB_PASSWORD=${DB_PASSWORD}

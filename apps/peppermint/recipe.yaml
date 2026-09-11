@@ -9,6 +9,13 @@ ugos:
   port: 3000
   open_type: tab
   tag_type: utility
+parameters:
+- key: DB_PASSWORD
+  label: DB PASSWORD
+  type: password
+- key: SECRET
+  label: SECRET
+  type: password
 volumes:
 - container_path: /var/lib/postgresql/data
   label: Var lib postgresql data

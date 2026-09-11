@@ -10,6 +10,10 @@ ugos:
   port: 5005
   open_type: tab
   tag_type: utility
+parameters:
+- key: PASSWORD
+  label: PASSWORD
+  type: password
 volumes:
 - container_path: /media
   label: Media

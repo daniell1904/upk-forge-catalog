@@ -17,7 +17,7 @@ services:
 
 
         Get involved with Etherpad at https://etherpad.org
-      - ADMIN_PASSWORD=admin
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
       - AUTHENTICATION_METHOD=apikey
       - DB_TYPE=dirty
       - DB_FILENAME=/opt/etherpad-lite/var/dirty.db

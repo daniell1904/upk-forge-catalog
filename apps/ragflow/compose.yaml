@@ -1,6 +1,6 @@
 services:
   ragflow:
-    image: app/ragflow:v0.21.1
+    image: icewhaletech/ragflow:v0.21.1
     restart: unless-stopped
     ports:
       - 9380:9380
@@ -28,7 +28,7 @@ services:
     volumes:
       - ./es01:/usr/share/elasticsearch/data
     environment:
-      - ELASTIC_PASSWORD=infini_rag_flow
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
       - TZ=$TZ
       - bootstrap.memory_lock=false
       - cluster.routing.allocation.disk.watermark.flood_stage=2gb
@@ -40,7 +40,7 @@ services:
       - xpack.security.http.ssl.enabled=false
       - xpack.security.transport.ssl.enabled=false
   ragflow-infinity:
-    image: app/ragflow-infinity:v0.6.1
+    image: icewhaletech/ragflow-infinity:v0.6.1
     restart: unless-stopped
     ports:
       - 23817:23817
@@ -53,25 +53,37 @@ services:
   ragflow-minio:
     image: quay.io/minio/minio:RELEASE.2025-06-13T11-33-47Z
     restart: unless-stopped
+    command:
+      - server
+      - --console-address
+      - :9001
+      - /data
     ports:
       - 9000:9000
       - 9001:9001
     volumes:
       - ./minio:/data
     environment:
-      - MINIO_ROOT_PASSWORD=infini_rag_flow
+      - MINIO_ROOT_PASSWORD=${ELASTIC_PASSWORD}
       - MINIO_ROOT_USER=rag_flow
       - TZ=$TZ
   ragflow-mysql:
-    image: app/ragflow-mysql:8.0.39
+    image: icewhaletech/ragflow-mysql:8.0.39
     restart: unless-stopped
+    command:
+      - --max_connections=1000
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --default-authentication-plugin=mysql_native_password
+      - --tls_version=TLSv1.2,TLSv1.3
+      - --binlog_expire_logs_seconds=604800
     ports:
       - 5455:3306
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
-      - MYSQL_PASSWORD=infini_rag_flow
-      - MYSQL_ROOT_PASSWORD=mysql
+      - MYSQL_PASSWORD=${ELASTIC_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - TZ=$TZ
   ragflow-opensearch01:
     image: opensearchproject/opensearch:2.19.1
@@ -81,8 +93,8 @@ services:
     volumes:
       - ./opensearch01:/usr/share/opensearch/data
     environment:
-      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=infini_rag_flow_OS_01
-      - OPENSEARCH_PASSWORD=infini_rag_flow_OS_01
+      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_INITIAL_ADMIN_PASSWORD}
+      - OPENSEARCH_PASSWORD=${OPENSEARCH_INITIAL_ADMIN_PASSWORD}
       - TZ=$TZ
       - bootstrap.memory_lock=false
       - cluster.routing.allocation.disk.watermark.flood_stage=2gb
@@ -97,6 +109,14 @@ services:
   ragflow-redis:
     image: valkey/valkey:8
     restart: unless-stopped
+    command:
+      - redis-server
+      - --requirepass
+      - infini_rag_flow
+      - --maxmemory
+      - 128mb
+      - --maxmemory-policy
+      - allkeys-lru
     ports:
       - 6379:6379
     volumes:

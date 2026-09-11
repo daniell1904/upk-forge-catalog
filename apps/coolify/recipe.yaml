@@ -10,11 +10,17 @@ ugos:
   open_type: tab
   tag_type: media
 parameters:
-- key: POSTGRES_PASSWORD
-  label: POSTGRES PASSWORD
+- key: APP_KEY
+  label: APP KEY
+  type: password
+- key: DB_PASSWORD
+  label: DB PASSWORD
   type: password
 - key: REDIS_PASSWORD
   label: REDIS PASSWORD
+  type: password
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
   type: password
 volumes:
 - container_path: /var/www/html/storage/app/ssh

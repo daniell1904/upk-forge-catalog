@@ -9,6 +9,10 @@ ugos:
   port: 3101
   open_type: tab
   tag_type: utility
+parameters:
+- key: BETTER_AUTH_SECRET
+  label: BETTER AUTH SECRET
+  type: password
 volumes:
 - container_path: /paperclip
   label: Paperclip

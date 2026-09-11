@@ -9,6 +9,10 @@ ugos:
   port: 53
   open_type: tab
   tag_type: utility
+parameters:
+- key: FTLCONF_webserver_api_password
+  label: FTLCONF webserver api password
+  type: password
 volumes:
 - container_path: /etc/pihole/
   label: Etc pihole

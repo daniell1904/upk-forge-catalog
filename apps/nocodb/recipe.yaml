@@ -13,6 +13,9 @@ parameters:
 - key: NC_AUTH_JWT_SECRET
   label: NC AUTH JWT SECRET
   type: password
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
 volumes:
 - container_path: /usr/src/app/data
   label: Usr src app data

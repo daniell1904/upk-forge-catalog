@@ -9,6 +9,13 @@ ugos:
   port: 8082
   open_type: tab
   tag_type: utility
+parameters:
+- key: VIKUNJA_DATABASE_PASSWORD
+  label: VIKUNJA DATABASE PASSWORD
+  type: password
+- key: MYSQL_ROOT_PASSWORD
+  label: MYSQL ROOT PASSWORD
+  type: password
 volumes:
 - container_path: /app/vikunja/files
   label: App vikunja files

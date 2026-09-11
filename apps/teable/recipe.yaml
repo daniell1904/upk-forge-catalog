@@ -32,6 +32,10 @@ ugos:
   port: 3200
   open_type: tab
   tag_type: utility
+parameters:
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
 volumes:
 - container_path: /app/.assets
   label: App .assets

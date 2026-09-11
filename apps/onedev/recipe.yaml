@@ -13,8 +13,8 @@ parameters:
 - key: hibernate_connection_password
   label: Hibernate connection password
   type: password
-- key: POSTGRES_PASSWORD
-  label: POSTGRES PASSWORD
+- key: initial_password
+  label: Initial password
   type: password
 volumes:
 - container_path: /opt/onedev

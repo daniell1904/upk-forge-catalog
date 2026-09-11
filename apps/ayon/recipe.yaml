@@ -9,6 +9,10 @@ ugos:
   port: 5000
   open_type: tab
   tag_type: devtool
+parameters:
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
 volumes:
 - container_path: /addons
   label: Addons

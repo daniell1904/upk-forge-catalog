@@ -9,7 +9,7 @@ services:
       - ./webdav-media:/media
     environment:
       - GID=1000
-      - PASSWORD=app
+      - PASSWORD=${PASSWORD}
       - TZ=Europe/Madrid
       - UDI=1000
-      - USERNAME=app
+      - USERNAME=${PASSWORD}

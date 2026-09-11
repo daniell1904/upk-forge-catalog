@@ -9,6 +9,13 @@ ugos:
   port: 8080
   open_type: tab
   tag_type: utility
+parameters:
+- key: DB_PASSWORD
+  label: DB PASSWORD
+  type: password
+- key: MARIADB_RANDOM_ROOT_PASSWORD
+  label: MARIADB RANDOM ROOT PASSWORD
+  type: password
 volumes:
 - container_path: /config
   label: Config

@@ -1,6 +1,6 @@
 services:
   next-ai-draw-io:
-    image: ghcr.io/dayuanjiang/next-ai-draw-io:latest
+    image: ghcr.io/dayuanjiang/next-ai-draw-io:0.4.15
     ports:
       - "3007:3000"
     environment:

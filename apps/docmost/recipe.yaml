@@ -48,6 +48,9 @@ parameters:
 - key: APP_SECRET
   label: APP SECRET
   type: password
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
 volumes:
 - container_path: /app/data/storage
   label: App data storage

@@ -22,16 +22,22 @@ services:
   owncloud-db:
     image: mariadb:10.6@sha256:114d40be36852d0a019afd8458f7e1cc63fd300403b115b1f32e31130d5f671b
     restart: unless-stopped
+    command:
+      - --max-allowed-packet=128M
+      - --innodb-log-file-size=64M
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${OWNCLOUD_DB_PASSWORD}
       - MYSQL_USER=app
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_PASSWORD=${OWNCLOUD_DB_PASSWORD}
       - MYSQL_DATABASE=app_owncloud
       - MARIADB_AUTO_UPGRADE=1
   owncloud-redis:
     image: redis:6.2.20@sha256:d06ff6ec778c7f2a5c0dfaf58141d598efaa50a89d0e966faedfdf122cef451b
     restart: unless-stopped
+    command:
+      - --databases
+      - "1"
     volumes:
       - ./redis:/data

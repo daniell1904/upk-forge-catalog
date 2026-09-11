@@ -11,6 +11,10 @@ ugos:
   port: 3000
   open_type: tab
   tag_type: utility
+parameters:
+- key: PASSWORD
+  label: PASSWORD
+  type: password
 volumes:
 - container_path: /data
   label: Data

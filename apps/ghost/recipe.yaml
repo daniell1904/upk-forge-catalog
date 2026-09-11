@@ -9,6 +9,10 @@ ugos:
   port: 2368
   open_type: tab
   tag_type: utility
+parameters:
+- key: database__connection__password
+  label: Database connection password
+  type: password
 volumes:
 - container_path: /var/lib/ghost/content
   label: Var lib ghost content

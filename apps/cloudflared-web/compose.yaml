@@ -12,4 +12,4 @@ services:
       - METRICS_ENABLE=false
       - METRICS_PORT=60123
       - BASIC_AUTH_USER=admin
-      - BASIC_AUTH_PASS=""
+      - BASIC_AUTH_PASS=${BASIC_AUTH_PASS}

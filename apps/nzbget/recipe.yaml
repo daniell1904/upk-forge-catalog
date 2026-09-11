@@ -16,6 +16,9 @@ parameters:
   label: Downloads folder
   help: Folder on the NAS for Nzbget's downloads. It is mounted into the container at /downloads; Nzbget has full read and write access to it.
   type: path
+- key: NZBGET_PASS
+  label: NZBGET PASS
+  type: string
 volumes:
 - container_path: /config
   label: Config

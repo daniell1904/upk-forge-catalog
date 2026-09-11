@@ -10,4 +10,4 @@ services:
       - ./watch:/watch
       - ./output:/output
     environment:
-      - VNC_PASSWORD=app
+      - VNC_PASSWORD=${VNC_PASSWORD}

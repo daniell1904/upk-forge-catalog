@@ -9,6 +9,10 @@ ugos:
   port: 8000
   open_type: tab
   tag_type: utility
+parameters:
+- key: JWT_SECRET
+  label: JWT SECRET
+  type: password
 volumes:
 - container_path: /data
   label: Data

@@ -28,19 +28,20 @@ services:
       - QUEUE_DRIVER=redis
       - REDIS_HOST=cache
       - DB_HOST=database
-      - DB_PASSWORD=app
+      - DB_PASSWORD=${DB_PASSWORD}
       - DB_PORT=3306
       - DB_CONNECTION=mariadb
   database:
     image: mariadb:10.5@sha256:a530aeeefd82f4fa5150f391b6c75462140904780338766f6b03acecb1cca3ce
     restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
     volumes:
       - ./database:/var/lib/mysql
     environment:
       - MYSQL_DATABASE=panel
       - MYSQL_USER=pterodactyl
-      - MYSQL_PASSWORD=app
-      - MYSQL_ROOT_PASSWORD=app
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
   cache:
     image: redis:8.2.2-alpine@sha256:1c78f5e7512cc8b22b0edc95c20e7abd9e1fd832e5dfd5c3c6b59ce82fb238d0
     restart: unless-stopped

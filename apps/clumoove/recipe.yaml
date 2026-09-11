@@ -30,6 +30,16 @@ ugos:
   port: 8380
   open_type: tab
   tag_type: utility
+parameters:
+- key: ENCRYPTION_SECRET_KEY
+  label: ENCRYPTION SECRET KEY
+  type: password
+- key: JWT_SECRET_KEY
+  label: JWT SECRET KEY
+  type: password
+- key: POSTGRES_PASSWORD
+  label: POSTGRES PASSWORD
+  type: password
 volumes:
 - container_path: /clumoove
   label: Clumoove
